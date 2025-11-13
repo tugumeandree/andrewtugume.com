@@ -1,7 +1,7 @@
-﻿# Andrew Tugume  Personal Brand Ecosystem
+﻿# Andrew Tugume
 
 > **Teacher  Technologist  Investor**  
-> Helping believers, workers, and leaders integrate faith with their calling
+> Helping believers, workers, and leaders succeed
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
@@ -10,26 +10,25 @@
 
 ##  Project Overview
 
-This is the official website for Andrew Tugume's comprehensive ministry ecosystem, featuring three distinct content vehicles:
-
+This is the official website for Andrew Tugume
 ### The Three Vehicles
 
 1. **WorkMasters**  For Workers
    - Content for entrepreneurs, freelancers, and employees
    - Qraft Academy school
-   - 1,247+ community members
+   - Millions of community members
 
 2. **Bible Study & Discipleship**  For Believers
    - Scripture teaching and application
    - Nations Bible School
-   - 2,154+ community members
+   - Millions of community members
 
 3. **Leadership Exchange**  For Leaders
    - Bible-based leadership frameworks
    - Chariot Leadership Institute
-   - 823+ community members
+   - Millions of  community members
 
-Plus **Tabernacle Tech Institute** for technology education across all three pillars.
+Plus **TechMasters** for technology education across all three pillars.
 
 ##  Tech Stack
 
