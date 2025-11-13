@@ -4,8 +4,8 @@
   # Build command
   command = "npm run build"
   
-  # Publish directory
-  publish = "dist"
+  # Publish directory for Next.js – the Netlify Next.js Runtime serves from .next
+  publish = ".next"
 
 # Environment variables
 [build.environment]
@@ -13,11 +13,7 @@
   NPM_FLAGS = "--legacy-peer-deps"
 
 # Redirects and headers for Next.js
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+# Next.js runtime handles routing; no SPA fallback redirect needed
 
 # Headers for security and performance
 [[headers]]
@@ -37,3 +33,7 @@
   for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Enable the official Netlify Next.js Runtime
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
