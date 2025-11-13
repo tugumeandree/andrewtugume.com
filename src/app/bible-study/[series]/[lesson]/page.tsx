@@ -1,6 +1,5 @@
 import React from 'react'
 import { getMdxByRelativePath } from '../../../../lib/mdx'
-import LessonReader from '../../../../components/LessonReader'
 
 export default async function LessonPage({ params }: { params: { series: string; lesson: string } }) {
   const { series, lesson } = params
@@ -20,8 +19,8 @@ export default async function LessonPage({ params }: { params: { series: string;
       <header>
         <h1 className="text-2xl font-semibold">{result.frontmatter.title}</h1>
       </header>
-      <div className="mt-6">
-        <LessonReader source={result.mdxSource} />
+      <div className="prose max-w-none mt-6">
+        {result.content}
       </div>
     </article>
   )
