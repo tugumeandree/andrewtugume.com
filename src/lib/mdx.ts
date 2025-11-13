@@ -1,9 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
-import remarkGfm from 'remark-gfm'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 export type MdxResult = {
   frontmatter: Record<string, any>
@@ -15,13 +12,18 @@ export async function getMdxByRelativePath(relPath: string): Promise<MdxResult |
   if (!fs.existsSync(fullPath)) return null
   const raw = fs.readFileSync(fullPath, 'utf8')
   
+  // Dynamic imports to avoid TypeScript plugin type conflicts
+  const remarkGfm = (await import('remark-gfm')).default
+  const rehypeSlug = (await import('rehype-slug')).default
+  const rehypeAutolinkHeadings = (await import('rehype-autolink-headings')).default
+  
   const { content, frontmatter } = await compileMDX<Record<string, any>>({
     source: raw,
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins: [remarkGfm],
-        rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+        remarkPlugins: [remarkGfm as any],
+        rehypePlugins: [rehypeSlug as any, rehypeAutolinkHeadings as any]
       }
     }
   })
