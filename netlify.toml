@@ -1,16 +1,13 @@
 # Netlify configuration for andrewtugume.com
 
 [build]
-  # Build command for Next.js
+  # Build command
   command = "npm run build"
   
-  # Publish directory for Next.js (standalone build output)
-  publish = ".next"
-  
-  # Node version
-  environment = { NODE_VERSION = "20" }
+  # Publish directory
+  publish = "dist"
 
-# Next.js-specific settings
+# Environment variables
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
