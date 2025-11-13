@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+a { @apply text-primary hover:underline }
+
+.container { 
+  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Mobile-friendly text scaling */
+@layer utilities {
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+}

@@ -1,0 +1,142 @@
+import '../styles/globals.css'
+import React from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://andrewtugume.com'),
+  title: {
+    default: 'Andrew Tugume — Teacher, Technologist, Investor | Faith-Driven Resources',
+    template: '%s | Andrew Tugume'
+  },
+  description: 'Andrew Tugume helps believers, workers, and leaders integrate faith with their calling through WorkMasters, Bible Study, and Leadership Exchange. Join 4,224+ members transforming their work, faith, and leadership.',
+  keywords: [
+    'Andrew Tugume',
+    'Christian business',
+    'faith and work',
+    'Bible study',
+    'Christian leadership',
+    'WorkMasters',
+    'biblical entrepreneurship',
+    'Christian teaching',
+    'faith-driven business',
+    'Christian investor',
+    'Bible teaching',
+    'leadership development',
+    'Nations Bible School',
+    'Chariot Leadership Institute',
+    'Qraft Academy',
+    'Tabernacle Tech Institute'
+  ],
+  authors: [{ name: 'Andrew Tugume', url: 'https://andrewtugume.com' }],
+  creator: 'Andrew Tugume',
+  publisher: 'Andrew Tugume',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://andrewtugume.com',
+    siteName: 'Andrew Tugume',
+    title: 'Andrew Tugume — Teacher, Technologist, Investor',
+    description: 'Helping believers, workers, and leaders integrate faith with their calling through biblical teaching, modern technology, and practical business wisdom.',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Andrew Tugume - Teacher, Technologist, Investor',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@_drewtugume',
+    creator: '@_drewtugume',
+    title: 'Andrew Tugume — Teacher, Technologist, Investor',
+    description: 'Helping believers, workers, and leaders integrate faith with their calling.',
+    images: ['https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your actual verification code
+  },
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="canonical" href="https://andrewtugume.com" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <meta name="theme-color" content="#0F5666" />
+      </head>
+      <body className="overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Andrew Tugume',
+              url: 'https://andrewtugume.com',
+              image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
+              jobTitle: 'Teacher, Technologist, Investor',
+              description: 'Helping believers, workers, and leaders integrate faith with their calling through biblical teaching, modern technology, and practical business wisdom.',
+              sameAs: [
+                'https://x.com/_drewtugume',
+              ],
+              knowsAbout: [
+                'Biblical Teaching',
+                'Christian Business',
+                'Leadership Development',
+                'Technology Education',
+                'Faith and Work Integration'
+              ],
+              alumniOf: {
+                '@type': 'EducationalOrganization',
+                name: 'Educational Background'
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Andrew Tugume',
+              url: 'https://andrewtugume.com',
+              description: 'Faith-driven resources for believers, workers, and leaders',
+              publisher: {
+                '@type': 'Person',
+                name: 'Andrew Tugume'
+              }
+            })
+          }}
+        />
+        <Header />
+        <main className="container py-6 md:py-12">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  )
+}
