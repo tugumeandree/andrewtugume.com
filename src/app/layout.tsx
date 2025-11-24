@@ -7,27 +7,28 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   metadataBase: new URL('https://andrewtugume.com'),
   title: {
-    default: 'Andrew Tugume — Teacher, Technologist, Investor | Faith-Driven Resources',
+    default: 'Andrew Tugume — Teacher, Technologist, Investor',
     template: '%s | Andrew Tugume'
   },
-  description: 'Andrew Tugume helps believers, workers, and leaders integrate faith with their calling through WorkMasters, Bible Study, and Leadership Exchange. Join 4,224+ members transforming their work, faith, and leadership.',
+  description: 'Andrew Tugume helps believers, workers, and leaders through WorkMasters, Bible Study, and Leadership Exchange. Join millions of members transforming their work, faith, and leadership.',
   keywords: [
     'Andrew Tugume',
-    'Christian business',
+    'Career and business coach',
     'faith and work',
     'Bible study',
-    'Christian leadership',
+    'leadership coaching',
     'WorkMasters',
-    'biblical entrepreneurship',
+    'entrepreneurship training',
     'Christian teaching',
     'faith-driven business',
-    'Christian investor',
+    'investor',
     'Bible teaching',
     'leadership development',
     'Nations Bible School',
     'Chariot Leadership Institute',
     'Qraft Academy',
-    'Tabernacle Tech Institute'
+    'technologist',
+    'javascript educator'
   ],
   authors: [{ name: 'Andrew Tugume', url: 'https://andrewtugume.com' }],
   creator: 'Andrew Tugume',
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     site: '@_drewtugume',
     creator: '@_drewtugume',
     title: 'Andrew Tugume — Teacher, Technologist, Investor',
-    description: 'Helping believers, workers, and leaders integrate faith with their calling.',
+    description: 'Helping believers, workers, and leaders succeed.',
     images: ['https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg'],
   },
   robots: {
@@ -99,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: 'https://andrewtugume.com',
               image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
               jobTitle: 'Teacher, Technologist, Investor',
-              description: 'Helping believers, workers, and leaders integrate faith with their calling through biblical teaching, modern technology, and practical business wisdom.',
+              description: 'Helping believers, workers, and leaders succeed through biblical teaching, modern technology, and practical business wisdom.',
               sameAs: [
                 'https://x.com/_drewtugume',
               ],

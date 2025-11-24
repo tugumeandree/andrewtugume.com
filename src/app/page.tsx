@@ -4,11 +4,11 @@ import AndrewsDesk from '@/components/AndrewsDesk'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Andrew Tugume — Teacher, Technologist, Investor | Faith-Driven Resources',
-  description: 'Join 4,224+ believers, workers, and leaders transforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange. Free resources, proven frameworks, real community.',
+  title: 'Andrew Tugume — Teacher, Technologist, Investor',
+  description: 'Join millions of believers, workers, and leaders transforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange. Free resources, proven frameworks, real community.',
   openGraph: {
     title: 'Andrew Tugume — Teacher, Technologist, Investor',
-    description: 'Join 4,224+ believers, workers, and leaders transforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange.',
+    description: 'Join millions of believers, workers, and leaders transforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange.',
     url: 'https://andrewtugume.com',
     type: 'website',
   },

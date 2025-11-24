@@ -69,6 +69,25 @@ export default function Contact() {
             </div>
           </div>
 
+          {/* Direct Contact */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+            <h3 className="font-bold mb-3">Direct Contact</h3>
+            <div className="space-y-3 text-sm text-gray-700">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">📧</span>
+                <a href="mailto:andrewtugume2@gmail.com" className="text-primary hover:underline font-medium">andrewtugume2@gmail.com</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-xl">📞</span>
+                <a href="tel:+256755017384" className="text-primary hover:underline font-medium">+256 755 017 384</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-xl">💬</span>
+                <a href="https://wa.me/256755017384" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline font-medium">WhatsApp Me</a>
+              </div>
+            </div>
+          </div>
+
           {/* Response Time */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
             <h3 className="font-bold mb-2">Response Time</h3>

@@ -96,7 +96,16 @@ export default function Footer() {
               <li><Link href="/impact" className="hover:text-white transition-colors">Our Impact</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Andrew</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-              <li className="pt-2 border-t border-white/20">
+              <li className="pt-2 border-t border-white/20 mt-2">
+                <a href="mailto:andrewtugume2@gmail.com" className="hover:text-white transition-colors block">📧 Email</a>
+              </li>
+              <li>
+                <a href="tel:+256755017384" className="hover:text-white transition-colors block">📞 +256 755 017 384</a>
+              </li>
+              <li>
+                <a href="https://wa.me/256755017384" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors block">💬 WhatsApp</a>
+              </li>
+              <li className="pt-2 border-t border-white/20 mt-2">
                 <Link href="/partner" className="hover:text-white transition-colors font-semibold text-accent">Become a Partner</Link>
               </li>
             </ul>
