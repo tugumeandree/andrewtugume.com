@@ -5,10 +5,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Andrew Tugume — Teacher, Technologist, Investor',
-  description: 'Join millions of believers, workers, and leaders transforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange. Free resources, proven frameworks, real community.',
+  description: 'Join millions of youtransforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange. Free resources, proven frameworks, real community.',
   openGraph: {
     title: 'Andrew Tugume — Teacher, Technologist, Investor',
-    description: 'Join millions of believers, workers, and leaders transforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange.',
+    description: 'Join millions of youtransforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange.',
     url: 'https://andrewtugume.com',
     type: 'website',
   },
@@ -46,7 +46,7 @@ export default function Home() {
                   Teacher • Technologist • Investor
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 md:mb-8 max-w-3xl mx-auto md:mx-0">
-                  I help believers, workers, and leaders thrive in their God-given callings through biblical teaching, modern technology, and practical business wisdom. Welcome to my ecosystem of faith-driven resources.
+                  I am here to help you succeed and thrive in your calling through sound teaching, modern technology, and practical wisdom. Welcome to my ecosystem of faith-driven resources.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start">
                   <Link 
@@ -81,7 +81,7 @@ export default function Home() {
           </div>
           <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">As a Teacher</h2>
           <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-            My deepest passion is making Scripture accessible and applicable. Through <strong>Nations Bible School</strong> and my Bible Study content, I help believers understand God's Word and apply it to every area of life.
+          I share my expertise in <strong>learning and development</strong>, <strong>instructional design</strong>,course creation and EdTech<strong>in the CourseMasters Program</strong>, I run three registered schools: <strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible School</strong>
           </p>
         </article>
 
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
           <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">As a Technologist</h2>
           <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-            I believe technology is a modern-day "tool for the tabernacle." Through <strong>Tabernacle Tech Institute</strong>, I equip believers to use digital tools for kingdom impact, business growth, and effective leadership.
+            I believe technology is what will change the economic state of Africa. Through <strong>my TechMasters Program And Qraft Labs</strong>, I equip young people and build tech solutions.
           </p>
         </article>
 
@@ -108,6 +108,117 @@ export default function Home() {
             I bring real-world business experience and financial wisdom to every teaching. Through <strong>WorkMasters</strong> and <strong>Chariot Leadership Institute</strong>, I help entrepreneurs and leaders build sustainable, faith-driven ventures.
           </p>
         </article>
+      </section>
+
+      {/* Masters Programs - For Everyone */}
+      <section className="mt-12 md:mt-16 bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl md:rounded-2xl p-6 md:p-12 -mx-4 sm:mx-0">
+        <div className="text-center mb-8 md:mb-12">
+          <div className="inline-block bg-primary/10 px-4 py-2 rounded-full text-sm font-semibold text-primary mb-4">
+            For Believers, Workers & Leaders
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 md:mb-4 px-4">The Masters Programs</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+            Three comprehensive programs available to everyone—no matter which journey you're on
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-3">
+          {/* CourseMasters */}
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-amber-600">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+              <svg className="w-7 h-7 md:w-8 md:h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">CourseMasters</h3>
+            <p className="text-sm md:text-base text-gray-700 mb-4">
+              Learn how to create transformational courses from my vast experience as a teacher, instructional designer, and course creator.
+            </p>
+            <div className="space-y-2 mb-6 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <span className="text-amber-600">✓</span>
+                <span>Individual & Team Training</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-amber-600">✓</span>
+                <span>Done-For-You Course Creation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-amber-600">✓</span>
+                <span>Ready-Made Courses</span>
+              </div>
+            </div>
+            <Link href="/masters/coursemasters" className="block text-center bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors">
+              Explore CourseMasters →
+            </Link>
+          </div>
+
+          {/* TechMasters */}
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-indigo-600">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+              <svg className="w-7 h-7 md:w-8 md:h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">TechMasters</h3>
+            <p className="text-sm md:text-base text-gray-700 mb-4">
+              Build state-of-the-art technology with my vast experience as a software engineer and technologist.
+            </p>
+            <div className="space-y-2 mb-6 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <span className="text-indigo-600">✓</span>
+                <span>Research & Development</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-indigo-600">✓</span>
+                <span>Product Development</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-indigo-600">✓</span>
+                <span>Skills & Business Development</span>
+              </div>
+            </div>
+            <Link href="/masters/techmasters" className="block text-center bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+              Explore TechMasters →
+            </Link>
+          </div>
+
+          {/* CapitalMasters */}
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-green-600">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+              <svg className="w-7 h-7 md:w-8 md:h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">CapitalMasters</h3>
+            <p className="text-sm md:text-base text-gray-700 mb-4">
+              Learn to invest and build wealth from my vast experience as an investor in startups, real estate, and financial markets.
+            </p>
+            <div className="space-y-2 mb-6 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <span className="text-green-600">✓</span>
+                <span>Investment Education</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-600">✓</span>
+                <span>Financial Literacy</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-600">✓</span>
+                <span>Wealth Building Strategies</span>
+              </div>
+            </div>
+            <Link href="/masters/capitalmasters" className="block text-center bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+              Explore CapitalMasters →
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-8 md:mt-12 text-center">
+          <p className="text-gray-700 mb-4 max-w-3xl mx-auto px-4">
+            <strong>These programs are for everyone—</strong> whether you're a believer growing in faith, a worker building your career, or a leader shepherding others. My expertise as a teacher, technologist, and investor is available to help you succeed.
+          </p>
+        </div>
       </section>
 
       {/* Andrew's Desk - Personal Update */}
@@ -236,7 +347,7 @@ export default function Home() {
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 md:mb-4 px-4">The Impact We're Making Together</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 px-4">
-            Join <strong>our community</strong> of believers, workers, and leaders transforming their callings
+            Join <strong>our community</strong> of youtransforming their callings
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 ﻿# Andrew Tugume
 
 > **Teacher  Technologist  Investor**  
-> Helping believers, workers, and leaders succeed
+> Helping yousucceed
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)

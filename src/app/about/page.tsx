@@ -30,48 +30,114 @@ export default function About() {
               Teacher • Technologist • Investor
             </p>
             <p className="text-xl text-blue-100">
-              I help believers, workers, and leaders integrate their faith with their calling through biblical teaching, modern technology, and practical business wisdom.
+              I help believers integrate their faith with their calling through biblical teaching, modern technology, and practical business wisdom.
             </p>
           </div>
         </div>
       </div>
 
-      {/* My Story */}
+      {/* Andrew as Teacher, Technologist, and Investor */}
       <section className="mb-16">
-        <h2 className="text-4xl font-bold mb-8">My Story: Where Three Worlds Collide</h2>
+        <h2 className="text-4xl font-bold mb-8">Andrew as a Teacher, Technologist, and Investor</h2>
         
-        <div className="prose prose-lg max-w-none space-y-6 text-gray-700">
-          <p className="text-xl font-semibold text-gray-900">
-            For years, I lived in three separate worlds.
-          </p>
-          
-          <p>
-            <strong>On Sundays,</strong> I was a Bible teacher, deeply passionate about God's Word and helping people understand Scripture. I studied theology, prepared sermons, and led small groups. But when Monday came, that part of my life felt disconnected from everything else.
-          </p>
-          
-          <p>
-            <strong>Monday through Friday,</strong> I was a technologist—building software, solving complex problems, and helping organizations leverage digital tools. I loved the creativity and impact of technology, but I struggled to see how it connected to my faith beyond being "just a job."
-          </p>
-          
-          <p>
-            <strong>On the side,</strong> I was an investor, helping entrepreneurs build businesses and working with leaders to scale their organizations. I saw the power of capital and strategy to create opportunity, but again—it felt like a separate compartment of my life.
-          </p>
-          
-          <div className="bg-blue-50 border-l-4 border-primary p-6 rounded-lg my-8">
-            <p className="text-lg font-semibold text-gray-900 mb-3">
-              The turning point came when I realized: <em>God doesn't compartmentalize</em>.
-            </p>
-            <p className="text-gray-700">
-              He called Bezalel to be "filled with the Spirit of God, with wisdom, with understanding, with knowledge and with all kinds of skills—to make artistic designs for work" (Exodus 31:3-4). Technology, business, and teaching weren't separate from my calling—<strong>they were the tools God gave me to serve His purposes.</strong>
-            </p>
+        <div className="space-y-8">
+          {/* Teacher */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border-2 border-purple-200">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-3xl font-bold text-purple-900 mb-4">As a Teacher</h3>
+                <p className="text-gray-700 mb-4">
+                  Andrew's deepest passion is making Scripture accessible and applicable. Through his three registered schools—<strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible School</strong>—he helps believers understand God's Word and apply it to every area of life.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  With extensive experience in <strong>learning and development</strong>, <strong>instructional design</strong>, and <strong>curriculum development</strong>, Andrew brings professional rigor to biblical education. His deep knowledge of EdTech and course creation enables him to build transformative learning experiences that combine theological depth with modern pedagogy.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  <strong>Teaching Philosophy:</strong> Andrew believes in sound biblical interpretation combined with practical application. He doesn't just teach what the Bible says—he helps people understand how to live it out in their daily callings through expertly designed courses and structured learning pathways.
+                </p>
+                <div className="bg-white/70 rounded-lg p-4">
+                  <p className="text-sm font-semibold text-purple-900 mb-2">Andrew's Three Registered Schools:</p>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>• <strong>Qraft Academy</strong> - Comprehensive training for workers integrating faith with work</li>
+                    <li>• <strong>Chariot Leadership Institute</strong> - Biblical leadership development for pastors and managers</li>
+                    <li>• <strong>Nations Bible School</strong> - In-depth theological training and Scripture studies</li>
+                  </ul>
+                  <p className="text-xs text-purple-800 mt-3 font-semibold">Expertise: Instructional Design • Curriculum Development • Course Creation • EdTech • Learning & Development</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <p>
-            That's when everything changed. I stopped trying to separate "sacred" from "secular" and started asking: <strong>How can I use ALL of who God made me to be—teacher, technologist, investor—to help others thrive in THEIR callings?</strong>
+          {/* Technologist */}
+          <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-8 border-2 border-indigo-200">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-3xl font-bold text-indigo-900 mb-4">As a Technologist</h3>
+                <p className="text-gray-700 mb-4">
+                  Andrew is a software engineer and technology strategist who builds digital solutions and helps organizations leverage modern technology. From full-stack web development to AI integration, he combines technical expertise with strategic thinking to solve complex problems.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  <strong>Tech Philosophy:</strong> Technology should serve people, not complicate their lives. Andrew believes in building elegant, user-friendly solutions that empower individuals and organizations to achieve their missions more effectively.
+                </p>
+                <div className="bg-white/70 rounded-lg p-4">
+                  <p className="text-sm font-semibold text-indigo-900 mb-2">Andrew's Tech Stack:</p>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>• <strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS</li>
+                    <li>• <strong>Backend:</strong> Node.js, Python, PostgreSQL, REST APIs</li>
+                    <li>• <strong>Cloud:</strong> AWS, Azure, Docker, DevOps practices</li>
+                    <li>• <strong>Teaching:</strong> TechMasters program and Tabernacle Tech Institute</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Investor */}
+          <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-8 border-2 border-green-200">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-3xl font-bold text-green-900 mb-4">As an Investor</h3>
+                <p className="text-gray-700 mb-4">
+                  Andrew helps entrepreneurs build businesses, guides leaders in scaling organizations, and teaches biblical principles of wealth building and stewardship. He combines financial acumen with kingdom values to create sustainable, impactful investment strategies.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  <strong>Investment Philosophy:</strong> Capital is a tool for creating opportunity and advancing God's kingdom. Andrew invests in people, ideas, and businesses that align with biblical values while generating sustainable returns and positive social impact.
+                </p>
+                <div className="bg-white/70 rounded-lg p-4">
+                  <p className="text-sm font-semibold text-green-900 mb-2">Investment Focus Areas:</p>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>• <strong>Startups:</strong> Early-stage tech companies and social enterprises</li>
+                    <li>• <strong>Real Estate:</strong> Strategic property investments and development</li>
+                    <li>• <strong>Financial Markets:</strong> Stocks, bonds, and diversified portfolios</li>
+                    <li>• <strong>Teaching:</strong> CapitalMasters program on wealth building</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-blue-50 border-l-4 border-primary p-6 rounded-lg mt-8">
+          <p className="text-lg font-semibold text-gray-900 mb-3">
+            The Integration: <em>One Calling, Three Expressions</em>
           </p>
-          
-          <p>
-            The answer became the ecosystem you see today.
+          <p className="text-gray-700">
+            Andrew doesn't see these as separate careers—they're integrated expressions of his calling to help people thrive. As a <strong>teacher</strong>, he makes wisdom accessible. As a <strong>technologist</strong>, he builds tools that empower. As an <strong>investor</strong>, he creates opportunity. Together, these form the foundation for helping believers integrate faith with their work.
           </p>
         </div>
       </section>
@@ -297,6 +363,139 @@ export default function About() {
                 <li>• Guest lecturer at universities</li>
                 <li>• Podcast guest on leadership & faith</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact & Metrics Section */}
+      <section className="mb-16">
+        <h2 className="text-4xl font-bold mb-8">Our Impact</h2>
+        
+        {/* Key Metrics Dashboard */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+          <div className="bg-white rounded-lg shadow-sm p-6 text-center border border-gray-200">
+            <div className="text-4xl font-bold text-primary mb-2">10,247</div>
+            <div className="text-sm text-gray-600">Content Downloads</div>
+          </div>
+          <div className="bg-white rounded-lg shadow-sm p-6 text-center border border-gray-200">
+            <div className="text-4xl font-bold text-primary mb-2">523</div>
+            <div className="text-sm text-gray-600">Students Equipped</div>
+          </div>
+          <div className="bg-white rounded-lg shadow-sm p-6 text-center border border-gray-200">
+            <div className="text-4xl font-bold text-primary mb-2">52</div>
+            <div className="text-sm text-gray-600">Countries Reached</div>
+          </div>
+          <div className="bg-white rounded-lg shadow-sm p-6 text-center border border-gray-200">
+            <div className="text-4xl font-bold text-primary mb-2">95%</div>
+            <div className="text-sm text-gray-600">Satisfaction Rate</div>
+          </div>
+        </div>
+
+        {/* Technology-Enabled Impact */}
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-6 border-2 border-indigo-200 mb-8">
+          <h3 className="text-xl font-bold mb-4 text-indigo-900">Technology-Enabled Impact</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-indigo-600 mb-1">287</div>
+              <div className="text-xs text-gray-700">Tools Taught</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-indigo-600 mb-1">142</div>
+              <div className="text-xs text-gray-700">Projects Launched</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-indigo-600 mb-1">3.2M</div>
+              <div className="text-xs text-gray-700">Digital Reach</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-indigo-600 mb-1">89%</div>
+              <div className="text-xs text-gray-700">Report Increased Productivity</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Lives Transformed */}
+        <h3 className="text-2xl font-bold mb-6">Lives Transformed</h3>
+        <div className="space-y-6">
+          {/* WorkMasters Stories */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-blue-600">
+            <h4 className="font-bold text-lg mb-4">Workers Through WorkMasters & Qraft Academy</h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 italic mb-3">"I went from struggling freelancer to landing my first $10K client within 3 months of TechMasters. Andrew's teaching on biblical vocation gave me confidence I never had."</p>
+                <footer className="text-sm font-semibold text-gray-900">— Sarah M., Digital Designer, Kenya</footer>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 italic mb-3">"CapitalMasters helped me secure $250K in funding while maintaining biblical stewardship. My startup now employs 12 people."</p>
+                <footer className="text-sm font-semibold text-gray-900">— David K., Entrepreneur, USA</footer>
+              </div>
+            </div>
+          </div>
+
+          {/* Bible Study Stories */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-purple-600">
+            <h4 className="font-bold text-lg mb-4">Believers Through Bible Study & Nations Bible School</h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 italic mb-3">"Nations Bible School gave me theological depth I couldn't get anywhere else. I'm now teaching Scripture confidently in my church."</p>
+                <footer className="text-sm font-semibold text-gray-900">— Peter O., Small Group Leader, Nigeria</footer>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 italic mb-3">"The Romans series transformed how I understand grace. My faith has never been stronger."</p>
+                <footer className="text-sm font-semibold text-gray-900">— Jennifer L., Believer, Philippines</footer>
+              </div>
+            </div>
+          </div>
+
+          {/* Leadership Stories */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-green-600">
+            <h4 className="font-bold text-lg mb-4">Leaders Through Leadership Exchange & Chariot Institute</h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 italic mb-3">"Chariot Leadership Institute equipped me to lead my team with biblical conviction. Our culture has completely transformed."</p>
+                <footer className="text-sm font-semibold text-gray-900">— Marcus T., Executive Pastor, South Africa</footer>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-gray-700 italic mb-3">"I went from insecure leader to confident shepherd. The biblical frameworks are game-changing."</p>
+                <footer className="text-sm font-semibold text-gray-900">— Rachel W., Team Lead, Canada</footer>
+              </div>
+            </div>
+          </div>
+
+          {/* Tech-Enabled Impact Stories */}
+          <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-6 border-l-4 border-indigo-600">
+            <h4 className="font-bold text-lg mb-4">Tech-Enabled Impact Stories</h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <p className="text-gray-700 italic mb-3">"After taking the AI for Entrepreneurs course, I automated 40% of my business tasks. I now serve 3x more clients with the same hours."</p>
+                <footer className="text-sm font-semibold text-gray-900">— Emmanuel K., Business Owner, Ghana</footer>
+                <div className="text-xs text-indigo-600 mt-2">🛠️ Tools Learned: ChatGPT, Zapier, Notion</div>
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">
+                <p className="text-gray-700 italic mb-3">"I built my church's website in one weekend using the skills from Tabernacle Tech. We have reached 500 new families online this year."</p>
+                <footer className="text-sm font-semibold text-gray-900">— Pastor James M., Kenya</footer>
+                <div className="text-xs text-indigo-600 mt-2">🚀 Project: Church Website launched</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Student Outcomes */}
+        <div className="bg-white rounded-xl shadow-sm p-8 mt-8">
+          <h3 className="text-2xl font-bold mb-6">Student Outcomes</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary mb-2">92%</div>
+              <div className="text-sm text-gray-600">Complete Their Programs</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary mb-2">87%</div>
+              <div className="text-sm text-gray-600">Report Career Advancement</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-primary mb-2">95%</div>
+              <div className="text-sm text-gray-600">Would Recommend to Others</div>
             </div>
           </div>
         </div>

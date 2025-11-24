@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'Andrew Tugume — Teacher, Technologist, Investor',
     template: '%s | Andrew Tugume'
   },
-  description: 'Andrew Tugume helps believers, workers, and leaders through WorkMasters, Bible Study, and Leadership Exchange. Join millions of members transforming their work, faith, and leadership.',
+  description: 'Andrew Tugume helps youthrough WorkMasters, Bible Study, and Leadership Exchange. Join millions of members transforming their work, faith, and leadership.',
   keywords: [
     'Andrew Tugume',
     'Career and business coach',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: 'https://andrewtugume.com',
     siteName: 'Andrew Tugume',
     title: 'Andrew Tugume — Teacher, Technologist, Investor',
-    description: 'Helping believers, workers, and leaders integrate faith with their calling through biblical teaching, modern technology, and practical business wisdom.',
+    description: 'Helping you integrate faith with their calling through biblical teaching, modern technology, and practical business wisdom.',
     images: [
       {
         url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     site: '@_drewtugume',
     creator: '@_drewtugume',
     title: 'Andrew Tugume — Teacher, Technologist, Investor',
-    description: 'Helping believers, workers, and leaders succeed.',
+    description: 'Helping yousucceed.',
     images: ['https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg'],
   },
   robots: {
@@ -100,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: 'https://andrewtugume.com',
               image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
               jobTitle: 'Teacher, Technologist, Investor',
-              description: 'Helping believers, workers, and leaders succeed through biblical teaching, modern technology, and practical business wisdom.',
+              description: 'Helping yousucceed through biblical teaching, modern technology, and practical business wisdom.',
               sameAs: [
                 'https://x.com/_drewtugume',
               ],

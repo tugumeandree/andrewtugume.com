@@ -17,7 +17,7 @@ export default function Footer() {
               <h3 className="text-xl md:text-2xl font-bold mb-2">Andrew Tugume</h3>
               <p className="text-base md:text-lg text-blue-200 mb-2 md:mb-3">Teacher • Technologist • Investor</p>
               <p className="text-sm md:text-base text-blue-100 max-w-2xl mx-auto md:mx-0">
-                Helping believers, workers, and leaders thrive in their God-given callings through biblical teaching, modern technology, and practical business wisdom.
+                Helping you thrive in your God-given callings through biblical teaching, modern technology, and practical business wisdom.
               </p>
             </div>
           </div>
@@ -92,6 +92,8 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">Connect</h4>
             <ul className="space-y-2 text-sm text-blue-100">
+              <li><Link href="/book" className="hover:text-white transition-colors font-semibold" style={{ color: '#D9A441' }}>🎤 Book Andrew</Link></li>
+              <li><Link href="/one-on-one" className="hover:text-white transition-colors font-semibold text-blue-300">🤝 One-on-One Coaching</Link></li>
               <li><Link href="/community" className="hover:text-white transition-colors">Communities (4,224)</Link></li>
               <li><Link href="/impact" className="hover:text-white transition-colors">Our Impact</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Andrew</Link></li>
@@ -126,7 +128,7 @@ export default function Footer() {
         {/* Mission Statement */}
         <div className="mt-6 pt-6 border-t border-white/20 text-center">
           <p className="text-xs md:text-sm text-blue-100 max-w-3xl mx-auto italic px-4">
-            "Equipping believers, workers, and leaders to integrate their faith with their calling—because God doesn't compartmentalize, and neither should we."
+            "Equipping you to integrate your faith with your calling—because God doesn't compartmentalize, and neither should we."
           </p>
         </div>
       </div>
