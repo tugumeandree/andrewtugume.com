@@ -10,7 +10,7 @@ export default function QraftAcademy() {
           <img src="/assets/qraft-logo-white.svg" alt="Qraft Academy" className="h-20 mx-auto mb-4" />
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Qraft Academy</h1>
           <p className="text-2xl mb-6">Master Modern Work Skills Rooted in Biblical Principles</p>
-          <Link href="/schools/qraft-academy/enroll" className="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition">Enroll Now →</Link>
+          <Link href="https://qraftacademy.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl transition">Enroll Now →</Link>
         </div>
       </section>
 
@@ -149,7 +149,7 @@ export default function QraftAcademy() {
               <li>✓ 1-on-1 coaching sessions</li>
               <li>✓ Priority support</li>
             </ul>
-            <Link href="/schools/qraft-academy/enroll?plan=all-access" className="block w-full bg-primary text-white text-center py-3 rounded font-bold hover:bg-blue-900">Enroll Now</Link>
+            <Link href="https://qraftacademy.com/" target="_blank" rel="noopener noreferrer" className="block w-full bg-primary text-white text-center py-3 rounded font-bold hover:bg-blue-900">Enroll Now</Link>
           </div>
 
           <div className="border-2 rounded-lg p-6 hover:shadow-lg transition">
