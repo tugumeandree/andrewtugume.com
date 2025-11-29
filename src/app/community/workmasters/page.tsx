@@ -93,7 +93,7 @@ export default function WorkMastersCommunity() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-6xl mb-4">💼</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">WorkMasters Community</h1>
-          <p className="text-xl mb-6">Where faith meets work—for entrepreneurs, freelancers, investors, and employees pursuing excellence.</p>
+          <p className="text-xl mb-6">Where faith meets work—for entrepreneurs, freelancers and employees pursuing excellence.</p>
           <div className="flex gap-6 justify-center text-sm mb-8">
             <div>
               <div className="text-2xl font-bold">1,247</div>
