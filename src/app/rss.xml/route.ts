@@ -32,7 +32,3 @@ export async function GET() {
   return new NextResponse(xml, { headers: { 'Content-Type': 'application/rss+xml' } })
 }
 
-function escapeXml(str?: string) {
-  if (!str) return ''
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;')
-}
