@@ -98,13 +98,21 @@ export default function Contact() {
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="font-bold mb-4">Connect on Social Media</h3>
             <div className="space-y-3">
+              <a href="https://www.facebook.com/drewtugume/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-700 hover:text-primary">
+                <span className="text-xl">📘</span>
+                <span>Facebook - Andrew Tugume</span>
+              </a>
               <a href="https://twitter.com/andrewtugume" className="flex items-center gap-3 text-gray-700 hover:text-primary">
                 <span className="text-xl">🐦</span>
                 <span>Twitter - @andrewtugume</span>
               </a>
-              <a href="https://linkedin.com/in/andrewtugume" className="flex items-center gap-3 text-gray-700 hover:text-primary">
+              <a href="https://www.linkedin.com/in/andrew-tugume-402ba3142/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-700 hover:text-primary">
                 <span className="text-xl">💼</span>
                 <span>LinkedIn - Andrew Tugume</span>
+              </a>
+              <a href="https://www.instagram.com/coachdrew_tugume/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-gray-700 hover:text-primary">
+                <span className="text-xl">📸</span>
+                <span>Instagram - @coachdrew_tugume</span>
               </a>
               <a href="https://youtube.com/@andrewtugume" className="flex items-center gap-3 text-gray-700 hover:text-primary">
                 <span className="text-xl">📺</span>

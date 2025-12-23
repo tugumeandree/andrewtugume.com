@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 
 export default function Header() {
+  const [mounted, setMounted] = useState(false)
   const [myWorkOpen, setMyWorkOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [mastersOpen, setMastersOpen] = useState(false)
@@ -12,6 +13,11 @@ export default function Header() {
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const [mobileMastersOpen, setMobileMastersOpen] = useState(false)
   const [mobileConnectOpen, setMobileConnectOpen] = useState(false)
+
+  // Ensure component is mounted before rendering interactive elements
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -105,7 +111,7 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <div className="container py-4 flex items-center justify-between">
+      <div className="container py-4 flex items-center justify-between" suppressHydrationWarning>
         <Link href="/" className="flex items-center gap-2 text-2xl font-semibold text-primary" onClick={closeMobileMenu}>
           <img src="https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg" alt="Andrew Tugume Logo" className="h-8 w-8 rounded-full" />
           <div className="flex flex-col">
@@ -119,8 +125,9 @@ export default function Header() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden p-2 text-gray-600 hover:text-primary transition-colors"
           aria-label="Toggle menu"
+          suppressHydrationWarning
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" suppressHydrationWarning>
             {mobileMenuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -130,7 +137,7 @@ export default function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-2 lg:gap-4 flex-wrap">
+        <nav className="hidden md:flex items-center gap-2 lg:gap-4 flex-wrap" suppressHydrationWarning>
           <Link href="/about" className="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">About</Link>
           
           {/* My Work Dropdown - The Three Vehicles */}
@@ -144,7 +151,7 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {myWorkOpen && (
+            {mounted && myWorkOpen && (
               <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
                 <div className="p-3 bg-gradient-to-r from-primary to-blue-800 text-white rounded-t-lg">
                   <p className="text-xs font-semibold">Come Join Me Every Week</p>
@@ -162,7 +169,8 @@ export default function Header() {
                     </div>
                     <div className="flex-1">
                       <div className="font-bold text-sm text-gray-900">For Workers</div>
-                      <div className="text-xs text-gray-600 mt-1">WorkMasters Meetup Every Tuesday</div>
+                      <div className="text-xs text-gray-600 mt-1">WorkMasters - First Meetup: Jan 6, 2026</div>
+                      <div className="text-xs text-blue-600 font-semibold">Then Every Tuesday in 2026</div>
                     </div>
                   </div>
                 </Link>
@@ -215,8 +223,8 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {mastersOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg border-2 border-accent/20 z-50">
+            {mounted && mastersOpen && (
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
                 <div className="p-3 bg-gradient-to-r from-accent to-amber-600 text-white rounded-t-lg">
                   <p className="text-xs font-semibold">For Everyone</p>
                 </div>
@@ -268,8 +276,8 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {resourcesOpen && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border z-50">
+            {mounted && resourcesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
                 <Link 
                   href="/store/products" 
                   className="block px-4 py-3 hover:bg-gray-50 border-b text-sm"
@@ -306,6 +314,8 @@ export default function Header() {
             )}
           </div>
           
+          <Link href="/community" className="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Communities</Link>
+          
           {/* Connect Dropdown */}
           <div className="relative">
             <button 
@@ -317,16 +327,8 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {connectOpen && (
-              <div className="absolute top-full right-0 mt-2 w-56 bg-white shadow-lg rounded-lg border z-50">
-                <Link 
-                  href="/community" 
-                  className="block px-4 py-3 hover:bg-gray-50 border-b text-sm"
-                  onClick={() => setConnectOpen(false)}
-                >
-                  <div className="font-semibold">Communities</div>
-                  <div className="text-xs text-gray-600">Join 4,224 members</div>
-                </Link>
+            {mounted && connectOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
                 <Link 
                   href="/contact" 
                   className="block px-4 py-3 hover:bg-gray-50 border-b text-sm"
@@ -368,7 +370,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Side Navigation */}
-        {mobileMenuOpen && (
+        {mounted && mobileMenuOpen && (
           <>
             {/* Overlay */}
             <div 
@@ -411,6 +413,14 @@ export default function Header() {
                   onClick={closeMobileMenu}
                 >
                   About
+                </Link>
+
+                <Link 
+                  href="/community" 
+                  className="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-100 rounded-lg mb-1"
+                  onClick={closeMobileMenu}
+                >
+                  Communities
                 </Link>
 
                 {/* My Work Accordion */}

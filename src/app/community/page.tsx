@@ -6,17 +6,18 @@ export default function CommunityHub() {
     {
       name: 'WorkMasters Community',
       slug: 'workmasters',
-      tagline: 'For Workers',
-      description: 'Connect with entrepreneurs, freelancers, investors, and employees integrating faith with work.',
-      members: '1,247',
-      activeThisWeek: '342',
+      tagline: 'For Workers - Community & Weekly Meetup',
+      description: 'Connect with entrepreneurs, freelancers and employees integrating faith with work. Join weekly hybrid meetups starting January 2026.',
+      members: 'Opening 2026',
+      activeThisWeek: 'First meetup: Jan 6, 2026',
       color: 'blue',
       icon: '💼',
       benefits: [
-        'Weekly mastermind groups',
+        'Weekly hybrid meetups (Every Tuesday)',
+        'First meetup: Monday, January 6th, 2026',
         'Exclusive job board',
         'Resource library access',
-        'Live Q&A sessions'
+        'Live mastermind groups'
       ]
     },
     {

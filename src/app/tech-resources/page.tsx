@@ -92,7 +92,7 @@ export default function TechResources() {
       {/* Hero */}
       <section className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Tech Resources Hub</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Digital Resources Hub</h1>
           <p className="text-xl mb-8">Curated tools, templates, and tutorials to help you use technology for Kingdom impact.</p>
           <div className="flex gap-4 justify-center">
             <Link href="#tools" className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
@@ -101,6 +101,33 @@ export default function TechResources() {
             <Link href="#templates" className="bg-white/20 backdrop-blur border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30">
               Free Templates
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Digital Skills Content */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">Latest Digital Skills for Workers Content</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Fresh insights and practical tutorials to enhance your digital skills and productivity.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { title: 'Productivity with AI: Using ChatGPT Ethically', category: 'AI & Ethics', date: 'Nov 10, 2025' },
+              { title: 'Building Your Freelance Tech Stack in 2025', category: 'Productivity', date: 'Nov 5, 2025' },
+              { title: 'Digital Marketing for Entrepreneurs', category: 'Marketing', date: 'Oct 28, 2025' },
+              { title: 'Cybersecurity Basics Every Freelancer Needs', category: 'Security', date: 'Oct 20, 2025' }
+            ].map((post, idx) => (
+              <div key={idx} className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition">
+                <div className="text-xs text-indigo-600 font-semibold mb-2">{post.category}</div>
+                <h3 className="font-bold text-lg mb-2">{post.title}</h3>
+                <div className="text-sm text-gray-600 mb-3">{post.date}</div>
+                <Link href="#" className="text-indigo-600 font-semibold text-sm hover:underline">
+                  Read Article →
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
