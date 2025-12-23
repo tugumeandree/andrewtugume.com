@@ -46,7 +46,7 @@ export default function Home() {
                   Teacher • Technologist • Investor
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 md:mb-8 max-w-3xl mx-auto md:mx-0">
-                  I am here to help you succeed and thrive in your calling through sound teaching, modern technology, and practical wisdom. Welcome to my ecosystem of faith-driven resources.
+                  I help workers, leaders, and students succeed through well-researched teaching and training, modern technology, and practical financial wisdom.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start">
                   <Link 
