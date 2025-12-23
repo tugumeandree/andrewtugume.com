@@ -89,7 +89,7 @@ export default function QraftAcademy() {
             <ul className="text-sm text-gray-700 space-y-1">
               <li>• Biblical Stewardship & Capital Principles</li>
               <li>• Funding Strategies for Entrepreneurs</li>
-              <li>• Investment Fundamentals for Believers</li>
+              <li>• Investment Fundamentals for Scholars</li>
               <li>• Financial Planning & Kingdom Economics</li>
             </ul>
           </div>

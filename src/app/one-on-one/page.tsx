@@ -97,7 +97,7 @@ export default function OneOnOne() {
       color: 'from-amber-600 to-orange-600',
       borderColor: 'border-amber-200',
       ideal: [
-        'New believers',
+        'New scholars',
         'Spiritual seekers',
         'Mature Christians seeking depth',
         'Ministry preparation'

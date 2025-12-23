@@ -8,7 +8,7 @@ export default function Partner() {
       <section className="bg-gradient-to-r from-primary to-blue-900 text-white rounded-lg p-12 mb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Partner With Us</h1>
         <p className="text-xl mb-2">Your partnership fuels transformation</p>
-        <p className="text-lg opacity-90">Join us in equipping workers, leaders, and believers around the world</p>
+        <p className="text-lg opacity-90">Join us in equipping scholars, workers, and leaders around the world</p>
       </section>
 
       {/* Mission & Impact Preview */}

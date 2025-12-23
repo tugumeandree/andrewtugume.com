@@ -18,7 +18,7 @@ This is the official website for Andrew Tugume
    - Qraft Academy school
    - Millions of community members
 
-2. **Bible Study & Discipleship**  For Believers
+2. **Bible Study & Discipleship**  For Bible Scholars
    - Scripture teaching and application
    - Nations Bible School
    - Millions of community members
@@ -131,7 +131,7 @@ npm start
 - **Primary:** #0F5666 (Teal Blue)
 - **Accent:** #D9A441 (Gold)
 - **Workers:** Blue (#2563EB)
-- **Believers:** Purple (#9333EA)
+- **Scholars:** Purple (#9333EA)
 - **Leaders:** Green (#16A34A)
 - **Technology:** Indigo (#4F46E5)
 

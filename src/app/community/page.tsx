@@ -22,8 +22,8 @@ export default function CommunityHub() {
     {
       name: 'Nations Bible Community',
       slug: 'nations-bible',
-      tagline: 'For Believers',
-      description: 'Join believers worldwide in deep Scripture study, prayer support, and spiritual growth.',
+      tagline: 'For Scholars',
+      description: 'Join scholars worldwide in deep Scripture study, prayer support, and spiritual growth.',
       members: '2,154',
       activeThisWeek: '589',
       color: 'purple',
@@ -196,7 +196,7 @@ export default function CommunityHub() {
             <div>
               <div className="text-4xl mb-3">🤝</div>
               <h3 className="font-bold mb-2">Find Your People</h3>
-              <p className="text-gray-700 text-sm">Connect with like-minded believers who share your calling and challenges.</p>
+              <p className="text-gray-700 text-sm">Connect with like-minded scholars who share your calling and challenges.</p>
             </div>
             <div>
               <div className="text-4xl mb-3">💡</div>

@@ -88,6 +88,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <meta name="theme-color" content="#0F5666" />
+        {/* Preconnect to Google Fonts and load Inter with font-display swap for better LCP */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { send_page_view: true });`,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className="overflow-x-hidden">
         <script
@@ -126,7 +140,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'WebSite',
               name: 'Andrew Tugume',
               url: 'https://andrewtugume.com',
-              description: 'Faith-driven resources for believers, workers, and leaders',
+              description: 'Faith-driven resources for scholars, workers, and leaders',
               publisher: {
                 '@type': 'Person',
                 name: 'Andrew Tugume'

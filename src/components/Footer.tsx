@@ -69,7 +69,7 @@ export default function Footer() {
             <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">My Work</h4>
             <ul className="space-y-2 text-sm text-blue-100">
               <li><Link href="/workmasters" className="hover:text-white transition-colors">For Workers (WorkMasters)</Link></li>
-              <li><Link href="/bible-study" className="hover:text-white transition-colors">For Believers (Bible Study)</Link></li>
+              <li><Link href="/bible-study" className="hover:text-white transition-colors">For Scholars (Bible Study)</Link></li>
               <li><Link href="/leadership" className="hover:text-white transition-colors">For Leaders (Leadership)</Link></li>
               <li className="pt-2 border-t border-white/20">
                 <Link href="/tech-resources" className="hover:text-white transition-colors font-semibold text-indigo-300">Tech Resources</Link>

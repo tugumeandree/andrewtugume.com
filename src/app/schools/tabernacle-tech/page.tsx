@@ -4,9 +4,9 @@ import Link from 'next/link'
 export default function TabernacleTechInstitute() {
   const tracks = [
     {
-      name: 'Digital Believer Track',
-      audience: 'For Believers',
-      tagline: 'Use technology to deepen your faith and amplify your witness',
+      name: 'Digital Scholar Track',
+      audience: 'For Scholars',
+      tagline: 'Use technology to deepen your study and amplify your impact',
       color: 'purple',
       icon: '📱',
       courses: [
@@ -107,7 +107,7 @@ export default function TabernacleTechInstitute() {
           <div className="text-6xl mb-4">⚒️</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Tabernacle Tech Institute</h1>
           <p className="text-2xl mb-2 font-semibold">Equipping for the Digital Age with Ancient Wisdom</p>
-          <p className="text-lg mb-8 opacity-90">Practical technology training for believers, workers, and leaders—rooted in biblical stewardship.</p>
+          <p className="text-lg mb-8 opacity-90">Practical technology training for scholars, workers, and leaders—rooted in biblical stewardship.</p>
           <div className="bg-white/10 backdrop-blur rounded-lg inline-block px-6 py-3 mb-8">
             <div className="text-sm opacity-90 mb-1">Technology as a modern-day tool for the tabernacle</div>
             <div className="text-xs italic">"And I have filled him with the Spirit of God, with wisdom, understanding, and knowledge in all kinds of crafts." - Exodus 31:3</div>
@@ -193,7 +193,7 @@ export default function TabernacleTechInstitute() {
           <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
           <div className="space-y-8">
             {[
-              { step: 1, title: 'Choose Your Track', desc: 'Select Digital Believer, Digital Worker, or Digital Leader based on your calling.' },
+              { step: 1, title: 'Choose Your Track', desc: 'Select Digital Scholar, Digital Worker, or Digital Leader based on your calling.' },
               { step: 2, title: 'Learn by Doing', desc: 'Watch video lessons, complete hands-on projects, and build real skills you can use immediately.' },
               { step: 3, title: 'Join Live Sessions', desc: 'Attend weekly live Q&A, get feedback on your projects, and learn from peers.' },
               { step: 4, title: 'Apply in Real Life', desc: 'Use your new skills in your actual ministry, work, or personal life with instructor support.' },

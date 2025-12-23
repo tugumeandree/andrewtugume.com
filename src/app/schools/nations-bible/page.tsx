@@ -7,8 +7,8 @@ export default function NationsBible() {
       <div className="bg-white rounded-lg p-8 shadow-sm mb-8">
         <img src="/assets/nations-logo.svg" alt="Nations Bible School" className="h-16 mb-4" />
         <h1 className="text-3xl font-bold mb-2">Nations Bible School</h1>
-        <p className="text-xl text-gray-600 mb-4">The School for Believers</p>
-        <p className="text-gray-700 mb-6">Comprehensive, structured Bible training for individuals and groups seeking deep theological knowledge and practical application of Scripture.</p>
+        <p className="text-xl text-gray-600 mb-4">The School for Scholars</p>
+        <p className="text-gray-700 mb-6">Comprehensive, structured Bible training for students — from primary through tertiary institutions — seeking deep theological knowledge and practical application of Scripture.</p>
         <div className="flex gap-4">
           <Link href="/schools/nations-bible/enroll" className="bg-primary text-white px-6 py-3 rounded-md">Enroll Now</Link>
           <Link href="/bible-study" className="border px-6 py-3 rounded-md">Explore Free Bible Study Content</Link>
@@ -50,7 +50,7 @@ export default function NationsBible() {
 
       <div className="bg-gray-50 rounded p-6">
         <h3 className="font-semibold mb-2">Ready to Deepen Your Faith?</h3>
-        <p className="text-gray-700 mb-4">Join believers around the world growing in biblical knowledge.</p>
+        <p className="text-gray-700 mb-4">Join students from primary to tertiary institutions around the world growing in biblical knowledge.</p>
         <Link href="/schools/nations-bible/enroll" className="bg-primary text-white px-6 py-2 rounded">Enroll Today</Link>
       </div>
     </section>

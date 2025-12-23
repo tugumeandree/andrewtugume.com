@@ -4,16 +4,16 @@ import Link from 'next/link';
 
 interface TechCalloutProps {
   context?: string;
-  track?: 'believer' | 'worker' | 'leader';
+  track?: 'scholar' | 'worker' | 'leader';
   className?: string;
 }
 
 const trackInfo = {
-  believer: {
+  scholar: {
     title: 'Ready to Use Technology for Kingdom Impact?',
-    description: 'Join the Digital Believer Track and learn to use modern tools for faith, discipleship, and gospel impact.',
-    link: '/schools/tabernacle-tech#believer-track',
-    cta: 'Explore Digital Believer Track'
+    description: 'Join the Digital Scholar Track and learn to use modern tools for study, discipleship, and gospel impact.',
+    link: '/schools/tabernacle-tech#scholar-track',
+    cta: 'Explore Digital Scholar Track'
   },
   worker: {
     title: 'Want to Level Up Your Digital Skills?',

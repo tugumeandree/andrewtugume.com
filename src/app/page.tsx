@@ -29,7 +29,7 @@ export default function Home() {
               <div className="flex-shrink-0">
                 <img 
                   src="https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg" 
-                  alt="Andrew Tugume - Teacher, Technologist, and Investor helping believers integrate faith with work" 
+                  alt="Andrew Tugume - Teacher, Technologist, and Investor helping scholars integrate faith with work" 
                   className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/20 shadow-2xl"
                   width="192"
                   height="192"
@@ -113,8 +113,8 @@ export default function Home() {
       {/* Masters Programs - For Everyone */}
       <section className="mt-12 md:mt-16 bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl md:rounded-2xl p-6 md:p-12 -mx-4 sm:mx-0">
         <div className="text-center mb-8 md:mb-12">
-          <div className="inline-block bg-primary/10 px-4 py-2 rounded-full text-sm font-semibold text-primary mb-4">
-            For Believers, Workers & Leaders
+            <div className="inline-block bg-primary/10 px-4 py-2 rounded-full text-sm font-semibold text-primary mb-4">
+            For Scholars, Workers & Leaders
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 md:mb-4 px-4">The Masters Programs</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -216,7 +216,7 @@ export default function Home() {
 
         <div className="mt-8 md:mt-12 text-center">
           <p className="text-gray-700 mb-4 max-w-3xl mx-auto px-4">
-            <strong>These programs are for everyone—</strong> whether you're a believer growing in faith, a worker building your career, or a leader shepherding others. My expertise as a teacher, technologist, and investor is available to help you succeed.
+            <strong>These programs are for everyone—</strong> whether you're a scholar growing in knowledge, a worker building your career, or a leader shepherding others. My expertise as a teacher, technologist, and investor is available to help you succeed.
           </p>
         </div>
       </section>
@@ -226,7 +226,7 @@ export default function Home() {
         <AndrewsDesk 
           date="November 2025"
           title="Why I Built This Ecosystem"
-          message="For years, I struggled to integrate my faith with my work as a technologist and investor. I saw believers who loved God but felt disconnected from their Monday-through-Friday lives. I saw entrepreneurs with great ideas but no biblical framework for business. I saw leaders burning out because they separated 'spiritual leadership' from 'practical management.' That's why I created WorkMasters, Nations Bible School, Chariot Leadership Institute, and Tabernacle Tech—each one addresses a gap I personally experienced. My prayer is that these resources help you thrive in your God-given calling, wherever He's placed you."
+          message="For years, I struggled to integrate my faith with my work as a technologist and investor. I saw scholars who loved God but felt disconnected from their Monday-through-Friday lives. I saw entrepreneurs with great ideas but no biblical framework for business. I saw leaders burning out because they separated 'spiritual leadership' from 'practical management.' That's why I created WorkMasters, Nations Bible School, Chariot Leadership Institute, and Tabernacle Tech—each one addresses a gap I personally experienced. My prayer is that these resources help you thrive in your God-given calling, wherever He's placed you."
           cta={{
             text: "Read My Full Story",
             href: "/about"
@@ -276,7 +276,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* For Believers - Bible Study */}
+          {/* For Scholars - Bible Study */}
           <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border-l-4 border-purple-600 hover:shadow-xl transition-shadow">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 md:w-12 md:h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -284,15 +284,15 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900">For Believers</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900">For Scholars</h3>
             </div>
-            <h4 className="text-lg md:text-xl font-semibold text-purple-600 mb-3">Bible Study & Discipleship</h4>
+              <h4 className="text-lg md:text-xl font-semibold text-purple-600 mb-3">Bible Study & Discipleship</h4>
             <p className="text-sm md:text-base text-gray-700 mb-4">
-              <strong>As a teacher,</strong> my deepest passion is helping believers understand Scripture. Through my Bible Study series and Nations Bible School, <strong>I make</strong> God's Word accessible and transformative.
+              <strong>As a teacher,</strong> my deepest passion is helping scholars understand Scripture. Through my Bible Study series and Nations Bible School, <strong>I make</strong> God's Word accessible and transformative. We welcome students from primary through tertiary institutions.
             </p>
             <div className="mb-4 p-3 bg-purple-50 rounded-lg border border-purple-100">
               <p className="text-xs md:text-sm text-gray-700">
-                <strong>Teaching is my calling.</strong> I've dedicated my life to making deep theological truths practical and understandable for everyday believers.
+                <strong>Teaching is my calling.</strong> I've dedicated my life to making deep theological truths practical and understandable for everyday scholars.
               </p>
             </div>
             <div className="space-y-2 mb-6">
@@ -300,7 +300,7 @@ export default function Home() {
                 → Free Bible Study Series
               </Link>
               <Link href="/schools/nations-bible" className="block text-sm md:text-base text-purple-600 font-semibold hover:text-purple-700">
-                → Nations Bible School (School for Believers)
+                → Nations Bible School (School for Scholars)
               </Link>
               <Link href="/community/nations-bible" className="block text-sm md:text-base text-purple-600 font-semibold hover:text-purple-700">
                 → Join Our Community (2,154 members)

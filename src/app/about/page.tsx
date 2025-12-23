@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Andrew Tugume — Teacher, Technologist, Investor',
-  description: 'Discover Andrew Tugume\'s journey from compartmentalized life to integrated calling. Learn how a teacher, technologist, and investor helps believers integrate faith with work through WorkMasters, Bible Study, and Leadership Exchange.',
+  description: 'Discover Andrew Tugume\'s journey from compartmentalized life to integrated calling. Learn how a teacher, technologist, and investor helps scholars integrate faith with work through WorkMasters, Bible Study, and Leadership Exchange.',
   openGraph: {
     title: 'About Andrew Tugume — Teacher, Technologist, Investor',
     description: 'Discover Andrew\'s journey from compartmentalized life to integrated calling.',
@@ -30,7 +30,7 @@ export default function About() {
               Teacher • Technologist • Investor
             </p>
             <p className="text-xl text-blue-100">
-              I help believers integrate their faith with their calling through biblical teaching, modern technology, and practical business wisdom.
+              I help workers, leaders, and students succeed through well-researched teaching and training, modern technology, and practical financial wisdom.
             </p>
           </div>
         </div>
@@ -51,23 +51,23 @@ export default function About() {
               </div>
               <div className="flex-1">
                 <h3 className="text-3xl font-bold text-purple-900 mb-4">As a Teacher</h3>
+                    <p className="text-gray-700 mb-4">
+                      Andrew's deepest passion is making learning accessible and applicable. Through his three registered schools—<strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible School</strong>—he helps workers, leaders and bible scholars learn and succeed in their callings
+                    </p>
                 <p className="text-gray-700 mb-4">
-                  Andrew's deepest passion is making Scripture accessible and applicable. Through his three registered schools—<strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible School</strong>—he helps believers understand God's Word and apply it to every area of life.
+                  With extensive experience in <strong>learning and development</strong>, <strong>instructional design</strong>, and <strong>curriculum development</strong>, Andrew brings professional rigor to learning. His deep knowledge of EdTech and course creation enables him to build transformative learning experiences that leverage modern pedagogy.
                 </p>
                 <p className="text-gray-700 mb-4">
-                  With extensive experience in <strong>learning and development</strong>, <strong>instructional design</strong>, and <strong>curriculum development</strong>, Andrew brings professional rigor to biblical education. His deep knowledge of EdTech and course creation enables him to build transformative learning experiences that combine theological depth with modern pedagogy.
-                </p>
-                <p className="text-gray-700 mb-4">
-                  <strong>Teaching Philosophy:</strong> Andrew believes in sound biblical interpretation combined with practical application. He doesn't just teach what the Bible says—he helps people understand how to live it out in their daily callings through expertly designed courses and structured learning pathways.
+                  <strong>Teaching Philosophy:</strong> Andrew believes in the principle of having knowledge available in all places. His three schools operate across academia, industry, and governance to ensure that learners are equipped to thrive in every sphere of life.
                 </p>
                 <div className="bg-white/70 rounded-lg p-4">
                   <p className="text-sm font-semibold text-purple-900 mb-2">Andrew's Three Registered Schools:</p>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• <strong>Qraft Academy</strong> - Comprehensive training for workers integrating faith with work</li>
-                    <li>• <strong>Chariot Leadership Institute</strong> - Biblical leadership development for pastors and managers</li>
-                    <li>• <strong>Nations Bible School</strong> - In-depth theological training and Scripture studies</li>
+                    <li>• <strong>Qraft Academy : Comprehensive Modern Work Development Training</strong> - Qraft Academy offers cutting-edge training and skill development for workers—including entrepreneurs, freelancers, employees, industry leaders and students—to effectively navigate the future of work. Our programs focus on career development, work readiness, and employability.</li>
+                    <li>• <strong>Chariot Leadership Institute</strong> - Chariot Leadership Institute offers comprehensive modern leadership development training for student leaders, professional leaders, managers, social leaders, family leaders, influencers, and public figures, equipping them with the skills needed to excel in their roles.</li>
+                    <li>• <strong>Nations Bible School</strong> - Nations Bible School offers Bible-based courses and training for workers, leaders, and students, including a Scripture Challenge and Bible Quiz with cash prizes, as well as training in the theology and doctrine of work and biblical leadership development for leaders.</li>
                   </ul>
-                  <p className="text-xs text-purple-800 mt-3 font-semibold">Expertise: Instructional Design • Curriculum Development • Course Creation • EdTech • Learning & Development</p>
+                  <p className="text-xs text-purple-800 mt-3 font-semibold">Expertise: Instructional Design • Curriculum Development • Course Creation • EdTech • Learning & Development • Biblical Wisdom</p>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function About() {
             The Integration: <em>One Calling, Three Expressions</em>
           </p>
           <p className="text-gray-700">
-            Andrew doesn't see these as separate careers—they're integrated expressions of his calling to help people thrive. As a <strong>teacher</strong>, he makes wisdom accessible. As a <strong>technologist</strong>, he builds tools that empower. As an <strong>investor</strong>, he creates opportunity. Together, these form the foundation for helping believers integrate faith with their work.
+            Andrew doesn't see these as separate careers—they're integrated expressions of his calling to help people thrive. As a <strong>teacher</strong>, he makes wisdom accessible. As a <strong>technologist</strong>, he builds tools that empower. As an <strong>investor</strong>, he creates opportunity. Together, these form the foundation for helping scholars integrate faith with their work.
           </p>
         </div>
       </section>
@@ -184,7 +184,7 @@ export default function About() {
                   <strong>I'll never forget the small group member who said,</strong> <em>"I love God, but I feel like the Bible was written for people smarter than me."</em> It broke my heart. <strong>Teaching Scripture is my deepest passion</strong>, and I realized I had a gift for making complex theology accessible without watering it down.
                 </p>
                 <p className="text-gray-700">
-                  That's why <strong>I created my Bible Study series and Nations Bible School</strong>—to help everyday believers understand God's Word deeply and apply it practically. <strong>I've dedicated my life to this work</strong> because nothing transforms lives like Scripture rightly understood.
+                  That's why <strong>I created my Bible Study series and Nations Bible School</strong>—to help everyday scholars understand God's Word deeply and apply it practically. <strong>I've dedicated my life to this work</strong> because nothing transforms lives like Scripture rightly understood.
                 </p>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function About() {
             },
             {
               title: 'Biblical Authority',
-              description: 'Scripture is my foundation. Every principle I teach, every framework I build, every decision I make flows from God\'s Word rightly understood and faithfully applied.'
+              description: ' is my foundation. Every principle I teach, every framework I build, every decision I make flows from God\'s Word rightly understood and faithfully applied.'
             },
             {
               title: 'Accessible Transformation',
@@ -435,7 +435,7 @@ export default function About() {
 
           {/* Bible Study Stories */}
           <div className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-purple-600">
-            <h4 className="font-bold text-lg mb-4">Believers Through Bible Study & Nations Bible School</h4>
+            <h4 className="font-bold text-lg mb-4">Scholars Through Bible Study & Nations Bible School</h4>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-gray-700 italic mb-3">"Nations Bible School gave me theological depth I couldn't get anywhere else. I'm now teaching Scripture confidently in my church."</p>
@@ -443,7 +443,7 @@ export default function About() {
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-gray-700 italic mb-3">"The Romans series transformed how I understand grace. My faith has never been stronger."</p>
-                <footer className="text-sm font-semibold text-gray-900">— Jennifer L., Believer, Philippines</footer>
+                <footer className="text-sm font-semibold text-gray-900">— Jennifer L., Scholar, Philippines</footer>
               </div>
             </div>
           </div>

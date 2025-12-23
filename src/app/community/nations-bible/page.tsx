@@ -80,7 +80,7 @@ export default function NationsBibleCommunity() {
       role: "Teacher, Uganda"
     },
     {
-      text: "The prayer wall is incredible. Seeing believers from around the world interceding for each other reminds me we are truly one body in Christ.",
+      text: "The prayer wall is incredible. Seeing scholars from around the world interceding for each other reminds me we are truly one body in Christ.",
       author: "Pastor John D.",
       role: "Pastor, South Africa"
     }
@@ -93,7 +93,7 @@ export default function NationsBibleCommunity() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-6xl mb-4">📖</div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Nations Bible Community</h1>
-          <p className="text-xl mb-6">A global family of believers pursuing deeper understanding of God\'s Word together.</p>
+          <p className="text-xl mb-6">A global family of scholars pursuing deeper understanding of God\'s Word together.</p>
           <div className="flex gap-6 justify-center text-sm mb-8">
             <div>
               <div className="text-2xl font-bold">2,154</div>
@@ -120,10 +120,10 @@ export default function NationsBibleCommunity() {
           <h2 className="text-3xl font-bold text-center mb-12">Who This Community Is For</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { icon: '🌱', title: 'New Believers', desc: 'Just starting your faith journey and eager to learn Scripture' },
+              { icon: '🌱', title: 'New Scholars', desc: 'Just starting your faith journey and eager to learn Scripture' },
               { icon: '📖', title: 'Devoted Students', desc: 'Hungry for deeper theological understanding and biblical knowledge' },
               { icon: '👨‍🏫', title: 'Teachers & Leaders', desc: 'Preparing to teach others and wanting solid biblical foundation' },
-              { icon: '🌍', title: 'Global Believers', desc: 'From any nation seeking authentic community centered on God\'s Word' }
+              { icon: '🌍', title: 'Global Scholars', desc: 'From any nation seeking authentic community centered on God\'s Word' }
             ].map((type, idx) => (
               <div key={idx} className="flex gap-4 items-start bg-purple-50 rounded-lg p-6">
                 <div className="text-4xl">{type.icon}</div>
@@ -187,7 +187,7 @@ export default function NationsBibleCommunity() {
             {[
               { step: 1, title: 'Create Your Profile', desc: 'Join the community and share where you are in your faith journey.' },
               { step: 2, title: 'Join a Study Group', desc: 'Pick a current book club or study group that fits your schedule and interests.' },
-              { step: 3, title: 'Engage in Community', desc: 'Post on the prayer wall, ask questions in forums, and connect with other believers.' },
+              { step: 3, title: 'Engage in Community', desc: 'Post on the prayer wall, ask questions in forums, and connect with other scholars.' },
               { step: 4, title: 'Attend Live Sessions', desc: 'Join weekly teaching sessions, Q&A, and special events with Andrew and guest teachers.' },
               { step: 5, title: 'Deepen Your Knowledge', desc: 'Consider Nations Bible School for systematic theological training.' }
             ].map((item) => (
@@ -276,7 +276,7 @@ export default function NationsBibleCommunity() {
       <section className="py-16 bg-purple-600 text-white text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">Join Your Global Bible Family</h2>
-          <p className="text-xl mb-8">Over 2,154 believers from 52 countries studying God\'s Word together.</p>
+          <p className="text-xl mb-8">Over 2,154 scholars from 52 countries studying God\'s Word together.</p>
           <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
             Join Nations Bible Community - Free
           </button>

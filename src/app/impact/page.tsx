@@ -78,7 +78,7 @@ export default function Impact() {
 
           {/* Bible Study Stories */}
           <div className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-yellow-400">
-            <h3 className="font-bold text-lg mb-4">Believers Through Bible Study & Nations Bible School</h3>
+            <h3 className="font-bold text-lg mb-4">Scholars Through Bible Study & Nations Bible School</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-4 rounded">
                 <p className="text-gray-700 italic mb-3">"Nations Bible School gave me theological depth I couldn't get anywhere else. I'm now teaching Scripture confidently in my church."</p>
@@ -86,7 +86,7 @@ export default function Impact() {
               </div>
               <div className="bg-gray-50 p-4 rounded">
                 <p className="text-gray-700 italic mb-3">"The Romans series transformed how I understand grace. My faith has never been stronger."</p>
-                <footer className="text-sm font-semibold">— Jennifer L., Believer, Philippines</footer>
+                <footer className="text-sm font-semibold">— Jennifer L., Scholar, Philippines</footer>
               </div>
             </div>
           </div>

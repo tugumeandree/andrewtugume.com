@@ -20,10 +20,10 @@ export default function BibleStudy() {
             </svg>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Now Including: Technology for Believers</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Now Including: Technology for Scholars</h3>
             <p className="text-gray-700 mb-3">Learn to use digital tools for discipleship, Bible study, and gospel impact. Topics include Bible study apps, content creation, digital evangelism, and more.</p>
             <Link href="/schools/tabernacle-tech" className="inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-800">
-              Explore Digital Believer Track
+              Explore Digital Scholar Track
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -35,7 +35,7 @@ export default function BibleStudy() {
       {/* Nations Bible School CTA */}
       <div className="mt-6 bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg mb-12">
         <h3 className="font-bold text-xl text-gray-900">Want Structured Bible Training?</h3>
-        <p className="text-gray-700 mt-2">Deepen your knowledge with comprehensive programs at <strong>Nations Bible School</strong>—the school for believers.</p>
+        <p className="text-gray-700 mt-2">Deepen your knowledge with comprehensive programs at <strong>Nations Bible School</strong>—the school for scholars.</p>
         <Link href="/schools/nations-bible" className="inline-block mt-4 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Explore Nations Bible School</Link>
       </div>
 
@@ -65,10 +65,10 @@ export default function BibleStudy() {
         </div>
       </div>
 
-      {/* Latest Tech for Believers Content */}
+      {/* Latest Tech for Scholars Content */}
       <div className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-3xl font-bold text-gray-900">Tech for Believers</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Tech for Scholars</h2>
           <Link href="/tech-resources" className="text-indigo-600 font-semibold hover:text-indigo-700">View All Tools →</Link>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -120,7 +120,7 @@ export default function BibleStudy() {
 
       {/* Tech Callout */}
       <TechCallout 
-        track="believer"
+        track="scholar"
         context="Master Bible study apps, create gospel content, and use technology for discipleship and spiritual growth."
       />
     </section>

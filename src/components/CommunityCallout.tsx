@@ -20,7 +20,7 @@ export default function CommunityCallout({ community, context }: CommunityCallou
       name: 'Nations Bible Community',
       icon: '📖',
       tagline: 'Deepen your study with the global community',
-      description: 'Join 2,154 believers from 52 countries studying Scripture together.',
+      description: 'Join 2,154 scholars from 52 countries studying Scripture together.',
       link: '/community/nations-bible',
       color: 'purple'
     },

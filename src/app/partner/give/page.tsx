@@ -5,7 +5,7 @@ export default function Give() {
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">Give Financially</h1>
-      <p className="text-gray-700 mb-8">Your generosity equips workers, strengthens believers, and develops leaders across the nations.</p>
+      <p className="text-gray-700 mb-8">Your generosity equips workers, strengthens scholars, and develops leaders across the nations.</p>
 
       {/* Giving Form */}
       <div className="bg-white rounded-lg shadow-md p-8 mb-8">

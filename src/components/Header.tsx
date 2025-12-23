@@ -178,7 +178,7 @@ export default function Header() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-sm text-gray-900">For Believers</div>
+                      <div className="font-bold text-sm text-gray-900">For Bible Scholars</div>
                       <div className="text-xs text-gray-600 mt-1">Bible Study Every Friday</div>
                     </div>
                   </div>
@@ -460,7 +460,7 @@ export default function Header() {
                             </svg>
                           </div>
                           <div>
-                            <div className="font-semibold text-gray-900">For Believers</div>
+                            <div className="font-semibold text-gray-900">For Scholars</div>
                             <div className="text-xs text-gray-600">Bible Study & Nations</div>
                           </div>
                         </div>

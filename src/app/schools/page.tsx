@@ -30,7 +30,7 @@ export default function Schools() {
         <article className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-yellow-400">
           <img src="/assets/nations-logo.svg" alt="Nations Bible School" className="h-12 mb-4" />
           <h2 className="text-2xl font-semibold mb-2">Nations Bible School</h2>
-          <p className="text-sm text-gray-600 mb-4">The School for Believers</p>
+          <p className="text-sm text-gray-600 mb-4">The School for Scholars</p>
           <p className="text-gray-700 mb-4">Comprehensive, structured Bible training for individuals and groups seeking deep theological knowledge.</p>
           <Link href="/schools/nations-bible" className="inline-block bg-primary text-white px-4 py-2 rounded">Explore Nations Bible School</Link>
         </article>
