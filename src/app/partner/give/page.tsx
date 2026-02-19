@@ -45,7 +45,7 @@ export default function Give() {
             <option>Where Most Needed</option>
             <option>Student Scholarships</option>
             <option>Qraft Academy</option>
-            <option>Nations Bible School</option>
+            <option>Nations Bible Community</option>
             <option>Chariot Leadership Institute</option>
             <option>Content Creation & Translation</option>
             <option>Technology & Platform</option>

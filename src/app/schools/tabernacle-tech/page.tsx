@@ -247,7 +247,7 @@ export default function TabernacleTechInstitute() {
           
           <div className="mt-8 text-center bg-yellow-50 border border-yellow-200 rounded-lg p-6">
             <h4 className="font-bold mb-2">Add Tech Education to Your School</h4>
-            <p className="text-gray-700 mb-4">Already enrolled in Qraft Academy, Nations Bible School, or Chariot Leadership Institute? Add any Tech Track as an elective for just $297 (save $200).</p>
+            <p className="text-gray-700 mb-4">Already enrolled in Qraft Academy, Nations Bible Community, or Chariot Leadership Institute? Add any Tech Track as an elective for just $297 (save $200).</p>
             <Link href="/contact" className="text-indigo-600 font-semibold">Contact Us to Add Tech Elective →</Link>
           </div>
         </div>
@@ -275,17 +275,17 @@ export default function TabernacleTechInstitute() {
           <h2 className="text-3xl font-bold text-center mb-12">Integrated Learning Ecosystem</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="font-bold text-xl mb-3">For Qraft Academy Students</h3>
+              <h3 className="font-bold text-xl mb-3">For Qraft Academy Learners</h3>
               <p className="text-gray-700 mb-4">Combine your work development training with digital tools to accelerate your career or business.</p>
               <Link href="/schools/qraft-academy" className="text-indigo-600 font-semibold">Learn More →</Link>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="font-bold text-xl mb-3">For Nations Bible Students</h3>
+              <h3 className="font-bold text-xl mb-3">For Nations Bible Learners</h3>
               <p className="text-gray-700 mb-4">Enhance your biblical training with digital discipleship tools and online ministry skills.</p>
               <Link href="/schools/nations-bible" className="text-indigo-600 font-semibold">Learn More →</Link>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-md">
-              <h3 className="font-bold text-xl mb-3">For Chariot Institute Students</h3>
+              <h3 className="font-bold text-xl mb-3">For Chariot Institute Learners</h3>
               <p className="text-gray-700 mb-4">Add digital-first leadership competencies to your Christ-centered leadership development.</p>
               <Link href="/schools/chariot-leadership" className="text-indigo-600 font-semibold">Learn More →</Link>
             </div>

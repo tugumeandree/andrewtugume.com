@@ -185,10 +185,10 @@ export default function FaithKnowledge() {
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Structured Training?</h2>
-          <p className="text-xl mb-8">Join Nations Bible School for comprehensive biblical education that transforms your life and work.</p>
+          <p className="text-xl mb-8">Join Nations Bible Community for comprehensive biblical education that transforms your life and work.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/schools/nations-bible" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100">
-              Explore Nations Bible School
+              Explore Nations Bible Community
             </Link>
             <Link href="/community" className="bg-white/20 backdrop-blur border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/30">
               Join Community

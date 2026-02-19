@@ -64,7 +64,7 @@ export default function AndrewsDesk({
           {/* Signature */}
           <div className="mt-6 pt-4 border-t border-gray-200">
             <p className="text-sm font-semibold text-gray-900">Andrew Tugume</p>
-            <p className="text-xs sm:text-sm text-gray-600">Teacher • Technologist • Investor</p>
+            <p className="text-xs sm:text-sm text-gray-600">Educator • Technologist • Investor</p>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ export default function Partner() {
           </div>
           <div>
             <div className="text-3xl font-bold text-primary mb-2">500+</div>
-            <div className="text-sm text-gray-600">Students Equipped</div>
+            <div className="text-sm text-gray-600">Learners Equipped</div>
           </div>
         </div>
         <div className="mt-6 text-center">
@@ -58,7 +58,7 @@ export default function Partner() {
             <h4 className="font-semibold mb-2">Designate Your Gift:</h4>
             <select className="w-full border rounded p-2 mb-4 text-sm">
               <option>Where Most Needed</option>
-              <option>Scholarships (Students in Need)</option>
+              <option>Scholarships (Learners in Need)</option>
               <option>Content Production (Free Resources)</option>
               <option>Operations (Ministry Infrastructure)</option>
               <option>Specific School Support</option>

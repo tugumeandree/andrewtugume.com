@@ -32,9 +32,9 @@ export default function UserJourneyCTA({ currentStep, context }: UserJourneyCTAP
     },
     bible: {
       content: {
-        next: 'Nations Bible School',
+        next: 'Nations Bible Community',
         link: '/schools/nations-bible',
-        message: 'Want structured Bible training? Enroll in Nations Bible School.'
+        message: 'Want structured Bible training? Enroll in Nations Bible Community.'
       },
       school: {
         next: 'Bible Study Resources',

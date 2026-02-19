@@ -15,9 +15,9 @@ export default function SchoolCTA({ school }: SchoolCTAProps) {
       color: 'primary'
     },
     nations: {
-      name: 'Nations Bible School',
+      name: 'Nations Bible Community',
       tagline: 'Want to go deeper? Study Scripture systematically.',
-      description: 'Enroll in Nations Bible School for comprehensive, structured Bible training.',
+      description: 'Enroll in Nations Bible Community for comprehensive, structured Bible training.',
       link: '/schools/nations-bible',
       color: 'yellow-400'
     },

@@ -115,10 +115,10 @@ export default function QraftAcademy() {
           <div>
             <h3 className="text-xl font-bold mb-2">Andrew Tugume</h3>
             <p className="text-gray-700 mb-4">
-              Andrew is a technologist, teacher, and entrepreneur with over a decade of experience helping workers integrate biblical principles with modern skills. He has trained thousands of freelancers, entrepreneurs, and employees to build God-centered careers and businesses.
+              Andrew is a technologist, educator, and entrepreneur with over a decade of experience helping workers integrate biblical principles with modern skills. He has trained thousands of freelancers, entrepreneurs, and employees to build God-centered careers and businesses.
             </p>
             <p className="text-gray-700">
-              His unique approach combines practical digital skills training with deep theological reflection on work, calling, and stewardship—helping students not just succeed professionally, but thrive spiritually in their vocations.
+              His unique approach combines practical digital skills training with deep theological reflection on work, calling, and stewardship—helping learners not just succeed professionally, but thrive spiritually in their vocations.
             </p>
           </div>
         </div>

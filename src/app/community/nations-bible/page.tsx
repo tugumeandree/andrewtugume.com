@@ -61,7 +61,7 @@ export default function NationsBibleCommunity() {
       ]
     },
     {
-      name: 'Nations Bible School Student',
+      name: 'Nations Bible Community Student',
       price: 'Included',
       features: [
         'All Premium benefits, plus:',
@@ -77,7 +77,7 @@ export default function NationsBibleCommunity() {
     {
       text: "I have been a Christian for 20 years, but the Nations Bible Community helped me understand Scripture at a depth I never knew was possible. The weekly study groups are transformational.",
       author: "Mary K.",
-      role: "Teacher, Uganda"
+      role: "Educator, Uganda"
     },
     {
       text: "The prayer wall is incredible. Seeing scholars from around the world interceding for each other reminds me we are truly one body in Christ.",
@@ -121,8 +121,8 @@ export default function NationsBibleCommunity() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { icon: '🌱', title: 'New Scholars', desc: 'Just starting your faith journey and eager to learn Scripture' },
-              { icon: '📖', title: 'Devoted Students', desc: 'Hungry for deeper theological understanding and biblical knowledge' },
-              { icon: '👨‍🏫', title: 'Teachers & Leaders', desc: 'Preparing to teach others and wanting solid biblical foundation' },
+              { icon: '📖', title: 'Devoted Learners', desc: 'Hungry for deeper theological understanding and biblical knowledge' },
+              { icon: '👨‍🏫', title: 'Educators & Leaders', desc: 'Preparing to teach others and wanting solid biblical foundation' },
               { icon: '🌍', title: 'Global Scholars', desc: 'From any nation seeking authentic community centered on God\'s Word' }
             ].map((type, idx) => (
               <div key={idx} className="flex gap-4 items-start bg-purple-50 rounded-lg p-6">
@@ -188,8 +188,8 @@ export default function NationsBibleCommunity() {
               { step: 1, title: 'Create Your Profile', desc: 'Join the community and share where you are in your faith journey.' },
               { step: 2, title: 'Join a Study Group', desc: 'Pick a current book club or study group that fits your schedule and interests.' },
               { step: 3, title: 'Engage in Community', desc: 'Post on the prayer wall, ask questions in forums, and connect with other scholars.' },
-              { step: 4, title: 'Attend Live Sessions', desc: 'Join weekly teaching sessions, Q&A, and special events with Andrew and guest teachers.' },
-              { step: 5, title: 'Deepen Your Knowledge', desc: 'Consider Nations Bible School for systematic theological training.' }
+              { step: 4, title: 'Attend Live Sessions', desc: 'Join weekly teaching sessions, Q&A, and special events with Andrew and guest educators.' },
+              { step: 5, title: 'Deepen Your Knowledge', desc: 'Consider Nations Bible Community for systematic theological training.' }
             ].map((item) => (
               <div key={item.step} className="flex gap-6 items-start">
                 <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
@@ -230,7 +230,7 @@ export default function NationsBibleCommunity() {
                     ))}
                   </ul>
                   <button className={`w-full py-3 rounded-lg font-semibold ${tier.popular ? 'bg-purple-600 text-white hover:bg-purple-700' : 'bg-gray-200 hover:bg-gray-300'}`}>
-                    {tier.name === 'Nations Bible School Student' ? 'Enroll in Bible School' : tier.price === '$0' ? 'Join Free' : 'Upgrade to Premium'}
+                    {tier.name === 'Nations Bible Community Student' ? 'Enroll in Bible School' : tier.price === '$0' ? 'Join Free' : 'Upgrade to Premium'}
                   </button>
                 </div>
               </div>

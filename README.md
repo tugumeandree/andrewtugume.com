@@ -1,6 +1,6 @@
 ﻿# Andrew Tugume
 
-> **Teacher  Technologist  Investor**  
+> **Educator  Technologist  Investor**  
 > Helping yousucceed
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
@@ -20,7 +20,7 @@ This is the official website for Andrew Tugume
 
 2. **Bible Study & Discipleship**  For Bible Scholars
    - Scripture teaching and application
-   - Nations Bible School
+   - Nations Bible Community
    - Millions of community members
 
 3. **Leadership Exchange**  For Leaders

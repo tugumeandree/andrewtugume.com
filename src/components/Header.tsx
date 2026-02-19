@@ -116,7 +116,7 @@ export default function Header() {
           <img src="https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg" alt="Andrew Tugume Logo" className="h-8 w-8 rounded-full" />
           <div className="flex flex-col">
             <span className="text-base md:text-lg leading-tight">Andrew Tugume</span>
-            <span className="text-xs font-normal text-gray-600 hidden sm:block">Teacher • Technologist • Investor</span>
+            <span className="text-xs font-normal text-gray-600 hidden sm:block">Educator • Technologist • Investor</span>
           </div>
         </Link>
 
@@ -391,7 +391,7 @@ export default function Header() {
                     />
                     <div>
                       <div className="font-bold">Andrew Tugume</div>
-                      <div className="text-xs text-blue-100">Teacher • Technologist • Investor</div>
+                      <div className="text-xs text-blue-100">Educator • Technologist • Investor</div>
                     </div>
                   </div>
                   <button 

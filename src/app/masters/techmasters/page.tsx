@@ -38,8 +38,11 @@ export default function TechMasters() {
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">What is TechMasters?</h2>
         <div className="bg-indigo-50 border-l-4 border-indigo-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700 leading-relaxed mb-3">
+            TechMasters is a <strong>Qraft Labs</strong> product under <strong>Rata Qraft Solutions Limited</strong>.
+          </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            TechMasters is my comprehensive technology development program built on <strong>vast experience as a software engineer and technologist</strong>. I help you navigate the entire journey from idea to market-ready product.
+            It is my comprehensive technology development program built on <strong>vast experience as a software engineer and technologist</strong>. I help you navigate the entire journey from idea to market-ready product.
           </p>
           <p className="text-gray-700">
             Whether you're a complete beginner wanting to learn tech skills, an entrepreneur with a tech idea, or a business ready to build a tech product—I provide the expertise you need to succeed.

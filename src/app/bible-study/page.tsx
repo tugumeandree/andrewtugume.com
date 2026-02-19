@@ -32,11 +32,11 @@ export default function BibleStudy() {
         </div>
       </div>
 
-      {/* Nations Bible School CTA */}
+      {/* Nations Bible Community CTA */}
       <div className="mt-6 bg-purple-50 border-l-4 border-purple-400 p-6 rounded-lg mb-12">
         <h3 className="font-bold text-xl text-gray-900">Want Structured Bible Training?</h3>
-        <p className="text-gray-700 mt-2">Deepen your knowledge with comprehensive programs at <strong>Nations Bible School</strong>—the school for scholars.</p>
-        <Link href="/schools/nations-bible" className="inline-block mt-4 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Explore Nations Bible School</Link>
+        <p className="text-gray-700 mt-2">Deepen your knowledge with comprehensive programs at <strong>Nations Bible Community</strong>—the school for scholars.</p>
+        <Link href="/schools/nations-bible" className="inline-block mt-4 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">Explore Nations Bible Community</Link>
       </div>
 
       {/* Content Series */}

@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   metadataBase: new URL('https://andrewtugume.com'),
   title: {
-    default: 'Andrew Tugume — Teacher, Technologist, Investor',
+    default: 'Andrew Tugume — Educator, Technologist, Investor',
     template: '%s | Andrew Tugume'
   },
   description: 'Andrew Tugume helps youthrough WorkMasters, Bible Study, and Leadership Exchange. Join millions of members transforming their work, faith, and leadership.',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'investor',
     'Bible teaching',
     'leadership development',
-    'Nations Bible School',
+    'Nations Bible Community',
     'Chariot Leadership Institute',
     'Qraft Academy',
     'technologist',
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://andrewtugume.com',
     siteName: 'Andrew Tugume',
-    title: 'Andrew Tugume — Teacher, Technologist, Investor',
+    title: 'Andrew Tugume — Educator, Technologist, Investor',
     description: 'Helping you integrate faith with their calling through biblical teaching, modern technology, and practical business wisdom.',
     images: [
       {
         url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
         width: 1200,
         height: 630,
-        alt: 'Andrew Tugume - Teacher, Technologist, Investor',
+        alt: 'Andrew Tugume - Educator, Technologist, Investor',
       }
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@_drewtugume',
     creator: '@_drewtugume',
-    title: 'Andrew Tugume — Teacher, Technologist, Investor',
+    title: 'Andrew Tugume — Educator, Technologist, Investor',
     description: 'Helping yousucceed.',
     images: ['https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg'],
   },
@@ -113,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Andrew Tugume',
               url: 'https://andrewtugume.com',
               image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-              jobTitle: 'Teacher, Technologist, Investor',
+              jobTitle: 'Educator, Technologist, Investor',
               description: 'Helping yousucceed through biblical teaching, modern technology, and practical business wisdom.',
               sameAs: [
                 'https://x.com/_drewtugume',

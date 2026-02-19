@@ -38,8 +38,11 @@ export default function CapitalMasters() {
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">What is CapitalMasters?</h2>
         <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700 leading-relaxed mb-3">
+            CapitalMasters is a <strong>Qraft Capital</strong> product under <strong>Rata Qraft Solutions Limited</strong>.
+          </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            CapitalMasters is my comprehensive wealth-building program built on <strong>vast experience as an investor</strong> in startups, real estate, and financial markets. I help you understand money, make wise investments, and build generational wealth.
+            It is my comprehensive wealth-building program built on <strong>vast experience as an investor</strong> in startups, real estate, and financial markets. I help you understand money, make wise investments, and build generational wealth.
           </p>
           <p className="text-gray-700">
             Unlike typical financial advice, CapitalMasters integrates <strong>biblical stewardship principles</strong> with proven investment strategies. I teach you to build wealth that honors God, serves others, and creates lasting impact.

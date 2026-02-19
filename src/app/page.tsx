@@ -1,13 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import AndrewsDesk from '@/components/AndrewsDesk'
+import WorkMastersLanding from '@/components/WorkMastersLanding'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Andrew Tugume — Teacher, Technologist, Investor',
+  title: 'Andrew Tugume — Educator, Technologist, Investor',
   description: 'Join millions of youtransforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange. Free resources, proven frameworks, real community.',
   openGraph: {
-    title: 'Andrew Tugume — Teacher, Technologist, Investor',
+    title: 'Andrew Tugume — Educator, Technologist, Investor',
     description: 'Join millions of youtransforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange.',
     url: 'https://andrewtugume.com',
     type: 'website',
@@ -29,7 +30,7 @@ export default function Home() {
               <div className="flex-shrink-0">
                 <img 
                   src="https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg" 
-                  alt="Andrew Tugume - Teacher, Technologist, and Investor helping scholars integrate faith with work" 
+                  alt="Andrew Tugume - Educator, Technologist, and Investor helping scholars integrate faith with work" 
                   className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/20 shadow-2xl"
                   width="192"
                   height="192"
@@ -43,10 +44,10 @@ export default function Home() {
                   Andrew Tugume
                 </h1>
                 <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-200 mb-4 md:mb-6">
-                  Teacher • Technologist • Investor
+                  Educator • Technologist • Investor
                 </p>
                 <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 md:mb-8 max-w-3xl mx-auto md:mx-0">
-                  I help workers, leaders, and students succeed through well-researched teaching and training, modern technology, and practical financial wisdom.
+                  I help workers, leaders, and learners succeed through well-researched teaching and training, modern technology, and practical financial wisdom.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start">
                   <Link 
@@ -71,6 +72,8 @@ export default function Home() {
         </div>
       </section>
 
+      <WorkMastersLanding />
+
       {/* Triple Expertise Section */}
       <section className="mt-8 md:mt-12 grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-3" aria-label="Andrew's Expertise">
         <article className="bg-white p-6 md:p-8 rounded-xl shadow-sm border-t-4 border-blue-600">
@@ -79,9 +82,9 @@ export default function Home() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
           </div>
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">As a Teacher</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">As an Educator</h2>
           <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-          I share my expertise in <strong>learning and development</strong>, <strong>instructional design</strong>,course creation and EdTech<strong>in the CourseMasters Program</strong>, I run three registered schools: <strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible School</strong>
+            I share my expertise in <strong>learning and development</strong>, <strong>instructional design</strong>, course creation, and EdTech through <strong>CourseMasters</strong>. I also lead three registered schools: <strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible Community</strong>.
           </p>
         </article>
 
@@ -110,6 +113,30 @@ export default function Home() {
         </article>
       </section>
 
+      {/* Holding Company Overview */}
+      <section className="mt-10 md:mt-14 bg-white rounded-xl md:rounded-2xl p-6 md:p-10 border border-slate-200 -mx-4 sm:mx-0">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Rata Qraft Solutions Limited</h2>
+          <p className="text-sm sm:text-base text-gray-700 mb-6">
+            I founded a for-profit holding company called <strong>Rata Qraft Solutions Limited</strong>. It includes three companies - <strong>Qraft Academy</strong>, <strong>Qraft Labs</strong>, and <strong>Qraft Capital</strong> - each responsible for one Masters program.
+          </p>
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3">
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+              <h3 className="font-semibold text-gray-900 mb-1">Qraft Academy</h3>
+              <p className="text-sm text-gray-700">Product: <strong>CourseMasters</strong></p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+              <h3 className="font-semibold text-gray-900 mb-1">Qraft Labs</h3>
+              <p className="text-sm text-gray-700">Product: <strong>TechMasters</strong></p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+              <h3 className="font-semibold text-gray-900 mb-1">Qraft Capital</h3>
+              <p className="text-sm text-gray-700">Product: <strong>CapitalMasters</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Masters Programs - For Everyone */}
       <section className="mt-12 md:mt-16 bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl md:rounded-2xl p-6 md:p-12 -mx-4 sm:mx-0">
         <div className="text-center mb-8 md:mb-12">
@@ -118,7 +145,7 @@ export default function Home() {
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 md:mb-4 px-4">The Masters Programs</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Three comprehensive programs available to everyone—no matter which journey you're on
+            Organized under Rata Qraft Solutions Limited through Qraft Academy, Qraft Labs, and Qraft Capital.
           </p>
         </div>
 
@@ -132,8 +159,9 @@ export default function Home() {
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">CourseMasters</h3>
             <p className="text-sm md:text-base text-gray-700 mb-4">
-              Learn how to create transformational courses from my vast experience as a teacher, instructional designer, and course creator.
+              Learn how to create transformational courses from my vast experience as an educator, instructional designer, and course creator.
             </p>
+            <p className="text-xs text-gray-500 mb-4">Product of <strong>Qraft Academy</strong></p>
             <div className="space-y-2 mb-6 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <span className="text-amber-600">✓</span>
@@ -164,6 +192,7 @@ export default function Home() {
             <p className="text-sm md:text-base text-gray-700 mb-4">
               Build state-of-the-art technology with my vast experience as a software engineer and technologist.
             </p>
+            <p className="text-xs text-gray-500 mb-4">Product of <strong>Qraft Labs</strong></p>
             <div className="space-y-2 mb-6 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <span className="text-indigo-600">✓</span>
@@ -194,6 +223,7 @@ export default function Home() {
             <p className="text-sm md:text-base text-gray-700 mb-4">
               Learn to invest and build wealth from my vast experience as an investor in startups, real estate, and financial markets.
             </p>
+            <p className="text-xs text-gray-500 mb-4">Product of <strong>Qraft Capital</strong></p>
             <div className="space-y-2 mb-6 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <span className="text-green-600">✓</span>
@@ -216,7 +246,7 @@ export default function Home() {
 
         <div className="mt-8 md:mt-12 text-center">
           <p className="text-gray-700 mb-4 max-w-3xl mx-auto px-4">
-            <strong>These programs are for everyone—</strong> whether you're a scholar growing in knowledge, a worker building your career, or a leader shepherding others. My expertise as a teacher, technologist, and investor is available to help you succeed.
+            <strong>These programs are for everyone—</strong> whether you're a scholar growing in knowledge, a worker building your career, or a leader shepherding others. My expertise as an educator, technologist, and investor is available to help you succeed.
           </p>
         </div>
       </section>
@@ -226,7 +256,7 @@ export default function Home() {
         <AndrewsDesk 
           date="November 2025"
           title="Why I Built This Ecosystem"
-          message="For years, I struggled to integrate my faith with my work as a technologist and investor. I saw scholars who loved God but felt disconnected from their Monday-through-Friday lives. I saw entrepreneurs with great ideas but no biblical framework for business. I saw leaders burning out because they separated 'spiritual leadership' from 'practical management.' That's why I created WorkMasters, Nations Bible School, Chariot Leadership Institute, and Tabernacle Tech—each one addresses a gap I personally experienced. My prayer is that these resources help you thrive in your God-given calling, wherever He's placed you."
+          message="For years, I struggled to integrate my faith with my work as a technologist and investor. I saw scholars who loved God but felt disconnected from their Monday-through-Friday lives. I saw entrepreneurs with great ideas but no biblical framework for business. I saw leaders burning out because they separated 'spiritual leadership' from 'practical management.' That's why I created WorkMasters, Nations Bible Community, Chariot Leadership Institute, and Tabernacle Tech—each one addresses a gap I personally experienced. My prayer is that these resources help you thrive in your God-given calling, wherever He's placed you."
           cta={{
             text: "Read My Full Story",
             href: "/about"
@@ -288,7 +318,7 @@ export default function Home() {
             </div>
               <h4 className="text-lg md:text-xl font-semibold text-purple-600 mb-3">Bible Study & Discipleship</h4>
             <p className="text-sm md:text-base text-gray-700 mb-4">
-              <strong>As a teacher,</strong> my deepest passion is helping scholars understand Scripture. Through my Bible Study series and Nations Bible School, <strong>I make</strong> God's Word accessible and transformative. We welcome students from primary through tertiary institutions.
+              <strong>As an educator,</strong> my deepest passion is helping scholars understand Scripture. Through my Bible Study series and Nations Bible Community, <strong>I make</strong> God's Word accessible and transformative. We welcome learners from primary through tertiary institutions.
             </p>
             <div className="mb-4 p-3 bg-purple-50 rounded-lg border border-purple-100">
               <p className="text-xs md:text-sm text-gray-700">
@@ -300,7 +330,7 @@ export default function Home() {
                 → Free Bible Study Series
               </Link>
               <Link href="/schools/nations-bible" className="block text-sm md:text-base text-purple-600 font-semibold hover:text-purple-700">
-                → Nations Bible School (School for Scholars)
+                → Nations Bible Community (School for Scholars)
               </Link>
               <Link href="/community/nations-bible" className="block text-sm md:text-base text-purple-600 font-semibold hover:text-purple-700">
                 → Join Our Community (2,154 members)
@@ -362,7 +392,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 md:mb-2">523</div>
-            <div className="text-xs sm:text-sm md:text-base text-gray-600">Students Trained</div>
+            <div className="text-xs sm:text-sm md:text-base text-gray-600">Learners Trained</div>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 md:mb-2">52</div>
@@ -379,7 +409,7 @@ export default function Home() {
           </blockquote>
           <blockquote className="bg-white rounded-xl shadow-sm p-5 md:p-6 border-l-4 border-purple-600">
             <p className="text-sm md:text-base text-gray-700 italic mb-3 md:mb-4">
-              "As a teacher, Andrew has an incredible gift for making deep theology accessible. The Nations Bible School course changed how I read and apply Scripture."
+              "As an educator, Andrew has an incredible gift for making deep theology accessible. The Nations Bible Community course changed how I read and apply Scripture."
             </p>
             <footer className="text-xs md:text-sm font-semibold text-gray-900">— Pastor David M., Small Group Leader</footer>
           </blockquote>

@@ -20,7 +20,7 @@ export default function Impact() {
           </div>
           <div className="bg-white rounded-lg shadow-sm p-6 text-center">
             <div className="text-4xl font-bold text-primary mb-2">523</div>
-            <div className="text-sm text-gray-600">Students Equipped</div>
+            <div className="text-sm text-gray-600">Learners Equipped</div>
           </div>
           <div className="bg-white rounded-lg shadow-sm p-6 text-center">
             <div className="text-4xl font-bold text-primary mb-2">52</div>
@@ -78,10 +78,10 @@ export default function Impact() {
 
           {/* Bible Study Stories */}
           <div className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-yellow-400">
-            <h3 className="font-bold text-lg mb-4">Scholars Through Bible Study & Nations Bible School</h3>
+            <h3 className="font-bold text-lg mb-4">Scholars Through Bible Study & Nations Bible Community</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-4 rounded">
-                <p className="text-gray-700 italic mb-3">"Nations Bible School gave me theological depth I couldn't get anywhere else. I'm now teaching Scripture confidently in my church."</p>
+                <p className="text-gray-700 italic mb-3">"Nations Bible Community gave me theological depth I couldn't get anywhere else. I'm now teaching Scripture confidently in my church."</p>
                 <footer className="text-sm font-semibold">— Peter O., Small Group Leader, Nigeria</footer>
               </div>
               <div className="bg-gray-50 p-4 rounded">
@@ -153,21 +153,21 @@ export default function Impact() {
             <div className="w-24 font-bold text-primary">2022</div>
             <div>
               <h4 className="font-semibold mb-1">First School Opens</h4>
-              <p className="text-sm text-gray-700">Qraft Academy launched with 47 students; 89% completion rate</p>
+              <p className="text-sm text-gray-700">Qraft Academy launched with 47 learners; 89% completion rate</p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-24 font-bold text-primary">2023</div>
             <div>
               <h4 className="font-semibold mb-1">Expansion Year</h4>
-              <p className="text-sm text-gray-700">Nations Bible School and Chariot Leadership Institute launched; reached 5,000+ people</p>
+              <p className="text-sm text-gray-700">Nations Bible Community and Chariot Leadership Institute launched; reached 5,000+ people</p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="w-24 font-bold text-primary">2025</div>
             <div>
               <h4 className="font-semibold mb-1">Global Impact</h4>
-              <p className="text-sm text-gray-700">Serving 52 countries with 10,000+ downloads and 500+ students equipped</p>
+              <p className="text-sm text-gray-700">Serving 52 countries with 10,000+ downloads and 500+ learners equipped</p>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function Impact() {
       <section className="bg-white rounded-lg shadow-sm p-8 mb-8">
         <h2 className="text-2xl font-bold mb-6">Community Growth Over Time</h2>
         <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-          <div className="text-gray-500">[Growth Chart Placeholder - Newsletter subscribers, students, partners]</div>
+          <div className="text-gray-500">[Growth Chart Placeholder - Newsletter subscribers, learners, partners]</div>
         </div>
       </section>
 
@@ -216,7 +216,7 @@ export default function Impact() {
             <p className="text-sm text-gray-700">Expand free content distribution across digital platforms</p>
           </div>
           <div className="border-l-4 border-primary pl-4">
-            <h4 className="font-semibold mb-2">🎓 Train 1,000 Students</h4>
+            <h4 className="font-semibold mb-2">🎓 Train 1,000 Learners</h4>
             <p className="text-sm text-gray-700">Double our school enrollment with new scholarship programs</p>
           </div>
           <div className="border-l-4 border-primary pl-4">

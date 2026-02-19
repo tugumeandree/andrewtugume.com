@@ -137,7 +137,7 @@ export default function Products() {
       {/* Value Proposition */}
       <div className="bg-gray-100 rounded-lg p-8 text-center">
         <h3 className="text-xl font-bold mb-4">Every Purchase Supports the Mission</h3>
-        <p className="text-gray-700 max-w-2xl mx-auto">100% of product profits fund scholarships for students who can't afford our schools. Your purchase creates transformation for others.</p>
+        <p className="text-gray-700 max-w-2xl mx-auto">100% of product profits fund scholarships for learners who can't afford our schools. Your purchase creates transformation for others.</p>
       </div>
     </div>
   )

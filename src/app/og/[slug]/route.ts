@@ -17,7 +17,7 @@ export async function GET(req: Request, { params }: { params: { slug: string } }
     <rect width="1200" height="630" fill="#0f172a" />
     <rect x="40" y="40" width="1120" height="550" rx="24" fill="url(#g)" opacity="0.95" />
     <text x="100" y="220" font-family="Inter, Arial, sans-serif" font-size="56" fill="#fff" font-weight="700">${escapeXml(title)}</text>
-    <text x="100" y="300" font-family="Inter, Arial, sans-serif" font-size="28" fill="#e6f7ff">Andrew Tugume — Teacher • Technologist • Investor</text>
+    <text x="100" y="300" font-family="Inter, Arial, sans-serif" font-size="28" fill="#e6f7ff">Andrew Tugume — Educator • Technologist • Investor</text>
   </svg>`
 
   return new NextResponse(svg, { headers: { 'Content-Type': 'image/svg+xml' } })

@@ -162,7 +162,7 @@ export default function BookAndrew() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Book Andrew Tugume</h1>
           <p className="text-xl md:text-2xl text-blue-200 mb-6">
-            Teacher • Technologist • Investor
+            Educator • Technologist • Investor
           </p>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
             Transform your organization, team, or personal journey with Andrew's expertise in biblical teaching, modern technology, and practical business wisdom.

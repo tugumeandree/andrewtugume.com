@@ -87,7 +87,7 @@ export default function CommunityHub() {
     },
     {
       question: "Do I need to be enrolled in a school to join?",
-      answer: "No! Communities are open to everyone. However, school students automatically get premium community access as part of their enrollment."
+      answer: "No! Communities are open to everyone. However, school learners automatically get premium community access as part of their enrollment."
     },
     {
       question: "What platforms do you use?",

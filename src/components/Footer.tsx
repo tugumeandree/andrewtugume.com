@@ -15,7 +15,7 @@ export default function Footer() {
             />
             <div className="flex-1">
               <h3 className="text-xl md:text-2xl font-bold mb-2">Andrew Tugume</h3>
-              <p className="text-base md:text-lg text-blue-200 mb-2 md:mb-3">Teacher • Technologist • Investor</p>
+              <p className="text-base md:text-lg text-blue-200 mb-2 md:mb-3">Educator • Technologist • Investor</p>
               <p className="text-sm md:text-base text-blue-100 max-w-2xl mx-auto md:mx-0">
                 Helping you thrive in your God-given callings through biblical teaching, modern technology, and practical business wisdom.
               </p>
@@ -92,7 +92,7 @@ export default function Footer() {
             <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base">My Schools</h4>
             <ul className="space-y-2 text-sm text-blue-100">
               <li><Link href="/schools/qraft-academy" className="hover:text-white transition-colors">Qraft Academy</Link></li>
-              <li><Link href="/schools/nations-bible" className="hover:text-white transition-colors">Nations Bible School</Link></li>
+              <li><Link href="/schools/nations-bible" className="hover:text-white transition-colors">Nations Bible Community</Link></li>
               <li><Link href="/schools/chariot-leadership" className="hover:text-white transition-colors">Chariot Leadership</Link></li>
               <li><Link href="/schools/tabernacle-tech" className="hover:text-white transition-colors">Tabernacle Tech</Link></li>
             </ul>

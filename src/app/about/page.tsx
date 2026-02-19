@@ -3,10 +3,10 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Andrew Tugume — Teacher, Technologist, Investor',
-  description: 'Discover Andrew Tugume\'s journey from compartmentalized life to integrated calling. Learn how a teacher, technologist, and investor helps scholars integrate faith with work through WorkMasters, Bible Study, and Leadership Exchange.',
+  title: 'About Andrew Tugume — Educator, Technologist, Investor',
+  description: 'Discover Andrew Tugume\'s journey from compartmentalized life to integrated calling. Learn how an educator, technologist, and investor helps scholars integrate faith with work through WorkMasters, Bible Study, and Leadership Exchange.',
   openGraph: {
-    title: 'About Andrew Tugume — Teacher, Technologist, Investor',
+    title: 'About Andrew Tugume — Educator, Technologist, Investor',
     description: 'Discover Andrew\'s journey from compartmentalized life to integrated calling.',
     url: 'https://andrewtugume.com/about',
     type: 'profile',
@@ -27,21 +27,21 @@ export default function About() {
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-5xl font-bold mb-4">Hi, I'm Andrew Tugume</h1>
             <p className="text-3xl font-semibold text-blue-200 mb-6">
-              Teacher • Technologist • Investor
+              Educator • Technologist • Investor
             </p>
             <p className="text-xl text-blue-100">
-              I help workers, leaders, and students succeed through well-researched teaching and training, modern technology, and practical financial wisdom.
+              I help workers, leaders, and learners succeed through well-researched teaching and training, modern technology, and practical financial wisdom.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Andrew as Teacher, Technologist, and Investor */}
+      {/* Andrew as Educator, Technologist, and Investor */}
       <section className="mb-16">
-        <h2 className="text-4xl font-bold mb-8">Andrew as a Teacher, Technologist, and Investor</h2>
+        <h2 className="text-4xl font-bold mb-8">Andrew as an Educator, Technologist, and Investor</h2>
         
         <div className="space-y-8">
-          {/* Teacher */}
+          {/* Educator */}
           <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border-2 border-purple-200">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -50,9 +50,9 @@ export default function About() {
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-3xl font-bold text-purple-900 mb-4">As a Teacher</h3>
+                <h3 className="text-3xl font-bold text-purple-900 mb-4">As an Educator</h3>
                     <p className="text-gray-700 mb-4">
-                      Andrew's deepest passion is making learning accessible and applicable. Through his three registered schools—<strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible School</strong>—he helps workers, leaders and bible scholars learn and succeed in their callings
+                      Andrew's deepest passion is making learning accessible and applicable. Through his three registered schools—<strong>Qraft Academy</strong>, <strong>Chariot Leadership Institute</strong>, and <strong>Nations Bible Community</strong>—he helps workers, leaders and bible scholars learn and succeed in their callings
                     </p>
                 <p className="text-gray-700 mb-4">
                   With extensive experience in <strong>learning and development</strong>, <strong>instructional design</strong>, and <strong>curriculum development</strong>, Andrew brings professional rigor to learning. His deep knowledge of EdTech and course creation enables him to build transformative learning experiences that leverage modern pedagogy.
@@ -63,9 +63,9 @@ export default function About() {
                 <div className="bg-white/70 rounded-lg p-4">
                   <p className="text-sm font-semibold text-purple-900 mb-2">Andrew's Three Registered Schools:</p>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• <strong>Qraft Academy : Comprehensive Modern Work Development Training</strong> - Qraft Academy offers cutting-edge training and skill development for workers—including entrepreneurs, freelancers, employees, industry leaders and students—to effectively navigate the future of work. Our programs focus on career development, work readiness, and employability.</li>
+                    <li>• <strong>Qraft Academy : Comprehensive Modern Work Development Training</strong> - Qraft Academy offers cutting-edge training and skill development for workers—including entrepreneurs, freelancers, employees, industry leaders and learners—to effectively navigate the future of work. Our programs focus on career development, work readiness, and employability.</li>
                     <li>• <strong>Chariot Leadership Institute</strong> - Chariot Leadership Institute offers comprehensive modern leadership development training for student leaders, professional leaders, managers, social leaders, family leaders, influencers, and public figures, equipping them with the skills needed to excel in their roles.</li>
-                    <li>• <strong>Nations Bible School</strong> - Nations Bible School offers Bible-based courses and training for workers, leaders, and students, including a Scripture Challenge and Bible Quiz with cash prizes, as well as training in the theology and doctrine of work and biblical leadership development for leaders.</li>
+                    <li>• <strong>Nations Bible Community</strong> - Nations Bible Community offers Bible-based courses and training for workers, leaders, and learners, including a Scripture Challenge and Bible Quiz with cash prizes, as well as training in the theology and doctrine of work and biblical leadership development for leaders.</li>
                   </ul>
                   <p className="text-xs text-purple-800 mt-3 font-semibold">Expertise: Instructional Design • Curriculum Development • Course Creation • EdTech • Learning & Development • Biblical Wisdom</p>
                 </div>
@@ -137,7 +137,7 @@ export default function About() {
             The Integration: <em>One Calling, Three Expressions</em>
           </p>
           <p className="text-gray-700">
-            Andrew doesn't see these as separate careers—they're integrated expressions of his calling to help people thrive. As a <strong>teacher</strong>, he makes wisdom accessible. As a <strong>technologist</strong>, he builds tools that empower. As an <strong>investor</strong>, he creates opportunity. Together, these form the foundation for helping scholars integrate faith with their work.
+            Andrew doesn't see these as separate careers—they're integrated expressions of his calling to help people thrive. As an <strong>educator</strong>, he makes wisdom accessible. As a <strong>technologist</strong>, he builds tools that empower. As an <strong>investor</strong>, he creates opportunity. Together, these form the foundation for helping scholars integrate faith with their work.
           </p>
         </div>
       </section>
@@ -179,12 +179,12 @@ export default function About() {
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Bible Study: The Teacher in Me</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Bible Study: The Educator in Me</h3>
                 <p className="text-gray-700 mb-4">
                   <strong>I'll never forget the small group member who said,</strong> <em>"I love God, but I feel like the Bible was written for people smarter than me."</em> It broke my heart. <strong>Teaching Scripture is my deepest passion</strong>, and I realized I had a gift for making complex theology accessible without watering it down.
                 </p>
                 <p className="text-gray-700">
-                  That's why <strong>I created my Bible Study series and Nations Bible School</strong>—to help everyday scholars understand God's Word deeply and apply it practically. <strong>I've dedicated my life to this work</strong> because nothing transforms lives like Scripture rightly understood.
+                  That's why <strong>I created my Bible Study series and Nations Bible Community</strong>—to help everyday scholars understand God's Word deeply and apply it practically. <strong>I've dedicated my life to this work</strong> because nothing transforms lives like Scripture rightly understood.
                 </p>
               </div>
             </div>
@@ -300,30 +300,88 @@ export default function About() {
         </div>
       </section>
 
-      {/* Journey Timeline */}
+      {/* Holding Company Structure */}
       <section className="mb-16">
-        <h2 className="text-4xl font-bold mb-8">My Journey</h2>
-        <div className="space-y-4">
-          {[
-            { year: '2015-2018', event: 'Struggled to integrate faith, technology, and business', impact: 'Felt like I was living in three separate worlds' },
-            { year: '2019', event: 'The "aha moment"—God doesn\'t compartmentalize', impact: 'Began teaching integrated biblical content online' },
-            { year: '2020', event: 'Launched first Bible study series', impact: '1,200 downloads in first year' },
-            { year: '2021', event: 'Created WorkMasters (TechMasters, CapitalMasters)', impact: '3,500 workers equipped with practical skills' },
-            { year: '2022', event: 'Founded Qraft Academy for comprehensive training', impact: '150 students enrolled in first cohort' },
-            { year: '2023', event: 'Expanded to Nations Bible & Chariot Leadership schools', impact: '400+ students across 3 specialized schools' },
-            { year: '2024', event: 'Integrated platform with Partner & Impact systems', impact: '10,247 downloads, 4,224 community members, 52 countries' },
-            { year: '2025', event: 'Adding Tabernacle Tech Institute (4th school)', impact: 'Goal: 25,000 people equipped, 1,000 school students' }
-          ].map((milestone, idx) => (
-            <div key={idx} className="flex gap-4">
-              <div className="w-24 flex-shrink-0">
-                <div className="bg-primary text-white px-3 py-2 rounded-lg font-bold text-center text-sm">{milestone.year}</div>
-              </div>
-              <div className="flex-1 bg-white rounded-lg p-5 shadow-sm border border-gray-200">
-                <div className="font-bold text-gray-900 mb-2">{milestone.event}</div>
-                <div className="text-sm text-gray-600">{milestone.impact}</div>
-              </div>
+        <h2 className="text-4xl font-bold mb-8">Rata Qraft Solutions Limited</h2>
+        <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-slate-200">
+          <p className="text-lg text-gray-700 mb-6">
+            I am an educator, technologist, and investor who founded a for-profit holding company called <strong>Rata Qraft Solutions Limited</strong>. It includes three companies that each carry a Masters program.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
+            <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
+              <h3 className="font-bold text-lg mb-2">Qraft Academy</h3>
+              <p className="text-sm text-gray-700">Product: <strong>CourseMasters</strong></p>
             </div>
-          ))}
+            <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
+              <h3 className="font-bold text-lg mb-2">Qraft Labs</h3>
+              <p className="text-sm text-gray-700">Product: <strong>TechMasters</strong></p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-5 border border-slate-200">
+              <h3 className="font-bold text-lg mb-2">Qraft Capital</h3>
+              <p className="text-sm text-gray-700">Product: <strong>CapitalMasters</strong></p>
+            </div>
+          </div>
+          <div className="bg-slate-100 rounded-lg p-5">
+            <p className="text-gray-700">
+              I fund my family, my ministry (<strong>Nations Bible Community</strong>), and my social enterprise (<strong>Chariot Leadership Institute</strong>) from the holding company.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* My Story */}
+      <section className="mb-16">
+        <h2 className="text-4xl font-bold mb-8">My Story</h2>
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Who Am I? Where Do I Come From?</h3>
+            <p className="text-gray-700 mb-4">
+              I am Andrew Tugume - educator, technologist, investor, and entrepreneur. Born on September 9th at Nyakibale Hospital in Rukingiri District, Kigezi region, southwestern Uganda, I grew up in Nyakibale Parish, Rujumbura. My mother, Mpirirwe Grace Jovita, was an English primary school educator who pivoted to business after a hearing impairment led to deafness. My father, Kirimuhuzya Claude, is a retired university lecturer. These resilient parents instilled values of perseverance, education, and service.
+            </p>
+            <p className="text-gray-700">
+              I attended Nyakibale Lower Primary School for two years, Rukungiri Modern Primary School for six, Ntare School in Mbarara for high school, and Makerere University for a degree in software engineering.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">The Turning Point: Why Am I Here? What Changed Inside?</h3>
+            <p className="text-gray-700">
+              Life tested me early. For over six years after high school, caring for my mentally ill mother through endless psychiatry hospital visits drained me - grades slipping, spirit fading. Yet, my inner search intensified. Watching Joseph Prince on TBN during a vacation, I had a profound personal moment: I prayed, felt an unexplainable shift, and experienced deep peace - like sleeping like a baby after years of turmoil. I dove into my Good News Bible (bought in Senior One) and inspirational content. This spiritual awakening answered <strong>why I am here</strong>: to harness inner strength, unlock my voice, and pursue purpose.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">University Momentum: What Can I Do?</h3>
+            <p className="text-gray-700">
+              At Makerere, I arrived energized and focused. Once painfully shy - never addressing a crowd or debating in high school - this breakthrough awakened natural gifts: clear communication, teaching, and bold leadership. What started as a skill became my core strength.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Mentorship Launchpad: Exposure to the World</h3>
+            <p className="text-gray-700">
+              In my second-last year, an internship under Kafeero Aziiz - the sharpest mind I've known - at a new organization immersed me in real-world leadership. I sharpened software development, digital training, innovation, investment, management, and business acumen. Leading initiatives like Africa Code Week, Techstars Startup Weekend, and Andela Level Up, I built software products and training programs early on. This opened doors; I've since collaborated professionally with countless organizations.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">My Path Ahead: Where Am I Going? What Impact? Who Are My People? Who Am I Called To? How Will I Get There?</h3>
+            <div className="space-y-3 text-gray-700">
+              <p><strong>Where am I going?</strong> To scale tech-enabled entrepreneurship, financial literacy, and agricultural value addition across Uganda and Africa.</p>
+              <p><strong>What impact do I need to achieve?</strong> Equip thousands with software skills, investment know-how, and leadership tools - sparking jobs, businesses, and wealth in sectors like livestock and agribusiness.</p>
+              <p><strong>Who are my people?</strong> Ambitious entrepreneurs, youth, farmers, and investors - from my Rukingiri community to global networks.</p>
+              <p><strong>Who am I called to?</strong> Builders and dreamers ready to rise, especially in Uganda's tech, education, and economic ecosystems.</p>
+              <p><strong>How do I want to reach there?</strong> Via Rata Qraft Solutions Limited, Qraft Hub, Qraft Academy, and ventures like Kibazzi Photography. Using Next.js, MongoDB, AI, and integrations like Flutterwave, I'll develop digital platforms, incubate startups, create content, and mentor strategically. Relentless execution and key partnerships will drive it.</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+            <p className="text-gray-700 mb-4">
+              This is my story - rooted in trials, powered by purpose, built for impact. Let's build together.
+            </p>
+            <p className="text-gray-900 font-semibold">Andrew Tugume</p>
+            <p className="text-gray-700">Educator. Technologist. Investor.</p>
+          </div>
         </div>
       </section>
 
@@ -344,7 +402,7 @@ export default function About() {
               <h3 className="font-bold text-xl mb-4 text-primary">Experience</h3>
               <ul className="space-y-2 text-gray-700">
                 <li>• 10+ years in software development & leadership</li>
-                <li>• 500+ students trained across 3 continents</li>
+                <li>• 500+ learners trained across 3 continents</li>
                 <li>• Multiple successful business ventures</li>
               </ul>
             </div>
@@ -353,7 +411,7 @@ export default function About() {
               <ul className="space-y-2 text-gray-700">
                 <li>• 50,000+ article readers</li>
                 <li>• 10,247 resource downloads</li>
-                <li>• 523 students across 4 schools</li>
+                <li>• 523 learners across 4 schools</li>
               </ul>
             </div>
             <div>
@@ -380,7 +438,7 @@ export default function About() {
           </div>
           <div className="bg-white rounded-lg shadow-sm p-6 text-center border border-gray-200">
             <div className="text-4xl font-bold text-primary mb-2">523</div>
-            <div className="text-sm text-gray-600">Students Equipped</div>
+            <div className="text-sm text-gray-600">Learners Equipped</div>
           </div>
           <div className="bg-white rounded-lg shadow-sm p-6 text-center border border-gray-200">
             <div className="text-4xl font-bold text-primary mb-2">52</div>
@@ -435,10 +493,10 @@ export default function About() {
 
           {/* Bible Study Stories */}
           <div className="bg-white rounded-xl shadow-sm p-6 border-l-4 border-purple-600">
-            <h4 className="font-bold text-lg mb-4">Scholars Through Bible Study & Nations Bible School</h4>
+            <h4 className="font-bold text-lg mb-4">Scholars Through Bible Study & Nations Bible Community</h4>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-700 italic mb-3">"Nations Bible School gave me theological depth I couldn't get anywhere else. I'm now teaching Scripture confidently in my church."</p>
+                <p className="text-gray-700 italic mb-3">"Nations Bible Community gave me theological depth I couldn't get anywhere else. I'm now teaching Scripture confidently in my church."</p>
                 <footer className="text-sm font-semibold text-gray-900">— Peter O., Small Group Leader, Nigeria</footer>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">

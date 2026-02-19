@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'CourseMasters — Learn Course Creation with Andrew Tugume',
-  description: 'Master course creation with expert guidance from Andrew Tugume - teacher, instructional designer, and learning & development expert. Individual training, team programs, and done-for-you course creation services.',
+  description: 'Master course creation with expert guidance from Andrew Tugume - educator, instructional designer, and learning & development expert. Individual training, team programs, and done-for-you course creation services.',
 }
 
 export default function CourseMasters() {
@@ -18,10 +18,10 @@ export default function CourseMasters() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">CourseMasters</h1>
           <p className="text-xl md:text-2xl text-amber-100 mb-6">
-            Learn how to create transformational courses from a master teacher
+            Learn how to create transformational courses from a master educator
           </p>
           <p className="text-lg text-white/90 mb-8">
-            With years of experience as a teacher, instructional designer, learning & development expert, and successful course creator, I help individuals and teams design, develop, and deliver powerful learning experiences.
+            With years of experience as an educator, instructional designer, learning & development expert, and successful course creator, I help individuals and teams design, develop, and deliver powerful learning experiences.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="#services" className="bg-white text-amber-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-50 transition-colors">
@@ -38,13 +38,16 @@ export default function CourseMasters() {
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">What is CourseMasters?</h2>
         <div className="bg-amber-50 border-l-4 border-amber-600 p-6 rounded-lg mb-8">
+          <p className="text-lg text-gray-700 leading-relaxed mb-3">
+            CourseMasters is a <strong>Qraft Academy</strong> product under <strong>Rata Qraft Solutions Limited</strong>.
+          </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            CourseMasters is my comprehensive course creation program built on <strong>vast experience</strong> as a:
+            It is my comprehensive course creation program built on <strong>vast experience</strong> as a:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">✓</span>
-              <span><strong>Teacher</strong> — Understanding pedagogy and how people learn</span>
+              <span><strong>Educator</strong> — Understanding pedagogy and how people learn</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">✓</span>
@@ -262,7 +265,7 @@ export default function CourseMasters() {
             <div className="text-3xl">🚀</div>
             <div>
               <h3 className="font-bold text-lg mb-2">Successful Course Creator</h3>
-              <p className="text-gray-700 text-sm">I practice what I teach—my own courses have helped thousands of students achieve real results.</p>
+              <p className="text-gray-700 text-sm">I practice what I teach—my own courses have helped thousands of learners achieve real results.</p>
             </div>
           </div>
         </div>
