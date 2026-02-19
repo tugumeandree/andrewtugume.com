@@ -18,6 +18,7 @@ const learningGrid = [
   'Sales: Build pipeline and follow-up',
   'Skills: Master modern digital tools',
   'Governance: Build founder discipline'
+]
 
 
 const timelineItems = [
