@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import { getPostBySlug } from '@/lib/blog/posts'
 
-export async function GET(req: Request, { params }: { params: { slug: string } }) {
-  const slug = params.slug
+export async function GET(req: Request, { params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   const post = await getPostBySlug(slug)
   const title = post ? post.meta.title : 'Andrew Tugume'
 
