@@ -3,21 +3,60 @@ import Link from 'next/link'
 import AndrewsDesk from '@/components/AndrewsDesk'
 import WorkMastersLanding from '@/components/WorkMastersLanding'
 import type { Metadata } from 'next'
+import { generateBreadcrumbSchema, generateWebPageSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Andrew Tugume — Educator, Technologist, Investor',
-  description: 'Join millions of youtransforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange. Free resources, proven frameworks, real community.',
+  description: 'Educator, Technologist, and Investor helping workers, leaders, and learners succeed through biblical teaching, modern technology, and practical business wisdom. Access WorkMasters, Bible Study, and Leadership coaching.',
+  alternates: {
+    canonical: 'https://andrewtugume.com',
+  },
   openGraph: {
     title: 'Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Join millions of youtransforming their calling. Access WorkMasters, Bible Study, and Leadership Exchange.',
+    description: 'Helping yo succeed through biblical teaching, modern technology, and practical business wisdom. Join thousands of scholars, workers, and leaders.',
     url: 'https://andrewtugume.com',
     type: 'website',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Andrew Tugume - Educator, Technologist, Investor',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Andrew Tugume — Educator, Technologist, Investor',
+    description: 'Helping workers, leaders, and learners succeed through faith, technology, and wisdom.',
   },
 }
 
 export default function Home() {
   return (
     <>
+      {/* JSON-LD Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateWebPageSchema(
+            'Andrew Tugume - Educator, Technologist, Investor',
+            'Helping workers, leaders, and learners succeed through biblical teaching, modern technology, and practical business wisdom.',
+            'https://andrewtugume.com'
+          ))
+        }}
+      />
+      
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://andrewtugume.com' }
+          ]))
+        }}
+      />
+
       {/* Hero Section - Andrew-Centric */}
       <section 
         className="relative bg-gradient-to-br from-primary via-blue-800 to-slate-900 text-white rounded-xl md:rounded-2xl overflow-hidden -mx-4 sm:mx-0"

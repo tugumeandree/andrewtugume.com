@@ -1,9 +1,57 @@
 import React from 'react'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import { generateBreadcrumbSchema } from '@/lib/seo/schema'
+
+export const metadata: Metadata = {
+  title: 'Contact Andrew Tugume',
+  description: 'Get in touch with Andrew Tugume. Have questions about WorkMasters, Bible Study, Leadership coaching, or partnership opportunities? Send us a message and we\'ll be in touch soon.',
+  keywords: ['contact', 'get in touch', 'inquiry', 'partnership', 'speaking invitation'],
+  alternates: {
+    canonical: 'https://andrewtugume.com/contact',
+  },
+  openGraph: {
+    title: 'Contact Andrew Tugume',
+    description: 'Get in touch. Have questions? We\'d love to hear from you.',
+    url: 'https://andrewtugume.com/contact',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Contact Andrew Tugume',
+    description: 'Get in touch with Andrew Tugume',
+  },
+}
 
 export default function Contact() {
   return (
-    <div className="max-w-4xl mx-auto">
+    <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://andrewtugume.com' },
+            { name: 'Contact', url: 'https://andrewtugume.com/contact' }
+          ]))
+        }}
+      />
+      
+      {/* Contact Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            url: 'https://andrewtugume.com/contact',
+            name: 'Contact Andrew Tugume',
+            description: 'Contact page for inquiries and partnerships',
+          })
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">Get in Touch</h1>
       <p className="text-gray-700 mb-8">Have a question, opportunity, or just want to say hello? We'd love to hear from you.</p>
 
@@ -129,5 +177,6 @@ export default function Contact() {
         <p className="text-gray-700">Based in Nairobi, Kenya • Serving 52+ countries worldwide</p>
       </div>
     </div>
+    </>
   )
 }

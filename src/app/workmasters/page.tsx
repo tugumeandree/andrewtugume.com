@@ -2,10 +2,46 @@ import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import WorkMastersApplyForm from '@/components/WorkMastersApplyForm'
+import { generateBreadcrumbSchema, generateCourseSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
-  title: 'WorkMasters | Andrew Tugume – Career, Business & Leadership Coaching',
-  description: 'Join WorkMasters for weekly coaching, meetups & challenges in Uganda.'
+  title: 'WorkMasters | Career, Business & Leadership Coaching — Andrew Tugume',
+  description: 'WorkMasters: Weekly career coaching, leadership development, and business skills training in Uganda. Build your portfolio, negotiate raises, scale your business, and master professional skills.',
+  keywords: [
+    'WorkMasters',
+    'career coaching',
+    'business coaching',
+    'leadership development',
+    'professional development',
+    'career growth',
+    'entrepreneurship training',
+    'investment coaching',
+    'sales training',
+    'management skills',
+    'Uganda business',
+  ],
+  alternates: {
+    canonical: 'https://andrewtugume.com/workmasters',
+  },
+  openGraph: {
+    title: 'WorkMasters — Career, Business & Leadership Coaching',
+    description: 'Weekly career coaching, leadership development, and business skills training to help you succeed professionally.',
+    url: 'https://andrewtugume.com/workmasters',
+    type: 'website',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'WorkMasters - Career and Business Coaching',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WorkMasters — Career, Business & Leadership Coaching',
+    description: 'Transform your career and business with professional coaching',
+  },
 }
 
 const learningGrid = [
@@ -107,6 +143,31 @@ const upcomingEvent = {
 export default function WorkMasters() {
   return (
     <div className="space-y-12">
+      {/* Course Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateCourseSchema(
+            'WorkMasters: Career, Business & Leadership Coaching',
+            'Weekly career coaching, leadership development, and business skills training for professionals, entrepreneurs, and business owners.',
+            'workmasters',
+            'Andrew Tugume'
+          ))
+        }}
+      />
+      
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://andrewtugume.com' },
+            { name: 'WorkMasters', url: 'https://andrewtugume.com/workmasters' }
+          ]))
+        }}
+      />
+      
+      {/* Event Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

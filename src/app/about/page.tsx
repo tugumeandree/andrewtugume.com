@@ -1,23 +1,70 @@
 import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { generateBreadcrumbSchema, generatePersonSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'About Andrew Tugume — Educator, Technologist, Investor',
-  description: 'Discover Andrew Tugume\'s journey from compartmentalized life to integrated calling. Learn how an educator, technologist, and investor helps scholars integrate faith with work through WorkMasters, Bible Study, and Leadership Exchange.',
+  description: 'Learn about Andrew Tugume\'s journey from compartmentalized life to integrated calling. Discover how an educator, technologist, and investor helps scholars integrate faith with work through innovative programs, Bible study, and practical business wisdom.',
+  keywords: [
+    'About Andrew Tugume',
+    'educator biography',
+    'technologist profile',
+    'investor background',
+    'faith and work integration',
+    'Christian educator',
+    'leadership coach',
+    'Bible teacher',
+  ],
+  alternates: {
+    canonical: 'https://andrewtugume.com/about',
+  },
   openGraph: {
     title: 'About Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Discover Andrew\'s journey from compartmentalized life to integrated calling.',
+    description: 'A journey from compartmentalized life to integrated calling. Learn how Andrew helps scholars succeed.',
     url: 'https://andrewtugume.com/about',
     type: 'profile',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
+        width: 400,
+        height: 400,
+        alt: 'Andrew Tugume - Educator, Technologist, Investor',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'About Andrew Tugume',
+    description: 'Learn about the educator, technologist, and investor helping scholars succeed',
   },
 }
 
 export default function About() {
   return (
-    <div className="max-w-6xl mx-auto">
-      {/* Hero Section - Triple Identity */}
-      <div className="bg-gradient-to-br from-primary via-blue-800 to-slate-900 text-white rounded-2xl p-12 mb-12">
+    <>
+      {/* Person Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generatePersonSchema())
+        }}
+      />
+      
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://andrewtugume.com' },
+            { name: 'About', url: 'https://andrewtugume.com/about' }
+          ]))
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto">
+        {/* Hero Section - Triple Identity */}
+        <div className="bg-gradient-to-br from-primary via-blue-800 to-slate-900 text-white rounded-2xl p-12 mb-12">
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <img 
             src="https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg" 
@@ -586,6 +633,7 @@ export default function About() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
