@@ -39,13 +39,16 @@ export default function CapitalMasters() {
         <h2 className="text-3xl font-bold mb-6">What is CapitalMasters?</h2>
         <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700 leading-relaxed mb-3">
-            CapitalMasters is a <strong>Qraft Capital</strong> product under <strong>Rata Qraft Solutions Limited</strong>.
+            CapitalMasters is Andrew Tugume&apos;s practical wealth-building mentorship platform for people who want to invest wisely and grow with discipline.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
             It is my comprehensive wealth-building program built on <strong>vast experience as an investor</strong> in startups, real estate, and financial markets. I help you understand money, make wise investments, and build generational wealth.
           </p>
           <p className="text-gray-700">
             Unlike typical financial advice, CapitalMasters integrates <strong>biblical stewardship principles</strong> with proven investment strategies. I teach you to build wealth that honors God, serves others, and creates lasting impact.
+          </p>
+          <p className="text-gray-700 mt-4 font-medium">
+            Capital is managed with transparent digital records and disciplined governance.
           </p>
         </div>
       </section>
@@ -353,16 +356,37 @@ export default function CapitalMasters() {
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-2xl p-8 md:p-12 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Build Wealth God's Way?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Build Wealth with Andrew Tugume?</h2>
         <p className="text-xl mb-8 text-green-100 max-w-2xl mx-auto">
-          Start your journey to financial freedom with biblical principles and proven investment strategies.
+          Start your CapitalMasters journey with direct access and clear next steps.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/store/products" className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-colors">
-            Browse Investment Courses
-          </Link>
-          <Link href="/contact" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">
-            Apply for 1-on-1 Coaching
+        <p className="text-green-100 mb-6 max-w-2xl mx-auto font-medium">
+          Capital is managed with transparent digital records and disciplined governance.
+        </p>
+        <div className="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto">
+          <a
+            href="https://wa.me/256755017384?text=Hello%20Andrew%20Tugume%2C%20I%20want%20to%20join%20CapitalMasters"
+            className="bg-white text-green-700 px-6 py-4 rounded-lg font-bold text-lg hover:bg-green-50 transition-colors"
+          >
+            Primary CTA: WhatsApp
+          </a>
+          <a
+            href="tel:+256755017384"
+            className="bg-emerald-700 border-2 border-white text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-emerald-800 transition-colors"
+          >
+            Secondary CTA: Call
+          </a>
+          <a
+            href="mailto:info@capitalmasters.com"
+            className="bg-transparent border-2 border-white text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors"
+          >
+            Tertiary CTA: Email
+          </a>
+          <Link
+            href="/contact#contact-form"
+            className="bg-transparent border-2 border-dashed border-white text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors"
+          >
+            Last Resort: Fill Contact Form
           </Link>
         </div>
       </section>
