@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact Andrew Tugume',
@@ -57,52 +58,7 @@ export default function Contact() {
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Contact Form */}
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-xl font-bold mb-6">Send a Message</h2>
-          <form className="space-y-4">
-            <div>
-              <label className="block font-semibold mb-2 text-sm">Name</label>
-              <input 
-                type="text" 
-                className="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:outline-none"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label className="block font-semibold mb-2 text-sm">Email</label>
-              <input 
-                type="email" 
-                className="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:outline-none"
-                placeholder="your@email.com"
-              />
-            </div>
-            <div>
-              <label className="block font-semibold mb-2 text-sm">Subject</label>
-              <select className="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:outline-none">
-                <option>General Inquiry</option>
-                <option>School Enrollment Question</option>
-                <option>Speaking Invitation</option>
-                <option>Partnership Opportunity</option>
-                <option>Technical Support</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label className="block font-semibold mb-2 text-sm">Message</label>
-              <textarea 
-                rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:outline-none"
-                placeholder="How can we help you?"
-              />
-            </div>
-            <button 
-              type="submit"
-              className="w-full bg-primary text-white px-6 py-3 rounded font-semibold hover:bg-blue-900 transition"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+        <ContactForm />
 
         {/* Contact Info & FAQs */}
         <div>
@@ -111,7 +67,7 @@ export default function Contact() {
             <h3 className="font-bold mb-4">Quick Links</h3>
             <div className="space-y-2">
               <Link href="/schools" className="block text-primary hover:underline">→ Browse Our Schools</Link>
-              <Link href="/partner/opportunities" className="block text-primary hover:underline">→ Submit Speaking Invitation</Link>
+              <Link href="/partner" className="block text-primary hover:underline">→ Submit Speaking Invitation</Link>
               <Link href="/partner/give" className="block text-primary hover:underline">→ Make a Donation</Link>
               <Link href="/impact" className="block text-primary hover:underline">→ View Our Impact</Link>
             </div>
