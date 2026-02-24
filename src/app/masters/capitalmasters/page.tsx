@@ -389,6 +389,9 @@ export default function CapitalMasters() {
             Last Resort: Fill Contact Form
           </Link>
         </div>
+        <p className="text-sm text-green-100 mt-6">
+          Official page: <a href="https://capitalmasters.netlify.app" className="underline hover:text-white">capitalmasters.netlify.app</a>
+        </p>
       </section>
     </div>
   )
