@@ -3,21 +3,17 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 
 export default function Header() {
-  const [mounted, setMounted] = useState(false)
   const [myWorkOpen, setMyWorkOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const [mastersOpen, setMastersOpen] = useState(false)
+  const [qraftOpen, setQraftOpen] = useState(false)
   const [connectOpen, setConnectOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileMyWorkOpen, setMobileMyWorkOpen] = useState(false)
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const [mobileMastersOpen, setMobileMastersOpen] = useState(false)
+  const [mobileQraftOpen, setMobileQraftOpen] = useState(false)
   const [mobileConnectOpen, setMobileConnectOpen] = useState(false)
-
-  // Ensure component is mounted before rendering interactive elements
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -36,6 +32,7 @@ export default function Header() {
     setMobileMyWorkOpen(false)
     setMobileResourcesOpen(false)
     setMobileMastersOpen(false)
+    setMobileQraftOpen(false)
     setMobileConnectOpen(false)
   }
 
@@ -43,6 +40,7 @@ export default function Header() {
     setMyWorkOpen(false)
     setResourcesOpen(false)
     setMastersOpen(false)
+    setQraftOpen(false)
     setConnectOpen(false)
   }
 
@@ -50,6 +48,7 @@ export default function Header() {
     setMyWorkOpen(!myWorkOpen)
     setResourcesOpen(false)
     setMastersOpen(false)
+    setQraftOpen(false)
     setConnectOpen(false)
   }
 
@@ -57,6 +56,7 @@ export default function Header() {
     setMyWorkOpen(false)
     setResourcesOpen(!resourcesOpen)
     setMastersOpen(false)
+    setQraftOpen(false)
     setConnectOpen(false)
   }
 
@@ -64,6 +64,15 @@ export default function Header() {
     setMyWorkOpen(false)
     setResourcesOpen(false)
     setMastersOpen(!mastersOpen)
+    setQraftOpen(false)
+    setConnectOpen(false)
+  }
+
+  const toggleQraft = () => {
+    setMyWorkOpen(false)
+    setResourcesOpen(false)
+    setMastersOpen(false)
+    setQraftOpen(!qraftOpen)
     setConnectOpen(false)
   }
 
@@ -71,6 +80,7 @@ export default function Header() {
     setMyWorkOpen(false)
     setResourcesOpen(false)
     setMastersOpen(false)
+    setQraftOpen(false)
     setConnectOpen(!connectOpen)
   }
 
@@ -138,42 +148,106 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-2 lg:gap-4 flex-wrap" suppressHydrationWarning>
-          <Link href="/about" className="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">About</Link>
-          
-          {/* My Work Dropdown - The Three Vehicles */}
+          {/* Masters Programs Dropdown - Position 1 */}
+          <div className="relative">
+            <button 
+              onClick={toggleMasters}
+              className="text-sm font-bold text-accent flex items-center gap-1"
+            >
+              Masters Programs
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {mastersOpen && (
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
+                <div className="p-3 bg-gradient-to-r from-accent to-amber-600 text-white rounded-t-lg">
+                  <p className="text-xs font-semibold">For Everyone</p>
+                </div>
+                <Link
+                  href="/workmasters"
+                  className="block px-4 py-3 hover:bg-blue-50 border-b text-sm"
+                  onClick={() => setMastersOpen(false)}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg">💼</span>
+                    <div className="font-semibold text-blue-600">WorkMasters</div>
+                  </div>
+                  <div className="text-xs text-gray-600">Career, business, and leadership mastery</div>
+                </Link>
+                <Link 
+                  href="/masters/capitalmasters" 
+                  className="block px-4 py-3 hover:bg-green-50 text-sm"
+                  onClick={() => setMastersOpen(false)}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg">💰</span>
+                    <div className="font-semibold text-green-600">CapitalMasters</div>
+                  </div>
+                  <div className="text-xs text-gray-600">Investment & wealth building</div>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Qraft Academy Dropdown - Position 2 */}
+          <div className="relative">
+            <button
+              onClick={toggleQraft}
+              className="text-sm font-bold text-indigo-600 flex items-center gap-1"
+            >
+              Qraft Academy
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {qraftOpen && (
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
+                <div className="p-3 bg-gradient-to-r from-indigo-600 to-blue-700 text-white rounded-t-lg">
+                  <p className="text-xs font-semibold">Qraft Academy Programs</p>
+                </div>
+                <Link
+                  href="/masters/coursemasters"
+                  className="block px-4 py-3 hover:bg-amber-50 border-b text-sm"
+                  onClick={() => setQraftOpen(false)}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg">🎓</span>
+                    <div className="font-semibold text-amber-600">CourseMasters</div>
+                  </div>
+                  <div className="text-xs text-gray-600">Course creation & instructional design</div>
+                </Link>
+                <Link
+                  href="/masters/techmasters"
+                  className="block px-4 py-3 hover:bg-indigo-50 text-sm"
+                  onClick={() => setQraftOpen(false)}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg">💻</span>
+                    <div className="font-semibold text-indigo-600">TechMasters</div>
+                  </div>
+                  <div className="text-xs text-gray-600">Technology & software development</div>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Chariot Leadership Institute Dropdown - Position 3 */}
           <div className="relative">
             <button 
               onClick={toggleMyWork}
               className="text-sm font-bold text-primary flex items-center gap-1"
             >
-              Weekly Meetups
+              Chariot Leadership Institute
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {mounted && myWorkOpen && (
+            {myWorkOpen && (
               <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
                 <div className="p-3 bg-gradient-to-r from-primary to-blue-800 text-white rounded-t-lg">
                   <p className="text-xs font-semibold">Come Join Me Every Week</p>
                 </div>
-                <Link 
-                  href="/workmasters" 
-                  className="block px-5 py-4 hover:bg-blue-50 border-b group"
-                  onClick={() => setMyWorkOpen(false)}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
-                      <svg className="w-5 h-5 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <div className="font-bold text-sm text-gray-900">For Workers</div>
-                      <div className="text-xs text-gray-600 mt-1">WorkMasters - First Meetup: Jan 6, 2026</div>
-                      <div className="text-xs text-blue-600 font-semibold">Then Every Tuesday in 2026</div>
-                    </div>
-                  </div>
-                </Link>
                 <Link 
                   href="/bible-study" 
                   className="block px-5 py-4 hover:bg-purple-50 border-b group"
@@ -212,60 +286,26 @@ export default function Header() {
             )}
           </div>
 
-          {/* Masters Programs Dropdown */}
-          <div className="relative">
-            <button 
-              onClick={toggleMasters}
-              className="text-sm font-bold text-accent flex items-center gap-1"
-            >
-              Masters Programs
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {mounted && mastersOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
-                <div className="p-3 bg-gradient-to-r from-accent to-amber-600 text-white rounded-t-lg">
-                  <p className="text-xs font-semibold">For Everyone</p>
-                </div>
-                <Link 
-                  href="/masters/coursemasters" 
-                  className="block px-4 py-3 hover:bg-amber-50 border-b text-sm"
-                  onClick={() => setMastersOpen(false)}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">🎓</span>
-                    <div className="font-semibold text-amber-600">CourseMasters</div>
-                  </div>
-                  <div className="text-xs text-gray-600">Course creation & instructional design</div>
-                </Link>
-                <Link 
-                  href="/masters/techmasters" 
-                  className="block px-4 py-3 hover:bg-indigo-50 border-b text-sm"
-                  onClick={() => setMastersOpen(false)}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">💻</span>
-                    <div className="font-semibold text-indigo-600">TechMasters</div>
-                  </div>
-                  <div className="text-xs text-gray-600">Technology & software development</div>
-                </Link>
-                <Link 
-                  href="/masters/capitalmasters" 
-                  className="block px-4 py-3 hover:bg-green-50 text-sm"
-                  onClick={() => setMastersOpen(false)}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-lg">💰</span>
-                    <div className="font-semibold text-green-600">CapitalMasters</div>
-                  </div>
-                  <div className="text-xs text-gray-600">Investment & wealth building</div>
-                </Link>
-              </div>
-            )}
-          </div>
+          {/* Book Andrew Button - Position 4 */}
+          <Link 
+            href="/book" 
+            className="text-xs lg:text-sm font-bold px-3 lg:px-4 py-2 rounded-lg transition-all hover:shadow-md whitespace-nowrap uppercase"
+            style={{ backgroundColor: '#D9A441', color: 'white' }}
+            onClick={closeAllDropdowns}
+          >
+            BOOK ANDREW
+          </Link>
 
-          {/* Resources Dropdown */}
+          {/* One-on-One Button - Position 5 */}
+          <Link 
+            href="/one-on-one" 
+            className="text-xs lg:text-sm font-bold bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg hover:bg-blue-700 transition-all hover:shadow-md whitespace-nowrap uppercase"
+            onClick={closeAllDropdowns}
+          >
+            ONE ON ONE
+          </Link>
+
+          {/* Resources Dropdown - Position 6 */}
           <div className="relative">
             <button 
               onClick={toggleResources}
@@ -276,7 +316,7 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {mounted && resourcesOpen && (
+            {resourcesOpen && (
               <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
                 <Link 
                   href="/store/products" 
@@ -313,10 +353,11 @@ export default function Header() {
               </div>
             )}
           </div>
-          
+
+          {/* Communities - Position 7 */}
           <Link href="/community" className="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">Communities</Link>
-          
-          {/* Connect Dropdown */}
+
+          {/* Connect Dropdown - Position 8 */}
           <div className="relative">
             <button 
               onClick={toggleConnect}
@@ -327,7 +368,7 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            {mounted && connectOpen && (
+            {connectOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg border-2 border-primary/20 z-50">
                 <Link 
                   href="/contact" 
@@ -349,28 +390,12 @@ export default function Header() {
             )}
           </div>
 
-          {/* Book Andrew Button */}
-          <Link 
-            href="/book" 
-            className="text-xs lg:text-sm font-bold px-3 lg:px-4 py-2 rounded-lg transition-all hover:shadow-md whitespace-nowrap uppercase"
-            style={{ backgroundColor: '#D9A441', color: 'white' }}
-            onClick={closeAllDropdowns}
-          >
-            BOOK ANDREW
-          </Link>
-
-          {/* One-on-One Button */}
-          <Link 
-            href="/one-on-one" 
-            className="text-xs lg:text-sm font-bold bg-blue-600 text-white px-3 lg:px-4 py-2 rounded-lg hover:bg-blue-700 transition-all hover:shadow-md whitespace-nowrap uppercase"
-            onClick={closeAllDropdowns}
-          >
-            ONE ON ONE
-          </Link>
+          {/* About - Position 9 */}
+          <Link href="/about" className="text-sm font-semibold hover:text-primary transition-colors whitespace-nowrap">About</Link>
         </nav>
 
         {/* Mobile Side Navigation */}
-        {mounted && mobileMenuOpen && (
+        {mobileMenuOpen && (
           <>
             {/* Overlay */}
             <div 
@@ -406,30 +431,91 @@ export default function Header() {
               </div>
 
               {/* Navigation Links */}
-              <nav className="p-4">
-                <Link 
-                  href="/about" 
-                  className="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-100 rounded-lg mb-1"
-                  onClick={closeMobileMenu}
-                >
-                  About
-                </Link>
+              <nav className="p-4 flex flex-col">
+                {/* Masters Programs Accordion - Position 1 */}
+                <div className="mb-1">
+                  <button 
+                    onClick={() => setMobileMastersOpen(!mobileMastersOpen)}
+                    className="w-full flex items-center justify-between px-4 py-3 font-semibold hover:bg-gray-100 rounded-lg"
+                    style={{ color: '#D9A441' }}
+                  >
+                    Masters Programs
+                    <svg 
+                      className={`w-5 h-5 transition-transform ${mobileMastersOpen ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {mobileMastersOpen && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      <Link
+                        href="/workmasters"
+                        className="block px-4 py-2 text-sm hover:bg-blue-50 rounded-lg"
+                        onClick={closeMobileMenu}
+                      >
+                        <div className="font-semibold text-blue-600">💼 WorkMasters</div>
+                        <div className="text-xs text-gray-600">Career, business, and leadership mastery</div>
+                      </Link>
+                      <Link 
+                        href="/masters/capitalmasters" 
+                        className="block px-4 py-2 text-sm hover:bg-green-50 rounded-lg"
+                        onClick={closeMobileMenu}
+                      >
+                        <div className="font-semibold text-green-600">💰 CapitalMasters</div>
+                        <div className="text-xs text-gray-600">Investment & wealth building</div>
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
-                <Link 
-                  href="/community" 
-                  className="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-100 rounded-lg mb-1"
-                  onClick={closeMobileMenu}
-                >
-                  Communities
-                </Link>
+                {/* Qraft Academy Accordion - Position 2 */}
+                <div className="mb-1">
+                  <button
+                    onClick={() => setMobileQraftOpen(!mobileQraftOpen)}
+                    className="w-full flex items-center justify-between px-4 py-3 text-indigo-600 font-semibold hover:bg-indigo-50 rounded-lg"
+                  >
+                    Qraft Academy
+                    <svg
+                      className={`w-5 h-5 transition-transform ${mobileQraftOpen ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {mobileQraftOpen && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      <Link
+                        href="/masters/coursemasters"
+                        className="block px-4 py-2 text-sm hover:bg-amber-50 rounded-lg"
+                        onClick={closeMobileMenu}
+                      >
+                        <div className="font-semibold text-amber-600">🎓 CourseMasters</div>
+                        <div className="text-xs text-gray-600">Course creation & instructional design</div>
+                      </Link>
+                      <Link
+                        href="/masters/techmasters"
+                        className="block px-4 py-2 text-sm hover:bg-indigo-50 rounded-lg"
+                        onClick={closeMobileMenu}
+                      >
+                        <div className="font-semibold text-indigo-600">💻 TechMasters</div>
+                        <div className="text-xs text-gray-600">Technology & software development</div>
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
-                {/* My Work Accordion */}
+                {/* Chariot Leadership Institute Accordion - Position 3 */}
                 <div className="mb-1">
                   <button 
                     onClick={() => setMobileMyWorkOpen(!mobileMyWorkOpen)}
                     className="w-full flex items-center justify-between px-4 py-3 text-primary font-bold hover:bg-blue-50 rounded-lg"
                   >
-                    My Work
+                    Chariot Leadership Institute
                     <svg 
                       className={`w-5 h-5 transition-transform ${mobileMyWorkOpen ? 'rotate-180' : ''}`}
                       fill="none" 
@@ -441,23 +527,6 @@ export default function Header() {
                   </button>
                   {mobileMyWorkOpen && (
                     <div className="ml-4 mt-1 space-y-1">
-                      <Link 
-                        href="/workmasters" 
-                        className="block px-4 py-3 text-sm hover:bg-blue-50 rounded-lg"
-                        onClick={closeMobileMenu}
-                      >
-                        <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                          </div>
-                          <div>
-                            <div className="font-semibold text-gray-900">For Workers</div>
-                            <div className="text-xs text-gray-600">WorkMasters & Qraft</div>
-                          </div>
-                        </div>
-                      </Link>
                       <Link 
                         href="/bible-study" 
                         className="block px-4 py-3 text-sm hover:bg-purple-50 rounded-lg"
@@ -496,7 +565,26 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* Resources Accordion */}
+                {/* Book Andrew Button - Position 4 */}
+                <Link
+                  href="/book"
+                  className="block px-4 py-3 text-center text-sm font-bold rounded-lg mb-1 uppercase"
+                  style={{ backgroundColor: '#D9A441', color: 'white' }}
+                  onClick={closeMobileMenu}
+                >
+                  BOOK ANDREW
+                </Link>
+
+                {/* One-on-One Button - Position 5 */}
+                <Link
+                  href="/one-on-one"
+                  className="block px-4 py-3 text-center text-sm font-bold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors mb-1 uppercase"
+                  onClick={closeMobileMenu}
+                >
+                  ONE ON ONE
+                </Link>
+
+                {/* Resources Accordion - Position 6 */}
                 <div className="mb-1">
                   <button 
                     onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
@@ -550,54 +638,16 @@ export default function Header() {
                   )}
                 </div>
 
-                {/* Masters Programs Accordion */}
-                <div className="mb-1">
-                  <button 
-                    onClick={() => setMobileMastersOpen(!mobileMastersOpen)}
-                    className="w-full flex items-center justify-between px-4 py-3 font-semibold hover:bg-gray-100 rounded-lg"
-                    style={{ color: '#D9A441' }}
-                  >
-                    Masters Programs
-                    <svg 
-                      className={`w-5 h-5 transition-transform ${mobileMastersOpen ? 'rotate-180' : ''}`}
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {mobileMastersOpen && (
-                    <div className="ml-4 mt-1 space-y-1">
-                      <Link 
-                        href="/masters/coursemasters" 
-                        className="block px-4 py-2 text-sm hover:bg-amber-50 rounded-lg"
-                        onClick={closeMobileMenu}
-                      >
-                        <div className="font-semibold text-amber-600">🎓 CourseMasters</div>
-                        <div className="text-xs text-gray-600">Course creation & instructional design</div>
-                      </Link>
-                      <Link 
-                        href="/masters/techmasters" 
-                        className="block px-4 py-2 text-sm hover:bg-indigo-50 rounded-lg"
-                        onClick={closeMobileMenu}
-                      >
-                        <div className="font-semibold text-indigo-600">💻 TechMasters</div>
-                        <div className="text-xs text-gray-600">Technology & software development</div>
-                      </Link>
-                      <Link 
-                        href="/masters/capitalmasters" 
-                        className="block px-4 py-2 text-sm hover:bg-green-50 rounded-lg"
-                        onClick={closeMobileMenu}
-                      >
-                        <div className="font-semibold text-green-600">💰 CapitalMasters</div>
-                        <div className="text-xs text-gray-600">Investment & wealth building</div>
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                {/* Communities - Position 7 */}
+                <Link 
+                  href="/community" 
+                  className="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-100 rounded-lg mb-1"
+                  onClick={closeMobileMenu}
+                >
+                  Communities
+                </Link>
 
-                {/* Connect Accordion */}
+                {/* Connect Accordion - Position 8 */}
                 <div className="mb-1">
                   <button 
                     onClick={() => setMobileConnectOpen(!mobileConnectOpen)}
@@ -615,14 +665,6 @@ export default function Header() {
                   </button>
                   {mobileConnectOpen && (
                     <div className="ml-4 mt-1 space-y-1">
-                      <Link 
-                        href="/community" 
-                        className="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg"
-                        onClick={closeMobileMenu}
-                      >
-                        <div className="font-semibold">Communities</div>
-                        <div className="text-xs text-gray-600">Join 4,224 members</div>
-                      </Link>
                       <Link 
                         href="/contact" 
                         className="block px-4 py-2 text-sm hover:bg-gray-100 rounded-lg"
@@ -642,6 +684,15 @@ export default function Header() {
                     </div>
                   )}
                 </div>
+
+                {/* About - Position 9 */}
+                <Link 
+                  href="/about" 
+                  className="block px-4 py-3 text-gray-700 font-semibold hover:bg-gray-100 rounded-lg mb-1"
+                  onClick={closeMobileMenu}
+                >
+                  About
+                </Link>
               </nav>
             </div>
           </>

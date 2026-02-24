@@ -113,6 +113,48 @@ export default function Home() {
 
       <WorkMastersLanding />
 
+      {/* CapitalMasters Landing Section */}
+      <section className="mt-8 md:mt-12 -mx-4 sm:mx-0">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-700 via-emerald-700 to-teal-700 text-white px-6 py-10 sm:px-10 md:px-12">
+          <div className="max-w-5xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">CapitalMasters: Invest with Wisdom &amp; Discipline</h2>
+            <p className="text-base sm:text-lg md:text-xl text-emerald-100 max-w-3xl">
+              Learn practical wealth-building, investment strategy, and biblical stewardship directly with Andrew Tugume.
+            </p>
+            <p className="mt-4 text-sm sm:text-base text-emerald-100 max-w-3xl font-medium">
+              Capital is managed with transparent digital records and disciplined governance.
+            </p>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <a
+                href="https://wa.me/256755017384?text=Hello%20Andrew%20Tugume%2C%20I%20want%20to%20join%20CapitalMasters"
+                className="inline-flex items-center justify-center bg-white text-emerald-700 font-semibold px-5 py-3 rounded-lg hover:bg-emerald-50 transition-colors"
+              >
+                WhatsApp
+              </a>
+              <a
+                href="tel:+256755017384"
+                className="inline-flex items-center justify-center border border-white/60 text-white font-semibold px-5 py-3 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                Call
+              </a>
+              <a
+                href="mailto:info@capitalmasters.com"
+                className="inline-flex items-center justify-center border border-white/60 text-white font-semibold px-5 py-3 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                Email
+              </a>
+              <Link
+                href="/masters/capitalmasters"
+                className="inline-flex items-center justify-center bg-emerald-900/40 border border-white/30 text-white font-semibold px-5 py-3 rounded-lg hover:bg-emerald-900/60 transition-colors"
+              >
+                Explore CapitalMasters
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Triple Expertise Section */}
       <section className="mt-8 md:mt-12 grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-3" aria-label="Andrew's Expertise">
         <article className="bg-white p-6 md:p-8 rounded-xl shadow-sm border-t-4 border-blue-600">

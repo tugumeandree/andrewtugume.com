@@ -3,8 +3,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'TechMasters — Build State-of-the-Art Technology with Andrew Tugume',
-  description: 'Master technology development with expert guidance from Andrew Tugume - software engineer and technologist. From R&D to product development, skills training to business strategy for your tech venture.',
+  title: 'TechMasters — Build State-of-the-Art Technology with Qraft Academy',
+  description: 'Master technology development with Qraft Academy. From R&D to product development, skills training, and business strategy for your tech venture.',
 }
 
 export default function TechMasters() {
@@ -18,10 +18,10 @@ export default function TechMasters() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">TechMasters</h1>
           <p className="text-xl md:text-2xl text-indigo-100 mb-6">
-            Build state-of-the-art technology with a proven software engineer
+            Build state-of-the-art technology with Qraft Academy
           </p>
           <p className="text-lg text-white/90 mb-8">
-            From vast experience as a technologist and software engineer, I help individuals and teams transform ideas into powerful tech products through research & development, product development, skills development, and business strategy.
+            Built on deep technology and product experience, Qraft Academy helps individuals and teams transform ideas into powerful tech products through research & development, product development, skills development, and business strategy.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="#services" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-indigo-50 transition-colors">
@@ -39,13 +39,13 @@ export default function TechMasters() {
         <h2 className="text-3xl font-bold mb-6">What is TechMasters?</h2>
         <div className="bg-indigo-50 border-l-4 border-indigo-600 p-6 rounded-lg mb-8">
           <p className="text-lg text-gray-700 leading-relaxed mb-3">
-            TechMasters is a <strong>Qraft Labs</strong> product under <strong>Rata Qraft Solutions Limited</strong>.
+            TechMasters is a <strong>Qraft Academy</strong> product under <strong>Rata Qraft Solutions Limited</strong>.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            It is my comprehensive technology development program built on <strong>vast experience as a software engineer and technologist</strong>. I help you navigate the entire journey from idea to market-ready product.
+            It is Qraft Academy&apos;s comprehensive technology development program built on <strong>vast practical engineering and product experience</strong>. The program helps you navigate the entire journey from idea to market-ready product.
           </p>
           <p className="text-gray-700">
-            Whether you're a complete beginner wanting to learn tech skills, an entrepreneur with a tech idea, or a business ready to build a tech product—I provide the expertise you need to succeed.
+            Whether you&apos;re a complete beginner wanting to learn tech skills, an entrepreneur with a tech idea, or a business ready to build a tech product—Qraft Academy provides the expertise needed to succeed.
           </p>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function TechMasters() {
           <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-8 border-2 border-purple-200">
             <h3 className="text-2xl font-bold mb-4">Done-For-You</h3>
             <p className="text-gray-700 mb-4">
-              Let me and my team build your tech product while you focus on your business.
+              Let Qraft Academy&apos;s team build your tech product while you focus on your business.
             </p>
             <div className="text-3xl font-bold text-indigo-600 mb-4">Custom Quote</div>
             <ul className="space-y-2 text-sm text-gray-700 mb-6">
@@ -261,9 +261,9 @@ export default function TechMasters() {
         </div>
       </section>
 
-      {/* Technologies I Work With */}
+      {/* Technologies in TechMasters */}
       <section className="mb-12 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8">
-        <h2 className="text-3xl font-bold mb-8 text-center">Technologies I Master</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">Technologies Covered in TechMasters</h2>
         <div className="grid md:grid-cols-4 gap-6">
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <h4 className="font-bold mb-3">Frontend</h4>
@@ -306,27 +306,27 @@ export default function TechMasters() {
 
       {/* Why Choose TechMasters */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">Why Build Technology With Me?</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">Why Build Technology With Qraft Academy?</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
             <div className="text-5xl mb-4">🔧</div>
             <h3 className="text-xl font-bold mb-3">Hands-On Experience</h3>
             <p className="text-gray-700 text-sm">
-              I've built real products, worked with startups, and scaled tech solutions. I teach from experience, not theory.
+              Qraft Academy has built real products, worked with startups, and scaled tech solutions. Training is delivered from experience, not theory.
             </p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
             <div className="text-5xl mb-4">🚀</div>
             <h3 className="text-xl font-bold mb-3">Full-Stack Expertise</h3>
             <p className="text-gray-700 text-sm">
-              From frontend to backend, mobile to cloud—I understand the entire technology stack and can guide you through it all.
+              From frontend to backend, mobile to cloud—Qraft Academy covers the entire technology stack and can guide teams through it all.
             </p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 text-center">
             <div className="text-5xl mb-4">💡</div>
             <h3 className="text-xl font-bold mb-3">Business Mindset</h3>
             <p className="text-gray-700 text-sm">
-              As an investor and entrepreneur, I don't just build tech—I build tech that makes business sense and generates value.
+              Beyond code, Qraft Academy builds technology that makes business sense and generates measurable value.
             </p>
           </div>
         </div>
@@ -336,7 +336,7 @@ export default function TechMasters() {
       <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl p-8 md:p-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Build Your Tech Product?</h2>
         <p className="text-xl mb-8 text-indigo-100 max-w-2xl mx-auto">
-          Whether you want to learn, need guidance, or want it built for you—let's turn your tech vision into reality.
+          Whether you want to learn, need guidance, or want it built for you—Qraft Academy can turn your tech vision into reality.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/contact" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-indigo-50 transition-colors">

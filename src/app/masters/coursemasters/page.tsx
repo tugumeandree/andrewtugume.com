@@ -3,8 +3,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'CourseMasters — Learn Course Creation with Andrew Tugume',
-  description: 'Master course creation with expert guidance from Andrew Tugume - educator, instructional designer, and learning & development expert. Individual training, team programs, and done-for-you course creation services.',
+  title: 'CourseMasters — Learn Course Creation with Qraft Academy',
+  description: 'Master course creation with Qraft Academy. Access individual training, team programs, and done-for-you course creation services built on practical instructional design and learning expertise.',
 }
 
 export default function CourseMasters() {
@@ -18,10 +18,10 @@ export default function CourseMasters() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">CourseMasters</h1>
           <p className="text-xl md:text-2xl text-amber-100 mb-6">
-            Learn how to create transformational courses from a master educator
+            Learn how to create transformational courses with Qraft Academy
           </p>
           <p className="text-lg text-white/90 mb-8">
-            With years of experience as an educator, instructional designer, learning & development expert, and successful course creator, I help individuals and teams design, develop, and deliver powerful learning experiences.
+            Built on years of experience in education, instructional design, and learning & development, Qraft Academy helps individuals and teams design, develop, and deliver powerful learning experiences.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="#services" className="bg-white text-amber-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-50 transition-colors">
@@ -42,24 +42,24 @@ export default function CourseMasters() {
             CourseMasters is a <strong>Qraft Academy</strong> product under <strong>Rata Qraft Solutions Limited</strong>.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed">
-            It is my comprehensive course creation program built on <strong>vast experience</strong> as a:
+            It is Qraft Academy&apos;s comprehensive course creation program built on <strong>vast experience</strong> in:
           </p>
           <ul className="mt-4 space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">✓</span>
-              <span><strong>Educator</strong> — Understanding pedagogy and how people learn</span>
+              <span><strong>Education Practice</strong> — Understanding pedagogy and how people learn</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">✓</span>
-              <span><strong>Instructional Designer</strong> — Structuring content for maximum impact</span>
+              <span><strong>Instructional Design</strong> — Structuring content for maximum impact</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">✓</span>
-              <span><strong>Learning & Development Expert</strong> — Building scalable training systems</span>
+              <span><strong>Learning &amp; Development</strong> — Building scalable training systems</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-amber-600 font-bold">✓</span>
-              <span><strong>Course Creator</strong> — Proven track record with successful online courses</span>
+              <span><strong>Course Production</strong> — Proven track record with successful online courses</span>
             </li>
           </ul>
         </div>
@@ -67,7 +67,7 @@ export default function CourseMasters() {
 
       {/* Services Section */}
       <section id="services" className="mb-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">How I Can Help You</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">How Qraft Academy Helps You</h2>
         
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Individual Training */}
@@ -159,7 +159,7 @@ export default function CourseMasters() {
               <div className="flex-1">
                 <h3 className="text-2xl font-bold mb-3">Done-For-You Course Creation</h3>
                 <p className="text-lg text-gray-700 mb-4">
-                  Don't have time to create your course? Let me do it for you. I'll handle everything from content extraction to final production.
+                  Don&apos;t have time to create your course? Let Qraft Academy do it for you. The team handles everything from content extraction to final production.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-white p-4 rounded-lg">
@@ -193,12 +193,12 @@ export default function CourseMasters() {
 
       {/* Ready-Made Courses */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">Ready-Made Courses by Andrew</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">Ready-Made Courses by Qraft Academy</h2>
         <div className="bg-white rounded-xl shadow-lg p-8 border-t-4 border-amber-600">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Learn From My Own Courses</h3>
+            <h3 className="text-2xl font-bold mb-4">Learn From Qraft Academy Courses</h3>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Experience my teaching firsthand by enrolling in courses I've created. See the CourseMasters methodology in action.
+              Experience the teaching approach firsthand by enrolling in courses created through Qraft Academy. See the CourseMasters methodology in action.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -238,7 +238,7 @@ export default function CourseMasters() {
 
       {/* Why Choose CourseMasters */}
       <section className="mb-12 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8">
-        <h2 className="text-3xl font-bold mb-6 text-center">Why Learn Course Creation With Me?</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">Why Learn Course Creation With Qraft Academy?</h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div className="flex gap-4">
             <div className="text-3xl">📚</div>
@@ -265,7 +265,7 @@ export default function CourseMasters() {
             <div className="text-3xl">🚀</div>
             <div>
               <h3 className="font-bold text-lg mb-2">Successful Course Creator</h3>
-              <p className="text-gray-700 text-sm">I practice what I teach—my own courses have helped thousands of learners achieve real results.</p>
+              <p className="text-gray-700 text-sm">Qraft Academy practices what it teaches—its courses have helped learners achieve practical results.</p>
             </div>
           </div>
         </div>
@@ -275,14 +275,14 @@ export default function CourseMasters() {
       <section className="bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-2xl p-8 md:p-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Course?</h2>
         <p className="text-xl mb-8 text-amber-100 max-w-2xl mx-auto">
-          Whether you want to learn, need a team trained, or want it done for you—I'm here to help.
+          Whether you want to learn, need a team trained, or want it done for you—Qraft Academy is here to help.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/contact" className="bg-white text-amber-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-50 transition-colors">
             Book a Free Consultation
           </Link>
-          <Link href="/about" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">
-            Learn More About Andrew
+          <Link href="/schools/qraft-academy" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">
+            Learn More About Qraft Academy
           </Link>
         </div>
       </section>
