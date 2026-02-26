@@ -91,23 +91,48 @@ export default function WorkMasters() {
         </div>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2">
-        <div className="bg-white border border-black/5 rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold text-primary">Expected outcomes</h2>
-          <ul className="mt-4 space-y-2 text-sm text-gray-700">
-            <li>Clear career roadmap with leverage and negotiating power.</li>
-            <li>Execution systems that remove chaos from weekly priorities.</li>
-            <li>Leadership confidence built on data and accountability.</li>
-          </ul>
-        </div>
-        <div className="bg-primary text-white rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold">Ready to apply?</h2>
-          <p className="mt-3 text-white/80">WorkMasters is a performance system. Apply if you are ready for accountability.</p>
-          <div className="mt-5">
-            <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary hover:bg-white/90">
-              Apply for Mastery Coaching
-            </Link>
+      <section className="bg-white border border-black/5 rounded-2xl p-6">
+        <h2 className="text-2xl font-semibold text-primary">Expected outcomes</h2>
+        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+          <li>Clear career roadmap with leverage and negotiating power.</li>
+          <li>Execution systems that remove chaos from weekly priorities.</li>
+          <li>Leadership confidence built on data and accountability.</li>
+        </ul>
+      </section>
+
+      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+        <h2 className="text-3xl font-semibold text-primary">Frequently Asked Questions</h2>
+        <div className="mt-6 space-y-6">
+          <div>
+            <h3 className="text-lg font-semibold text-primary">How long is the program?</h3>
+            <p className="mt-2 text-sm text-gray-700">WorkMasters is a 6-month structured cohort. Extensions are available for continued accountability.</p>
           </div>
+          <div>
+            <h3 className="text-lg font-semibold text-primary">What is the time commitment?</h3>
+            <p className="mt-2 text-sm text-gray-700">One weekly coaching session (60-90 minutes), one monthly meetup, and quarterly performance reviews. Plus execution time for your goals.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-primary">Is this for employees or entrepreneurs?</h3>
+            <p className="mt-2 text-sm text-gray-700">Both. WorkMasters serves professionals building career capital and founders building scalable businesses.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-primary">What if I'm not making progress?</h3>
+            <p className="mt-2 text-sm text-gray-700">Weekly accountability means we catch stalls early. If you're not executing, we adjust strategy or scope.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-primary">Can I join mid-cohort?</h3>
+            <p className="mt-2 text-sm text-gray-700">No. Cohorts start together for peer accountability and shared momentum.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary text-white rounded-2xl p-10 md:p-14">
+        <h2 className="text-3xl font-semibold">Ready to apply?</h2>
+        <p className="mt-3 text-white/80">WorkMasters is a performance system. Apply if you are ready for accountability.</p>
+        <div className="mt-6">
+          <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
+            Apply for Mastery Coaching
+          </Link>
         </div>
       </section>
     </div>
