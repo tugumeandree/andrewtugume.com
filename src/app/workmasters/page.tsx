@@ -44,7 +44,7 @@ export default function WorkMasters() {
         <p className="text-sm font-semibold tracking-wide text-accent uppercase">WorkMasters</p>
         <h1 className="mt-2 text-4xl md:text-5xl font-semibold text-primary">Career, Leadership and Execution Mastery</h1>
         <p className="mt-4 text-gray-700 max-w-3xl">
-          For professionals and entrepreneurs who want to accelerate income, sharpen positioning, and build structured career or business growth.
+          WorkMasters is for builders who refuse average careers and want structured progression.
         </p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
@@ -65,10 +65,11 @@ export default function WorkMasters() {
         <div className="bg-white border border-black/5 rounded-2xl p-6">
           <h2 className="text-2xl font-semibold text-primary">Core pillars</h2>
           <ul className="mt-4 space-y-2 text-sm text-gray-700">
-            <li>Career capital strategy and positioning.</li>
-            <li>Leadership systems and team execution.</li>
-            <li>Business model clarity and revenue discipline.</li>
-            <li>Productivity architecture and KPI governance.</li>
+            <li>Career capital strategy</li>
+            <li>Business model clarity</li>
+            <li>Leadership systems</li>
+            <li>Productivity architecture</li>
+            <li>Raising capital with confidence</li>
           </ul>
         </div>
       </section>
