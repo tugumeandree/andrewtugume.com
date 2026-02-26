@@ -21,6 +21,30 @@ a { @apply text-primary hover:underline }
   @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+/* Accessibility: Focus visible state */
+@layer utilities {
+  @supports selector(:focus-visible) {
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      @apply outline-none ring-2 ring-primary ring-offset-2;
+    }
+  }
+  
+  /* Fallback for older browsers */
+  @supports not selector(:focus-visible) {
+    button:focus,
+    a:focus,
+    input:focus,
+    textarea:focus,
+    select:focus {
+      @apply outline-none ring-2 ring-primary ring-offset-2;
+    }
+  }
+}
+
 /* Mobile-friendly text scaling */
 @layer utilities {
   .text-responsive-xl {
