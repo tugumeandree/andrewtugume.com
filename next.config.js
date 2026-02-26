@@ -126,8 +126,65 @@ const nextConfig = {
   // Redirects for SEO
   async redirects() {
     return [
-      // Add any necessary redirects here to maintain link equity
-      // Example: { source: '/old-url', destination: '/new-url', permanent: true }
+      // Legacy store routes → Apply page
+      {
+        source: '/store/products',
+        destination: '/apply',
+        permanent: true,
+      },
+      {
+        source: '/store/services',
+        destination: '/apply',
+        permanent: true,
+      },
+      {
+        source: '/store/events',
+        destination: '/resources',
+        permanent: true,
+      },
+      
+      // Community routes → Programs
+      {
+        source: '/community/workmasters',
+        destination: '/workmasters',
+        permanent: true,
+      },
+      {
+        source: '/community/chariot-leadership',
+        destination: '/schools/chariot-leadership',
+        permanent: true,
+      },
+      {
+        source: '/community/nations-bible',
+        destination: '/schools/nations-bible',
+        permanent: true,
+      },
+      
+      // Partner routes → Contact/Apply
+      {
+        source: '/partner/give',
+        destination: '/contact',
+        permanent: true,
+      },
+      
+      // Legacy master routes → Simplified structure
+      {
+        source: '/masters/coursemasters',
+        destination: '/programs',
+        permanent: true,
+      },
+      {
+        source: '/workmasters/techmasters',
+        destination: '/masters/techmasters',
+        permanent: true,
+      },
+      
+      // Newsletter/Subscribe → Apply
+      {
+        source: '/subscribe',
+        destination: '/apply',
+        permanent: true,
+      },
     ]
   },
 
