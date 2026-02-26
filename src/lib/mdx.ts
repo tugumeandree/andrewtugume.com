@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
-import { compileMDX } from 'next-mdx-remote/rsc'
+import matter from 'gray-matter'
+import { evaluate } from '@mdx-js/mdx'
+import * as runtime from 'react/jsx-runtime'
 
 export type MdxResult = {
   frontmatter: Record<string, any>
@@ -12,21 +14,24 @@ export async function getMdxByRelativePath(relPath: string): Promise<MdxResult |
   if (!fs.existsSync(fullPath)) return null
   const raw = fs.readFileSync(fullPath, 'utf8')
   
+  // Parse frontmatter
+  const { data: frontmatter, content: source } = matter(raw)
+  
   // Dynamic imports to avoid TypeScript plugin type conflicts
   const remarkGfm = (await import('remark-gfm')).default
   const rehypeSlug = (await import('rehype-slug')).default
   const rehypeAutolinkHeadings = (await import('rehype-autolink-headings')).default
   
-  const { content, frontmatter } = await compileMDX<Record<string, any>>({
-    source: raw,
-    options: {
-      parseFrontmatter: true,
-      mdxOptions: {
-        remarkPlugins: [remarkGfm as any],
-        rehypePlugins: [rehypeSlug as any, rehypeAutolinkHeadings as any]
-      }
-    }
-  })
+  // Evaluate MDX content
+  const { default: MdxContent } = await evaluate(source, {
+    ...runtime,
+    remarkPlugins: [remarkGfm as any],
+    rehypePlugins: [rehypeSlug as any, rehypeAutolinkHeadings as any],
+    format: 'mdx'
+  } as any)
+  
+  // Create React element from evaluated content
+  const content = runtime.jsx(MdxContent as any, {})
   
   return { frontmatter, content }
 }
