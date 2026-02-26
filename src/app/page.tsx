@@ -87,6 +87,7 @@ export default function Home() {
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-primary">The Mastery Coaching Programs</h2>
             <p className="mt-3 text-gray-700 max-w-2xl">These are not courses. They are operating systems for serious growth.</p>
+            <p className="mt-2 text-sm text-gray-600">Weekly coaching • Monthly meetups • Quarterly challenges</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -148,12 +149,8 @@ export default function Home() {
         <div className="max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-semibold text-primary">Built From Real Experience</h2>
           <p className="mt-4 text-gray-700">
-            I am not a motivational speaker. I build companies, systems, and capital structures.
+            I'm not a motivational speaker. I build companies, systems, and capital structures. My work sits at the intersection of skill, systems, and capital.
           </p>
-          <p className="mt-4 text-gray-700">
-            As an educator, I design high-performance learning systems. As a technologist, I build and advise on scalable products. As an investor, I focus on disciplined capital allocation and governance.
-          </p>
-          <p className="mt-4 text-gray-700">My work sits at the intersection of skill, systems, and capital.</p>
           <Link href="/about" className="mt-6 inline-flex text-sm font-semibold text-primary">
             View Full Bio →
           </Link>
@@ -163,7 +160,7 @@ export default function Home() {
       <section className="mt-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold text-primary">The Institutions Behind the Ecosystem</h2>
-          <p className="mt-3 text-gray-700">Beyond coaching, I have founded organizations focused on education, leadership, technology, and capital development.</p>
+          <p className="mt-3 text-gray-700">Beyond coaching, I've founded organizations focused on education, leadership, technology, and capital development.</p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             <div className="bg-white border border-black/5 rounded-2xl p-6">
