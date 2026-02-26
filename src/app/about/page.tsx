@@ -105,6 +105,67 @@ export default function About() {
         </p>
       </section>
 
+      <section className="mt-12 bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+        <h2 className="text-3xl font-semibold text-primary">What I believe</h2>
+        <ul className="mt-4 space-y-2 text-sm text-gray-700">
+          <li>Clarity beats intensity. Define the system, then execute.</li>
+          <li>Skill compounds when measured weekly and reviewed monthly.</li>
+          <li>Leadership is a set of habits, not a title.</li>
+          <li>Wealth is built through disciplined allocation and governance.</li>
+        </ul>
+      </section>
+
+      <section className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="bg-white border border-black/5 rounded-2xl p-6">
+          <p className="text-xs font-semibold tracking-wide text-accent uppercase">2019</p>
+          <h3 className="mt-2 text-lg font-semibold text-primary">Learning systems built</h3>
+          <p className="mt-2 text-sm text-gray-700">Launched structured curricula and performance frameworks for serious learners.</p>
+        </div>
+        <div className="bg-white border border-black/5 rounded-2xl p-6">
+          <p className="text-xs font-semibold tracking-wide text-accent uppercase">2021</p>
+          <h3 className="mt-2 text-lg font-semibold text-primary">Product execution scaled</h3>
+          <p className="mt-2 text-sm text-gray-700">Advised and shipped technology products with disciplined execution cadence.</p>
+        </div>
+        <div className="bg-white border border-black/5 rounded-2xl p-6">
+          <p className="text-xs font-semibold tracking-wide text-accent uppercase">2023</p>
+          <h3 className="mt-2 text-lg font-semibold text-primary">Capital discipline refined</h3>
+          <p className="mt-2 text-sm text-gray-700">Established investment governance and long-horizon portfolio strategy.</p>
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <div className="mb-6">
+          <h2 className="text-3xl font-semibold text-primary">Featured work</h2>
+          <p className="mt-3 text-gray-700 max-w-2xl">The programs are built as operating systems for focused, measurable growth.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          <article className="bg-white border border-black/5 rounded-2xl p-6">
+            <p className="text-xs font-semibold tracking-wide text-accent uppercase">WorkMasters</p>
+            <h3 className="mt-2 text-xl font-semibold text-primary">Career, Leadership and Execution Mastery</h3>
+            <p className="mt-3 text-sm text-gray-700">For professionals and founders who want structured progression and performance accountability.</p>
+            <Link href="/workmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
+              Explore WorkMasters →
+            </Link>
+          </article>
+          <article className="bg-white border border-black/5 rounded-2xl p-6">
+            <p className="text-xs font-semibold tracking-wide text-accent uppercase">TechMasters</p>
+            <h3 className="mt-2 text-xl font-semibold text-primary">Technology, Product and Innovation Mastery</h3>
+            <p className="mt-3 text-sm text-gray-700">For builders who want to ship technology that solves real economic problems.</p>
+            <Link href="/masters/techmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
+              Explore TechMasters →
+            </Link>
+          </article>
+          <article className="bg-white border border-black/5 rounded-2xl p-6">
+            <p className="text-xs font-semibold tracking-wide text-accent uppercase">CapitalMasters</p>
+            <h3 className="mt-2 text-xl font-semibold text-primary">Investment and Wealth Mastery</h3>
+            <p className="mt-3 text-sm text-gray-700">For operators who want to think like investors and build durable wealth.</p>
+            <Link href="/masters/capitalmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
+              Explore CapitalMasters →
+            </Link>
+          </article>
+        </div>
+      </section>
+
       <section className="mt-12 bg-primary text-white rounded-2xl p-8 md:p-12">
         <h2 className="text-3xl font-semibold">Work with Andrew</h2>
         <p className="mt-3 text-white/80">If you want structure, discipline, and measurable progress, apply to the next cohort.</p>
