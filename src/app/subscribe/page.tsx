@@ -1,19 +1,19 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function Subscribe() {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold">Subscribe</h2>
-      <p className="mt-3 text-gray-700">Join the newsletter for weekly practical teaching—direct to your inbox.</p>
-      <form className="mt-4 max-w-md">
-        <label className="block">
-          <span className="sr-only">Email</span>
-          <input aria-label="Email" placeholder="Your email" className="mt-1 block w-full rounded-md border-gray-200 shadow-sm" />
-        </label>
-        <div className="mt-3">
-          <button className="bg-primary text-white px-4 py-2 rounded">Join the Newsletter</button>
-        </div>
-      </form>
+    <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+      <h1 className="text-3xl md:text-4xl font-semibold text-primary">Insights</h1>
+      <p className="mt-4 text-gray-700">Explore essays and resources built for ambitious operators.</p>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link href="/blog" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
+          Visit the Blog
+        </Link>
+        <Link href="/resources" className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-black hover:text-white">
+          Resources
+        </Link>
+      </div>
     </section>
   )
 }

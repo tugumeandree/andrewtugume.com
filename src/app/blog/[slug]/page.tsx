@@ -209,8 +209,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">About Andrew Tugume</h3>
                   <p className="text-sm text-gray-700">
-                    Educator, Technologist, and Investor helping workers, leaders, and learners succeed through biblical teaching, 
-                    modern technology, and practical business wisdom.
+                    Educator, technologist, and investor helping ambitious operators build skill, systems, and disciplined capital.
                   </p>
                   <Link href="/about" className="text-primary hover:underline text-sm font-semibold mt-2 inline-block">
                     Learn more →

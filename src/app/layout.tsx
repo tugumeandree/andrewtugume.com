@@ -11,28 +11,22 @@ export const metadata: Metadata = {
     default: 'Andrew Tugume — Educator, Technologist, Investor',
     template: '%s | Andrew Tugume'
   },
-  description: 'Educator, Technologist, and Investor helping workers, leaders, and learners succeed through biblical teaching, technology, and practical wisdom. Access WorkMasters, Bible Study, Leadership coaching, and more.',
+  description: 'Educator, technologist, and investor helping ambitious African professionals, founders, and operators master career growth, technology execution, and disciplined capital.',
   keywords: [
     'Andrew Tugume',
-    'career coach',
-    'business coach',
-    'faith and work',
-    'Bible study online',
-    'leadership coaching',
-    'WorkMasters course',
-    'entrepreneurship training',
-    'Christian teaching',
-    'faith-driven business',
-    'investor',
-    'Bible teaching',
-    'leadership development',
-    'Nations Bible Community',
-    'Chariot Leadership Institute',
-    'Qraft Academy',
-    'tech educator',
+    'mastery coaching',
+    'career strategy',
+    'leadership systems',
+    'technology execution',
+    'product strategy',
+    'investment discipline',
+    'capital allocation',
+    'African founders',
+    'operators',
+    'investors',
+    'WorkMasters',
     'TechMasters',
-    'online courses',
-    'professional development',
+    'CapitalMasters',
   ],
   authors: [{ name: 'Andrew Tugume', url: 'https://andrewtugume.com' }],
   creator: 'Andrew Tugume',
@@ -50,7 +44,7 @@ export const metadata: Metadata = {
     url: 'https://andrewtugume.com',
     siteName: 'Andrew Tugume',
     title: 'Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Helping workers, leaders, and learners succeed through biblical teaching, modern technology, and practical business wisdom.',
+    description: 'Helping ambitious professionals and founders build skill, systems, and disciplined capital through structured mastery coaching.',
     images: [
       {
         url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
@@ -72,7 +66,7 @@ export const metadata: Metadata = {
     site: '@_drewtugume',
     creator: '@_drewtugume',
     title: 'Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Helping workers succeed through faith, technology, and wisdom',
+    description: 'Helping ambitious professionals and founders build skill, systems, and disciplined capital.',
     images: {
       url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
       alt: 'Andrew Tugume portrait',
@@ -120,8 +114,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0F5666" />
         
         {/* Theme Colors */}
-        <meta name="theme-color" content="#0F5666" />
-        <meta name="msapplication-TileColor" content="#0F5666" />
+        <meta name="theme-color" content="#0B0B0B" />
+        <meta name="msapplication-TileColor" content="#0B0B0B" />
         
         {/* Performance: Preconnect to external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -130,7 +124,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
         {/* Google Fonts */}
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
         
         {/* Additional SEO Meta Tags */}
         <meta name="mobile-alternate" content="https://andrewtugume.com" />
@@ -168,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'WebSite',
               name: 'Andrew Tugume',
               url: 'https://andrewtugume.com',
-              description: 'Educator, Technologist, and Investor helping workers, leaders, and learners succeed through biblical teaching, technology, and practical wisdom.',
+              description: 'Educator, technologist, and investor helping ambitious professionals build skill, systems, and disciplined capital.',
               image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
               potentialAction: {
                 '@type': 'SearchAction',
@@ -192,11 +186,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Main Navigation',
               url: 'https://andrewtugume.com',
               mainEntity: [
+                { name: 'Home', url: 'https://andrewtugume.com' },
                 { name: 'About', url: 'https://andrewtugume.com/about' },
-                { name: 'WorkMasters', url: 'https://andrewtugume.com/workmasters' },
-                { name: 'Bible Study', url: 'https://andrewtugume.com/bible-study' },
-                { name: 'Blog', url: 'https://andrewtugume.com/blog' },
-                { name: 'Leadership', url: 'https://andrewtugume.com/leadership' },
+                { name: 'Programs', url: 'https://andrewtugume.com/programs' },
+                { name: 'Institutions', url: 'https://andrewtugume.com/institutions' },
+                { name: 'Resources', url: 'https://andrewtugume.com/resources' },
+                { name: 'Apply', url: 'https://andrewtugume.com/apply' },
               ],
             })
           }}

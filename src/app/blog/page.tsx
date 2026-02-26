@@ -5,21 +5,21 @@ import type { Metadata } from 'next'
 import { generateBreadcrumbSchema, generateWebPageSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Insights on faith, work, technology, investing, entrepreneurship, leadership development, and biblical teaching. Read articles from Andrew Tugume on integrating faith with work.',
+  title: 'Insights',
+  description: 'Essays on execution, leadership systems, technology strategy, and disciplined capital for ambitious operators.',
   alternates: {
     canonical: 'https://andrewtugume.com/blog',
   },
   openGraph: {
-    title: 'Blog — Andrew Tugume',
-    description: 'Insights on faith, work, technology, and investing',
+    title: 'Insights — Andrew Tugume',
+    description: 'Essays on execution, leadership systems, technology strategy, and disciplined capital.',
     url: 'https://andrewtugume.com/blog',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog — Andrew Tugume',
-    description: 'Insights on faith, work, technology, and investing',
+    title: 'Insights — Andrew Tugume',
+    description: 'Essays on execution, leadership systems, technology strategy, and disciplined capital.',
   },
 }
 
@@ -33,8 +33,8 @@ export default async function BlogIndex() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateWebPageSchema(
-            'Blog - Andrew Tugume',
-            'Insights on faith, work, technology, and investing from Andrew Tugume',
+            'Insights - Andrew Tugume',
+            'Essays on execution, leadership systems, technology strategy, and disciplined capital.',
             'https://andrewtugume.com/blog'
           ))
         }}
@@ -53,8 +53,8 @@ export default async function BlogIndex() {
       
       <div className="max-w-6xl mx-auto py-12">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold">Blog</h1>
-          <p className="text-gray-700 mt-2 text-lg">Insights on faith, work, technology, investing, leadership, and practical wisdom for scholars, workers, and entrepreneurs.</p>
+          <h1 className="text-4xl font-semibold">Insights</h1>
+          <p className="text-gray-700 mt-2 text-lg">Execution, leadership systems, technology strategy, and disciplined capital for ambitious operators.</p>
         </header>
 
         <div className="grid md:grid-cols-2 gap-6">

@@ -1,40 +1,41 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default function Schools() {
+export default function InstitutionsIndex() {
   return (
-    <section>
-      <h1 className="text-3xl font-bold mb-4">Our Schools</h1>
-      <p className="text-gray-700 mb-8">Transform your learning journey with specialized, in-depth training at one of our three schools.</p>
+    <div className="space-y-12">
+      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+        <h1 className="text-4xl md:text-5xl font-semibold text-primary">Institutions</h1>
+        <p className="mt-4 text-gray-700 max-w-3xl">These institutions support the broader ecosystem of education, leadership, technology, and capital development.</p>
+        <div className="mt-6">
+          <Link href="/institutions" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
+            View Institutions Overview
+          </Link>
+        </div>
+      </section>
 
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
-        {/* Qraft Academy */}
-        <article className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-primary">
-          <img src="/assets/qraft-logo.svg" alt="Qraft Academy" className="h-12 mb-4" />
-          <h2 className="text-2xl font-semibold mb-2">Qraft Academy</h2>
-          <p className="text-sm text-gray-600 mb-4">The School for Workers</p>
-          <p className="text-gray-700 mb-4">Master modern work skills—digital, data, design, capital development, and course creation—grounded in biblical principles.</p>
-          <Link href="/schools/qraft-academy" className="inline-block bg-primary text-white px-4 py-2 rounded">Explore Qraft Academy</Link>
+      <section className="grid gap-6 md:grid-cols-2">
+        <article className="bg-white border border-black/5 rounded-2xl p-6">
+          <h2 className="text-xl font-semibold text-primary">Qraft Academy</h2>
+          <p className="mt-3 text-sm text-gray-700">Skill development and career acceleration programs.</p>
+          <Link href="/schools/qraft-academy" className="mt-4 inline-flex text-sm font-semibold text-primary">View profile →</Link>
         </article>
-
-        {/* Chariot Leadership Institute */}
-        <article className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-yellow-300">
-          <img src="/assets/chariot-logo.svg" alt="Chariot Leadership Institute" className="h-12 mb-4" />
-          <h2 className="text-2xl font-semibold mb-2">Chariot Leadership Institute</h2>
-          <p className="text-sm text-gray-600 mb-4">The School for Leaders</p>
-          <p className="text-gray-700 mb-4">Develop Bible-based leadership skills for team leaders, pastors, executives, and emerging leaders.</p>
-          <Link href="/schools/chariot-leadership" className="inline-block bg-primary text-white px-4 py-2 rounded">Explore Chariot Institute</Link>
+        <article className="bg-white border border-black/5 rounded-2xl p-6">
+          <h2 className="text-xl font-semibold text-primary">Chariot Leadership Institute</h2>
+          <p className="mt-3 text-sm text-gray-700">Leadership development and governance training.</p>
+          <Link href="/schools/chariot-leadership" className="mt-4 inline-flex text-sm font-semibold text-primary">View profile →</Link>
         </article>
-
-        {/* Nations Bible Community */}
-        <article className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-yellow-400">
-          <img src="/assets/nations-logo.svg" alt="Nations Bible Community" className="h-12 mb-4" />
-          <h2 className="text-2xl font-semibold mb-2">Nations Bible Community</h2>
-          <p className="text-sm text-gray-600 mb-4">The School for Scholars</p>
-          <p className="text-gray-700 mb-4">Comprehensive, structured Bible training for individuals and groups seeking deep theological knowledge.</p>
-          <Link href="/schools/nations-bible" className="inline-block bg-primary text-white px-4 py-2 rounded">Explore Nations Bible Community</Link>
+        <article className="bg-white border border-black/5 rounded-2xl p-6">
+          <h2 className="text-xl font-semibold text-primary">Nations Community</h2>
+          <p className="mt-3 text-sm text-gray-700">Legacy education initiatives now consolidated into the ecosystem.</p>
+          <Link href="/schools/nations-bible" className="mt-4 inline-flex text-sm font-semibold text-primary">View profile →</Link>
         </article>
-      </div>
-    </section>
+        <article className="bg-white border border-black/5 rounded-2xl p-6">
+          <h2 className="text-xl font-semibold text-primary">Tabernacle Tech Institute</h2>
+          <p className="mt-3 text-sm text-gray-700">Digital skills and innovation training.</p>
+          <Link href="/schools/tabernacle-tech" className="mt-4 inline-flex text-sm font-semibold text-primary">View profile →</Link>
+        </article>
+      </section>
+    </div>
   )
 }
