@@ -119,7 +119,7 @@ export default function Home() {
                 <li>Technical execution discipline</li>
                 <li>Monetization and scale</li>
               </ul>
-              <Link href="/masters/techmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
+              <Link href="/techmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
                 Explore TechMasters →
               </Link>
               <p className="mt-4 text-xs text-gray-600">TechMasters is for builders who want to create technology that solves real economic problems.</p>

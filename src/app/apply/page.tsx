@@ -1,11 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
-import ApplicationForm from '@/components/ApplicationForm'
 
 export const metadata: Metadata = {
   title: 'Apply for Mastery Coaching',
-  description: 'Apply to the next cohort of Andrew Tugume\'s mastery coaching programs.',
+  description: 'Apply directly via WhatsApp, phone call, or email for the next mastery coaching cohort.',
   alternates: {
     canonical: 'https://andrewtugume.com/apply'
   }
@@ -29,7 +29,7 @@ export default function Apply() {
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
         <h1 className="text-4xl md:text-5xl font-semibold text-primary">Apply for Mastery Coaching</h1>
         <p className="mt-4 text-gray-700 max-w-3xl">
-          The mastery programs are high-touch and cohort-based. Apply to join the next intake for WorkMasters, TechMasters, or CapitalMasters.
+          The mastery programs are high-touch and cohort-based. Apply directly via WhatsApp, phone call, or email to join the next intake for WorkMasters, TechMasters, or CapitalMasters.
         </p>
       </section>
 
@@ -43,6 +43,12 @@ export default function Apply() {
           <div className="bg-white border border-black/5 rounded-2xl p-6">
             <h3 className="text-lg font-semibold text-primary">TechMasters</h3>
             <p className="mt-3 text-sm text-gray-700">Developers and technical founders. Builders shipping real-world solutions.</p>
+            <Link
+              href="/techmasters"
+              className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-black"
+            >
+              Explore TechMasters
+            </Link>
           </div>
           <div className="bg-white border border-black/5 rounded-2xl p-6">
             <h3 className="text-lg font-semibold text-primary">CapitalMasters</h3>
@@ -72,8 +78,8 @@ export default function Apply() {
           <li className="flex gap-4">
             <span className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-primary text-white text-sm font-semibold">1</span>
             <div>
-              <h3 className="text-lg font-semibold text-primary">Submit your application</h3>
-              <p className="mt-1 text-sm text-gray-700">Tell us about yourself, your goals, and which program interests you.</p>
+              <h3 className="text-lg font-semibold text-primary">Contact directly</h3>
+              <p className="mt-1 text-sm text-gray-700">Send a WhatsApp message, call, or email with your name, goals, and preferred program.</p>
             </div>
           </li>
           <li className="flex gap-4">
@@ -93,7 +99,39 @@ export default function Apply() {
         </ol>
       </section>
 
-      <ApplicationForm />
+      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+        <h2 className="text-3xl font-semibold text-primary mb-3">Apply Directly</h2>
+        <p className="text-sm text-gray-700 max-w-3xl">
+          Choose any channel below and share your full name, the program you want to join, and your current goals.
+        </p>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <a
+            href="https://wa.me/256755017384"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="tel:+256755017384"
+            className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-white"
+          >
+            Call +256 755 017 384
+          </a>
+          <a
+            href="mailto:andrewtugume2@gmail.com?subject=Mastery%20Coaching%20Application"
+            className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-white"
+          >
+            Email Application
+          </a>
+        </div>
+
+        <p className="mt-5 text-xs text-gray-600">
+          Response time is usually within 1-2 business days.
+        </p>
+      </section>
 
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
         <h2 className="text-3xl font-semibold text-primary mb-6">Frequently Asked Questions</h2>
