@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema, generateWebPageSchema } from '@/lib/seo/schema'
 
@@ -55,43 +56,56 @@ export default function Home() {
         }}
       />
 
-      <section className="relative overflow-hidden rounded-2xl bg-white border border-black/5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(199,161,75,0.15),_transparent_45%)]" />
-        <div className="relative px-6 py-14 md:px-12 md:py-20">
-          <div className="max-w-5xl">
-            <p className="text-sm font-semibold tracking-wide text-accent uppercase">Andrew Tugume</p>
-            <h1 className="mt-3 text-4xl md:text-6xl font-semibold text-primary">Master Your Career, Technology and Wealth.</h1>
-            <p className="mt-4 text-base md:text-lg text-gray-700 max-w-3xl">
-              I coach ambitious professionals, founders, and operators to build real skill, scalable systems, and disciplined capital through structured weekly mentorship and quarterly performance challenges.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/apply"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black"
-              >
-                Apply for Mastery Coaching
-              </Link>
-              <Link
-                href="/programs"
-                className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-black hover:text-white"
-              >
-                Explore the Programs
-              </Link>
-            </div>
+      <div className="home-fullbleed">
+      <section
+        className="relative overflow-hidden h-[85vh] md:h-[100vh] -mt-10 md:-mt-16 bg-gray-900 flex flex-col"
+        style={{
+          minHeight: '640px',
+          backgroundImage: 'url("https://res.cloudinary.com/dy8hw3vod/image/upload/v1777389242/Andrew_T_xlglko.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10" />
+        <div className="relative z-10 flex-1" />
+        <div className="relative z-20 border-t border-white/30 bg-black/35 backdrop-blur-sm px-6 py-5 md:px-12 md:py-6">
+          <div className="mx-auto flex w-full max-w-2xl flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 rounded-full bg-black/45 backdrop-blur-sm p-2 border border-white/30">
+            <Link
+              href="/apply"
+              className="inline-flex items-center justify-center rounded-full border border-white bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black"
+            >
+              Apply for Mastery Coaching
+            </Link>
+            <Link
+              href="/programs"
+              className="inline-flex items-center justify-center rounded-full border border-white bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-primary"
+            >
+              Explore the Programs
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="mt-14">
+      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-primary">The Mastery Coaching Programs</h2>
-            <p className="mt-3 text-gray-700 max-w-2xl">These are not courses. They are operating systems for serious growth.</p>
+            <p className="mt-3 text-gray-700 max-w-2xl">I coach ambitious independent professionals, founders, and investors to build real skill, scalable systems, and disciplined capital through structured weekly mentorship, monthly meetups and quarterly performance challenges.</p>
             <p className="mt-2 text-sm text-gray-600">Weekly coaching • Monthly meetups • Quarterly challenges</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
+            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+              <div className="relative w-full h-48">
+                <Image
+                  src="https://res.cloudinary.com/dwa3soopc/image/upload/v1777800891/Andrew%20Bio%20Photos/WorkMasters/reduce_words___i_need_202605031233_a05fzr.jpg"
+                  alt="WorkMasters"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
               <p className="text-xs font-semibold tracking-wide text-accent uppercase">WorkMasters</p>
               <h3 className="mt-2 text-xl font-semibold text-primary">Career, Leadership and Execution Mastery</h3>
               <p className="mt-3 text-sm text-gray-700">For professionals and entrepreneurs who want to accelerate income, sharpen positioning, and build structured career or business growth.</p>
@@ -106,9 +120,14 @@ export default function Home() {
                 Explore WorkMasters →
               </Link>
               <p className="mt-4 text-xs text-gray-600">WorkMasters is for builders who refuse average careers and want structured progression.</p>
+              </div>
             </article>
 
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
+            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+                <span className="text-gray-400 text-sm">Image</span>
+              </div>
+              <div className="p-6">
               <p className="text-xs font-semibold tracking-wide text-accent uppercase">TechMasters</p>
               <h3 className="mt-2 text-xl font-semibold text-primary">Technology, Product and Innovation Mastery</h3>
               <p className="mt-3 text-sm text-gray-700">For developers, technical founders, and innovation leaders who want to build real-world solutions, not just learn theory.</p>
@@ -123,9 +142,14 @@ export default function Home() {
                 Explore TechMasters →
               </Link>
               <p className="mt-4 text-xs text-gray-600">TechMasters is for builders who want to create technology that solves real economic problems.</p>
+              </div>
             </article>
 
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
+            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+                <span className="text-gray-400 text-sm">Image</span>
+              </div>
+              <div className="p-6">
               <p className="text-xs font-semibold tracking-wide text-accent uppercase">CapitalMasters</p>
               <h3 className="mt-2 text-xl font-semibold text-primary">Investment and Wealth Mastery</h3>
               <p className="mt-3 text-sm text-gray-700">For disciplined individuals ready to move from income to ownership.</p>
@@ -140,24 +164,27 @@ export default function Home() {
                 Explore CapitalMasters →
               </Link>
               <p className="mt-4 text-xs text-gray-600">CapitalMasters is for operators who want to think like investors and build durable wealth.</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section className="mt-16 bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <div className="max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary">Built From Real Experience</h2>
-          <p className="mt-4 text-gray-700">
-            I'm not a motivational speaker. I build companies, systems, and capital structures. My work sits at the intersection of skill, systems, and capital.
-          </p>
-          <Link href="/about" className="mt-6 inline-flex text-sm font-semibold text-primary">
-            View Full Bio →
-          </Link>
+      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-semibold text-primary">Built From Real Experience</h2>
+            <p className="mt-4 text-gray-700">
+              I'm not a motivational speaker. I build companies, systems, and capital structures. My work sits at the intersection of skill, systems, and capital.
+            </p>
+            <Link href="/about" className="mt-6 inline-flex text-sm font-semibold text-primary">
+              View Full Bio →
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="mt-16">
+      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold text-primary">The Institutions Behind the Ecosystem</h2>
           <p className="mt-3 text-gray-700">Beyond coaching, I've founded organizations focused on education, leadership, technology, and capital development.</p>
@@ -187,8 +214,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-16 bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <div className="max-w-6xl mx-auto">
+      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto bg-white border border-black/5 rounded-2xl p-8 md:p-12">
           <h2 className="text-3xl md:text-4xl font-semibold text-primary">Results From the Community</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             <article className="rounded-xl border border-black/5 p-6">
@@ -207,21 +234,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-16 bg-primary text-white rounded-2xl p-10 md:p-14">
-        <div className="max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-semibold">Ready to Operate at a Higher Level?</h2>
-          <p className="mt-3 text-white/80">Mastery requires structure. Structure requires commitment.</p>
-          <div className="mt-6 flex flex-col sm:flex-row items-start gap-3">
-            <Link
-              href="/apply"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90"
-            >
-              Apply for Mastery Coaching
-            </Link>
-            <p className="text-xs text-white/70">Limited intake per cohort.</p>
+      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto bg-primary text-white rounded-2xl p-10 md:p-14">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-semibold">Ready to Operate at a Higher Level?</h2>
+            <p className="mt-3 text-white/80">Mastery requires structure. Structure requires commitment.</p>
+            <div className="mt-6 flex flex-col sm:flex-row items-start gap-3">
+              <Link
+                href="/apply"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90"
+              >
+                Apply for Mastery Coaching
+              </Link>
+              <p className="text-xs text-white/70">Limited intake per cohort.</p>
+            </div>
           </div>
         </div>
       </section>
+
+      </div>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 
@@ -36,23 +37,43 @@ export default function Apply() {
       <section>
         <h2 className="text-3xl font-semibold text-primary mb-6">Who these programs are for</h2>
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="bg-white border border-black/5 rounded-2xl p-6">
-            <h3 className="text-lg font-semibold text-primary">WorkMasters</h3>
-            <p className="mt-3 text-sm text-gray-700">Operators and managers stepping into leadership. Founders building execution discipline.</p>
+          <div className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+            <div className="relative w-full h-48">
+              <Image
+                src="https://res.cloudinary.com/dwa3soopc/image/upload/v1777800891/Andrew%20Bio%20Photos/WorkMasters/reduce_words___i_need_202605031233_a05fzr.jpg"
+                alt="WorkMasters"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-primary">WorkMasters</h3>
+              <p className="mt-3 text-sm text-gray-700">Operators and managers stepping into leadership. Founders building execution discipline.</p>
+            </div>
           </div>
-          <div className="bg-white border border-black/5 rounded-2xl p-6">
-            <h3 className="text-lg font-semibold text-primary">TechMasters</h3>
-            <p className="mt-3 text-sm text-gray-700">Developers and technical founders. Builders shipping real-world solutions.</p>
-            <Link
-              href="/techmasters"
-              className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-black"
-            >
-              Explore TechMasters
-            </Link>
+          <div className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+            <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+              <span className="text-gray-400 text-sm">Image</span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-primary">TechMasters</h3>
+              <p className="mt-3 text-sm text-gray-700">Developers and technical founders. Builders shipping real-world solutions.</p>
+              <Link
+                href="/techmasters"
+                className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-black"
+              >
+                Explore TechMasters
+              </Link>
+            </div>
           </div>
-          <div className="bg-white border border-black/5 rounded-2xl p-6">
-            <h3 className="text-lg font-semibold text-primary">CapitalMasters</h3>
-            <p className="mt-3 text-sm text-gray-700">Operators ready to move from income to ownership. Disciplined investors.</p>
+          <div className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+            <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+              <span className="text-gray-400 text-sm">Image</span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-semibold text-primary">CapitalMasters</h3>
+              <p className="mt-3 text-sm text-gray-700">Operators ready to move from income to ownership. Disciplined investors.</p>
+            </div>
           </div>
         </div>
       </section>

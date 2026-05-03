@@ -21,6 +21,12 @@ a { @apply text-primary hover:underline }
   @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+/* Let the homepage opt out of the global container while keeping other pages unchanged. */
+main.container:has(> .home-fullbleed) {
+  max-width: 100%;
+  padding: 0;
+}
+
 /* Accessibility: Focus visible state */
 @layer utilities {
   @supports selector(:focus-visible) {
