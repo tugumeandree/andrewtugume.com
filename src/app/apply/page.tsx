@@ -40,7 +40,7 @@ export default function Apply() {
           <div className="bg-white border border-black/5 rounded-2xl overflow-hidden">
             <div className="relative w-full h-48">
               <Image
-                src="https://res.cloudinary.com/dwa3soopc/image/upload/v1777800891/Andrew%20Bio%20Photos/WorkMasters/reduce_words___i_need_202605031233_a05fzr.jpg"
+                src="https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg"
                 alt="WorkMasters"
                 fill
                 className="object-cover"

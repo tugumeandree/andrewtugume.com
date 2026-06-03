@@ -91,15 +91,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-semibold text-primary">The Mastery Coaching Programs</h2>
-            <p className="mt-3 text-gray-700 max-w-2xl">I coach ambitious independent professionals, founders, and investors to build real skill, scalable systems, and disciplined capital through structured weekly mentorship, monthly meetups and quarterly performance challenges.</p>
-            <p className="mt-2 text-sm text-gray-600">Weekly coaching • Monthly meetups • Quarterly challenges</p>
+            <p className="mt-3 text-gray-700 max-w-2xl">Our mission is to transform the landscape of work and leadership in Africa. Through our innovative coaching programs, we combine holistic learning with cutting-edge technology and financial insights. Join us on this journey to empower individuals and organizations for a brighter future.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
               <div className="relative w-full h-48">
                 <Image
-                  src="https://res.cloudinary.com/dwa3soopc/image/upload/v1777800891/Andrew%20Bio%20Photos/WorkMasters/reduce_words___i_need_202605031233_a05fzr.jpg"
+                  src="https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg"
                   alt="WorkMasters"
                   fill
                   className="object-cover"
@@ -120,6 +119,73 @@ export default function Home() {
                 Explore WorkMasters →
               </Link>
               <p className="mt-4 text-xs text-gray-600">WorkMasters is for builders who refuse average careers and want structured progression.</p>
+              </div>
+            </article>
+
+            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+                <span className="text-gray-400 text-sm">Image</span>
+              </div>
+              <div className="p-6">
+              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Leadership Exchange</p>
+              <h3 className="mt-2 text-xl font-semibold text-primary">Peer Leadership and Strategic Exchange</h3>
+              <p className="mt-3 text-sm text-gray-700">A networked leadership forum for accountability, strategic review, and shared execution insights.</p>
+              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                <li>Accountability partnerships</li>
+                <li>Strategy sessions</li>
+                <li>Performance review</li>
+                <li>Decision frameworks</li>
+                <li>Leadership growth</li>
+              </ul>
+              <Link href="/contact" className="mt-5 inline-flex text-sm font-semibold text-primary">
+                Inquire About Leadership Exchange →
+              </Link>
+              <p className="mt-4 text-xs text-gray-600">Leadership Exchange is for leaders who want peer accountability and repeated strategic clarity.</p>
+              </div>
+            </article>
+
+            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+                <span className="text-gray-400 text-sm">Image</span>
+              </div>
+              <div className="p-6">
+              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Bible Study</p>
+              <h3 className="mt-2 text-xl font-semibold text-primary">Scripture Study and Discipleship</h3>
+              <p className="mt-3 text-sm text-gray-700">For serious Bible learners seeking structured study, spiritual formation, and community discipleship aligned with our mission to transform the landscape of work and leadership in Africa.</p>
+              <p className="mt-3 text-sm text-gray-700">Through this program, we connect holistic scripture-based learning with technology and financial insight to empower individuals and organizations.</p>
+              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                <li>Scripture deep dives</li>
+                <li>Historical context</li>
+                <li>Practical application</li>
+                <li>Accountability circles</li>
+                <li>Discipleship rhythms</li>
+              </ul>
+              <Link href="/bible-study" className="mt-5 inline-flex text-sm font-semibold text-primary">
+                Explore Bible Study →
+              </Link>
+              <p className="mt-4 text-xs text-gray-600">Bible Study is aligned with the mission to transform work and leadership in Africa through holistic learning, technology and finance.</p>
+              </div>
+            </article>
+
+            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
+              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
+                <span className="text-gray-400 text-sm">Image</span>
+              </div>
+              <div className="p-6">
+              <p className="text-xs font-semibold tracking-wide text-accent uppercase">CourseMasters</p>
+              <h3 className="mt-2 text-xl font-semibold text-primary">Learning Design and Course Systems</h3>
+              <p className="mt-3 text-sm text-gray-700">For teams and organizations building high-performance training systems that scale knowledge and skill.</p>
+              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+                <li>Curriculum strategy</li>
+                <li>Course production</li>
+                <li>Learning experience design</li>
+                <li>Engagement and retention</li>
+                <li>Launch support</li>
+              </ul>
+              <Link href="/masters/coursemasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
+                Explore CourseMasters →
+              </Link>
+              <p className="mt-4 text-xs text-gray-600">CourseMasters is for organizations that need a better way to teach, train, and certify high-performers.</p>
               </div>
             </article>
 
@@ -201,13 +267,17 @@ export default function Home() {
             <div className="bg-white border border-black/5 rounded-2xl p-6">
               <p className="text-xs font-semibold tracking-wide text-accent uppercase">As a Technologist</p>
               <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                <li><Link href="/institutions/qraft-labs" className="hover:text-primary">Qraft Labs</Link></li>
+                <li><Link href="/institutions/qraft-labs" className="hover:text-primary">Solar Energy Solutions</Link></li>
+                   <li><Link href="/institutions/qraft-labs" className="hover:text-primary">Mechatronics & Automation</Link></li>
+                      <li><Link href="/institutions/qraft-labs" className="hover:text-primary">Artificial Intelligence</Link></li>
               </ul>
             </div>
             <div className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">As an Investor</p>
+              <p className="text-xs font-semibold tracking-wide text-accent uppercase">As an Investor / Fund Manager</p>
               <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                <li><Link href="/institutions/qraft-capital" className="hover:text-primary">Qraft Capital</Link></li>
+                <li><Link href="/institutions/qraft-capital" className="hover:text-primary">Commodities(Coffee, Cocoa & Vanilla)</Link></li>
+                 <li><Link href="/institutions/qraft-capital" className="hover:text-primary">Transport & Logistics</Link></li>
+                  <li><Link href="/institutions/qraft-capital" className="hover:text-primary">Real Estate & Family Office</Link></li>
               </ul>
             </div>
           </div>
