@@ -49,7 +49,7 @@ export default function Contact() {
               <p className="mt-2 text-white/80 text-sm">Looking for coaching? Apply to the mastery programs.</p>
               <div className="mt-4">
                 <a href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary hover:bg-white/90">
-                  Apply for Mastery Coaching
+                  Claim Your Spot
                 </a>
               </div>
             </div>

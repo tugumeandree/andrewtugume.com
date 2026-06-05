@@ -1,8 +1,16 @@
 import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema, generateWebPageSchema } from '@/lib/seo/schema'
+import HeroImproved from '@/components/HeroImproved'
+import AuthorityPillars from '@/components/AuthorityPillars'
+import MasteryFramework from '@/components/MasteryFramework'
+import ProgramsEcosystem from '@/components/ProgramsEcosystem'
+import PersonalStory from '@/components/PersonalStory'
+import MissionVisionSection from '@/components/MissionVisionSection'
+import InstitutionsSection from '@/components/InstitutionsSection'
+import TestimonialsSection from '@/components/TestimonialsSection'
+import FinalCTASection from '@/components/FinalCTASection'
+import ProofStrip from '@/components/ProofStrip'
 
 export const metadata: Metadata = {
   title: 'Andrew Tugume — Educator, Technologist, Investor',
@@ -57,271 +65,35 @@ export default function Home() {
       />
 
       <div className="home-fullbleed">
-      <section
-        className="relative overflow-hidden h-[85vh] md:h-[100vh] -mt-10 md:-mt-16 bg-gray-900 flex flex-col"
-        style={{
-          minHeight: '640px',
-          backgroundImage: 'url("https://res.cloudinary.com/dy8hw3vod/image/upload/v1777389242/Andrew_T_xlglko.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/10" />
-        <div className="relative z-10 flex-1" />
-        <div className="relative z-20 border-t border-white/30 bg-black/35 backdrop-blur-sm px-6 py-5 md:px-12 md:py-6">
-          <div className="mx-auto flex w-full max-w-2xl flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 rounded-full bg-black/45 backdrop-blur-sm p-2 border border-white/30">
-            <Link
-              href="/apply"
-              className="inline-flex items-center justify-center rounded-full border border-white bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black"
-            >
-              Apply for Mastery Coaching
-            </Link>
-            <Link
-              href="/programs"
-              className="inline-flex items-center justify-center rounded-full border border-white bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-primary"
-            >
-              Explore the Programs
-            </Link>
-          </div>
-        </div>
-      </section>
+        {/* Hero Section - Transformation-focused */}
+        <HeroImproved />
 
-      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-semibold text-primary">The Mastery Coaching Programs</h2>
-            <p className="mt-3 text-gray-700 max-w-2xl">Our mission is to transform the landscape of work and leadership in Africa. Through our innovative coaching programs, we combine holistic learning with cutting-edge technology and financial insights. Join us on this journey to empower individuals and organizations for a brighter future.</p>
-          </div>
+        {/* Proof Strip - Quick credibility metrics */}
+        <ProofStrip />
 
-          <div className="grid gap-6 md:grid-cols-3">
-            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-              <div className="relative w-full h-48">
-                <Image
-                  src="https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg"
-                  alt="WorkMasters"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">WorkMasters</p>
-              <h3 className="mt-2 text-xl font-semibold text-primary">Career, Leadership and Execution Mastery</h3>
-              <p className="mt-3 text-sm text-gray-700">For professionals and entrepreneurs who want to accelerate income, sharpen positioning, and build structured career or business growth.</p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                <li>Career capital strategy</li>
-                <li>Business model clarity</li>
-                <li>Leadership systems</li>
-                <li>Productivity architecture</li>
-                <li>Raising capital with confidence</li>
-              </ul>
-              <Link href="/workmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
-                Explore WorkMasters →
-              </Link>
-              <p className="mt-4 text-xs text-gray-600">WorkMasters is for builders who refuse average careers and want structured progression.</p>
-              </div>
-            </article>
+        {/* Authority Section - Establish credibility early */}
+        <AuthorityPillars />
 
-            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-400 text-sm">Image</span>
-              </div>
-              <div className="p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Leadership Exchange</p>
-              <h3 className="mt-2 text-xl font-semibold text-primary">Peer Leadership and Strategic Exchange</h3>
-              <p className="mt-3 text-sm text-gray-700">A networked leadership forum for accountability, strategic review, and shared execution insights.</p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                <li>Accountability partnerships</li>
-                <li>Strategy sessions</li>
-                <li>Performance review</li>
-                <li>Decision frameworks</li>
-                <li>Leadership growth</li>
-              </ul>
-              <Link href="/contact" className="mt-5 inline-flex text-sm font-semibold text-primary">
-                Inquire About Leadership Exchange →
-              </Link>
-              <p className="mt-4 text-xs text-gray-600">Leadership Exchange is for leaders who want peer accountability and repeated strategic clarity.</p>
-              </div>
-            </article>
+        {/* Mastery Framework - Explain the system */}
+        <MasteryFramework />
 
-            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-400 text-sm">Image</span>
-              </div>
-              <div className="p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Bible Study</p>
-              <h3 className="mt-2 text-xl font-semibold text-primary">Scripture Study and Discipleship</h3>
-              <p className="mt-3 text-sm text-gray-700">For serious Bible learners seeking structured study, spiritual formation, and community discipleship aligned with our mission to transform the landscape of work and leadership in Africa.</p>
-              <p className="mt-3 text-sm text-gray-700">Through this program, we connect holistic scripture-based learning with technology and financial insight to empower individuals and organizations.</p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                <li>Scripture deep dives</li>
-                <li>Historical context</li>
-                <li>Practical application</li>
-                <li>Accountability circles</li>
-                <li>Discipleship rhythms</li>
-              </ul>
-              <Link href="/bible-study" className="mt-5 inline-flex text-sm font-semibold text-primary">
-                Explore Bible Study →
-              </Link>
-              <p className="mt-4 text-xs text-gray-600">Bible Study is aligned with the mission to transform work and leadership in Africa through holistic learning, technology and finance.</p>
-              </div>
-            </article>
+        {/* Programs Organized by Pillar - Show ecosystem */}
+        <ProgramsEcosystem />
 
-            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-400 text-sm">Image</span>
-              </div>
-              <div className="p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">CourseMasters</p>
-              <h3 className="mt-2 text-xl font-semibold text-primary">Learning Design and Course Systems</h3>
-              <p className="mt-3 text-sm text-gray-700">For teams and organizations building high-performance training systems that scale knowledge and skill.</p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                <li>Curriculum strategy</li>
-                <li>Course production</li>
-                <li>Learning experience design</li>
-                <li>Engagement and retention</li>
-                <li>Launch support</li>
-              </ul>
-              <Link href="/masters/coursemasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
-                Explore CourseMasters →
-              </Link>
-              <p className="mt-4 text-xs text-gray-600">CourseMasters is for organizations that need a better way to teach, train, and certify high-performers.</p>
-              </div>
-            </article>
+        {/* Personal Story - Enhanced and moved higher */}
+        <PersonalStory />
 
-            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-400 text-sm">Image</span>
-              </div>
-              <div className="p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">TechMasters</p>
-              <h3 className="mt-2 text-xl font-semibold text-primary">Technology, Product and Innovation Mastery</h3>
-              <p className="mt-3 text-sm text-gray-700">For developers, technical founders, and innovation leaders who want to build real-world solutions, not just learn theory.</p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                <li>Product thinking</li>
-                <li>Systems architecture</li>
-                <li>Research and development</li>
-                <li>Technical execution discipline</li>
-                <li>Monetization and scale</li>
-              </ul>
-              <Link href="/techmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
-                Explore TechMasters →
-              </Link>
-              <p className="mt-4 text-xs text-gray-600">TechMasters is for builders who want to create technology that solves real economic problems.</p>
-              </div>
-            </article>
+        {/* Mission & Vision - Movement narrative */}
+        <MissionVisionSection />
 
-            <article className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-              <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-                <span className="text-gray-400 text-sm">Image</span>
-              </div>
-              <div className="p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">CapitalMasters</p>
-              <h3 className="mt-2 text-xl font-semibold text-primary">Investment and Wealth Mastery</h3>
-              <p className="mt-3 text-sm text-gray-700">For disciplined individuals ready to move from income to ownership.</p>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                <li>Investment frameworks</li>
-                <li>Portfolio strategy</li>
-                <li>Risk management</li>
-                <li>Financial governance</li>
-                <li>Long-term capital growth</li>
-              </ul>
-              <Link href="/masters/capitalmasters" className="mt-5 inline-flex text-sm font-semibold text-primary">
-                Explore CapitalMasters →
-              </Link>
-              <p className="mt-4 text-xs text-gray-600">CapitalMasters is for operators who want to think like investors and build durable wealth.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+        {/* Institutions - Infrastructure supporting mission */}
+        <InstitutionsSection />
 
-      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-semibold text-primary">Built From Real Experience</h2>
-            <p className="mt-4 text-gray-700">
-              I'm not a motivational speaker. I build companies, systems, and capital structures. My work sits at the intersection of skill, systems, and capital.
-            </p>
-            <Link href="/about" className="mt-6 inline-flex text-sm font-semibold text-primary">
-              View Full Bio →
-            </Link>
-          </div>
-        </div>
-      </section>
+        {/* Testimonials - Social proof */}
+        <TestimonialsSection />
 
-      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary">The Institutions Behind the Ecosystem</h2>
-          <p className="mt-3 text-gray-700">Beyond coaching, I've founded organizations focused on education, leadership, technology, and capital development.</p>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <div className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">As an Educator</p>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                <li><Link href="/schools/qraft-academy" className="hover:text-primary">Qraft Academy</Link></li>
-                <li><Link href="/schools/chariot-leadership" className="hover:text-primary">Chariot Leadership Institute</Link></li>
-                <li><Link href="/schools/nations-bible" className="hover:text-primary">Nations Knowledge Community</Link></li>
-              </ul>
-            </div>
-            <div className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">As a Technologist</p>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                <li><Link href="/institutions/qraft-labs" className="hover:text-primary">Solar Energy Solutions</Link></li>
-                   <li><Link href="/institutions/qraft-labs" className="hover:text-primary">Mechatronics & Automation</Link></li>
-                      <li><Link href="/institutions/qraft-labs" className="hover:text-primary">Artificial Intelligence</Link></li>
-              </ul>
-            </div>
-            <div className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">As an Investor / Fund Manager</p>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                <li><Link href="/institutions/qraft-capital" className="hover:text-primary">Commodities(Coffee, Cocoa & Vanilla)</Link></li>
-                 <li><Link href="/institutions/qraft-capital" className="hover:text-primary">Transport & Logistics</Link></li>
-                  <li><Link href="/institutions/qraft-capital" className="hover:text-primary">Real Estate & Family Office</Link></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-primary">Results From the Community</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <article className="rounded-xl border border-black/5 p-6">
-              <p className="text-sm text-gray-700">"I rebuilt my career strategy and doubled my responsibility within six months. The systems are rigorous and clear."</p>
-              <p className="mt-4 text-xs font-semibold text-primary">Operations Lead, Nairobi</p>
-            </article>
-            <article className="rounded-xl border border-black/5 p-6">
-              <p className="text-sm text-gray-700">"TechMasters pushed me from shipping features to thinking in systems. My product now has a real growth loop."</p>
-              <p className="mt-4 text-xs font-semibold text-primary">Product Founder, Lagos</p>
-            </article>
-            <article className="rounded-xl border border-black/5 p-6">
-              <p className="text-sm text-gray-700">"CapitalMasters gave me an investment framework that finally matches my income and risk profile."</p>
-              <p className="mt-4 text-xs font-semibold text-primary">Founder-Investor, Kampala</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto bg-primary text-white rounded-2xl p-10 md:p-14">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-semibold">Ready to Operate at a Higher Level?</h2>
-            <p className="mt-3 text-white/80">Mastery requires structure. Structure requires commitment.</p>
-            <div className="mt-6 flex flex-col sm:flex-row items-start gap-3">
-              <Link
-                href="/apply"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90"
-              >
-                Apply for Mastery Coaching
-              </Link>
-              <p className="text-xs text-white/70">Limited intake per cohort.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+        {/* Final CTA - Transformation-focused */}
+        <FinalCTASection />
       </div>
     </>
   )

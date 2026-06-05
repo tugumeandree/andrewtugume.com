@@ -12,7 +12,7 @@ export default function QraftAcademy() {
             Visit Qraft Academy
           </a>
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-black hover:text-white">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>

@@ -41,7 +41,7 @@ export default function StrategicPrinciples() {
         <p className="mt-3 text-white/80">Mastery coaching turns principles into repeatable operating systems.</p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>

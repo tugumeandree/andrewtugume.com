@@ -34,7 +34,7 @@ export default function TechMasters() {
         </p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>
@@ -118,7 +118,7 @@ export default function TechMasters() {
         <p className="mt-3 text-white/80">TechMasters is a performance system for serious builders.</p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>

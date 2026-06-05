@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
-  title: 'Apply for Mastery Coaching',
+  title: 'Claim Your Spot',
   description: 'Apply directly via WhatsApp, phone call, or email for the next mastery coaching cohort.',
   alternates: {
     canonical: 'https://andrewtugume.com/apply'
@@ -28,7 +28,7 @@ export default function Apply() {
       />
 
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-semibold text-primary">Apply for Mastery Coaching</h1>
+        <h1 className="text-4xl md:text-5xl font-semibold text-primary">Claim Your Spot</h1>
         <p className="mt-4 text-gray-700 max-w-3xl">
           The mastery programs are high-touch and cohort-based. Apply directly via WhatsApp, phone call, or email to join the next intake for WorkMasters, TechMasters, or CapitalMasters.
         </p>

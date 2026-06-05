@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 type ButtonProps = {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'outline'
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   disabled?: boolean
   className?: string
@@ -18,7 +18,8 @@ const baseStyles = 'inline-flex items-center justify-center rounded-full font-se
 const variants = {
   primary: 'bg-primary text-white hover:bg-black disabled:opacity-60 disabled:cursor-not-allowed',
   secondary: 'border border-primary text-primary hover:bg-black hover:text-white',
-  outline: 'border border-black/5 bg-white text-primary hover:bg-gray-50'
+  outline: 'border border-black/5 bg-white text-primary hover:bg-gray-50',
+  ghost: 'border border-white/50 bg-transparent text-white hover:bg-white/10'
 }
 
 const sizes = {

@@ -10,7 +10,7 @@ export default function MasteryNetwork() {
         <p className="mt-4 text-gray-700 max-w-3xl">Cohort members gain access to a private network for accountability, feedback, and execution support.</p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function MasteryNetwork() {
         <p className="mt-3 text-white/80">Apply to join the next intake and unlock the network.</p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>

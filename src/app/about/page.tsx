@@ -67,7 +67,7 @@ export default function About() {
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
               <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
-                Apply for Mastery Coaching
+                Claim Your Spot
               </Link>
               <Link href="/programs" className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-black hover:text-white">
                 Explore the Programs
@@ -171,7 +171,7 @@ export default function About() {
         <p className="mt-3 text-white/80">If you want structure, discipline, and measurable progress, apply to the next cohort.</p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>

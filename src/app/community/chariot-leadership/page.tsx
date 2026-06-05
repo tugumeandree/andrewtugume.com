@@ -9,7 +9,7 @@ export default function LeadershipCommunity() {
         <p className="mt-4 text-gray-700">Access to leadership accountability and peer review is included inside the mastery cohorts.</p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>

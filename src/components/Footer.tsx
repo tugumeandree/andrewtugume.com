@@ -35,7 +35,7 @@ export default function Footer() {
                 href="/apply"
                 className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary hover:bg-white/90"
               >
-                Apply for Mastery Coaching
+                Claim Your Spot
               </Link>
             </div>
           </div>

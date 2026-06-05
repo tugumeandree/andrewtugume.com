@@ -42,7 +42,7 @@ export default function CapitalIntelligence() {
         <p className="mt-3 text-white/80">CapitalMasters is the structured program for serious operators.</p>
         <div className="mt-6">
           <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
-            Apply for Mastery Coaching
+            Claim Your Spot
           </Link>
         </div>
       </section>
