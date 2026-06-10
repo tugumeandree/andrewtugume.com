@@ -7,6 +7,25 @@ type ContactPayload = {
   message?: string
 }
 
+async function sendEmail(to: string, subject: string, text: string) {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) return
+
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: 'noreply@andrewtugume.com',
+      to,
+      subject,
+      text,
+    }),
+  })
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ContactPayload
@@ -18,14 +37,11 @@ export async function POST(request: Request) {
       )
     }
 
-    console.log('contact', {
-      name: body.name,
-      email: body.email,
-      subject: body.subject,
-      message: body.message,
-      source: 'contact-page',
-      submittedAt: new Date().toISOString(),
-    })
+    await sendEmail(
+      'andrewtugume2@gmail.com',
+      `Contact: ${body.subject}`,
+      `Name: ${body.name}\nEmail: ${body.email}\nSubject: ${body.subject}\n\n${body.message}\n\nSubmitted: ${new Date().toISOString()}`
+    )
 
     return NextResponse.json({ ok: true })
   } catch {

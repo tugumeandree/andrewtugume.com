@@ -13,36 +13,42 @@ export async function GET() {
   const base = 'https://andrewtugume.com'
   const currentDate = new Date().toISOString().split('T')[0]
 
-  // Static pages with their change frequency and priority
   const staticPages: SitemapUrl[] = [
+    // Core
     { loc: `${base}/`, lastmod: currentDate, changefreq: 'weekly', priority: 1.0 },
     { loc: `${base}/about`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
-    { loc: `${base}/book`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/one-on-one`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/workmasters`, lastmod: currentDate, changefreq: 'weekly', priority: 0.9 },
-    { loc: `${base}/community`, lastmod: currentDate, changefreq: 'weekly', priority: 0.8 },
-    { loc: `${base}/chariot-leadership`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/nations-bible`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/faith-knowledge`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/financial-intelligence`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/impact`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/leadership`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/bible-study`, lastmod: currentDate, changefreq: 'weekly', priority: 0.8 },
-    { loc: `${base}/blog`, lastmod: currentDate, changefreq: 'daily', priority: 0.9 },
-    { loc: `${base}/tech-resources`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/schools`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/masters/coursemasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/masters/techmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/store`, lastmod: currentDate, changefreq: 'weekly', priority: 0.8 },
-    { loc: `${base}/store/events`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
-    { loc: `${base}/store/products`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
-    { loc: `${base}/store/services`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
-    { loc: `${base}/subscribe`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/partner`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
     { loc: `${base}/contact`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
+    // Programs
+    { loc: `${base}/programs`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
+    { loc: `${base}/apply`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
+    { loc: `${base}/workmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
+    { loc: `${base}/techmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
+    { loc: `${base}/masters/techmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
+    { loc: `${base}/masters/capitalmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
+    // Engagements
+    { loc: `${base}/book`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/one-on-one`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    // Institutions & schools
+    { loc: `${base}/institutions`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
+    { loc: `${base}/schools`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
+    { loc: `${base}/schools/qraft-academy`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/schools/chariot-leadership`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/schools/nations-bible`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/schools/tabernacle-tech`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    // Content
+    { loc: `${base}/blog`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
+    { loc: `${base}/resources`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/tech-resources`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/bible-study`, lastmod: currentDate, changefreq: 'weekly', priority: 0.6 },
+    // Topic pages
+    { loc: `${base}/faith-knowledge`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
+    { loc: `${base}/financial-intelligence`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
+    { loc: `${base}/impact`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
+    { loc: `${base}/leadership`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
+    // Other
+    { loc: `${base}/partner`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
   ]
 
-  // Dynamic blog posts
   const postEntries: SitemapUrl[] = posts.map((p) => ({
     loc: `${base}/blog/${p.slug}`,
     lastmod: new Date(p.date).toISOString().split('T')[0],
@@ -50,10 +56,8 @@ export async function GET() {
     priority: 0.8,
   }))
 
-  // Combine all URLs
   const allUrls = [...staticPages, ...postEntries]
 
-  // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"

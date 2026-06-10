@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
-import TechMastersNoSSR from './TechMastersNoSSR'
+import TechMastersClient from './TechMastersClient'
 
 export const metadata: Metadata = {
   title: 'TechMasters — Weekly Tech Mentorship & Coaching',
@@ -26,7 +26,7 @@ export default function TechMastersPage() {
           ),
         }}
       />
-      <TechMastersNoSSR />
+      <TechMastersClient />
     </>
   )
 }
