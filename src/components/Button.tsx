@@ -41,10 +41,12 @@ export default function Button({
   const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`
 
   if (asLink) {
+    const isExternal = href.startsWith('http')
     return (
       <Link
         href={href}
         className={combinedClassName}
+        {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {children}
       </Link>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import Button from '@/components/Button'
 
 interface Program {
@@ -22,9 +21,9 @@ interface PillarGroup {
 
 const pillarGroups: PillarGroup[] = [
   {
-    pillar: 'Work Mastery',
-    icon: '💼',
-    tagline: 'Master your career, productivity, and professional systems',
+    pillar: 'Work & Leadership Mastery',
+    icon: '🎯',
+    tagline: 'Master your career, sharpen your leadership, and build on principles that govern both',
     programs: [
       {
         tag: 'WorkMasters',
@@ -42,14 +41,7 @@ const pillarGroups: PillarGroup[] = [
         ctaLink: '/workmasters',
         image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg',
         testimonial: 'I rebuilt my career strategy and doubled my responsibility within six months. The systems are rigorous and clear.'
-      }
-    ]
-  },
-  {
-    pillar: 'Leadership Mastery',
-    icon: '👥',
-    tagline: 'Build vision, accountability, and strategic clarity',
-    programs: [
+      },
       {
         tag: 'Leadership Exchange',
         title: 'Peer Leadership and Strategic Exchange',
@@ -67,27 +59,27 @@ const pillarGroups: PillarGroup[] = [
         testimonial: 'The structured accountability keeps me focused on what matters most.'
       },
       {
-        tag: 'Bible Study',
-        title: 'Biblical Principles For Workers And Leaders',
-        description: 'For serious workers and leaders seeking structured study, spiritual formation, and community discipleship grounded in scripture.',
+        tag: 'Workers & Leaders Bible Study · Fridays · 8 PM EAT',
+        title: 'Scripture as a Framework for Work, Leadership, and Stewardship',
+        description: 'A weekly online study for professionals, founders, and investors who refuse to keep faith and work separate. Biblical wisdom applied to careers, business, capital, and leadership — every Friday at 8 PM EAT on Google Meet.',
         features: [
-          'Scripture deep dives and study',
-          'Historical and cultural context',
-          'Practical workplace application',
-          'Accountability circles',
-          'Discipleship rhythms and community'
+          'Biblical leadership and authority',
+          'Stewardship, wealth, and capital principles',
+          'Decision-making and character formation',
+          'Purpose, calling, and workplace influence',
+          'Live discussion and practical application'
         ],
-        cta: 'Explore Bible Study',
-        ctaLink: '/bible-study',
-        image: '',
-        testimonial: 'The integration of faith and work transformed how I lead my team.'
+        cta: 'Join This Friday\'s Study',
+        ctaLink: 'https://meet.google.com/jbq-qumi-ntf',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1781178700/workers_and_leaders_bible_study_vcs4fu.png',
+        testimonial: 'This study reshaped how I think about work, money, and leadership. The biblical frameworks are as rigorous as any business course I have taken.'
       }
     ]
   },
   {
-    pillar: 'Learning Mastery',
-    icon: '📚',
-    tagline: 'Design systems that scale knowledge and skill',
+    pillar: 'Learning, Technology & Capital',
+    icon: '⚡',
+    tagline: 'The three disciplines through which work and leadership are built, scaled, and sustained',
     programs: [
       {
         tag: 'CourseMasters',
@@ -102,16 +94,9 @@ const pillarGroups: PillarGroup[] = [
         ],
         cta: 'Explore CourseMasters',
         ctaLink: '/masters/coursemasters',
-        image: '',
+        image: 'https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg',
         testimonial: 'Our training ROI increased 3x after restructuring with these principles.'
-      }
-    ]
-  },
-  {
-    pillar: 'Technology Mastery',
-    icon: '⚙️',
-    tagline: 'Build products and solutions that solve real problems',
-    programs: [
+      },
       {
         tag: 'TechMasters',
         title: 'Technology, Product and Innovation Mastery',
@@ -125,16 +110,9 @@ const pillarGroups: PillarGroup[] = [
         ],
         cta: 'Explore TechMasters',
         ctaLink: '/techmasters',
-        image: '',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1615551883/IMG_5942_c83b2h.jpg',
         testimonial: 'TechMasters pushed me from shipping features to thinking in systems. My product now has a real growth loop.'
-      }
-    ]
-  },
-  {
-    pillar: 'Capital Mastery',
-    icon: '💰',
-    tagline: 'Move from earning to owning and building wealth',
-    programs: [
+      },
       {
         tag: 'CapitalMasters',
         title: 'Investment and Wealth Mastery',
@@ -148,7 +126,7 @@ const pillarGroups: PillarGroup[] = [
         ],
         cta: 'Explore CapitalMasters',
         ctaLink: '/masters/capitalmasters',
-        image: '',
+        image: 'https://personalefinance.com/wp-content/uploads/Top-Characteristics-of-Finance-FAQ-What-are-Finance-Characteristics-Frequently-Asked-Questions.webp',
         testimonial: 'CapitalMasters gave me an investment framework that finally matches my income and risk profile.'
       }
     ]
@@ -161,12 +139,12 @@ export default function ProgramsEcosystem() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-12 text-center max-w-3xl mx-auto">
-          <p className="text-xs font-semibold tracking-widest text-accent uppercase">Programs Organized by Pillar</p>
+          <p className="text-xs font-semibold tracking-widest text-accent uppercase">The Mastery Ecosystem</p>
           <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-primary">
-            The Complete Mastery Coaching Ecosystem
+            Shaping the Future of Work and Leadership
           </h2>
           <p className="mt-4 text-base md:text-lg text-gray-700 leading-relaxed">
-            Each program is designed to build mastery in one of the five pillars. Choose the pillar you need, or combine programs to create a complete mastery journey.
+            One mission. Two tracks. Every program is built to help ambitious professionals master work and leadership — through learning, technology, and capital.
           </p>
         </div>
 
@@ -189,12 +167,11 @@ export default function ProgramsEcosystem() {
                   <article key={pidx} className="bg-white border border-black/5 rounded-2xl overflow-hidden hover:border-accent/30 hover:shadow-md transition-all h-full flex flex-col">
                     {/* Image */}
                     {program.image ? (
-                      <div className="relative w-full h-48">
-                        <Image
+                      <div className="w-full h-48 overflow-hidden">
+                        <img
                           src={program.image}
                           alt={program.title}
-                          fill
-                          className="object-cover"
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     ) : (
