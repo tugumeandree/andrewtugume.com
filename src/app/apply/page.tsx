@@ -1,16 +1,86 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Claim Your Spot',
-  description: 'Apply directly via WhatsApp, phone call, or email for the next mastery coaching cohort.',
+  description: 'Apply for WorkMasters, Leadership Exchange, TechMasters, CourseMasters, CapitalMasters, or join the Workers & Leaders Bible Study.',
   alternates: {
     canonical: 'https://andrewtugume.com/apply'
   }
 }
+
+const MEET_URL = 'https://meet.google.com/jbq-qumi-ntf'
+
+const tracks = [
+  {
+    label: 'Work & Leadership Mastery',
+    tagline: 'Master your career, sharpen your leadership, and build on principles that govern both',
+    programs: [
+      {
+        tag: 'WorkMasters',
+        title: 'Career, Productivity and Management Mastery',
+        description: 'For professionals, consultants, entrepreneurs, and investors who want to accelerate income, sharpen positioning, and build structured career or business growth.',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg',
+        cta: 'Apply for WorkMasters',
+        ctaHref: null,
+        learnHref: '/workmasters',
+      },
+      {
+        tag: 'Leadership Exchange',
+        title: 'Peer Leadership and Strategic Exchange',
+        description: 'A networked leadership forum for accountability, strategic review, and shared execution insights. For managers, executives, and founders.',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780618459/ILSZ9458_11zon_meuy7y.jpg',
+        cta: 'Inquire About Leadership Exchange',
+        ctaHref: null,
+        learnHref: '/contact',
+      },
+      {
+        tag: 'Workers & Leaders Bible Study',
+        title: 'Scripture as a Framework for Work, Leadership, and Stewardship',
+        description: 'A free weekly online study for professionals, founders, and investors integrating biblical wisdom into careers, business, and leadership. Every Friday at 8 PM EAT on Google Meet.',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1781178700/workers_and_leaders_bible_study_vcs4fu.png',
+        cta: 'Join This Friday\'s Study',
+        ctaHref: MEET_URL,
+        learnHref: '/bible-study',
+      },
+    ],
+  },
+  {
+    label: 'Learning, Technology & Capital',
+    tagline: 'The three disciplines through which work and leadership are built, scaled, and sustained',
+    programs: [
+      {
+        tag: 'CourseMasters',
+        title: 'Learning Design and Course Systems',
+        description: 'For teams and organizations building high-performance training systems that scale knowledge and skill across their operations.',
+        image: 'https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg',
+        cta: 'Apply for CourseMasters',
+        ctaHref: null,
+        learnHref: '/masters/coursemasters',
+      },
+      {
+        tag: 'TechMasters',
+        title: 'Technology, Product and Innovation Mastery',
+        description: 'For developers, technical founders, and innovation leaders who want to build real-world solutions and lead with technical discipline.',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1615551883/IMG_5942_c83b2h.jpg',
+        cta: 'Apply for TechMasters',
+        ctaHref: null,
+        learnHref: '/techmasters',
+      },
+      {
+        tag: 'CapitalMasters',
+        title: 'Investment and Wealth Mastery',
+        description: 'For disciplined individuals and operators ready to move from income to ownership and build durable, long-term wealth.',
+        image: 'https://personalefinance.com/wp-content/uploads/Top-Characteristics-of-Finance-FAQ-What-are-Finance-Characteristics-Frequently-Asked-Questions.webp',
+        cta: 'Apply for CapitalMasters',
+        ctaHref: null,
+        learnHref: '/masters/capitalmasters',
+      },
+    ],
+  },
+]
 
 export default function Apply() {
   return (
@@ -27,57 +97,84 @@ export default function Apply() {
         }}
       />
 
+      {/* ── Hero ── */}
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-semibold text-primary">Claim Your Spot</h1>
+        <p className="text-sm font-semibold tracking-widest text-accent uppercase">Claim Your Spot</p>
+        <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-primary max-w-3xl leading-tight">
+          Choose your program. Start your mastery journey.
+        </h1>
         <p className="mt-4 text-gray-700 max-w-3xl">
-          The mastery programs are high-touch and cohort-based. Apply directly via WhatsApp, phone call, or email to join the next intake for WorkMasters, TechMasters, or CapitalMasters.
+          Six programs. Two tracks. One mission: shaping the future of work and leadership through learning, technology, and capital. Apply directly via WhatsApp, call, or email.
         </p>
       </section>
 
-      <section>
-        <h2 className="text-3xl font-semibold text-primary mb-6">Who these programs are for</h2>
-        <div className="grid gap-6 md:grid-cols-3">
-          <div className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-            <div className="relative w-full h-48">
-              <Image
-                src="https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg"
-                alt="WorkMasters"
-                fill
-                className="object-cover"
-              />
+      {/* ── Programs by track ── */}
+      <div className="space-y-12">
+        {tracks.map((track) => (
+          <div key={track.label}>
+            <div className="mb-6 pb-5 border-b-2 border-accent/20">
+              <h2 className="text-2xl font-semibold text-primary">{track.label}</h2>
+              <p className="mt-1 text-sm text-gray-600">{track.tagline}</p>
             </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-primary">WorkMasters</h3>
-              <p className="mt-3 text-sm text-gray-700">Operators and managers stepping into leadership. Founders building execution discipline.</p>
+            <div className="grid gap-6 md:grid-cols-3">
+              {track.programs.map((program) => (
+                <article
+                  key={program.tag}
+                  className="bg-white border border-black/5 rounded-2xl overflow-hidden flex flex-col hover:border-accent/30 hover:shadow-md transition-all"
+                >
+                  <div className="w-full h-48 overflow-hidden">
+                    <img
+                      src={program.image}
+                      alt={program.tag}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <p className="text-xs font-semibold tracking-wide text-accent uppercase">
+                      {program.tag}
+                    </p>
+                    <h3 className="mt-2 text-base font-semibold text-primary leading-snug">
+                      {program.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-600 leading-relaxed flex-1">
+                      {program.description}
+                    </p>
+                    <div className="mt-5 flex flex-col gap-2">
+                      {program.ctaHref ? (
+                        <a
+                          href={program.ctaHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-black"
+                        >
+                          {program.cta}
+                        </a>
+                      ) : (
+                        <a
+                          href="https://wa.me/256755017384"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-black"
+                        >
+                          {program.cta}
+                        </a>
+                      )}
+                      <Link
+                        href={program.learnHref}
+                        className="inline-flex items-center justify-center rounded-full border border-black/10 px-5 py-2 text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary"
+                      >
+                        Learn more →
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
-          <div className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-            <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-              <span className="text-gray-400 text-sm">Image</span>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-primary">TechMasters</h3>
-              <p className="mt-3 text-sm text-gray-700">Developers and technical founders. Builders shipping real-world solutions.</p>
-              <Link
-                href="/techmasters"
-                className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-black"
-              >
-                Explore TechMasters
-              </Link>
-            </div>
-          </div>
-          <div className="bg-white border border-black/5 rounded-2xl overflow-hidden">
-            <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-              <span className="text-gray-400 text-sm">Image</span>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-primary">CapitalMasters</h3>
-              <p className="mt-3 text-sm text-gray-700">Operators ready to move from income to ownership. Disciplined investors.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        ))}
+      </div>
 
+      {/* ── What's included ── */}
       <section className="grid gap-6 md:grid-cols-3">
         <div className="bg-white border border-black/5 rounded-2xl p-6">
           <h2 className="text-xl font-semibold text-primary">Weekly coaching</h2>
@@ -93,8 +190,9 @@ export default function Apply() {
         </div>
       </section>
 
+      {/* ── Application steps ── */}
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <h2 className="text-3xl font-semibold text-primary">Application steps</h2>
+        <h2 className="text-3xl font-semibold text-primary">How to apply</h2>
         <ol className="mt-6 space-y-4">
           <li className="flex gap-4">
             <span className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-primary text-white text-sm font-semibold">1</span>
@@ -120,12 +218,12 @@ export default function Apply() {
         </ol>
       </section>
 
+      {/* ── Apply directly ── */}
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
         <h2 className="text-3xl font-semibold text-primary mb-3">Apply Directly</h2>
         <p className="text-sm text-gray-700 max-w-3xl">
           Choose any channel below and share your full name, the program you want to join, and your current goals.
         </p>
-
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <a
             href="https://wa.me/256755017384"
@@ -148,12 +246,10 @@ export default function Apply() {
             Email Application
           </a>
         </div>
-
-        <p className="mt-5 text-xs text-gray-600">
-          Response time is usually within 1-2 business days.
-        </p>
+        <p className="mt-5 text-xs text-gray-600">Response time is usually within 1–2 business days.</p>
       </section>
 
+      {/* ── FAQ ── */}
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
         <h2 className="text-3xl font-semibold text-primary mb-6">Frequently Asked Questions</h2>
         <div className="space-y-6">
@@ -162,8 +258,12 @@ export default function Apply() {
             <p className="mt-2 text-sm text-gray-700">Cohorts start quarterly. Exact dates are confirmed after your intake interview.</p>
           </div>
           <div>
+            <h3 className="text-lg font-semibold text-primary">Can I apply for more than one program?</h3>
+            <p className="mt-2 text-sm text-gray-700">Yes. Some participants combine WorkMasters with CapitalMasters, or TechMasters with CourseMasters. Mention both programs when you apply and we'll discuss what makes sense.</p>
+          </div>
+          <div>
             <h3 className="text-lg font-semibold text-primary">What's the time commitment?</h3>
-            <p className="mt-2 text-sm text-gray-700">One weekly coaching session (60-90 minutes), one monthly meetup, and quarterly performance reviews. Plus execution time for your goals.</p>
+            <p className="mt-2 text-sm text-gray-700">One weekly coaching session (60–90 minutes), one monthly meetup, and quarterly performance reviews. Plus execution time for your goals.</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-primary">Do I need to commit to the full 6 months?</h3>
@@ -175,7 +275,11 @@ export default function Apply() {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-primary">How many people are in each cohort?</h3>
-            <p className="mt-2 text-sm text-gray-700">Cohorts are capped at 8-12 participants to maintain high-touch accountability and real feedback.</p>
+            <p className="mt-2 text-sm text-gray-700">Cohorts are capped at 8–12 participants to maintain high-touch accountability and real feedback.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-primary">Is the Bible Study free?</h3>
+            <p className="mt-2 text-sm text-gray-700">Yes. The Workers & Leaders Bible Study is a free weekly session open to any professional who wants to integrate biblical wisdom into their work and leadership. Join any Friday at 8 PM EAT on Google Meet.</p>
           </div>
         </div>
       </section>
