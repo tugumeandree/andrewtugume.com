@@ -9,7 +9,9 @@ interface Program {
   cta: string
   ctaLink: string
   image: string
-  testimonial: string
+  testimonial?: string
+  featured?: boolean
+  badge?: string
 }
 
 interface PillarGroup {
@@ -25,6 +27,23 @@ const pillarGroups: PillarGroup[] = [
     icon: '🎯',
     tagline: 'Master your career, sharpen your leadership, and build on principles that govern both',
     programs: [
+      {
+        tag: 'Mastermind · Founding Cohort · Starts 10 Oct',
+        title: 'Make More & Better Offers',
+        description: 'An eight-week mastermind for consultants tired of waiting for the phone to ring. Build the nine-offer architecture that makes demand something you manufacture, not something you hope for.',
+        features: [
+          'The nine-offer architecture',
+          'A priced, written core offer',
+          'A live offer taking money by week five',
+          'Weekly live coaching in a 12-seat cohort',
+          'A full lead-generation and closing system'
+        ],
+        cta: 'Apply for a Seat',
+        ctaLink: '/mastermind',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg',
+        featured: true,
+        badge: 'Applications Open'
+      },
       {
         tag: 'WorkMasters',
         title: 'Career, Productivity and Management Mastery',
@@ -42,38 +61,6 @@ const pillarGroups: PillarGroup[] = [
         image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg',
         testimonial: 'I rebuilt my career strategy and doubled my responsibility within six months. The systems are rigorous and clear.'
       },
-      {
-        tag: 'Leadership Exchange',
-        title: 'Peer Leadership and Strategic Exchange',
-        description: 'A networked leadership forum for accountability, strategic review, and shared execution insights.',
-        features: [
-          'Accountability partnerships',
-          'Strategy sessions and reviews',
-          'Performance evaluation frameworks',
-          'Decision-making processes',
-          'Leadership growth acceleration'
-        ],
-        cta: 'Inquire About Leadership Exchange',
-        ctaLink: '/contact',
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780618459/ILSZ9458_11zon_meuy7y.jpg',
-        testimonial: 'The structured accountability keeps me focused on what matters most.'
-      },
-      {
-        tag: 'Workers & Leaders Bible Study · Fridays · 8 PM EAT',
-        title: 'Scripture as a Framework for Work, Leadership, and Stewardship',
-        description: 'A weekly online study for professionals, founders, and investors who refuse to keep faith and work separate. Biblical wisdom applied to careers, business, capital, and leadership — every Friday at 8 PM EAT on Google Meet.',
-        features: [
-          'Biblical leadership and authority',
-          'Stewardship, wealth, and capital principles',
-          'Decision-making and character formation',
-          'Purpose, calling, and workplace influence',
-          'Live discussion and practical application'
-        ],
-        cta: 'Join This Friday\'s Study',
-        ctaLink: 'https://meet.google.com/jbq-qumi-ntf',
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1781178700/workers_and_leaders_bible_study_vcs4fu.png',
-        testimonial: 'This study reshaped how I think about work, money, and leadership. The biblical frameworks are as rigorous as any business course I have taken.'
-      }
     ]
   },
   {
@@ -164,7 +151,19 @@ export default function ProgramsEcosystem() {
               {/* Programs in pillar */}
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {group.programs.map((program, pidx) => (
-                  <article key={pidx} className="bg-white border border-black/5 rounded-2xl overflow-hidden hover:border-accent/30 hover:shadow-md transition-all h-full flex flex-col">
+                  <article
+                    key={pidx}
+                    className={`relative bg-white rounded-2xl overflow-hidden transition-all h-full flex flex-col ${
+                      program.featured
+                        ? 'border-2 border-accent shadow-lg ring-4 ring-accent/10 md:-translate-y-1'
+                        : 'border border-black/5 hover:border-accent/30 hover:shadow-md'
+                    }`}
+                  >
+                    {program.badge && (
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary shadow">
+                        {program.badge}
+                      </span>
+                    )}
                     {/* Image */}
                     {program.image ? (
                       <div className="w-full h-48 overflow-hidden">
@@ -203,14 +202,22 @@ export default function ProgramsEcosystem() {
                       </ul>
 
                       {/* CTA */}
-                      <Button asLink href={program.ctaLink} variant="secondary" size="sm" className="mt-5 w-full sm:w-auto text-left">
+                      <Button
+                        asLink
+                        href={program.ctaLink}
+                        variant={program.featured ? 'primary' : 'secondary'}
+                        size="sm"
+                        className="mt-5 w-full sm:w-auto text-left"
+                      >
                         {program.cta} →
                       </Button>
 
                       {/* Testimonial */}
-                      <p className="mt-4 pt-4 border-t border-black/5 text-xs text-gray-600 italic leading-relaxed">
-                        "{program.testimonial}"
-                      </p>
+                      {program.testimonial && (
+                        <p className="mt-4 pt-4 border-t border-black/5 text-xs text-gray-600 italic leading-relaxed">
+                          "{program.testimonial}"
+                        </p>
+                      )}
                     </div>
                   </article>
                 ))}

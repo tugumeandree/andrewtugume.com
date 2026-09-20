@@ -22,6 +22,7 @@ export async function GET() {
     { loc: `${base}/programs`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
     { loc: `${base}/apply`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
     { loc: `${base}/workmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
+    { loc: `${base}/mastermind`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
     { loc: `${base}/techmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
     { loc: `${base}/masters/techmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
     { loc: `${base}/masters/capitalmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
@@ -39,7 +40,6 @@ export async function GET() {
     { loc: `${base}/blog`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
     { loc: `${base}/resources`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
     { loc: `${base}/tech-resources`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/bible-study`, lastmod: currentDate, changefreq: 'weekly', priority: 0.6 },
     // Topic pages
     { loc: `${base}/faith-knowledge`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
     { loc: `${base}/financial-intelligence`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },

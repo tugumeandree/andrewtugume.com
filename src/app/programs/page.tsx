@@ -6,13 +6,11 @@ import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 export const metadata: Metadata = {
   title: 'Programs — Mastery Coaching for Work, Leadership, Learning, Technology & Capital',
   description:
-    'Six programs built around one mission: shaping the future of work and leadership in Africa. WorkMasters, Leadership Exchange, Bible Study, CourseMasters, TechMasters, and CapitalMasters.',
+    'Programs built around one mission: shaping the future of work and leadership in Africa. WorkMasters, the Make More & Better Offers Mastermind, CourseMasters, TechMasters, and CapitalMasters.',
   alternates: {
     canonical: 'https://andrewtugume.com/programs',
   },
 }
-
-const MEET_URL = 'https://meet.google.com/jbq-qumi-ntf'
 
 const tracks = [
   {
@@ -39,42 +37,23 @@ const tracks = [
         external: false,
       },
       {
-        tag: 'Leadership Exchange',
-        title: 'Peer Leadership and Strategic Exchange',
+        tag: 'Mastermind',
+        title: 'Make More & Better Offers',
         description:
-          'A networked leadership forum for accountability, strategic review, and shared execution insights. For managers, executives, and founders who want to lead with more clarity and fewer blind spots.',
+          'An eight-week mastermind for consultants who are tired of waiting for the phone to ring. Build the nine-offer architecture that makes demand something you manufacture instead of something you hope for.',
         features: [
-          'Accountability partnerships',
-          'Strategy sessions and reviews',
-          'Performance evaluation frameworks',
-          'Decision-making processes',
-          'Leadership growth acceleration',
+          'The nine-offer architecture',
+          'A priced, written core offer',
+          'A live offer taking money by week five',
+          'Weekly live coaching in a 12-seat cohort',
+          'A full lead-generation and closing system',
         ],
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780618459/ILSZ9458_11zon_meuy7y.jpg',
-        href: '/contact',
-        cta: 'Inquire About Leadership Exchange',
-        applyCta: 'Inquire Now',
-        applyHref: 'https://wa.me/256755017384',
+        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg',
+        href: '/mastermind',
+        cta: 'Explore the Mastermind',
+        applyCta: 'Apply for a Seat',
+        applyHref: '/mastermind#apply',
         external: false,
-      },
-      {
-        tag: 'Workers & Leaders Bible Study',
-        title: 'Scripture as a Framework for Work, Leadership, and Stewardship',
-        description:
-          'A free weekly online study for professionals, founders, and investors integrating biblical wisdom into careers, business, leadership, and capital. Every Friday at 8 PM EAT on Google Meet.',
-        features: [
-          'Biblical leadership and authority',
-          'Stewardship, wealth, and capital principles',
-          'Decision-making and character formation',
-          'Purpose, calling, and workplace influence',
-          'Live discussion and practical application',
-        ],
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1781178700/workers_and_leaders_bible_study_vcs4fu.png',
-        href: '/bible-study',
-        cta: 'Learn More',
-        applyCta: 'Join This Friday · Free',
-        applyHref: MEET_URL,
-        external: true,
       },
     ],
   },
@@ -162,7 +141,7 @@ export default function Programs() {
       <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
         <p className="text-sm font-semibold tracking-widest text-accent uppercase">The Mastery Ecosystem</p>
         <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-primary max-w-3xl leading-tight">
-          Six programs. Two tracks. One mission.
+          Five programs. Two tracks. One mission.
         </h1>
         <p className="mt-4 text-gray-700 max-w-3xl leading-relaxed">
           Every program is built to help ambitious professionals master work and leadership — through

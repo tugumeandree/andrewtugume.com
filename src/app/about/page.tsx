@@ -92,7 +92,6 @@ const ecosystem = [
     category: 'Leadership',
     items: [
       { name: 'Chariot Leadership Institute', description: 'Developing leaders for Africa\'s organizations, communities, and institutions.', href: '/schools/chariot-leadership' },
-      { name: 'Leadership Exchange', description: 'A peer accountability and strategic review forum for active leaders and executives.', href: '/contact' },
     ],
   },
   {
@@ -118,7 +117,6 @@ const ecosystem = [
     category: 'Community',
     items: [
       { name: 'Nations Knowledge Community', description: 'A community for knowledge-driven professionals and leaders building across Africa.', href: '/schools/nations-bible' },
-      { name: 'Workers & Leaders Bible Study', description: 'Weekly integration of biblical wisdom into work, leadership, stewardship, and decision-making.', href: '/bible-study' },
     ],
   },
 ]
@@ -458,8 +456,8 @@ export default function About() {
               },
               {
                 title: 'Communities',
-                body: 'Participate in Leadership Exchange, the Workers & Leaders Bible Study, or the Nations Knowledge Community. Transformation rarely happens alone.',
-                href: '/bible-study',
+                body: 'Participate in the Nations Knowledge Community. Transformation rarely happens alone.',
+                href: '/schools/nations-bible',
                 cta: 'Join a Community',
               },
               {

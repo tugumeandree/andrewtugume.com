@@ -5,13 +5,11 @@ import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Claim Your Spot',
-  description: 'Apply for WorkMasters, Leadership Exchange, TechMasters, CourseMasters, CapitalMasters, or join the Workers & Leaders Bible Study.',
+  description: 'Apply for WorkMasters, TechMasters, CourseMasters, or CapitalMasters.',
   alternates: {
     canonical: 'https://andrewtugume.com/apply'
   }
 }
-
-const MEET_URL = 'https://meet.google.com/jbq-qumi-ntf'
 
 const tracks = [
   {
@@ -26,24 +24,6 @@ const tracks = [
         cta: 'Apply for WorkMasters',
         ctaHref: null,
         learnHref: '/workmasters',
-      },
-      {
-        tag: 'Leadership Exchange',
-        title: 'Peer Leadership and Strategic Exchange',
-        description: 'A networked leadership forum for accountability, strategic review, and shared execution insights. For managers, executives, and founders.',
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780618459/ILSZ9458_11zon_meuy7y.jpg',
-        cta: 'Inquire About Leadership Exchange',
-        ctaHref: null,
-        learnHref: '/contact',
-      },
-      {
-        tag: 'Workers & Leaders Bible Study',
-        title: 'Scripture as a Framework for Work, Leadership, and Stewardship',
-        description: 'A free weekly online study for professionals, founders, and investors integrating biblical wisdom into careers, business, and leadership. Every Friday at 8 PM EAT on Google Meet.',
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1781178700/workers_and_leaders_bible_study_vcs4fu.png',
-        cta: 'Join This Friday\'s Study',
-        ctaHref: MEET_URL,
-        learnHref: '/bible-study',
       },
     ],
   },
@@ -104,7 +84,7 @@ export default function Apply() {
           Choose your program. Start your mastery journey.
         </h1>
         <p className="mt-4 text-gray-700 max-w-3xl">
-          Six programs. Two tracks. One mission: shaping the future of work and leadership through learning, technology, and capital. Apply directly via WhatsApp, call, or email.
+          Four programs. Two tracks. One mission: shaping the future of work and leadership through learning, technology, and capital. Apply directly via WhatsApp, call, or email.
         </p>
       </section>
 
@@ -276,10 +256,6 @@ export default function Apply() {
           <div>
             <h3 className="text-lg font-semibold text-primary">How many people are in each cohort?</h3>
             <p className="mt-2 text-sm text-gray-700">Cohorts are capped at 8–12 participants to maintain high-touch accountability and real feedback.</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-primary">Is the Bible Study free?</h3>
-            <p className="mt-2 text-sm text-gray-700">Yes. The Workers & Leaders Bible Study is a free weekly session open to any professional who wants to integrate biblical wisdom into their work and leadership. Join any Friday at 8 PM EAT on Google Meet.</p>
           </div>
         </div>
       </section>

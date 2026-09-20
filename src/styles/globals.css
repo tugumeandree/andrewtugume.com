@@ -21,8 +21,9 @@ a { @apply text-primary hover:underline }
   @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Let the homepage opt out of the global container while keeping other pages unchanged. */
-main.container:has(> .home-fullbleed) {
+/* Let full-bleed landing pages opt out of the global container while keeping other pages unchanged. */
+main.container:has(> .home-fullbleed),
+main.container:has(> .mastermind-fullbleed) {
   max-width: 100%;
   padding: 0;
 }
