@@ -3,15 +3,46 @@ import { NextResponse } from 'next/server'
 type ContactPayload = {
   name?: string
   email?: string
+  organisation?: string
   subject?: string
+  preferredContact?: string
+  phone?: string
   message?: string
+  website?: string
 }
 
-async function sendEmail(to: string, subject: string, text: string) {
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) return
+export async function POST(request: Request) {
+  let body: ContactPayload
+  try {
+    body = (await request.json()) as ContactPayload
+  } catch {
+    return NextResponse.json({ ok: false, message: 'Invalid request payload' }, { status: 400 })
+  }
 
-  await fetch('https://api.resend.com/emails', {
+  // Honeypot filled: pretend success so bots don't retry
+  if (body.website) {
+    return NextResponse.json({ ok: true })
+  }
+
+  if (!body.name || !body.email || !body.subject) {
+    return NextResponse.json({ ok: false, message: 'Missing required fields' }, { status: 400 })
+  }
+
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    return NextResponse.json({ ok: false, message: 'Email is not configured' }, { status: 500 })
+  }
+
+  const details = [
+    `Name: ${body.name}`,
+    `Email: ${body.email}`,
+    body.organisation && `Organisation: ${body.organisation}`,
+    `Interest / subject: ${body.subject}`,
+    `Preferred contact: ${body.preferredContact || 'Email'}`,
+    body.phone && `Phone / WhatsApp: ${body.phone}`,
+  ].filter(Boolean).join('\n')
+
+  const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -19,35 +50,16 @@ async function sendEmail(to: string, subject: string, text: string) {
     },
     body: JSON.stringify({
       from: 'noreply@andrewtugume.com',
-      to,
-      subject,
-      text,
+      to: 'andrewtugume2@gmail.com',
+      reply_to: body.email,
+      subject: `Enquiry: ${body.subject} — ${body.name}`,
+      text: `${details}\n\n${body.message || '(no message)'}\n\nSubmitted: ${new Date().toISOString()}`,
     }),
   })
-}
 
-export async function POST(request: Request) {
-  try {
-    const body = (await request.json()) as ContactPayload
-
-    if (!body.name || !body.email || !body.subject || !body.message) {
-      return NextResponse.json(
-        { ok: false, message: 'Missing required fields' },
-        { status: 400 }
-      )
-    }
-
-    await sendEmail(
-      'andrewtugume2@gmail.com',
-      `Contact: ${body.subject}`,
-      `Name: ${body.name}\nEmail: ${body.email}\nSubject: ${body.subject}\n\n${body.message}\n\nSubmitted: ${new Date().toISOString()}`
-    )
-
-    return NextResponse.json({ ok: true })
-  } catch {
-    return NextResponse.json(
-      { ok: false, message: 'Invalid request payload' },
-      { status: 400 }
-    )
+  if (!response.ok) {
+    return NextResponse.json({ ok: false, message: 'Unable to send message' }, { status: 502 })
   }
+
+  return NextResponse.json({ ok: true })
 }

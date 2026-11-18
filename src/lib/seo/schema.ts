@@ -1,5 +1,6 @@
 // JSON-LD Schema markup generators for comprehensive SEO
 import { Metadata } from 'next'
+import { brand } from '@/lib/brand'
 
 export interface SchemaOrganization {
   '@context': string
@@ -92,15 +93,11 @@ export function generateOrganizationSchema(): SchemaOrganization {
     name: 'Andrew Tugume',
     url: 'https://andrewtugume.com',
     logo: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-    description: 'Educator, Technologist, and Investor helping workers, leaders, and learners succeed through biblical teaching, technology, and practical wisdom.',
-    sameAs: [
-      'https://twitter.com/_drewtugume',
-      'https://linkedin.com/in/andrewtugume',
-      'https://youtube.com/@andrewtugume',
-    ],
+    description: brand.description,
+    sameAs: brand.socials.map((social) => social.href),
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'US',
+      addressCountry: 'UG',
     },
     founder: {
       '@type': 'Person',
@@ -166,13 +163,11 @@ export function generatePersonSchema() {
     name: 'Andrew Tugume',
     url: 'https://andrewtugume.com',
     image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-    jobTitle: ['Educator', 'Technologist', 'Investor'],
-    sameAs: [
-      'https://twitter.com/_drewtugume',
-      'https://linkedin.com/in/andrewtugume',
-      'https://youtube.com/@andrewtugume',
-    ],
-    description: 'Educator, Technologist, and Investor helping workers, leaders, and learners succeed.',
+    jobTitle: brand.titles,
+    sameAs: brand.socials.map((social) => social.href),
+    description: brand.description,
+    alternateName: brand.alias,
+    address: { '@type': 'PostalAddress', addressLocality: 'Kampala', addressCountry: 'UG' },
   }
 }
 

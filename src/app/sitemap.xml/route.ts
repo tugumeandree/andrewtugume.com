@@ -17,36 +17,20 @@ export async function GET() {
     // Core
     { loc: `${base}/`, lastmod: currentDate, changefreq: 'weekly', priority: 1.0 },
     { loc: `${base}/about`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
-    { loc: `${base}/contact`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    // Programs
-    { loc: `${base}/programs`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
-    { loc: `${base}/apply`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
-    { loc: `${base}/workmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
-    { loc: `${base}/mastermind`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
-    { loc: `${base}/techmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
-    { loc: `${base}/masters/techmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/masters/capitalmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    // Engagements
-    { loc: `${base}/book`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/one-on-one`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    // Institutions & schools
-    { loc: `${base}/institutions`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/schools`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
-    { loc: `${base}/schools/qraft-academy`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/schools/chariot-leadership`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/schools/nations-bible`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/schools/tabernacle-tech`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    // Content
-    { loc: `${base}/blog`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
-    { loc: `${base}/resources`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    { loc: `${base}/tech-resources`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
-    // Topic pages
-    { loc: `${base}/faith-knowledge`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
-    { loc: `${base}/financial-intelligence`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
-    { loc: `${base}/impact`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
-    { loc: `${base}/leadership`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
-    // Other
-    { loc: `${base}/partner`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
+    // Flagship initiatives
+    { loc: `${base}/workmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
+    { loc: `${base}/influencemasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
+    { loc: `${base}/bible-study`, lastmod: currentDate, changefreq: 'weekly', priority: 0.9 },
+    { loc: `${base}/bible-study/invite`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    // Hubs
+    { loc: `${base}/programs`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
+    { loc: `${base}/resources`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
+    { loc: `${base}/ecosystem`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
+    { loc: `${base}/blog`, lastmod: currentDate, changefreq: 'weekly', priority: 0.6 },
+    // Engagement
+    { loc: `${base}/speaking`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
+    { loc: `${base}/contact`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/mastermind`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
   ]
 
   const postEntries: SitemapUrl[] = posts.map((p) => ({

@@ -6,20 +6,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/', '/_next/', '/private/', '/.env', '/sitemap.xml'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        crawlDelay: 0,
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        crawlDelay: 1,
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://andrewtugume.com/sitemap.xml',
-    host: 'https://andrewtugume.com',
   }
 }

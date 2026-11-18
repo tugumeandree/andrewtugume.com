@@ -23,7 +23,8 @@ a { @apply text-primary hover:underline }
 
 /* Let full-bleed landing pages opt out of the global container while keeping other pages unchanged. */
 main.container:has(> .home-fullbleed),
-main.container:has(> .mastermind-fullbleed) {
+main.container:has(> .mastermind-fullbleed),
+main.container:has(> .fullbleed) {
   max-width: 100%;
   padding: 0;
 }
@@ -64,3 +65,8 @@ main.container:has(> .mastermind-fullbleed) {
     @apply text-3xl sm:text-4xl md:text-5xl;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+[id] { scroll-margin-top: 5rem; }

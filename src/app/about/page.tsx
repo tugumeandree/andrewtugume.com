@@ -2,11 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema, generatePersonSchema } from '@/lib/seo/schema'
+import EcosystemOverview from '@/components/EcosystemOverview'
+import { bookingHref, brand, cld, initiatives } from '@/lib/brand'
 
 export const metadata: Metadata = {
-  title: 'About Andrew Tugume — Building People, Systems & Capital for Africa\'s Future',
+  title: 'About Andrew Tugume — Educator, Technologist, Investor',
   description:
-    'Andrew Tugume is an educator, technologist, and investor shaping the future of work and leadership in Africa through workforce development programs, leadership institutions, and capital formation.',
+    'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda, and the founder of WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
   keywords: [
     'Andrew Tugume',
     'African leadership development',
@@ -16,14 +18,13 @@ export const metadata: Metadata = {
     'entrepreneur Uganda',
     'Qraft Solutions',
     'WorkMasters',
-    'TechMasters',
     'CapitalMasters',
   ],
   alternates: {
     canonical: 'https://andrewtugume.com/about',
   },
   openGraph: {
-    title: 'About Andrew Tugume — Building People, Systems & Capital for Africa\'s Future',
+    title: 'About Andrew Tugume — Educator, Technologist, Investor',
     description:
       'Educator, technologist, and investor working at the intersection of workforce development, leadership, technology, and capital in Africa.',
     url: 'https://andrewtugume.com/about',
@@ -80,46 +81,6 @@ const beliefs = [
   },
 ]
 
-const ecosystem = [
-  {
-    category: 'Learning',
-    items: [
-      { name: 'Qraft Academy', description: 'A structured learning institution developing future-ready professionals.' },
-      { name: 'CourseMasters', description: 'Helping organizations design high-performance training systems that scale.', href: '/masters/coursemasters' },
-    ],
-  },
-  {
-    category: 'Leadership',
-    items: [
-      { name: 'Chariot Leadership Institute', description: 'Developing leaders for Africa\'s organizations, communities, and institutions.', href: '/schools/chariot-leadership' },
-    ],
-  },
-  {
-    category: 'Workforce Development',
-    items: [
-      { name: 'WorkMasters', description: 'Career, productivity, and management mastery for professionals, founders, and operators.', href: '/workmasters' },
-    ],
-  },
-  {
-    category: 'Technology',
-    items: [
-      { name: 'TechMasters', description: 'Product and innovation mastery for developers, builders, and technical founders.', href: '/techmasters' },
-      { name: 'Qraft Solutions', description: 'Technology advisory and development for organizations building real-world solutions.' },
-    ],
-  },
-  {
-    category: 'Capital',
-    items: [
-      { name: 'CapitalMasters', description: 'Investment and wealth mastery for operators ready to build durable, long-term wealth.', href: '/masters/capitalmasters' },
-    ],
-  },
-  {
-    category: 'Community',
-    items: [
-      { name: 'Nations Knowledge Community', description: 'A community for knowledge-driven professionals and leaders building across Africa.', href: '/schools/nations-bible' },
-    ],
-  },
-]
 
 export default function About() {
   return (
@@ -146,8 +107,10 @@ export default function About() {
         <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-14">
           <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
             <img
-              src="https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg"
-              alt="Andrew Tugume"
+              src={cld(brand.images.headshot, 400)}
+              alt={`Portrait of ${brand.name}`}
+              width={192}
+              height={192}
               className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover flex-shrink-0"
             />
             <div className="flex-1 text-center md:text-left">
@@ -155,24 +118,25 @@ export default function About() {
                 Andrew Tugume — Educator. Technologist. Investor.
               </p>
               <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-primary max-w-2xl leading-tight">
-                Building People, Systems &amp; Capital for Africa's Future
+                I help people discover what they carry, develop what they know and put it to meaningful use.
               </h1>
               <p className="mt-5 text-lg text-gray-700 max-w-2xl leading-relaxed">
-                Andrew Tugume works at the intersection of workforce development, leadership, technology,
-                and capital — with one aim: to shape the future of work and leadership in Africa.
+                I’m Andrew Tugume — an educator, technologist and investor based in {brand.location}. Through
+                practical education, productive work, intellectual development and biblical teaching, I help
+                people develop their potential, create value and live with purpose.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                 <Link
-                  href="/programs"
+                  href="/#initiatives"
                   className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white hover:bg-black"
                 >
-                  Explore Programs
+                  Explore My Work
                 </Link>
                 <Link
-                  href="/contact"
+                  href={bookingHref}
                   className="inline-flex items-center justify-center rounded-full border border-primary px-7 py-3 text-sm font-semibold text-primary hover:bg-black hover:text-white"
                 >
-                  Work With Andrew
+                  Book Andrew to Speak
                 </Link>
               </div>
             </div>
@@ -313,42 +277,37 @@ export default function About() {
           </div>
         </section>
 
-        {/* ── 6. The Ecosystem ─────────────────────────────────── */}
+        {/* ── 6. My Work ───────────────────────────────────────── */}
         <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-          <p className="text-sm font-semibold tracking-widest text-accent uppercase">The Ecosystem</p>
+          <p className="text-sm font-semibold tracking-widest text-accent uppercase">My Work</p>
           <h2 className="mt-3 text-3xl font-semibold text-primary max-w-2xl leading-snug">
-            Building an Ecosystem for Transformation
+            Three initiatives, one purpose.
           </h2>
           <p className="mt-4 text-gray-700 max-w-3xl leading-relaxed">
-            These are not isolated projects. They are the components of a single answer to a single
-            question: How do you build a generation of people ready to lead Africa's economic
-            transformation? Each institution addresses a specific gap. Together, they form an ecosystem.
+            WorkMasters and InfluenceMasters make up my Personal Capital Development work — helping people develop
+            productive capital and influence capital. Bible Study with Andrew Tugume is distinct: it is teaching,
+            grounded in Scripture, and it is never a condition of, or a route into, any commercial programme.
           </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {ecosystem.map((group) => (
-              <div key={group.category} className="rounded-xl border border-black/5 p-6">
-                <p className="text-xs font-semibold tracking-widest text-accent uppercase mb-4">
-                  {group.category}
-                </p>
-                <div className="space-y-4">
-                  {group.items.map((item) => (
-                    <div key={item.name}>
-                      <h3 className="text-sm font-semibold text-primary">
-                        {item.href ? (
-                          <Link href={item.href} className="hover:text-accent">
-                            {item.name} →
-                          </Link>
-                        ) : (
-                          item.name
-                        )}
-                      </h3>
-                      <p className="mt-1 text-xs text-gray-600 leading-relaxed">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {initiatives.map((initiative) => (
+              <Link
+                key={initiative.id}
+                href={initiative.href}
+                className="block rounded-xl border border-black/5 p-6 hover:border-accent/40 hover:no-underline"
+              >
+                <span className="block text-xs font-semibold tracking-widest text-gray-600 uppercase">{initiative.category}</span>
+                <span className="mt-2 block text-lg font-semibold text-primary">{initiative.name} →</span>
+                <span className="mt-2 block text-sm text-gray-700">{initiative.summary}</span>
+              </Link>
             ))}
           </div>
+
+          <h3 className="mt-12 text-xl font-semibold text-primary">The wider ecosystem</h3>
+          <p className="mt-2 mb-6 text-gray-700 max-w-3xl">
+            Alongside my personal-brand work, I founded Rata Qraft Solutions Limited (Qraft Group), and my work
+            connects to the Future of Work Forum.
+          </p>
+          <EcosystemOverview />
         </section>
 
         {/* ── 7. Experience & Credibility ──────────────────────── */}
@@ -375,12 +334,12 @@ export default function About() {
               {
                 area: 'Technology & Product',
                 detail:
-                  'Founded Qraft Solutions and led technical teams through the full cycle of product development, from problem definition to architecture to production — in markets where infrastructure is rarely predictable.',
+                  'Led technical teams through the full cycle of product development, from problem definition to architecture to production — in markets where infrastructure is rarely predictable.',
               },
               {
                 area: 'Leadership Development',
                 detail:
-                  'Founded Chariot Leadership Institute to develop leaders for Africa\'s organizations and communities, with programs grounded in governance, accountability, and character formation.',
+                  'Developed leadership programmes for organisations and communities, grounded in governance, accountability, and character formation.',
               },
               {
                 area: 'Entrepreneurship',
@@ -418,7 +377,7 @@ export default function About() {
             </p>
             <p>
               My faith shapes how I think about work, stewardship, and service. It is the reason
-              the Workers &amp; Leaders Bible Study exists — because I believe the principles in
+              <Link href="/bible-study">Bible Study with Andrew Tugume</Link> exists — because I believe the principles in
               scripture are as relevant to business and leadership as any management framework, and
               that the professionals who integrate both tend to build something more durable than
               those who keep the two separate.
@@ -440,7 +399,7 @@ export default function About() {
           <div className="mb-8">
             <p className="text-sm font-semibold tracking-widest text-accent uppercase">Join the Mission</p>
             <h2 className="mt-3 text-3xl font-semibold text-primary">
-              This work is bigger than any single program.
+              Ways to engage with my work.
             </h2>
             <p className="mt-4 text-gray-700 max-w-2xl leading-relaxed">
               There are several ways to engage — depending on where you are and what you are building.
@@ -449,40 +408,40 @@ export default function About() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: 'Programs',
-                body: 'Join a mastery cohort and develop the skills, systems, and discipline your career or business demands. WorkMasters, TechMasters, CapitalMasters, CourseMasters.',
-                href: '/programs',
-                cta: 'Explore Programs',
+                title: 'WorkMasters',
+                body: 'Develop productive capital — turn your skills and expertise into valuable offers, productive systems and income-generating assets.',
+                href: '/workmasters',
+                cta: 'Explore WorkMasters',
               },
               {
-                title: 'Communities',
-                body: 'Participate in the Nations Knowledge Community. Transformation rarely happens alone.',
-                href: '/schools/nations-bible',
-                cta: 'Join a Community',
+                title: 'InfluenceMasters',
+                body: 'Develop influence capital — your voice, original ideas and credible authority.',
+                href: '/influencemasters',
+                cta: 'Explore InfluenceMasters',
               },
               {
-                title: 'Coaching',
-                body: 'For founders and executives who want direct, high-accountability strategic work. Limited availability.',
-                href: '/one-on-one',
-                cta: 'Inquire About Coaching',
+                title: 'Bible Study',
+                body: 'Study Scripture and its application to work, leadership, money, stewardship and relationships.',
+                href: '/bible-study',
+                cta: 'Explore Bible Study',
+              },
+              {
+                title: 'Speaking',
+                body: 'Keynotes, workshops, panels and podcast interviews for organisations and events.',
+                href: bookingHref,
+                cta: 'Book Andrew',
+              },
+              {
+                title: 'Guest Teaching',
+                body: 'Bible teaching and seminars for churches, ministries and Christian organisations.',
+                href: '/bible-study/invite',
+                cta: 'Invite Andrew to teach',
               },
               {
                 title: 'Partnerships',
-                body: 'If you lead an organization focused on workforce development, education, or economic transformation in Africa — let\'s talk.',
-                href: '/contact',
-                cta: 'Start a Conversation',
-              },
-              {
-                title: 'Engagements',
-                body: 'Speaking, advisory, and team training for leadership teams, organizations, and events.',
-                href: '/book',
-                cta: 'Request an Engagement',
-              },
-              {
-                title: 'Institutions',
-                body: 'If you are building in learning, leadership, or capital in Africa, there may be an opportunity to collaborate across the ecosystem.',
-                href: '/contact',
-                cta: 'Explore Collaboration',
+                body: 'Collaborate on programmes, events, sponsorship, media or institutional initiatives.',
+                href: '/ecosystem#partner',
+                cta: 'Start a conversation',
               },
             ].map((item) => (
               <article key={item.title} className="bg-white border border-black/5 rounded-2xl p-6 flex flex-col">
@@ -505,24 +464,23 @@ export default function About() {
             Andrew Tugume
           </p>
           <h2 className="mt-4 text-3xl md:text-4xl font-semibold max-w-2xl mx-auto leading-snug">
-            Let's Build the Future Together
+            What Will You Develop Next?
           </h2>
-          <p className="mt-4 text-white/70 max-w-xl mx-auto leading-relaxed">
-            If you are serious about your development, your organization, or Africa's future —
-            there is a program, a community, or a conversation for you here.
+          <p className="mt-4 text-white/75 max-w-xl mx-auto leading-relaxed">
+            Explore the programmes, study the Bible with us, or start a conversation.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/apply"
+              href="/programs"
               className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3 text-sm font-semibold text-primary hover:bg-accent/90"
             >
-              Apply for Coaching
+              Explore Programmes
             </Link>
             <Link
-              href="/programs"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-3 text-sm font-semibold text-white hover:border-white"
             >
-              Explore Programs
+              Get in Touch
             </Link>
           </div>
         </section>

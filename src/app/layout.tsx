@@ -11,22 +11,20 @@ export const metadata: Metadata = {
     default: 'Andrew Tugume — Educator, Technologist, Investor',
     template: '%s | Andrew Tugume'
   },
-  description: 'Educator, technologist, and investor helping ambitious African professionals, founders, and operators master career growth, technology execution, and disciplined capital.',
+  description: 'Andrew Tugume is an educator, technologist and investor helping people develop their potential, create value and live with purpose through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
   keywords: [
     'Andrew Tugume',
-    'mastery coaching',
-    'career strategy',
-    'leadership systems',
-    'technology execution',
-    'product strategy',
-    'investment discipline',
-    'capital allocation',
-    'African founders',
-    'operators',
-    'investors',
     'WorkMasters',
-    'TechMasters',
-    'CapitalMasters',
+    'InfluenceMasters',
+    'Bible Study with Andrew Tugume',
+    'productive capital development',
+    'influence capital development',
+    'Bible study Uganda',
+    'Kampala',
+    'Qraft Group',
+    'Qraft Academy',
+    'Qraft Capital',
+    'Future of Work Forum',
   ],
   authors: [{ name: 'Andrew Tugume', url: 'https://andrewtugume.com' }],
   creator: 'Andrew Tugume',
@@ -40,11 +38,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['en_GB', 'sw_KE', 'sw_TZ'],
     url: 'https://andrewtugume.com',
     siteName: 'Andrew Tugume',
     title: 'Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Helping ambitious professionals and founders build skill, systems, and disciplined capital through structured mastery coaching.',
+    description: 'Develop your potential, create value and live with purpose — through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
     images: [
       {
         url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
@@ -66,7 +63,7 @@ export const metadata: Metadata = {
     site: '@_drewtugume',
     creator: '@_drewtugume',
     title: 'Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Helping ambitious professionals and founders build skill, systems, and disciplined capital.',
+    description: 'Develop your potential, create value and live with purpose — through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
     images: {
       url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
       alt: 'Andrew Tugume portrait',
@@ -85,34 +82,18 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE || '',
-    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION_CODE || '',
+    ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE && { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE }),
+    ...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION_CODE && { yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION_CODE }),
   },
   manifest: '/site.webmanifest',
-  alternates: {
-    canonical: 'https://andrewtugume.com',
-    languages: {
-      'en-US': 'https://andrewtugume.com',
-      'en': 'https://andrewtugume.com',
-    },
-  },
+
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://andrewtugume.com" />
-        
-        {/* Favicon and App Icons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0F5666" />
-        
+        {/* Favicon and app icons: add files to src/app (icon.png, apple-icon.png) once brand icons exist */}
         {/* Theme Colors */}
         <meta name="theme-color" content="#0B0B0B" />
         <meta name="msapplication-TileColor" content="#0B0B0B" />
@@ -162,16 +143,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'WebSite',
               name: 'Andrew Tugume',
               url: 'https://andrewtugume.com',
-              description: 'Educator, technologist, and investor helping ambitious professionals build skill, systems, and disciplined capital.',
+              description: 'Develop your potential, create value and live with purpose — through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
               image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: {
-                  '@type': 'EntryPoint',
-                  urlTemplate: 'https://andrewtugume.com/search?q={search_term_string}',
-                },
-                'query-input': 'required name=search_term_string',
-              },
+
             })
           }}
         />
@@ -188,17 +162,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               mainEntity: [
                 { name: 'Home', url: 'https://andrewtugume.com' },
                 { name: 'About', url: 'https://andrewtugume.com/about' },
-                { name: 'Programs', url: 'https://andrewtugume.com/programs' },
-                { name: 'Institutions', url: 'https://andrewtugume.com/institutions' },
+                { name: 'WorkMasters', url: 'https://andrewtugume.com/workmasters' },
+                { name: 'InfluenceMasters', url: 'https://andrewtugume.com/influencemasters' },
+                { name: 'Bible Study', url: 'https://andrewtugume.com/bible-study' },
                 { name: 'Resources', url: 'https://andrewtugume.com/resources' },
-                { name: 'Apply', url: 'https://andrewtugume.com/apply' },
+                { name: 'My Ecosystem', url: 'https://andrewtugume.com/ecosystem' },
               ],
             })
           }}
         />
         
         <Header />
-        <main className="container py-6 md:py-12">{children}</main>
+        <main id="main" className="container py-6 md:py-12">{children}</main>
         <Footer />
       </body>
     </html>

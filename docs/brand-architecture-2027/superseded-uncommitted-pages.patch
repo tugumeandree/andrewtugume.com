@@ -1,0 +1,797 @@
+diff --git a/src/app/partners/page.tsx b/src/app/partners/page.tsx
+new file mode 100644
+index 0000000..7a8d16e
+--- /dev/null
++++ b/src/app/partners/page.tsx
+@@ -0,0 +1,116 @@
++import React from 'react'
++import type { Metadata } from 'next'
++import { generateBreadcrumbSchema } from '@/lib/seo/schema'
++import Button from '@/components/Button'
++import ContactForm from '@/components/ContactForm'
++import PageHero from '@/components/PageHero'
++import PartnerCard from '@/components/PartnerCard'
++import SectionHeading from '@/components/SectionHeading'
++import { alliances, brand, ecosystem, partnershipTypes } from '@/lib/brand'
++
++export const metadata: Metadata = {
++  title: 'Partners & Alliances',
++  description:
++    'The institutions Andrew Tugume has founded and the strategic partners and alliances he builds with — plus opportunities to partner.',
++  alternates: {
++    canonical: 'https://andrewtugume.com/partners'
++  }
++}
++
++export default function Partners() {
++  const activeAlliances = alliances.filter((group) => group.partners.length > 0)
++
++  return (
++    <>
++      <script
++        type="application/ld+json"
++        dangerouslySetInnerHTML={{
++          __html: JSON.stringify(
++            generateBreadcrumbSchema([
++              { name: 'Home', url: 'https://andrewtugume.com' },
++              { name: 'Partners', url: 'https://andrewtugume.com/partners' }
++            ])
++          )
++        }}
++      />
++
++      <div className="fullbleed">
++        <PageHero
++          eyebrow="Partners & Alliances"
++          title="Building Africa’s future through alliances that last."
++          intro="Andrew works with institutions, companies, and communities that share one mission: to shape the future of work and leadership in Africa through learning, technology, and capital."
++        >
++          <Button asLink href="#partner-with-andrew" variant="accent" size="lg" className="hover:no-underline">Partner with Andrew</Button>
++        </PageHero>
++
++        {/* Founded ecosystem */}
++        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++          <div className="max-w-6xl mx-auto">
++            <SectionHeading
++              eyebrow="The Ecosystem"
++              title="Institutions Andrew founded and leads."
++              intro="The organizations that carry the mission into learning, leadership, technology, and capital."
++            />
++            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
++              {ecosystem.map((partner) => (
++                <PartnerCard key={partner.name} partner={partner} />
++              ))}
++            </div>
++          </div>
++        </section>
++
++        {/* Strategic alliances — groups render once partners are added in src/lib/brand.ts */}
++        {activeAlliances.map((group) => (
++          <section key={group.category} className="bg-white px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++            <div className="max-w-6xl mx-auto">
++              <SectionHeading eyebrow="Alliances" title={group.category} />
++              <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
++                {group.partners.map((partner) => (
++                  <PartnerCard key={partner.name} partner={partner} />
++                ))}
++              </div>
++            </div>
++          </section>
++        ))}
++
++        {/* Partnership types */}
++        <section className="bg-primary px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++          <div className="max-w-6xl mx-auto">
++            <SectionHeading
++              tone="dark"
++              eyebrow="Opportunities"
++              title="Ways to partner."
++              intro="From one-off events to long-term programs, partnerships are designed around shared outcomes."
++            />
++            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
++              {partnershipTypes.map((type) => (
++                <div key={type.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
++                  <h3 className="text-lg font-semibold text-white">{type.title}</h3>
++                  <p className="mt-2 text-sm text-white/70 leading-relaxed">{type.body}</p>
++                </div>
++              ))}
++            </div>
++          </div>
++        </section>
++
++        {/* Enquiry */}
++        <section id="partner-with-andrew" className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++          <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
++            <div>
++              <SectionHeading
++                eyebrow="Partner with Andrew"
++                title="Let’s build something together."
++                intro="Share who you are and what you have in mind. Andrew’s team will follow up to explore fit."
++              />
++              <div className="mt-8 space-y-2 text-sm text-gray-700">
++                <p><a href={`mailto:${brand.email}?subject=Partnership%20opportunity`}>{brand.email}</a></p>
++                <p><a href={brand.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp {brand.phone}</a></p>
++              </div>
++            </div>
++            <ContactForm defaultSubject="Partnership Opportunity" />
++          </div>
++        </section>
++      </div>
++    </>
++  )
++}
+diff --git a/src/app/library/page.tsx b/src/app/library/page.tsx
+new file mode 100644
+index 0000000..3dbdf88
+--- /dev/null
++++ b/src/app/library/page.tsx
+@@ -0,0 +1,149 @@
++import React from 'react'
++import Link from 'next/link'
++import type { Metadata } from 'next'
++import { generateBreadcrumbSchema } from '@/lib/seo/schema'
++import { getAllPosts } from '@/lib/blog/posts'
++import PageHero from '@/components/PageHero'
++import SectionHeading from '@/components/SectionHeading'
++import SubscribeForm from '@/components/SubscribeForm'
++import { libraryCollections, mediaItems } from '@/lib/brand'
++
++export const metadata: Metadata = {
++  title: 'Library — Essays, Talks, Study Series & Toolkits',
++  description:
++    'Andrew Tugume’s digital library: essays, talks, podcasts, Bible study series, frameworks, and toolkits on work, leadership, technology, and capital.',
++  alternates: {
++    canonical: 'https://andrewtugume.com/library'
++  }
++}
++
++const formatDate = (date: string) =>
++  new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
++
++export default async function Library() {
++  const posts = await getAllPosts()
++
++  return (
++    <>
++      <script
++        type="application/ld+json"
++        dangerouslySetInnerHTML={{
++          __html: JSON.stringify(
++            generateBreadcrumbSchema([
++              { name: 'Home', url: 'https://andrewtugume.com' },
++              { name: 'Library', url: 'https://andrewtugume.com/library' }
++            ])
++          )
++        }}
++      />
++
++      <div className="fullbleed">
++        <PageHero
++          eyebrow="Digital Library"
++          title="Read, watch, and learn with Andrew."
++          intro="Essays, talks, study series, and frameworks on work, leadership, technology, and capital — built from real practice and free to use."
++        />
++
++        {/* Collections */}
++        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++          <div className="max-w-6xl mx-auto">
++            <SectionHeading eyebrow="Collections" title="Browse by collection." />
++            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
++              {libraryCollections.map((collection) => (
++                <Link
++                  key={collection.title}
++                  href={collection.href}
++                  className="flex h-full flex-col rounded-2xl border border-black/5 bg-white p-6 hover:border-accent/40 hover:shadow-md hover:no-underline"
++                >
++                  <p className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">{collection.kicker}</p>
++                  <h3 className="mt-3 text-xl font-semibold text-primary">{collection.title}</h3>
++                  <p className="mt-3 flex-1 text-sm text-gray-700 leading-relaxed">{collection.description}</p>
++                  <p className="mt-5 text-sm font-semibold text-primary">Open →</p>
++                </Link>
++              ))}
++            </div>
++          </div>
++        </section>
++
++        {/* Watch & listen */}
++        <section id="watch" className="bg-primary px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++          <div className="max-w-6xl mx-auto">
++            <SectionHeading
++              tone="dark"
++              eyebrow="Watch & Listen"
++              title="Talks, podcasts, and interviews."
++            />
++            {mediaItems.length > 0 ? (
++              <ul className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
++                {mediaItems.map((item) => (
++                  <li key={item.href}>
++                    <a
++                      href={item.href}
++                      target="_blank"
++                      rel="noopener noreferrer"
++                      className="block h-full rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-accent hover:no-underline"
++                    >
++                      <p className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">
++                        {item.type} · {item.platform}
++                      </p>
++                      <h3 className="mt-3 text-lg font-semibold text-white">{item.title}</h3>
++                      {item.date && <p className="mt-2 text-xs text-white/50">{formatDate(item.date)}</p>}
++                    </a>
++                  </li>
++                ))}
++              </ul>
++            ) : (
++              <div className="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
++                <p className="max-w-xl text-white/70">
++                  New talks and podcast conversations are on the way. Join the list to get them as they’re released.
++                </p>
++                <SubscribeForm tone="dark" cta="Get updates" />
++              </div>
++            )}
++          </div>
++        </section>
++
++        {/* Essays */}
++        <section id="essays" className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++          <div className="max-w-6xl mx-auto">
++            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
++              <SectionHeading eyebrow="Insights" title="Latest essays." />
++              <Link href="/blog" className="shrink-0 text-sm font-semibold text-primary hover:text-accent">All essays →</Link>
++            </div>
++            {posts.length > 0 ? (
++              <div className="mt-10 grid gap-6 md:grid-cols-2">
++                {posts.slice(0, 6).map((post) => (
++                  <Link
++                    key={post.slug}
++                    href={`/blog/${post.slug}`}
++                    className="block rounded-2xl border border-black/5 bg-white p-6 hover:border-accent/40 hover:no-underline"
++                  >
++                    <p className="text-xs text-gray-500">{formatDate(post.date)}</p>
++                    <h3 className="mt-2 text-xl font-semibold text-primary">{post.title}</h3>
++                    {post.summary && <p className="mt-2 text-sm text-gray-700">{post.summary}</p>}
++                    {post.tags && post.tags.length > 0 && (
++                      <p className="mt-4 text-xs text-gray-500">{post.tags.slice(0, 3).map((tag) => `#${tag}`).join(' ')}</p>
++                    )}
++                  </Link>
++                ))}
++              </div>
++            ) : (
++              <p className="mt-8 text-gray-700">New essays are coming soon.</p>
++            )}
++          </div>
++        </section>
++
++        {/* Subscribe */}
++        <section className="px-4 sm:px-6 lg:px-8 pb-8">
++          <div className="max-w-6xl mx-auto rounded-3xl border border-black/5 bg-white p-8 md:p-12 grid gap-6 md:grid-cols-2 md:items-center">
++            <div>
++              <h2 className="text-3xl font-semibold text-primary">Get new ideas in your inbox.</h2>
++              <p className="mt-3 text-gray-700">Short, high-signal notes on execution, leadership, and capital.</p>
++            </div>
++            <SubscribeForm />
++          </div>
++        </section>
++      </div>
++    </>
++  )
++}
+diff --git a/src/components/OfferCard.tsx b/src/components/OfferCard.tsx
+new file mode 100644
+index 0000000..4113f85
+--- /dev/null
++++ b/src/components/OfferCard.tsx
+@@ -0,0 +1,53 @@
++import React from 'react'
++import Link from 'next/link'
++import type { Offer } from '@/lib/brand'
++
++const statusLabels = {
++  open: 'Enrolling',
++  waitlist: 'Coming soon',
++  free: 'Free',
++}
++
++export default function OfferCard({ offer }: { offer: Offer }) {
++  const featured = Boolean(offer.badge)
++
++  return (
++    <article
++      className={`relative flex h-full flex-col rounded-2xl p-6 md:p-8 transition-all ${
++        featured
++          ? 'bg-primary text-white ring-1 ring-accent'
++          : 'bg-white border border-black/5 hover:border-accent/40 hover:shadow-md'
++      }`}
++    >
++      <div className="flex items-start justify-between gap-3">
++        <p className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">{offer.kicker}</p>
++        {(offer.badge || offer.status) && (
++          <span
++            className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${
++              featured ? 'bg-accent text-primary' : 'bg-accent/10 text-primary'
++            }`}
++          >
++            {offer.badge || (offer.status && statusLabels[offer.status])}
++          </span>
++        )}
++      </div>
++      <h3 className={`mt-3 text-xl md:text-2xl font-semibold leading-snug ${featured ? 'text-white' : 'text-primary'}`}>
++        {offer.name}
++      </h3>
++      <p className={`mt-3 flex-1 text-sm leading-relaxed ${featured ? 'text-white/75' : 'text-gray-700'}`}>
++        {offer.description}
++      </p>
++      {offer.price && (
++        <p className={`mt-4 text-sm font-semibold ${featured ? 'text-accent' : 'text-primary'}`}>{offer.price}</p>
++      )}
++      <Link
++        href={offer.href}
++        className={`mt-5 inline-flex items-center text-sm font-semibold hover:no-underline ${
++          featured ? 'text-white hover:text-accent' : 'text-primary hover:text-accent'
++        }`}
++      >
++        {offer.cta} →
++      </Link>
++    </article>
++  )
++}
+diff --git a/src/components/OffersSection.tsx b/src/components/OffersSection.tsx
+new file mode 100644
+index 0000000..6db0d3d
+--- /dev/null
++++ b/src/components/OffersSection.tsx
+@@ -0,0 +1,32 @@
++import React from 'react'
++import Link from 'next/link'
++import OfferCard from '@/components/OfferCard'
++import SectionHeading from '@/components/SectionHeading'
++import { offerGroups } from '@/lib/brand'
++
++export default function OffersSection() {
++  const programs = offerGroups.find((group) => group.id === 'programs')?.offers ?? []
++
++  return (
++    <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-24">
++      <div className="max-w-6xl mx-auto">
++        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
++          <SectionHeading
++            eyebrow="Offers & Shop"
++            title="Work with Andrew."
++            intro="Masterminds, programs, advisory, and toolkits for professionals, founders, and organizations ready to grow with structure."
++          />
++          <Link href="/store" className="shrink-0 text-sm font-semibold text-primary hover:text-accent">
++            View all offers →
++          </Link>
++        </div>
++
++        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
++          {programs.map((offer) => (
++            <OfferCard key={offer.name} offer={offer} />
++          ))}
++        </div>
++      </div>
++    </section>
++  )
++}
+diff --git a/src/components/PartnerCard.tsx b/src/components/PartnerCard.tsx
+new file mode 100644
+index 0000000..28126fc
+--- /dev/null
++++ b/src/components/PartnerCard.tsx
+@@ -0,0 +1,36 @@
++import React from 'react'
++import Link from 'next/link'
++import type { Partner } from '@/lib/brand'
++
++export default function PartnerCard({ partner }: { partner: Partner }) {
++  const content = (
++    <>
++      {partner.logo ? (
++        <img src={partner.logo} alt={partner.name} className="h-10 w-auto object-contain" />
++      ) : (
++        <p className="text-lg font-semibold text-primary" style={{ fontFamily: 'Playfair Display, serif' }}>
++          {partner.name}
++        </p>
++      )}
++      <p className="mt-3 text-sm text-gray-700 leading-relaxed">{partner.description}</p>
++      {partner.href && <p className="mt-4 text-xs font-semibold text-accent">Visit →</p>}
++    </>
++  )
++
++  const className = 'block h-full rounded-2xl border border-black/5 bg-white p-6 transition-all hover:border-accent/40 hover:shadow-md hover:no-underline'
++
++  if (!partner.href) {
++    return <div className={className}>{content}</div>
++  }
++
++  const isExternal = partner.href.startsWith('http')
++  return (
++    <Link
++      href={partner.href}
++      className={className}
++      {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
++    >
++      {content}
++    </Link>
++  )
++}
+diff --git a/src/components/PartnersSection.tsx b/src/components/PartnersSection.tsx
+new file mode 100644
+index 0000000..a0d4038
+--- /dev/null
++++ b/src/components/PartnersSection.tsx
+@@ -0,0 +1,41 @@
++import React from 'react'
++import Link from 'next/link'
++import SectionHeading from '@/components/SectionHeading'
++import { alliances, ecosystem } from '@/lib/brand'
++
++export default function PartnersSection() {
++  const allies = alliances.flatMap((group) => group.partners)
++  const names = [...ecosystem, ...allies]
++
++  return (
++    <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20 border-y border-black/5">
++      <div className="max-w-6xl mx-auto">
++        <SectionHeading
++          align="center"
++          eyebrow="Ecosystem & Alliances"
++          title="Building with institutions that last."
++        />
++
++        <ul className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-6">
++          {names.map((partner) => (
++            <li key={partner.name} className="flex items-center">
++              {partner.logo ? (
++                <img src={partner.logo} alt={partner.name} className="h-10 w-auto object-contain opacity-70 grayscale hover:opacity-100 hover:grayscale-0" />
++              ) : (
++                <span className="text-lg md:text-xl font-semibold text-primary/70" style={{ fontFamily: 'Playfair Display, serif' }}>
++                  {partner.name}
++                </span>
++              )}
++            </li>
++          ))}
++        </ul>
++
++        <div className="mt-10 text-center">
++          <Link href="/partners" className="text-sm font-semibold text-primary hover:text-accent">
++            Partners & partnership opportunities →
++          </Link>
++        </div>
++      </div>
++    </section>
++  )
++}
+diff --git a/src/components/LibrarySection.tsx b/src/components/LibrarySection.tsx
+new file mode 100644
+index 0000000..dac3234
+--- /dev/null
++++ b/src/components/LibrarySection.tsx
+@@ -0,0 +1,58 @@
++import React from 'react'
++import Link from 'next/link'
++import SectionHeading from '@/components/SectionHeading'
++import { getAllPosts } from '@/lib/blog/posts'
++import { libraryCollections } from '@/lib/brand'
++
++export default async function LibrarySection() {
++  const posts = (await getAllPosts()).slice(0, 3)
++
++  return (
++    <section className="bg-white px-4 sm:px-6 lg:px-8 py-16 md:py-24">
++      <div className="max-w-6xl mx-auto">
++        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
++          <SectionHeading
++            eyebrow="Digital Library"
++            title="Ideas worth building on."
++            intro="Essays, study series, frameworks, talks, and toolkits — free to read, watch, and use."
++          />
++          <Link href="/library" className="shrink-0 text-sm font-semibold text-primary hover:text-accent">
++            Enter the library →
++          </Link>
++        </div>
++
++        <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
++          <div className="space-y-4">
++            {posts.map((post) => (
++              <Link
++                key={post.slug}
++                href={`/blog/${post.slug}`}
++                className="block rounded-2xl border border-black/5 bg-[#F7F6F2] p-6 hover:border-accent/40 hover:no-underline"
++              >
++                <p className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">
++                  Essay · {new Date(post.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
++                </p>
++                <h3 className="mt-2 text-xl font-semibold text-primary">{post.title}</h3>
++                {post.summary && <p className="mt-2 text-sm text-gray-700 line-clamp-2">{post.summary}</p>}
++              </Link>
++            ))}
++          </div>
++
++          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
++            {libraryCollections.slice(1).map((collection) => (
++              <Link
++                key={collection.title}
++                href={collection.href}
++                className="block rounded-2xl border border-black/5 p-6 hover:border-accent/40 hover:no-underline"
++              >
++                <p className="text-xs font-semibold tracking-[0.15em] text-accent uppercase">{collection.kicker}</p>
++                <h3 className="mt-2 text-lg font-semibold text-primary">{collection.title}</h3>
++                <p className="mt-2 text-sm text-gray-700">{collection.description}</p>
++              </Link>
++            ))}
++          </div>
++        </div>
++      </div>
++    </section>
++  )
++}
+diff --git a/src/components/IdentitySection.tsx b/src/components/IdentitySection.tsx
+new file mode 100644
+index 0000000..9e17ed2
+--- /dev/null
++++ b/src/components/IdentitySection.tsx
+@@ -0,0 +1,46 @@
++import React from 'react'
++import Image from 'next/image'
++import Link from 'next/link'
++import { brand, roles } from '@/lib/brand'
++
++export default function IdentitySection() {
++  return (
++    <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-24">
++      <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-[0.9fr_1.1fr] items-center">
++        <div className="relative">
++          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
++            <Image src={brand.images.headshot} alt={brand.name} fill className="object-cover" sizes="(min-width: 768px) 45vw, 100vw" />
++          </div>
++          <div className="absolute -bottom-6 left-6 right-6 md:-right-8 md:left-auto md:w-72 rounded-2xl bg-primary p-6 text-white shadow-xl">
++            <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase">Mission</p>
++            <p className="mt-2 text-sm leading-relaxed text-white/85">{brand.mission}</p>
++          </div>
++        </div>
++
++        <div className="pt-8 md:pt-0">
++          <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase">Who I Am</p>
++          <h2 className="mt-3 text-3xl md:text-5xl font-semibold text-primary leading-tight">
++            I build people, systems, and capital.
++          </h2>
++          <p className="mt-5 text-base md:text-lg text-gray-700 leading-relaxed">
++            I don’t teach from theory. I’ve founded schools, built technology, and deployed capital — and everything I
++            share on stage, in programs, and in private rooms comes from that work.
++          </p>
++
++          <dl className="mt-8 divide-y divide-black/5 border-y border-black/5">
++            {roles.map((item) => (
++              <div key={item.role} className="grid grid-cols-[7.5rem_1fr] gap-4 py-4">
++                <dt className="text-sm font-semibold tracking-wide text-primary uppercase">{item.role}</dt>
++                <dd className="text-sm text-gray-700 leading-relaxed">{item.body}</dd>
++              </div>
++            ))}
++          </dl>
++
++          <Link href="/about" className="mt-8 inline-flex text-sm font-semibold text-primary hover:text-accent">
++            Read my full story →
++          </Link>
++        </div>
++      </div>
++    </section>
++  )
++}
+diff --git a/src/components/SpeakingSection.tsx b/src/components/SpeakingSection.tsx
+new file mode 100644
+index 0000000..749bc66
+--- /dev/null
++++ b/src/components/SpeakingSection.tsx
+@@ -0,0 +1,45 @@
++import React from 'react'
++import Link from 'next/link'
++import Button from '@/components/Button'
++import SectionHeading from '@/components/SectionHeading'
++import TalkCard from '@/components/TalkCard'
++import { bookingHref, engagementFormats, signatureTalks } from '@/lib/brand'
++
++export default function SpeakingSection() {
++  return (
++    <section className="bg-primary px-4 sm:px-6 lg:px-8 py-16 md:py-24">
++      <div className="max-w-6xl mx-auto">
++        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
++          <SectionHeading
++            tone="dark"
++            eyebrow="Speaking & Media"
++            title="Bring Andrew to your stage, team, or show."
++            intro="Keynotes, panels, workshops, and podcast conversations on the future of work, leadership, technology, and capital."
++          />
++          <Button asLink href={bookingHref} variant="accent" size="lg" className="shrink-0 hover:no-underline">
++            Book Andrew
++          </Button>
++        </div>
++
++        <div className="mt-12 grid gap-6 md:grid-cols-3">
++          {signatureTalks.slice(0, 3).map((talk, index) => (
++            <TalkCard key={talk.title} talk={talk} index={index} tone="dark" />
++          ))}
++        </div>
++
++        <div className="mt-10 flex flex-wrap items-center gap-3">
++          <span className="text-xs font-semibold tracking-[0.2em] text-white/50 uppercase mr-2">Formats</span>
++          {engagementFormats.map((format) => (
++            <span key={format.title} className="rounded-full border border-white/15 px-4 py-1.5 text-sm text-white/80">
++              {format.title}
++            </span>
++          ))}
++        </div>
++
++        <Link href="/speaking" className="mt-10 inline-flex text-sm font-semibold text-accent hover:text-white">
++          See all talks, formats & media kit →
++        </Link>
++      </div>
++    </section>
++  )
++}
+diff --git a/src/app/store/page.tsx b/src/app/store/page.tsx
+index efde993..e21a33e 100644
+--- a/src/app/store/page.tsx
++++ b/src/app/store/page.tsx
+@@ -1,21 +1,99 @@
+ import React from 'react'
+ import Link from 'next/link'
++import type { Metadata } from 'next'
++import { generateBreadcrumbSchema } from '@/lib/seo/schema'
++import Button from '@/components/Button'
++import OfferCard from '@/components/OfferCard'
++import PageHero from '@/components/PageHero'
++import SectionHeading from '@/components/SectionHeading'
++import SubscribeForm from '@/components/SubscribeForm'
++import { bookingHref, offerGroups } from '@/lib/brand'
++
++export const metadata: Metadata = {
++  title: 'Offers & Shop — Programs, Advisory & Toolkits',
++  description:
++    'Masterminds, Masters programs, private advisory, corporate training, and digital toolkits from Andrew Tugume.',
++  alternates: {
++    canonical: 'https://andrewtugume.com/store'
++  }
++}
+ 
+ export default function Store() {
+   return (
+-    <div className="space-y-10">
+-      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+-        <h1 className="text-4xl md:text-5xl font-semibold text-primary">Resources and Engagements</h1>
+-        <p className="mt-4 text-gray-700">The store has been consolidated into focused resources and coaching engagements.</p>
+-        <div className="mt-6 flex flex-wrap gap-3">
+-          <Link href="/resources" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
+-            Resources
+-          </Link>
+-          <Link href="/book" className="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-black hover:text-white">
+-            Engagements
+-          </Link>
+-        </div>
+-      </section>
+-    </div>
++    <>
++      <script
++        type="application/ld+json"
++        dangerouslySetInnerHTML={{
++          __html: JSON.stringify(
++            generateBreadcrumbSchema([
++              { name: 'Home', url: 'https://andrewtugume.com' },
++              { name: 'Offers', url: 'https://andrewtugume.com/store' }
++            ])
++          )
++        }}
++      />
++
++      <div className="fullbleed">
++        <PageHero
++          eyebrow="Offers & Shop"
++          title="Programs, advisory, and tools to build with structure."
++          intro="Choose the level of support that fits where you are — from free resources to cohort masterminds, private advisory, and organizational programs."
++        >
++          <Button asLink href="#programs" variant="accent" size="lg" className="hover:no-underline">See programs</Button>
++          <Button asLink href="#free" variant="ghost" size="lg" className="hover:no-underline">Start free</Button>
++        </PageHero>
++
++        {/* Section index */}
++        <nav aria-label="Offer categories" className="sticky top-[68px] z-40 border-b border-black/5 bg-[#F7F6F2]/95 backdrop-blur px-4 sm:px-6 lg:px-8">
++          <ul className="max-w-6xl mx-auto flex gap-6 overflow-x-auto py-4 text-sm font-semibold whitespace-nowrap">
++            {offerGroups.map((group) => (
++              <li key={group.id}>
++                <Link href={`#${group.id}`} className="text-gray-700 hover:text-primary">{group.title}</Link>
++              </li>
++            ))}
++          </ul>
++        </nav>
++
++        {offerGroups.map((group, index) => (
++          <section
++            key={group.id}
++            id={group.id}
++            className={`px-4 sm:px-6 lg:px-8 py-16 md:py-20 ${index % 2 === 1 ? 'bg-white' : ''}`}
++          >
++            <div className="max-w-6xl mx-auto">
++              <SectionHeading eyebrow={`0${index + 1}`} title={group.title} intro={group.intro} />
++              <div className={`mt-10 grid gap-6 md:grid-cols-2 ${group.offers.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
++                {group.offers.map((offer) => (
++                  <OfferCard key={offer.name} offer={offer} />
++                ))}
++              </div>
++
++              {group.id === 'digital' && (
++                <div id="notify" className="mt-10 rounded-2xl bg-primary p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
++                  <div>
++                    <h3 className="text-2xl font-semibold text-white">Be first when toolkits launch.</h3>
++                    <p className="mt-2 text-sm text-white/70">Join the list for launch pricing and new releases.</p>
++                  </div>
++                  <SubscribeForm tone="dark" cta="Notify me" />
++                </div>
++              )}
++            </div>
++          </section>
++        ))}
++
++        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
++          <div className="max-w-6xl mx-auto rounded-3xl border border-black/5 bg-white p-8 md:p-12 grid gap-6 md:grid-cols-[1.5fr_1fr] md:items-center">
++            <div>
++              <h2 className="text-3xl font-semibold text-primary">Not sure where to start?</h2>
++              <p className="mt-3 text-gray-700">Apply and Andrew’s team will recommend the right program for your goals.</p>
++            </div>
++            <div className="flex flex-col sm:flex-row md:justify-end gap-3">
++              <Button asLink href="/apply" variant="primary" size="md" className="hover:no-underline">Apply now</Button>
++              <Button asLink href={bookingHref} variant="secondary" size="md" className="hover:no-underline">Book for your team</Button>
++            </div>
++          </div>
++        </section>
++      </div>
++    </>
+   )
+ }
+diff --git a/src/components/ProofStrip.tsx b/src/components/ProofStrip.tsx
+index 26cc184..eb15b58 100644
+--- a/src/components/ProofStrip.tsx
++++ b/src/components/ProofStrip.tsx
+@@ -1,34 +1,18 @@
+ import React from 'react'
++import { stats } from '@/lib/brand'
+ 
+ export default function ProofStrip() {
+   return (
+-    <section className="px-4 sm:px-6 lg:px-8 py-6 md:py-8 bg-accent/5 border-b border-accent/10">
+-      <div className="max-w-6xl mx-auto">
+-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+-          {/* Metric 1 */}
+-          <div className="text-center md:text-left">
+-            <p className="text-2xl md:text-3xl font-bold text-primary">5000+</p>
+-            <p className="text-xs md:text-sm text-gray-700 mt-1">Professionals Trained</p>
++    <section className="bg-primary px-4 sm:px-6 lg:px-8 py-10 md:py-12">
++      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
++        {stats.map((stat) => (
++          <div key={stat.label} className="text-center md:text-left md:border-l md:border-white/15 md:pl-6 first:border-0 first:pl-0">
++            <p className="text-3xl md:text-5xl font-semibold text-accent" style={{ fontFamily: 'Playfair Display, serif' }}>
++              {stat.value}
++            </p>
++            <p className="mt-2 text-xs md:text-sm tracking-wide text-white/70 uppercase">{stat.label}</p>
+           </div>
+-
+-          {/* Metric 2 */}
+-          <div className="text-center md:text-left">
+-            <p className="text-2xl md:text-3xl font-bold text-primary">10+</p>
+-            <p className="text-xs md:text-sm text-gray-700 mt-1">Years Building in Africa</p>
+-          </div>
+-
+-          {/* Metric 3 */}
+-          <div className="text-center md:text-left">
+-            <p className="text-2xl md:text-3xl font-bold text-primary">3</p>
+-            <p className="text-xs md:text-sm text-gray-700 mt-1">Schools Founded</p>
+-          </div>
+-
+-          {/* Metric 4 */}
+-          <div className="text-center md:text-left">
+-            <p className="text-2xl md:text-3xl font-bold text-primary">100M+</p>
+-            <p className="text-xs md:text-sm text-gray-700 mt-1">Capital Deployed</p>
+-          </div>
+-        </div>
++        ))}
+       </div>
+     </section>
+   )

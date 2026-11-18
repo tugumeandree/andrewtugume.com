@@ -5,7 +5,7 @@ import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Claim Your Spot',
-  description: 'Apply for WorkMasters, TechMasters, CourseMasters, or CapitalMasters.',
+  description: 'Apply for WorkMasters, CourseMasters, or CapitalMasters.',
   alternates: {
     canonical: 'https://andrewtugume.com/apply'
   }
@@ -39,15 +39,6 @@ const tracks = [
         cta: 'Apply for CourseMasters',
         ctaHref: null,
         learnHref: '/masters/coursemasters',
-      },
-      {
-        tag: 'TechMasters',
-        title: 'Technology, Product and Innovation Mastery',
-        description: 'For developers, technical founders, and innovation leaders who want to build real-world solutions and lead with technical discipline.',
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1615551883/IMG_5942_c83b2h.jpg',
-        cta: 'Apply for TechMasters',
-        ctaHref: null,
-        learnHref: '/techmasters',
       },
       {
         tag: 'CapitalMasters',
@@ -239,7 +230,7 @@ export default function Apply() {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-primary">Can I apply for more than one program?</h3>
-            <p className="mt-2 text-sm text-gray-700">Yes. Some participants combine WorkMasters with CapitalMasters, or TechMasters with CourseMasters. Mention both programs when you apply and we'll discuss what makes sense.</p>
+            <p className="mt-2 text-sm text-gray-700">Yes. Some participants combine WorkMasters with CapitalMasters or CourseMasters. Mention both programs when you apply and we'll discuss what makes sense.</p>
           </div>
           <div>
             <h3 className="text-lg font-semibold text-primary">What's the time commitment?</h3>

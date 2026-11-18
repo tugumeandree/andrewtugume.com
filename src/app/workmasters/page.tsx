@@ -1,33 +1,33 @@
 import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { generateBreadcrumbSchema, generateCourseSchema } from '@/lib/seo/schema'
+import { generateBreadcrumbSchema } from '@/lib/seo/schema'
+import ContactForm from '@/components/ContactForm'
+import FaqList from '@/components/FaqList'
+import OfferTile from '@/components/OfferTile'
+import PageHero from '@/components/PageHero'
+import SectionHeading from '@/components/SectionHeading'
+import StepList from '@/components/StepList'
+import SubscribeForm from '@/components/SubscribeForm'
+import { workmasters } from '@/lib/brand'
 
 export const metadata: Metadata = {
-  title: 'WorkMasters — Career, Leadership and Execution Mastery',
-  description: 'WorkMasters is structured mastery coaching for ambitious professionals and founders who want disciplined career and business growth.',
+  title: 'WorkMasters — Productive Capital Development',
+  description:
+    'WorkMasters helps professionals, consultants and founders turn what they know and what they can do into valuable work, productive assets and greater freedom.',
   alternates: {
     canonical: 'https://andrewtugume.com/workmasters'
   }
 }
 
+const offerById = (id: string) => workmasters.offers.find((offer) => offer.id === id)!
+const advancedOffers = ['worksmart', 'offers', 'advisory'].map(offerById)
+const live = offerById('live')
+const circle = offerById('circle')
+
 export default function WorkMasters() {
   return (
-    <div className="space-y-12">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateCourseSchema(
-              'WorkMasters: Career, Leadership and Execution Mastery',
-              'Structured mastery coaching for ambitious professionals and founders.',
-              'workmasters',
-              'Andrew Tugume'
-            )
-          )
-        }}
-      />
-
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -40,102 +40,128 @@ export default function WorkMasters() {
         }}
       />
 
-      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <p className="text-sm font-semibold tracking-wide text-accent uppercase">WorkMasters</p>
-        <h1 className="mt-2 text-4xl md:text-5xl font-semibold text-primary">Career, Leadership and Execution Mastery</h1>
-        <p className="mt-4 text-gray-700 max-w-3xl">
-          WorkMasters is for builders who refuse average careers and want structured progression.
-        </p>
-        <div className="mt-6">
-          <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black">
-            Claim Your Spot
-          </Link>
-        </div>
-      </section>
+      <div className="fullbleed">
+        <PageHero theme="work" eyebrow={`WorkMasters · ${workmasters.category}`} title={workmasters.promise} intro={workmasters.philosophy}>
+          <a href="#live" className="inline-flex items-center justify-center rounded-full bg-work-accent px-8 py-4 text-base font-semibold text-work hover:bg-white hover:no-underline">
+            Start with WorkMasters LIVE
+          </a>
+          <a href="#offers-catalogue" className="inline-flex items-center justify-center rounded-full border border-white/50 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 hover:no-underline">
+            See all programmes
+          </a>
+        </PageHero>
 
-      <section className="grid gap-6 md:grid-cols-2">
-        <div className="bg-white border border-black/5 rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold text-primary">Who it is for</h2>
-          <ul className="mt-4 space-y-2 text-sm text-gray-700">
-            <li>Operators and managers stepping into bigger leadership scopes.</li>
-            <li>Founders who need execution discipline and business model clarity.</li>
-            <li>Professionals ready to build career capital and negotiation leverage.</li>
-          </ul>
-        </div>
-        <div className="bg-white border border-black/5 rounded-2xl p-6">
-          <h2 className="text-2xl font-semibold text-primary">Core pillars</h2>
-          <ul className="mt-4 space-y-2 text-sm text-gray-700">
-            <li>Career capital strategy</li>
-            <li>Business model clarity</li>
-            <li>Leadership systems</li>
-            <li>Productivity architecture</li>
-            <li>Raising capital with confidence</li>
-          </ul>
-        </div>
-      </section>
+        {/* Audience and problem */}
+        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2">
+            <div>
+              <SectionHeading eyebrow="Who WorkMasters Serves" title="For people with valuable skills." />
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                {workmasters.audience.map((item) => (
+                  <li key={item} className="rounded-xl bg-white border border-black/5 px-4 py-3 text-gray-800">{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <SectionHeading eyebrow="The Productive-Capital Problem" title="Skill alone does not create value." />
+              <p className="mt-6 text-gray-700">Many capable people struggle to:</p>
+              <ul className="mt-4 space-y-2 text-gray-800">
+                {workmasters.problems.map((problem) => (
+                  <li key={problem} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-work-accent" aria-hidden="true" />
+                    {problem}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
 
-      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <h2 className="text-3xl font-semibold text-primary">What is included</h2>
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
-          <div className="rounded-xl border border-black/5 p-5">
-            <h3 className="text-lg font-semibold text-primary">Weekly</h3>
-            <p className="mt-2 text-sm text-gray-700">Structured coaching sessions with goals, scorecards, and execution reviews.</p>
+        {/* Method */}
+        <section className="bg-work-light px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeading
+              eyebrow="The Method"
+              title="The Work Value Engine"
+              intro="Seven steps from what you know to work that creates lasting value."
+            />
+            <div className="mt-10">
+              <StepList steps={workmasters.engine} numberClassName="text-work-text" />
+            </div>
           </div>
-          <div className="rounded-xl border border-black/5 p-5">
-            <h3 className="text-lg font-semibold text-primary">Monthly</h3>
-            <p className="mt-2 text-sm text-gray-700">In-person or virtual meetups for playbooks, peer accountability, and case studies.</p>
-          </div>
-          <div className="rounded-xl border border-black/5 p-5">
-            <h3 className="text-lg font-semibold text-primary">Quarterly</h3>
-            <p className="mt-2 text-sm text-gray-700">Performance challenges that force measurable progress and real outcomes.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-white border border-black/5 rounded-2xl p-6">
-        <h2 className="text-2xl font-semibold text-primary">Expected outcomes</h2>
-        <ul className="mt-4 space-y-2 text-sm text-gray-700">
-          <li>Clear career roadmap with leverage and negotiating power.</li>
-          <li>Execution systems that remove chaos from weekly priorities.</li>
-          <li>Leadership confidence built on data and accountability.</li>
-        </ul>
-      </section>
+        {/* Free entry point */}
+        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeading
+              eyebrow="Start Here"
+              title="Learn monthly. Gather in person."
+              intro="WorkMasters LIVE and CIRCLE happen in the same week each month — one online and open to all, one in person and by invitation."
+            />
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              <OfferTile offer={live} accent="work" />
+              <OfferTile offer={circle} accent="work" />
+            </div>
+          </div>
+        </section>
 
-      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <h2 className="text-3xl font-semibold text-primary">Frequently Asked Questions</h2>
-        <div className="mt-6 space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold text-primary">How long is the program?</h3>
-            <p className="mt-2 text-sm text-gray-700">WorkMasters is a 6-month structured cohort. Extensions are available for continued accountability.</p>
+        {/* Catalogue */}
+        <section id="offers-catalogue" className="bg-white px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeading
+              eyebrow="Go Further"
+              title="Training, implementation and advisory."
+              intro="Practical programmes for building productive systems, valuable offers and greater leverage."
+            />
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              {advancedOffers.map((offer) => (
+                <OfferTile key={offer.id} offer={offer} accent="work" />
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-gray-700">
+              The Offer Accelerator builds on the{' '}
+              <Link href="/mastermind" className="font-semibold">Make More &amp; Better Offers mastermind</Link>.
+            </p>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold text-primary">What is the time commitment?</h3>
-            <p className="mt-2 text-sm text-gray-700">One weekly coaching session (60-90 minutes), one monthly meetup, and quarterly performance reviews. Plus execution time for your goals.</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-primary">Is this for employees or entrepreneurs?</h3>
-            <p className="mt-2 text-sm text-gray-700">Both. WorkMasters serves professionals building career capital and founders building scalable businesses.</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-primary">What if I'm not making progress?</h3>
-            <p className="mt-2 text-sm text-gray-700">Weekly accountability means we catch stalls early. If you're not executing, we adjust strategy or scope.</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold text-primary">Can I join mid-cohort?</h3>
-            <p className="mt-2 text-sm text-gray-700">No. Cohorts start together for peer accountability and shared momentum.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-primary text-white rounded-2xl p-10 md:p-14">
-        <h2 className="text-3xl font-semibold">Ready to apply?</h2>
-        <p className="mt-3 text-white/80">WorkMasters is a performance system. Apply if you are ready for accountability.</p>
-        <div className="mt-6">
-          <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
-            Claim Your Spot
-          </Link>
-        </div>
-      </section>
-    </div>
+        {/* FAQs */}
+        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeading eyebrow="FAQs" title="Questions about WorkMasters" />
+            <div className="mt-8">
+              <FaqList faqs={workmasters.faqs} />
+            </div>
+          </div>
+        </section>
+
+        {/* Enquiry */}
+        <section id="enquire" className="bg-work px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <SectionHeading
+                tone="dark"
+                eyebrow="Get Involved"
+                title="Register your interest."
+                intro="Tell us what you’re interested in and Andrew’s team will follow up with dates, details and availability."
+              />
+              <div className="mt-8 rounded-2xl border border-white/15 p-6">
+                <h3 className="text-lg font-semibold text-white">Just want the WorkMasters LIVE dates?</h3>
+                <p className="mt-1 mb-4 text-sm text-white/75">Leave your email and we’ll send them when they’re confirmed.</p>
+                <SubscribeForm tone="dark" cta="Send me the dates" interest="WorkMasters LIVE" />
+              </div>
+            </div>
+            <ContactForm
+              heading="WorkMasters enquiry"
+              subjectLabel="I’m interested in"
+              subjects={workmasters.offers.map((offer) => offer.name)}
+              showOrganisation
+              messageRequired={false}
+              submitLabel="Send enquiry"
+            />
+          </div>
+        </section>
+      </div>
+    </>
   )
 }

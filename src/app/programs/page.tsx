@@ -2,276 +2,112 @@ import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
+import OfferTile from '@/components/OfferTile'
+import PageHero from '@/components/PageHero'
+import { bibleStudy, bookingHref, influencemasters, workmasters } from '@/lib/brand'
 
 export const metadata: Metadata = {
-  title: 'Programs — Mastery Coaching for Work, Leadership, Learning, Technology & Capital',
+  title: 'Programmes — WorkMasters, InfluenceMasters and Bible Study',
   description:
-    'Programs built around one mission: shaping the future of work and leadership in Africa. WorkMasters, the Make More & Better Offers Mastermind, CourseMasters, TechMasters, and CapitalMasters.',
+    'Explore WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume — with the current status of every programme.',
   alternates: {
-    canonical: 'https://andrewtugume.com/programs',
-  },
+    canonical: 'https://andrewtugume.com/programs'
+  }
 }
-
-const tracks = [
-  {
-    label: 'Work & Leadership Mastery',
-    tagline: 'Master your career, sharpen your leadership, and build on the principles that govern both',
-    programs: [
-      {
-        tag: 'WorkMasters',
-        title: 'Career, Productivity and Management Mastery',
-        description:
-          'For professionals, consultants, entrepreneurs, and investors who want to accelerate income, sharpen positioning, and build structured career or business growth.',
-        features: [
-          'Career strategy and positioning',
-          'Productivity architecture',
-          'Leadership and management frameworks',
-          'Business development systems',
-          'Capital raising with confidence',
-        ],
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg',
-        href: '/workmasters',
-        cta: 'Explore WorkMasters',
-        applyCta: 'Apply via WhatsApp',
-        applyHref: 'https://wa.me/256755017384',
-        external: false,
-      },
-      {
-        tag: 'Mastermind',
-        title: 'Make More & Better Offers',
-        description:
-          'An eight-week mastermind for consultants who are tired of waiting for the phone to ring. Build the nine-offer architecture that makes demand something you manufacture instead of something you hope for.',
-        features: [
-          'The nine-offer architecture',
-          'A priced, written core offer',
-          'A live offer taking money by week five',
-          'Weekly live coaching in a 12-seat cohort',
-          'A full lead-generation and closing system',
-        ],
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1780507670/WorkMasters_2_pthuuz.jpg',
-        href: '/mastermind',
-        cta: 'Explore the Mastermind',
-        applyCta: 'Apply for a Seat',
-        applyHref: '/mastermind#apply',
-        external: false,
-      },
-    ],
-  },
-  {
-    label: 'Learning, Technology & Capital',
-    tagline: 'The three disciplines through which work and leadership are built, scaled, and sustained',
-    programs: [
-      {
-        tag: 'CourseMasters',
-        title: 'Learning Design and Course Systems',
-        description:
-          'For teams and organizations building high-performance training systems that scale knowledge and skill across their operations.',
-        features: [
-          'Curriculum strategy and design',
-          'Course production and delivery',
-          'Learning experience optimization',
-          'Engagement and retention systems',
-          'Launch strategy and support',
-        ],
-        image: 'https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg',
-        href: '/masters/coursemasters',
-        cta: 'Explore CourseMasters',
-        applyCta: 'Apply via WhatsApp',
-        applyHref: 'https://wa.me/256755017384',
-        external: false,
-      },
-      {
-        tag: 'TechMasters',
-        title: 'Technology, Product and Innovation Mastery',
-        description:
-          'For developers, technical founders, and innovation leaders who want to build real-world solutions and lead with technical discipline — not just write code.',
-        features: [
-          'Product thinking and strategy',
-          'Systems architecture',
-          'Research and development practice',
-          'Technical execution discipline',
-          'Monetization and scaling',
-        ],
-        image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1615551883/IMG_5942_c83b2h.jpg',
-        href: '/techmasters',
-        cta: 'Explore TechMasters',
-        applyCta: 'Apply via WhatsApp',
-        applyHref: 'https://wa.me/256755017384',
-        external: false,
-      },
-      {
-        tag: 'CapitalMasters',
-        title: 'Investment and Wealth Mastery',
-        description:
-          'For disciplined individuals and operators ready to move from income to ownership and build durable, long-term wealth through structured investment frameworks.',
-        features: [
-          'Investment frameworks and thesis',
-          'Portfolio strategy and management',
-          'Risk assessment and governance',
-          'Financial governance structures',
-          'Long-term capital growth',
-        ],
-        image: 'https://personalefinance.com/wp-content/uploads/Top-Characteristics-of-Finance-FAQ-What-are-Finance-Characteristics-Frequently-Asked-Questions.webp',
-        href: '/masters/capitalmasters',
-        cta: 'Explore CapitalMasters',
-        applyCta: 'Apply via WhatsApp',
-        applyHref: 'https://wa.me/256755017384',
-        external: false,
-      },
-    ],
-  },
-]
 
 export default function Programs() {
   return (
-    <div className="space-y-12">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateBreadcrumbSchema([
               { name: 'Home', url: 'https://andrewtugume.com' },
-              { name: 'Programs', url: 'https://andrewtugume.com/programs' },
+              { name: 'Programmes', url: 'https://andrewtugume.com/programs' }
             ])
-          ),
+          )
         }}
       />
 
-      {/* ── Hero ── */}
-      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <p className="text-sm font-semibold tracking-widest text-accent uppercase">The Mastery Ecosystem</p>
-        <h1 className="mt-3 text-4xl md:text-5xl font-semibold text-primary max-w-3xl leading-tight">
-          Five programs. Two tracks. One mission.
-        </h1>
-        <p className="mt-4 text-gray-700 max-w-3xl leading-relaxed">
-          Every program is built to help ambitious professionals master work and leadership — through
-          learning, technology, and capital. Choose the program that matches where you are and what
-          you are building.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            href="/apply"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white hover:bg-black"
-          >
-            Apply Now
-          </Link>
-          <a
-            href="https://wa.me/256755017384"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-primary px-7 py-3 text-sm font-semibold text-primary hover:bg-black hover:text-white"
-          >
-            Ask a Question on WhatsApp
-          </a>
-        </div>
-      </section>
+      <div className="fullbleed">
+        <PageHero
+          eyebrow="Explore Programmes"
+          title="Find the programme that fits where you are."
+          intro="Every programme shows its current status. Where dates or prices are not yet confirmed, you can join an interest list or enquire."
+        >
+          <a href="#workmasters" className="inline-flex items-center justify-center rounded-full bg-work-accent px-6 py-3 text-sm font-semibold text-work hover:bg-white hover:no-underline">WorkMasters</a>
+          <a href="#influencemasters" className="inline-flex items-center justify-center rounded-full bg-[#F2C9D0] px-6 py-3 text-sm font-semibold text-influence hover:bg-white hover:no-underline">InfluenceMasters</a>
+          <a href="#bible-study" className="inline-flex items-center justify-center rounded-full bg-scripture-light px-6 py-3 text-sm font-semibold text-scripture hover:bg-white hover:no-underline">Bible Study</a>
+        </PageHero>
 
-      {/* ── Programs by track ── */}
-      <div className="space-y-14">
-        {tracks.map((track) => (
-          <div key={track.label}>
-            <div className="mb-8 pb-5 border-b-2 border-accent/20">
-              <h2 className="text-2xl font-semibold text-primary">{track.label}</h2>
-              <p className="mt-1 text-sm text-gray-600">{track.tagline}</p>
+        <section id="workmasters" className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-xs font-semibold tracking-[0.2em] text-work-text uppercase">{workmasters.category}</p>
+            <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-work">WorkMasters</h2>
+              <Link href="/workmasters" className="text-sm font-semibold text-work-text">About WorkMasters →</Link>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {track.programs.map((program) => (
-                <article
-                  key={program.tag}
-                  className="bg-white border border-black/5 rounded-2xl overflow-hidden flex flex-col hover:border-accent/30 hover:shadow-md transition-all"
-                >
-                  <div className="w-full h-48 overflow-hidden">
-                    <img
-                      src={program.image}
-                      alt={program.tag}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <p className="text-xs font-semibold tracking-wide text-accent uppercase">
-                      {program.tag}
-                    </p>
-                    <h3 className="mt-2 text-base font-semibold text-primary leading-snug">
-                      {program.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                      {program.description}
-                    </p>
-                    <ul className="mt-4 space-y-1.5 flex-1">
-                      {program.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="text-accent font-bold flex-shrink-0 mt-0.5">✓</span>
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-6 flex flex-col gap-2">
-                      <a
-                        href={program.applyHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-black"
-                      >
-                        {program.applyCta}
-                      </a>
-                      <Link
-                        href={program.href}
-                        className="inline-flex items-center justify-center rounded-full border border-black/10 px-5 py-2 text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary"
-                      >
-                        {program.cta} →
-                      </Link>
-                    </div>
-                  </div>
-                </article>
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {workmasters.offers.map((offer) => (
+                <OfferTile key={offer.id} offer={{ ...offer, cta: { ...offer.cta, href: `/workmasters${offer.cta.href}` } }} accent="work" anchor={false} />
               ))}
             </div>
           </div>
-        ))}
+        </section>
+
+        <section id="influencemasters" className="bg-influence-light px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-xs font-semibold tracking-[0.2em] text-influence uppercase">{influencemasters.category}</p>
+            <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-influence">InfluenceMasters</h2>
+              <Link href="/influencemasters" className="text-sm font-semibold text-influence">About InfluenceMasters →</Link>
+            </div>
+            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {influencemasters.offers.map((offer) => (
+                <OfferTile key={offer.id} offer={{ ...offer, cta: { ...offer.cta, href: `/influencemasters${offer.cta.href}` } }} accent="influence" anchor={false} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="bible-study" className="bg-scripture-light px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-xs font-semibold tracking-[0.2em] text-scripture-warm uppercase">Biblical Wisdom for Everyday Life</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-scripture">{bibleStudy.name}</h2>
+            <p className="mt-4 max-w-3xl text-gray-800">
+              Bible Study is teaching, not a programme to buy. Join the weekly study, explore the four tracks, or invite
+              Andrew to teach.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <Link href="/bible-study#weekly" className="block rounded-2xl bg-white p-6 hover:no-underline">
+                <span className="block text-lg font-semibold text-scripture">{bibleStudy.weekly.title}</span>
+                <span className="mt-1 block text-sm text-gray-700">{bibleStudy.weekly.when}</span>
+              </Link>
+              <Link href="/bible-study#tracks" className="block rounded-2xl bg-white p-6 hover:no-underline">
+                <span className="block text-lg font-semibold text-scripture">Four teaching tracks</span>
+                <span className="mt-1 block text-sm text-gray-700">Work, money, stewardship, relationships</span>
+              </Link>
+              <Link href="/bible-study/invite" className="block rounded-2xl bg-white p-6 hover:no-underline">
+                <span className="block text-lg font-semibold text-scripture">Invite Andrew to teach</span>
+                <span className="mt-1 block text-sm text-gray-700">Churches, ministries and Christian organisations</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto rounded-3xl border border-black/5 bg-white p-8 md:p-12 grid gap-6 md:grid-cols-[1.5fr_1fr] md:items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold text-primary">Bringing Andrew to your organisation?</h2>
+              <p className="mt-2 text-gray-700">Keynotes, workshops and training for conferences, companies and institutions.</p>
+            </div>
+            <Link href={bookingHref} className="inline-flex w-fit items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-semibold text-white hover:bg-black hover:no-underline md:justify-self-end">
+              Book Andrew to speak →
+            </Link>
+          </div>
+        </section>
       </div>
-
-      {/* ── What's included across cohort programs ── */}
-      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <p className="text-sm font-semibold tracking-widest text-accent uppercase">What's Included</p>
-        <h2 className="mt-3 text-2xl font-semibold text-primary">Every cohort program includes</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-black/5 bg-black/[0.02] p-5">
-            <h3 className="text-sm font-semibold text-primary">Weekly Coaching</h3>
-            <p className="mt-2 text-sm text-gray-600">Structured sessions with goals, scorecards, and accountability reviews.</p>
-          </div>
-          <div className="rounded-xl border border-black/5 bg-black/[0.02] p-5">
-            <h3 className="text-sm font-semibold text-primary">Monthly Meetups</h3>
-            <p className="mt-2 text-sm text-gray-600">Private sessions for feedback, playbooks, and real-world case studies.</p>
-          </div>
-          <div className="rounded-xl border border-black/5 bg-black/[0.02] p-5">
-            <h3 className="text-sm font-semibold text-primary">Quarterly Challenges</h3>
-            <p className="mt-2 text-sm text-gray-600">Performance sprints designed to produce measurable, reviewable outcomes.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Final CTA ── */}
-      <section className="bg-primary text-white rounded-2xl p-10 md:p-14 text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold">Not sure which program is right for you?</h2>
-        <p className="mt-4 text-white/70 max-w-xl mx-auto">
-          Send a WhatsApp message with your name, current role, and goals. The right program will become clear.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="https://wa.me/256755017384"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-3 text-sm font-semibold text-primary hover:bg-accent/90"
-          >
-            Message on WhatsApp
-          </a>
-          <Link
-            href="/apply"
-            className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-3 text-sm font-semibold text-white hover:border-white"
-          >
-            View the Apply Page
-          </Link>
-        </div>
-      </section>
-    </div>
+    </>
   )
 }

@@ -28,6 +28,8 @@ export function getPostSlugs(): string[] {
 }
 
 export async function getPostBySlug(slug: string): Promise<{ meta: PostMeta; content: string } | null> {
+  // Only plain slugs — never let a URL segment walk outside the posts directory
+  if (!/^[a-z0-9-]+$/i.test(slug)) return null
   const filename = `${slug}.mdx`
   const fullPath = path.join(POSTS_PATH, filename)
   if (!fs.existsSync(fullPath)) return null

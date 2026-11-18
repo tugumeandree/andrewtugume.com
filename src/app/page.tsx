@@ -1,41 +1,37 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { generateBreadcrumbSchema, generateWebPageSchema } from '@/lib/seo/schema'
+import { generatePersonSchema, generateWebPageSchema } from '@/lib/seo/schema'
 import HeroImproved from '@/components/HeroImproved'
-import AuthorityPillars from '@/components/AuthorityPillars'
-import MasteryFramework from '@/components/MasteryFramework'
-import ProgramsEcosystem from '@/components/ProgramsEcosystem'
-import PersonalStory from '@/components/PersonalStory'
-import MissionVisionSection from '@/components/MissionVisionSection'
-import InstitutionsSection from '@/components/InstitutionsSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
+import InitiativesSection from '@/components/InitiativesSection'
+import PurposeSection from '@/components/PurposeSection'
+import BibleWisdomSection from '@/components/BibleWisdomSection'
+import MeetAndrewSection from '@/components/MeetAndrewSection'
+import FeaturedSection from '@/components/FeaturedSection'
+import EcosystemOverview from '@/components/EcosystemOverview'
+import EvidenceSection from '@/components/EvidenceSection'
 import FinalCTASection from '@/components/FinalCTASection'
-import ProofStrip from '@/components/ProofStrip'
+import SectionHeading from '@/components/SectionHeading'
+import { brand } from '@/lib/brand'
+
+const title = 'Andrew Tugume — Educator, Technologist, Investor'
 
 export const metadata: Metadata = {
-  title: 'Andrew Tugume — Educator, Technologist, Investor',
-  description: 'Mastery coaching for ambitious African professionals, founders, and operators to build skill, systems, and disciplined capital.',
+  title: { absolute: title },
+  description: brand.description,
   alternates: {
     canonical: 'https://andrewtugume.com'
   },
   openGraph: {
-    title: 'Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Master your career, technology, and wealth through structured mastery coaching.',
+    title,
+    description: brand.headline,
     url: 'https://andrewtugume.com',
     type: 'website',
-    images: [
-      {
-        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Andrew Tugume - Educator, Technologist, Investor'
-      }
-    ]
+    images: [{ url: brand.images.headshot, alt: brand.name }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Andrew Tugume — Educator, Technologist, Investor',
-    description: 'Master your career, technology, and wealth through structured mastery coaching.'
+    title,
+    description: brand.headline
   }
 }
 
@@ -45,54 +41,50 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateWebPageSchema(
-              'Andrew Tugume - Educator, Technologist, Investor',
-              'Mastery coaching for ambitious African professionals, founders, and operators.',
-              'https://andrewtugume.com'
-            )
-          )
+          __html: JSON.stringify(generateWebPageSchema(title, brand.description, 'https://andrewtugume.com'))
         }}
       />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateBreadcrumbSchema([{ name: 'Home', url: 'https://andrewtugume.com' }])
-          )
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
       />
 
       <div className="home-fullbleed">
-        {/* Hero Section - Transformation-focused */}
+        {/* Hero - Who, what, and next step */}
         <HeroImproved />
 
-        {/* Proof Strip - Quick credibility metrics */}
-        <ProofStrip />
+        {/* Three flagship initiatives, equal visibility */}
+        <InitiativesSection />
 
-        {/* Authority Section - Establish credibility early */}
-        <AuthorityPillars />
+        {/* Why this work matters + Personal Capital Development */}
+        <PurposeSection />
 
-        {/* Mastery Framework - Explain the system */}
-        <MasteryFramework />
+        {/* Bible Study as a distinct, welcoming initiative */}
+        <BibleWisdomSection />
 
-        {/* Programs Organized by Pillar - Show ecosystem */}
-        <ProgramsEcosystem />
+        {/* Founder introduction */}
+        <MeetAndrewSection />
 
-        {/* Personal Story - Enhanced and moved higher */}
-        <PersonalStory />
+        {/* Only real, current programmes and resources */}
+        <FeaturedSection />
 
-        {/* Mission & Vision - Movement narrative */}
-        <MissionVisionSection />
+        {/* Wider ecosystem - connected, not personal-brand programmes */}
+        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeading
+              eyebrow="Wider Ecosystem"
+              title="Connected initiatives."
+              intro="My personal-brand work connects to a corporate business and a wider ecosystem initiative."
+            />
+            <div className="mt-10">
+              <EcosystemOverview />
+            </div>
+          </div>
+        </section>
 
-        {/* Institutions - Infrastructure supporting mission */}
-        <InstitutionsSection />
+        {/* Verified evidence only - hidden until entries exist */}
+        <EvidenceSection />
 
-        {/* Testimonials - Social proof */}
-        <TestimonialsSection />
-
-        {/* Final CTA - Transformation-focused */}
         <FinalCTASection />
       </div>
     </>

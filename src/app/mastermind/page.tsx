@@ -4,7 +4,8 @@ import { IBM_Plex_Sans, IBM_Plex_Serif } from 'next/font/google'
 import { generateBreadcrumbSchema, generateCourseSchema } from '@/lib/seo/schema'
 
 // Edit these three to update the page without touching markup below.
-const APPLICATION_FORM_URL = 'https://forms.gle/REPLACE_WITH_APPLICATION_FORM' // TODO: paste your real application form link
+// Routes to the working WorkMasters enquiry form until a dedicated application form exists
+const APPLICATION_FORM_URL = '/workmasters#enquire'
 const WHATSAPP_NUMBER = '256755017384'
 const SEATS_REMAINING = 12
 
@@ -552,8 +553,6 @@ export default function Mastermind() {
           </p>
           <a
             href={APPLICATION_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-block self-start bg-[#E87722] hover:bg-[#D06A18] text-white no-underline text-[19px] font-semibold px-[42px] py-[19px] min-h-[44px] mt-[6px]"
           >
             Start my application

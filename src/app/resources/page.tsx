@@ -2,18 +2,56 @@ import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
+import { getAllPosts } from '@/lib/blog/posts'
+import PageHero from '@/components/PageHero'
+import SectionHeading from '@/components/SectionHeading'
+import SubscribeForm from '@/components/SubscribeForm'
+import { bibleStudy, mediaItems, resourceCategories } from '@/lib/brand'
 
 export const metadata: Metadata = {
-  title: 'Resources',
-  description: 'Essays, insights, and tools for high-performance operators across career, technology, and capital.',
+  title: 'Resources — Articles, Teaching and Media',
+  description:
+    'Articles, Bible teaching, talks and frameworks from Andrew Tugume on productive capital, influence capital, leadership, the future of work and biblical wisdom.',
   alternates: {
     canonical: 'https://andrewtugume.com/resources'
   }
 }
 
-export default function Resources() {
+const formatDate = (date: string) =>
+  new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })
+
+const collections = [
+  {
+    title: 'Bible Study teaching tracks',
+    kicker: 'Bible Study',
+    description: 'Four tracks on work, money, stewardship and relationships, with key passages and outcomes.',
+    href: '/bible-study#tracks',
+    className: 'bg-scripture-light',
+  },
+  {
+    title: 'The Work Value Engine',
+    kicker: 'WorkMasters',
+    description: 'Seven steps from what you know to work that creates lasting value.',
+    href: '/workmasters',
+    className: 'bg-work-light',
+  },
+  {
+    title: 'The Influence Asset Cycle',
+    kicker: 'InfluenceMasters',
+    description: 'Six stages for turning what you know into influence that lasts.',
+    href: '/influencemasters',
+    className: 'bg-influence-light',
+  },
+]
+
+export default async function Resources() {
+  const posts = await getAllPosts()
+  const mediaByCategory = resourceCategories
+    .map((category) => ({ category, items: mediaItems.filter((item) => item.category === category) }))
+    .filter((group) => group.items.length > 0)
+
   return (
-    <div className="space-y-12">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -26,123 +64,113 @@ export default function Resources() {
         }}
       />
 
-      <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-semibold text-primary">Resources</h1>
-        <p className="mt-4 text-gray-700 max-w-3xl">Short, high-signal insights on execution, systems, and capital discipline.</p>
-      </section>
+      <div className="fullbleed">
+        <PageHero
+          eyebrow="Resources"
+          title="Read, watch and learn."
+          intro="Articles, frameworks, Bible teaching and media — published as they are ready, and free to use."
+        />
 
-      <section className="space-y-12">
-        <div>
-          <h2 className="text-3xl font-semibold text-primary">Career Resources</h2>
-          <p className="mt-2 text-gray-700">Systems for leadership, positioning, and career capital.</p>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Essay</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Building Career Capital</h3>
-              <p className="mt-3 text-sm text-gray-700">A framework for accumulating leverage, skills, and negotiating power over 5-10 years.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Checklist</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Leadership Systems Audit</h3>
-              <p className="mt-3 text-sm text-gray-700">20-point checklist to audit your execution systems, team clarity, and KPI discipline.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Framework</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Positioning Strategy</h3>
-              <p className="mt-3 text-sm text-gray-700">How to position yourself as the go-to operator in your domain.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Tool</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Career Roadmap Template</h3>
-              <p className="mt-3 text-sm text-gray-700">Quarterly planning template for tracking progression and execution milestones.</p>
-            </article>
+        {/* Frameworks and collections */}
+        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeading eyebrow="Frameworks & Collections" title="Start with the core ideas." />
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {collections.map((collection) => (
+                <Link key={collection.title} href={collection.href} className={`flex flex-col rounded-2xl p-6 hover:no-underline ${collection.className}`}>
+                  <span className="text-xs font-semibold tracking-[0.15em] text-gray-700 uppercase">{collection.kicker}</span>
+                  <span className="mt-3 text-xl font-semibold text-primary">{collection.title}</span>
+                  <span className="mt-2 flex-1 text-sm text-gray-700">{collection.description}</span>
+                  <span className="mt-5 text-sm font-semibold text-primary">Open →</span>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div>
-          <h2 className="text-3xl font-semibold text-primary">Technology Resources</h2>
-          <p className="mt-2 text-gray-700">Product thinking, architecture, and execution discipline.</p>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Essay</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Product Thinking for Engineers</h3>
-              <p className="mt-3 text-sm text-gray-700">Moving beyond shipping features to thinking in systems, leverage, and economic impact.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Framework</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Technical Architecture Blueprint</h3>
-              <p className="mt-3 text-sm text-gray-700">Scalable system design patterns for building durable products.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Checklist</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Execution Rhythm Template</h3>
-              <p className="mt-3 text-sm text-gray-700">Weekly, monthly, and quarterly review cadence for product teams.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Tool</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Monetization Scorecard</h3>
-              <p className="mt-3 text-sm text-gray-700">Metrics framework for evaluating product sustainability and growth.</p>
-            </article>
+        {/* Articles */}
+        <section id="articles" className="bg-white px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto">
+            <SectionHeading eyebrow="Articles" title="Latest writing." />
+            {posts.length > 0 ? (
+              <div className="mt-10 grid gap-6 md:grid-cols-2">
+                {posts.map((post) => (
+                  <Link key={post.slug} href={`/blog/${post.slug}`} className="block rounded-2xl border border-black/5 bg-[#F7F6F2] p-6 hover:border-accent/40 hover:no-underline">
+                    <p className="text-xs text-gray-600">Andrew Tugume · {formatDate(post.date)}</p>
+                    <h3 className="mt-2 text-xl font-semibold text-primary">{post.title}</h3>
+                    {post.summary && <p className="mt-2 text-sm text-gray-700">{post.summary}</p>}
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-8 text-gray-700">New articles are on the way.</p>
+            )}
           </div>
-        </div>
+        </section>
 
-        <div>
-          <h2 className="text-3xl font-semibold text-primary">Investing Resources</h2>
-          <p className="mt-2 text-gray-700">Portfolio strategy, risk management, and capital discipline.</p>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Essay</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">From Income to Ownership</h3>
-              <p className="mt-3 text-sm text-gray-700">The mindset shift from earning to building a durable portfolio and long-term wealth.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Framework</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Risk Management Playbook</h3>
-              <p className="mt-3 text-sm text-gray-700">Principles for downside protection and asset allocation discipline.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Tool</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Portfolio Tracker Template</h3>
-              <p className="mt-3 text-sm text-gray-700">Quarterly review framework for tracking allocation, rebalancing, and performance.</p>
-            </article>
-            <article className="bg-white border border-black/5 rounded-2xl p-6">
-              <p className="text-xs font-semibold tracking-wide text-accent uppercase">Checklist</p>
-              <h3 className="mt-2 text-lg font-semibold text-primary">Financial Governance Audit</h3>
-              <p className="mt-3 text-sm text-gray-700">15-point checklist for evaluating your capital discipline and decision-making.</p>
-            </article>
+        {/* Media — grouped by category once entries exist */}
+        {mediaByCategory.length > 0 && (
+          <section id="media" className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <div className="max-w-6xl mx-auto">
+              <SectionHeading eyebrow="Watch & Listen" title="Talks, podcasts and interviews." />
+              <div className="mt-10 space-y-10">
+                {mediaByCategory.map((group) => (
+                  <div key={group.category}>
+                    <h3 className="text-lg font-semibold text-primary">{group.category}</h3>
+                    <ul className="mt-4 grid gap-4 md:grid-cols-3">
+                      {group.items.map((item) => (
+                        <li key={item.href}>
+                          <a href={item.href} target="_blank" rel="noopener noreferrer" className="block h-full rounded-2xl border border-black/5 bg-white p-5 hover:no-underline">
+                            <span className="text-xs font-semibold tracking-[0.15em] text-gray-600 uppercase">{item.type} · {item.platform}</span>
+                            <span className="mt-2 block font-semibold text-primary">{item.title}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Bible Study */}
+        <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <div className="max-w-6xl mx-auto rounded-3xl bg-scripture-light p-8 md:p-12">
+            <p className="text-xs font-semibold tracking-[0.2em] text-scripture-warm uppercase">{bibleStudy.name}</p>
+            <h2 className="mt-3 text-3xl font-semibold text-scripture">Bible teaching and study</h2>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {bibleStudy.tracks.map((track) => (
+                <li key={track.id}>
+                  <Link href={`/bible-study#${track.id}`} className="font-semibold text-scripture">{track.title} →</Link>
+                </li>
+              ))}
+            </ul>
+            {bibleStudy.youtubeChannelUrl && (
+              <a
+                href={bibleStudy.youtubeChannelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center rounded-full bg-scripture px-6 py-3 text-sm font-semibold text-white hover:bg-primary hover:no-underline"
+              >
+                Watch Bible teaching on YouTube ↗
+              </a>
+            )}
+            <p className="mt-6 text-sm text-gray-700">Study guides and workbooks will appear here as they are published.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mt-12 bg-white border border-black/5 rounded-2xl p-8 md:p-12">
-        <h2 className="text-3xl font-semibold text-primary">Get weekly operational insights</h2>
-        <p className="mt-3 text-gray-700 max-w-2xl">Short, high-signal notes on execution, systems, and discipline. Delivered every Sunday.</p>
-        <form className="mt-6 flex flex-col sm:flex-row gap-3 max-w-md">
-          <input
-            type="email"
-            placeholder="your@email.com"
-            className="flex-1 rounded-full border border-black/10 px-4 py-3 text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            required
-          />
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-black"
-          >
-            Subscribe
-          </button>
-        </form>
-        <p className="mt-3 text-xs text-gray-600">No spam, ever. Unsubscribe instantly.</p>
-      </section>
-
-      <section className="bg-primary text-white rounded-2xl p-8 md:p-12">
-        <h2 className="text-3xl font-semibold">Claim Your Spot</h2>
-        <p className="mt-3 text-white/80">Resources are a taste of the structured accountability inside the cohort.</p>
-        <div className="mt-6">
-          <Link href="/apply" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-white/90">
-            Claim Your Spot
-          </Link>
-        </div>
-      </section>
-    </div>
+        {/* Subscribe */}
+        <section className="px-4 sm:px-6 lg:px-8 pb-8">
+          <div className="max-w-6xl mx-auto rounded-3xl border border-black/5 bg-white p-8 md:p-12 grid gap-6 md:grid-cols-2 md:items-center">
+            <div>
+              <h2 className="text-3xl font-semibold text-primary">Get new resources by email.</h2>
+              <p className="mt-3 text-gray-700">Articles, frameworks and teaching as they are published.</p>
+            </div>
+            <SubscribeForm interest="Resources" />
+          </div>
+        </section>
+      </div>
+    </>
   )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getAllPosts, getPostBySlug, PostMeta } from '@/lib/blog/posts'
 import { generateBreadcrumbSchema, generateArticleSchema } from '@/lib/seo/schema'
 
-type Params = { params: { slug: string } }
+type Params = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -13,7 +14,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
   if (!post) return { title: 'Post Not Found' }
   
   const url = `https://andrewtugume.com/blog/${post.meta.slug}`
@@ -57,19 +59,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug)
-  if (!post) {
-    return (
-      <div className="max-w-4xl mx-auto py-12 text-center">
-        <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-        <p className="text-gray-600 mb-6">Sorry, the blog post you're looking for doesn't exist.</p>
-        <Link href="/blog" className="text-primary hover:underline font-semibold">
-          ← Go back to blog
-        </Link>
-      </div>
-    )
-  }
+export default async function PostPage({ params }: Params) {
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
+  if (!post) notFound()
 
   const { meta, content } = post
   const canonical = `https://andrewtugume.com/blog/${meta.slug}`

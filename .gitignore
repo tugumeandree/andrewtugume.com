@@ -5,3 +5,6 @@ node_modules
 .env.test.local
 .env.production.local
 .DS_Store
+
+# TypeScript incremental build cache
+*.tsbuildinfo

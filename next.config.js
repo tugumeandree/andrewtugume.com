@@ -127,68 +127,62 @@ const nextConfig = {
     ]
   },
 
-  // Redirects for SEO
+  // Redirects for SEO — see docs/brand-architecture-2027/01-audit-and-plan.md
   async redirects() {
+    const permanent = (source, destination) => ({ source, destination, permanent: true })
+
     return [
-      // Legacy store routes → Apply page
-      {
-        source: '/store/products',
-        destination: '/apply',
-        permanent: true,
-      },
-      {
-        source: '/store/services',
-        destination: '/apply',
-        permanent: true,
-      },
-      {
-        source: '/store/events',
-        destination: '/resources',
-        permanent: true,
-      },
-      
-      // Community routes → Programs
-      {
-        source: '/community/workmasters',
-        destination: '/workmasters',
-        permanent: true,
-      },
-      {
-        source: '/community/chariot-leadership',
-        destination: '/schools/chariot-leadership',
-        permanent: true,
-      },
-      {
-        source: '/community/nations-bible',
-        destination: '/schools/nations-bible',
-        permanent: true,
-      },
-      
-      // Partner routes → Contact/Apply
-      {
-        source: '/partner/give',
-        destination: '/contact',
-        permanent: true,
-      },
-      
-      // Legacy master routes → Simplified structure
-      {
-        source: '/masters/coursemasters',
-        destination: '/programs',
-        permanent: true,
-      },
-      {
-        source: '/workmasters/techmasters',
-        destination: '/masters/techmasters',
-        permanent: true,
-      },
-      
-      // Newsletter/Subscribe → Apply
-      {
-        source: '/subscribe',
-        destination: '/apply',
-        permanent: true,
-      },
+      // Offers hub → Explore Programmes
+      permanent('/store', '/programs'),
+      permanent('/store/products', '/programs'),
+      permanent('/store/services', '/programs'),
+      permanent('/store/events', '/programs'),
+
+      // Institutions and partners → Ecosystem
+      permanent('/partners', '/ecosystem'),
+      permanent('/partner', '/ecosystem'),
+      permanent('/partner/give', '/ecosystem#partner'),
+      permanent('/institutions', '/ecosystem'),
+      permanent('/schools', '/ecosystem'),
+      permanent('/schools/qraft-academy', '/ecosystem#qraft-academy'),
+
+      // CourseMasters → Qraft Academy; CapitalMasters → Qraft Capital
+      permanent('/masters/coursemasters', '/ecosystem#qraft-academy'),
+      permanent('/masters/capitalmasters', '/ecosystem#qraft-capital'),
+      permanent('/financial-intelligence', '/ecosystem#qraft-capital'),
+
+      // ContentMasters → InfluenceMasters (no legacy pages existed; catches external links)
+      permanent('/contentmasters', '/influencemasters'),
+      permanent('/content-masters', '/influencemasters'),
+
+      // Unified resource library
+      permanent('/library', '/resources'),
+      permanent('/tech-resources', '/resources'),
+      permanent('/subscribe', '/resources'),
+
+      // Programme pages folded into WorkMasters
+      permanent('/one-on-one', '/workmasters#advisory'),
+      permanent('/leadership', '/workmasters'),
+      permanent('/community', '/workmasters'),
+      permanent('/community/workmasters', '/workmasters'),
+
+      // Faith content → Bible Study
+      permanent('/faith-knowledge', '/bible-study'),
+
+      // Retired programmes and institutions (pages deleted November 2026)
+      permanent('/techmasters', '/programs'),
+      permanent('/masters/techmasters', '/programs'),
+      permanent('/workmasters/techmasters', '/programs'),
+      permanent('/schools/chariot-leadership', '/ecosystem'),
+      permanent('/community/chariot-leadership', '/ecosystem'),
+      permanent('/schools/tabernacle-tech', '/ecosystem'),
+      permanent('/schools/nations-bible', '/bible-study'),
+      permanent('/community/nations-bible', '/bible-study'),
+
+      // Other
+      permanent('/impact', '/about'),
+      permanent('/book', '/speaking#book'),
+      permanent('/media', '/speaking#media-kit'),
     ]
   },
 

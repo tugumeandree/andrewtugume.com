@@ -1,27 +1,48 @@
 import React from 'react'
-import { getMdxByRelativePath } from '../../../../lib/mdx'
+import Link from 'next/link'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { getMdxByRelativePath } from '@/lib/mdx'
+import { bibleStudy } from '@/lib/brand'
 
-export default async function LessonPage({ params }: { params: { series: string; lesson: string } }) {
-  const { series, lesson } = params
-  const rel = `${series}/${lesson}.mdx`
-  const result = await getMdxByRelativePath(rel)
-  if (!result) {
-    return (
-      <section>
-        <h2 className="text-2xl font-semibold">Not found</h2>
-        <p className="mt-3 text-gray-700">Lesson not found.</p>
-      </section>
-    )
+type Params = { params: Promise<{ series: string; lesson: string }> }
+
+const SLUG = /^[a-z0-9-]+$/
+
+// Lessons live in content/bible-study/<series>/<lesson>.mdx. Only plain slugs are
+// accepted so a URL can never reach files outside that directory.
+async function loadLesson(series: string, lesson: string) {
+  if (!SLUG.test(series) || !SLUG.test(lesson)) return null
+  return getMdxByRelativePath(`bible-study/${series}/${lesson}.mdx`)
+}
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { series, lesson } = await params
+  const result = await loadLesson(series, lesson)
+  if (!result) return { title: 'Lesson not found' }
+
+  return {
+    title: `${result.frontmatter.title} — ${bibleStudy.name}`,
+    description: result.frontmatter.summary,
+    alternates: {
+      canonical: `https://andrewtugume.com/bible-study/${series}/${lesson}`
+    }
   }
+}
+
+export default async function LessonPage({ params }: Params) {
+  const { series, lesson } = await params
+  const result = await loadLesson(series, lesson)
+  if (!result) notFound()
 
   return (
-    <article>
-      <header>
-        <h1 className="text-2xl font-semibold">{result.frontmatter.title}</h1>
+    <article className="max-w-3xl mx-auto">
+      <Link href="/bible-study" className="text-sm font-semibold text-scripture">← {bibleStudy.name}</Link>
+      <header className="mt-6">
+        <h1 className="text-3xl md:text-4xl font-semibold text-scripture">{result.frontmatter.title}</h1>
+        {result.frontmatter.scripture && <p className="mt-2 text-gray-700">{result.frontmatter.scripture}</p>}
       </header>
-      <div className="prose max-w-none mt-6">
-        {result.content}
-      </div>
+      <div className="mt-8 space-y-4 leading-relaxed text-gray-800">{result.content}</div>
     </article>
   )
 }
