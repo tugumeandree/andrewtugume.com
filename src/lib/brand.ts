@@ -17,7 +17,7 @@ export const brand = {
   statement:
     'Through practical education, productive work, intellectual development and biblical teaching, I help people discover what they carry, develop what they know and put it to meaningful use.',
   heroCopy:
-    'I help professionals, entrepreneurs and leaders develop productive capabilities and meaningful influence, while sharing biblical wisdom for work, leadership, stewardship and everyday life.',
+    'I help professionals, entrepreneurs and leaders develop productive capabilities and meaningful influence, while sharing ancient wisdom for work, leadership, stewardship and everyday life.',
   description:
     'Andrew Tugume is an educator, technologist and investor helping people develop their potential, create value and live with purpose through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
   email: 'andrewtugume2@gmail.com',

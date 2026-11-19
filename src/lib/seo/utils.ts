@@ -1,7 +1,7 @@
 export const SITE_BASE = 'https://andrewtugume.com'
 export const SITE_NAME = 'Andrew Tugume'
 export const SITE_AUTHOR = 'Andrew Tugume'
-export const SITE_DESCRIPTION = 'Educator, Technologist, and Investor helping workers, leaders, and learners succeed through biblical teaching, technology, and practical wisdom.'
+export const SITE_DESCRIPTION = 'Educator, Technologist, and Investor helping workers, leaders, and learners succeed through deep teaching, technology, and practical wisdom.'
 
 export function escapeXml(str?: string) {
   if (!str) return ''
