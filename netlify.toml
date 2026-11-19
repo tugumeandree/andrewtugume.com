@@ -9,7 +9,7 @@
 
 # Environment variables
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps"
 
 # Redirects and headers for Next.js
