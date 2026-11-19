@@ -19,7 +19,7 @@ export const brand = {
   heroCopy:
     'I help professionals, entrepreneurs and leaders develop productive capabilities and meaningful influence, while sharing ancient wisdom for work, leadership, stewardship and everyday life.',
   description:
-    'Andrew Tugume is an educator, technologist and investor helping people develop their potential, create value and live with purpose through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
+    'Andrew Tugume is an educator, technologist and investor helping workers, leaders and learners succeed through deep teaching, modern technology and practical business wisdom.',
   email: 'andrewtugume2@gmail.com',
   phone: '+256 755 017 384',
   whatsapp: 'https://wa.me/256755017384',

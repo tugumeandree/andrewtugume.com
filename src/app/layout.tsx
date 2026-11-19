@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import type { Metadata } from 'next'
 import Analytics from '../components/Analytics'
 import { siteGraph } from '@/lib/seo/graph'
+import { brand } from '@/lib/brand'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://andrewtugume.com'),
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     default: 'Andrew Tugume — Educator, Technologist, Investor',
     template: '%s | Andrew Tugume'
   },
-  description: 'Andrew Tugume is an educator, technologist and investor helping people develop their potential, create value and live with purpose through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
+  description: brand.description,
   keywords: [
     'Andrew Tugume',
     'WorkMasters',
