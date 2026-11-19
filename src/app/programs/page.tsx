@@ -1,19 +1,17 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import OfferTile from '@/components/OfferTile'
 import PageHero from '@/components/PageHero'
 import { bibleStudy, bookingHref, influencemasters, workmasters } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'Programmes — WorkMasters, InfluenceMasters and Bible Study',
-  description:
-    'Explore WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume — with the current status of every programme.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/programs'
-  }
-}
+export const metadata = pageMetadata({
+  title: 'Programmes — WorkMasters, InfluenceMasters & Bible Study',
+  description: 'Every programme from Andrew Tugume with its current status — WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
+  path: '/programs',
+  absolute: true,
+})
 
 export default function Programs() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import { getAllPosts } from '@/lib/blog/posts'
 import PageHero from '@/components/PageHero'
@@ -8,14 +8,11 @@ import SectionHeading from '@/components/SectionHeading'
 import SubscribeForm from '@/components/SubscribeForm'
 import { bibleStudy, mediaItems, resourceCategories } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'Resources — Articles, Teaching and Media',
-  description:
-    'Articles, Bible teaching, talks and frameworks from Andrew Tugume on productive capital, influence capital, leadership, the future of work and biblical wisdom.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/resources'
-  }
-}
+export const metadata = pageMetadata({
+  title: 'Resources: Articles, Frameworks & Teaching',
+  description: 'Free articles, frameworks and Bible teaching from Andrew Tugume on productivity, influence, leadership, the future of work and biblical wisdom.',
+  path: '/resources',
+})
 
 const formatDate = (date: string) =>
   new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })

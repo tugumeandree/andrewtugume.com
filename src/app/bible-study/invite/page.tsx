@@ -1,18 +1,16 @@
 import React from 'react'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo/metadata'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import BookingForm from '@/components/BookingForm'
 import PageHero from '@/components/PageHero'
 import { bibleStudy, brand } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'Invite Andrew Tugume to Teach',
-  description:
-    'Invite Andrew Tugume to teach or preach at your church, ministry, fellowship, university, conference or retreat.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/bible-study/invite'
-  }
-}
+export const metadata = pageMetadata({
+  title: 'Invite Andrew Tugume to Teach or Preach',
+  description: 'Invite Andrew Tugume to teach or preach at your church, ministry, fellowship, university, conference or retreat.',
+  path: '/bible-study/invite',
+  absolute: true,
+})
 
 const hosts = [
   'Churches',

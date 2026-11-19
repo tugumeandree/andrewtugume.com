@@ -30,6 +30,7 @@ export async function GET() {
     // Engagement
     { loc: `${base}/speaking`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
     { loc: `${base}/contact`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/faq`, lastmod: currentDate, changefreq: 'monthly', priority: 0.7 },
     { loc: `${base}/mastermind`, lastmod: currentDate, changefreq: 'monthly', priority: 0.5 },
   ]
 

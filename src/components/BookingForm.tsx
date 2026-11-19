@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { getAttribution, trackLead } from '@/lib/analytics'
 import { bibleStudy, engagementFormats, signatureTalks } from '@/lib/brand'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
@@ -80,7 +81,7 @@ export default function BookingForm({ variant = 'speaking' }: { variant?: Varian
       const response = await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, kind: variant }),
+        body: JSON.stringify({ ...formData, kind: variant, source: getAttribution() }),
       })
 
       if (!response.ok) {
@@ -89,6 +90,7 @@ export default function BookingForm({ variant = 'speaking' }: { variant?: Varian
       }
 
       setStatus('success')
+      trackLead(variant === 'ministry' ? 'Teaching invitation' : 'Speaking request')
       setFormData(initialFormData)
     } catch {
       setStatus('error')

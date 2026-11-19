@@ -1,6 +1,6 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import { getAllPosts } from '@/lib/blog/posts'
 import ContactForm from '@/components/ContactForm'
@@ -11,14 +11,12 @@ import SectionHeading from '@/components/SectionHeading'
 import StepList from '@/components/StepList'
 import { influencemasters } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'InfluenceMasters — Influence Capital Development',
-  description:
-    'InfluenceMasters helps experts and leaders discover their voice, develop original ideas, build credible authority and multiply their impact.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/influencemasters'
-  }
-}
+export const metadata = pageMetadata({
+  title: 'InfluenceMasters: Thought Leadership Training',
+  description: 'Discover your voice, develop original ideas and build credible authority. InfluenceMasters helps experts and leaders turn knowledge into influence.',
+  path: '/influencemasters',
+  image: '/influencemasters/opengraph-image',
+})
 
 export default async function InfluenceMasters() {
   const posts = (await getAllPosts()).slice(0, 3)

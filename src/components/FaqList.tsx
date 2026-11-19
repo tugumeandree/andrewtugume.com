@@ -2,15 +2,18 @@ import React from 'react'
 import { generateFAQSchema } from '@/lib/seo/schema'
 import type { Faq } from '@/lib/brand'
 
-export default function FaqList({ faqs }: { faqs: Faq[] }) {
+// Set schema={false} when a page emits one combined FAQPage itself (e.g. /faq)
+export default function FaqList({ faqs, schema = true }: { faqs: Faq[]; schema?: boolean }) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateFAQSchema(faqs.map((faq) => ({ question: faq.question, answer: faq.answer }))))
-        }}
-      />
+      {schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateFAQSchema(faqs.map((faq) => ({ question: faq.question, answer: faq.answer }))))
+          }}
+        />
+      )}
       <div className="divide-y divide-black/10 border-y border-black/10">
         {faqs.map((faq) => (
           <details key={faq.question} className="group py-5">

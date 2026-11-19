@@ -1,6 +1,6 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import ContactForm from '@/components/ContactForm'
 import FaqList from '@/components/FaqList'
@@ -11,14 +11,12 @@ import StepList from '@/components/StepList'
 import SubscribeForm from '@/components/SubscribeForm'
 import { workmasters } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'WorkMasters — Productive Capital Development',
-  description:
-    'WorkMasters helps professionals, consultants and founders turn what they know and what they can do into valuable work, productive assets and greater freedom.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/workmasters'
-  }
-}
+export const metadata = pageMetadata({
+  title: 'WorkMasters: Productivity & Offer Building',
+  description: 'WorkMasters helps professionals, consultants and founders turn skills into valuable offers, productive systems and income-generating assets.',
+  path: '/workmasters',
+  image: '/workmasters/opengraph-image',
+})
 
 const offerById = (id: string) => workmasters.offers.find((offer) => offer.id === id)!
 const advancedOffers = ['worksmart', 'offers', 'advisory'].map(offerById)

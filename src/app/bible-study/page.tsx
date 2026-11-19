@@ -1,6 +1,6 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import FaqList from '@/components/FaqList'
 import PageHero from '@/components/PageHero'
@@ -8,20 +8,13 @@ import SubscribeForm from '@/components/SubscribeForm'
 import YouTubeEmbed from '@/components/YouTubeEmbed'
 import { bibleStudy, brand } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'Bible Study with Andrew Tugume',
-  description:
-    'Study the Bible, grow in wisdom and apply truth to life. Scripture-centred teaching on work, leadership, business and money, stewardship, relationships and peace.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/bible-study'
-  },
-  openGraph: {
-    title: 'Bible Study with Andrew Tugume',
-    description: bibleStudy.descriptor,
-    url: 'https://andrewtugume.com/bible-study',
-    type: 'website'
-  }
-}
+export const metadata = pageMetadata({
+  title: 'Bible Study with Andrew Tugume | Work, Money, Leadership & Life',
+  description: 'Free Scripture-centred Bible study on work, leadership, money, stewardship and relationships — weekly online study and YouTube teaching.',
+  path: '/bible-study',
+  absolute: true,
+  image: '/bible-study/opengraph-image',
+})
 
 const sectionHeading = 'text-3xl md:text-4xl font-semibold text-scripture leading-tight'
 const eyebrow = 'text-xs font-semibold tracking-[0.2em] text-scripture-warm uppercase'

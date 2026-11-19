@@ -1,34 +1,34 @@
 import { getAllPosts } from '@/lib/blog/posts'
 import { escapeXml } from '@/lib/seo/utils'
+import { brand, SITE_URL } from '@/lib/brand'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
   const posts = await getAllPosts()
-  const base = 'https://andrewtugume.com'
-  const siteTitle = 'Andrew Tugume'
-  const siteDesc = 'Teaching, technology, and investing insights to integrate faith and work.'
 
-  const items = posts.map(p => `
+  const items = posts.map((post) => `
     <item>
-      <title>${escapeXml(p.title)}</title>
-      <link>${base}/blog/${p.slug}</link>
-      <guid isPermaLink="true">${base}/blog/${p.slug}</guid>
-      <pubDate>${new Date(p.date).toUTCString()}</pubDate>
-      <description>${escapeXml(p.summary || '')}</description>
-    </item>
-  `).join('\n')
+      <title>${escapeXml(post.title)}</title>
+      <link>${SITE_URL}/blog/${post.slug}</link>
+      <guid isPermaLink="true">${SITE_URL}/blog/${post.slug}</guid>
+      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+      <dc:creator>${escapeXml(brand.name)}</dc:creator>
+      <description>${escapeXml(post.summary || '')}</description>
+      ${(post.tags || []).map((tag) => `<category>${escapeXml(tag)}</category>`).join('')}
+    </item>`).join('\n')
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-  <rss version="2.0">
-    <channel>
-      <title>${escapeXml(siteTitle)}</title>
-      <link>${base}</link>
-      <description>${escapeXml(siteDesc)}</description>
-      <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-      ${items}
-    </channel>
-  </rss>`
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>${escapeXml(`${brand.name} — Insights`)}</title>
+    <link>${SITE_URL}</link>
+    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
+    <description>${escapeXml(brand.description)}</description>
+    <language>en</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    ${items}
+  </channel>
+</rss>`
 
-  return new NextResponse(xml, { headers: { 'Content-Type': 'application/rss+xml' } })
+  return new NextResponse(xml, { headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' } })
 }
-

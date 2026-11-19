@@ -1,6 +1,6 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import ContactForm from '@/components/ContactForm'
 import EcosystemOverview from '@/components/EcosystemOverview'
@@ -8,14 +8,11 @@ import PageHero from '@/components/PageHero'
 import SectionHeading from '@/components/SectionHeading'
 import { capitalDimensions, ecosystem, initiatives, partnershipTypes } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'My Ecosystem — Qraft Group and Future of Work Forum',
-  description:
-    'How Andrew Tugume’s personal-brand initiatives connect to Qraft Group (Rata Qraft Solutions Limited), Qraft Academy, Qraft Capital and the Future of Work Forum.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/ecosystem'
-  }
-}
+export const metadata = pageMetadata({
+  title: 'Ecosystem: Qraft Group & Future of Work Forum',
+  description: 'How WorkMasters, InfluenceMasters and Bible Study connect to Qraft Group (Rata Qraft Solutions Limited), Qraft Academy, Qraft Capital and the Future of Work Forum.',
+  path: '/ecosystem',
+})
 
 const initiativeColours = {
   work: 'border-work-accent',

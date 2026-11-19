@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { getAttribution, trackLead } from '@/lib/analytics'
 
 type ContactStatus = 'idle' | 'sending' | 'success' | 'error'
 
@@ -67,7 +68,7 @@ export default function ContactForm({
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, source: getAttribution() }),
       })
 
       if (!response.ok) {
@@ -76,6 +77,7 @@ export default function ContactForm({
       }
 
       setStatus('success')
+      trackLead(formData.subject)
       setFormData(initialFormData)
     } catch {
       setStatus('error')

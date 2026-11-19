@@ -18,8 +18,8 @@ export function getCanonicalUrl(path: string): string {
 }
 
 // OpenGraph URLs for social sharing
-export function getOGImageUrl(slug: string, type: 'og' | 'twitter' = 'og'): string {
-  return `${SITE_BASE}/${type}/${slug}`
+export function getOGImageUrl(slug: string): string {
+  return `${SITE_BASE}/blog/${slug}/opengraph-image`
 }
 
 // Slug generation from title

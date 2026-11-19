@@ -1,50 +1,18 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
-import type { Metadata } from 'next'
-import { generateBreadcrumbSchema, generatePersonSchema } from '@/lib/seo/schema'
+import { generateBreadcrumbSchema } from '@/lib/seo/schema'
+import { profilePageSchema } from '@/lib/seo/graph'
 import EcosystemOverview from '@/components/EcosystemOverview'
-import { bookingHref, brand, cld, initiatives } from '@/lib/brand'
+import { bookingHref, brand, cld, facts, initiatives } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'About Andrew Tugume — Educator, Technologist, Investor',
-  description:
-    'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda, and the founder of WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
-  keywords: [
-    'Andrew Tugume',
-    'African leadership development',
-    'workforce development Africa',
-    'future of work Africa',
-    'economic transformation Africa',
-    'entrepreneur Uganda',
-    'Qraft Solutions',
-    'WorkMasters',
-    'CapitalMasters',
-  ],
-  alternates: {
-    canonical: 'https://andrewtugume.com/about',
-  },
-  openGraph: {
-    title: 'About Andrew Tugume — Educator, Technologist, Investor',
-    description:
-      'Educator, technologist, and investor working at the intersection of workforce development, leadership, technology, and capital in Africa.',
-    url: 'https://andrewtugume.com/about',
-    type: 'profile',
-    images: [
-      {
-        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Andrew Tugume',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About Andrew Tugume',
-    description:
-      'Educator, technologist, and investor shaping the future of work and leadership in Africa.',
-  },
-}
+export const metadata = pageMetadata({
+  title: 'About Andrew Tugume | Educator, Technologist & Investor',
+  description: 'Meet Andrew Tugume, a Kampala-based educator, technologist and investor and founder of WorkMasters, InfluenceMasters and Qraft Group.',
+  path: '/about',
+  absolute: true,
+  type: 'profile',
+})
 
 const beliefs = [
   {
@@ -87,7 +55,7 @@ export default function About() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema()) }}
       />
       <script
         type="application/ld+json"
@@ -141,6 +109,19 @@ export default function About() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ── At a glance (direct facts for search and answer engines) ── */}
+        <section aria-labelledby="at-a-glance" className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
+          <h2 id="at-a-glance" className="text-sm font-semibold tracking-widest text-accent uppercase">Andrew Tugume at a glance</h2>
+          <dl className="mt-6 grid gap-x-10 gap-y-4 md:grid-cols-2">
+            {facts.map((fact) => (
+              <div key={fact.label} className="border-t border-black/5 pt-4">
+                <dt className="text-xs font-semibold tracking-wide text-gray-600 uppercase">{fact.label}</dt>
+                <dd className="mt-1 text-gray-800">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* ── 2. Origin Story ──────────────────────────────────── */}

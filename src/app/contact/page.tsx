@@ -1,15 +1,14 @@
 import React from 'react'
-import type { Metadata } from 'next'
+import { pageMetadata } from '@/lib/seo/metadata'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import ContactForm from '@/components/ContactForm'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: 'Contact Andrew Tugume',
-  description: 'Get in touch with Andrew Tugume about WorkMasters, InfluenceMasters, Bible Study, speaking or partnerships.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/contact'
-  }
-}
+  description: 'Contact Andrew Tugume about WorkMasters, InfluenceMasters, Bible Study, speaking or partnerships — by form, email or WhatsApp.',
+  path: '/contact',
+  absolute: true,
+})
 
 export default function Contact() {
   return (

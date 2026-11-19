@@ -3,7 +3,8 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import type { Metadata } from 'next'
-import { generateOrganizationSchema } from '@/lib/seo/schema'
+import Analytics from '../components/Analytics'
+import { siteGraph } from '@/lib/seo/graph'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://andrewtugume.com'),
@@ -37,26 +38,10 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://andrewtugume.com',
+    locale: 'en_GB',
     siteName: 'Andrew Tugume',
     title: 'Andrew Tugume — Educator, Technologist, Investor',
     description: 'Develop your potential, create value and live with purpose — through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
-    images: [
-      {
-        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Andrew Tugume - Educator, Technologist, Investor',
-        type: 'image/jpeg',
-      },
-      {
-        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-        width: 800,
-        height: 600,
-        alt: 'Andrew Tugume - Professional headshot',
-      }
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -64,10 +49,6 @@ export const metadata: Metadata = {
     creator: '@_drewtugume',
     title: 'Andrew Tugume — Educator, Technologist, Investor',
     description: 'Develop your potential, create value and live with purpose — through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
-    images: {
-      url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-      alt: 'Andrew Tugume portrait',
-    },
   },
   robots: {
     index: true,
@@ -85,7 +66,9 @@ export const metadata: Metadata = {
     ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE && { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION_CODE }),
     ...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION_CODE && { yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION_CODE }),
   },
-  manifest: '/site.webmanifest',
+  alternates: {
+    types: { 'application/rss+xml': [{ url: '/rss.xml', title: 'Andrew Tugume — Insights' }] },
+  },
 
 }
 
@@ -93,7 +76,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Favicon and app icons: add files to src/app (icon.png, apple-icon.png) once brand icons exist */}
         {/* Theme Colors */}
         <meta name="theme-color" content="#0B0B0B" />
         <meta name="msapplication-TileColor" content="#0B0B0B" />
@@ -113,68 +95,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Andrew Tugume" />
         
-        {/* Google Analytics */}
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { send_page_view: true, 'anonymize_ip': true });`,
-              }}
-            />
-          </>
-        )}
       </head>
       <body className="overflow-x-hidden">
-        {/* Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema())
-          }}
-        />
-        
-        {/* Website Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'Andrew Tugume',
-              url: 'https://andrewtugume.com',
-              description: 'Develop your potential, create value and live with purpose — through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
-              image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
 
-            })
-          }}
-        />
-        
-        {/* Navigational Schema */}
+        {/* Site-wide entity graph: Person, WebSite, initiatives, businesses */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'SiteNavigationElement',
-              name: 'Main Navigation',
-              url: 'https://andrewtugume.com',
-              mainEntity: [
-                { name: 'Home', url: 'https://andrewtugume.com' },
-                { name: 'About', url: 'https://andrewtugume.com/about' },
-                { name: 'WorkMasters', url: 'https://andrewtugume.com/workmasters' },
-                { name: 'InfluenceMasters', url: 'https://andrewtugume.com/influencemasters' },
-                { name: 'Bible Study', url: 'https://andrewtugume.com/bible-study' },
-                { name: 'Resources', url: 'https://andrewtugume.com/resources' },
-                { name: 'My Ecosystem', url: 'https://andrewtugume.com/ecosystem' },
-              ],
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph()) }}
         />
         
         <Header />
         <main id="main" className="container py-6 md:py-12">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )

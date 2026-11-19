@@ -1,6 +1,6 @@
 import React from 'react'
-import type { Metadata } from 'next'
-import { generateBreadcrumbSchema, generatePersonSchema } from '@/lib/seo/schema'
+import { pageMetadata } from '@/lib/seo/metadata'
+import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import Link from 'next/link'
 import Button from '@/components/Button'
 import BookingForm from '@/components/BookingForm'
@@ -17,21 +17,12 @@ import {
   signatureTalks
 } from '@/lib/brand'
 
-export const metadata: Metadata = {
-  title: 'Book Andrew Tugume to Speak — Keynotes, Panels & Podcasts',
-  description:
-    'Book Andrew Tugume for keynotes, panels, workshops, corporate training, and podcast interviews on the future of work, leadership, technology, and capital in Africa.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/speaking'
-  },
-  openGraph: {
-    title: 'Book Andrew Tugume to Speak',
-    description: 'Keynotes, panels, workshops, and podcast interviews on the future of work, leadership, technology, and capital.',
-    url: 'https://andrewtugume.com/speaking',
-    type: 'profile',
-    images: [{ url: brand.images.headshot, width: 1200, height: 630, alt: brand.name }]
-  }
-}
+export const metadata = pageMetadata({
+  title: 'Book Andrew Tugume to Speak | Keynotes, Workshops & Podcasts',
+  description: 'Book Andrew Tugume, a Kampala-based educator, technologist and investor, for keynotes, workshops, corporate training, panels and podcasts.',
+  path: '/speaking',
+  absolute: true,
+})
 
 // Cloudinary serves the original file as a download with fl_attachment
 const downloadUrl = (url: string) => url.replace('/upload/', '/upload/fl_attachment/')
@@ -51,10 +42,6 @@ const steps = [
 export default function Speaking() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

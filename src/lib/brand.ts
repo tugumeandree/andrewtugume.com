@@ -753,3 +753,63 @@ export const resourceCategories = [
 
 // Add verified entries: talks, podcast episodes and interviews.
 export const mediaItems: MediaItem[] = []
+
+// ── Answer-engine content ───────────────────────────────────
+// Direct, factual answers about Andrew. Only confirmed facts belong here —
+// answer engines quote these verbatim.
+
+export const SITE_URL = 'https://andrewtugume.com'
+
+export const facts = [
+  { label: 'Name', value: 'Andrew Tugume (known to students as Coach Drew)' },
+  { label: 'Roles', value: 'Educator, technologist and investor' },
+  { label: 'Based in', value: 'Kampala, Uganda' },
+  { label: 'Initiatives', value: 'WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume' },
+  { label: 'Founder of', value: 'Rata Qraft Solutions Limited (Qraft Group), including Qraft Academy and Qraft Capital' },
+  { label: 'Speaks on', value: 'Productive capital, influence, the future of work, technology and biblical wisdom for everyday life' },
+  { label: 'Contact', value: 'andrewtugume2@gmail.com · WhatsApp +256 755 017 384' },
+]
+
+export const knowsAbout = [
+  'Productivity',
+  'Career development',
+  'Consulting and offer design',
+  'Thought leadership',
+  'Personal branding',
+  'Future of work',
+  'Digital tools and AI-assisted workflows',
+  'Investment and stewardship',
+  'Bible study',
+  'Biblical leadership',
+]
+
+export const generalFaqs: Faq[] = [
+  {
+    question: 'Who is Andrew Tugume?',
+    answer: 'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda. He helps people develop their potential, create value and live with purpose through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume, and he is the founder of Rata Qraft Solutions Limited (Qraft Group).',
+  },
+  {
+    question: 'What does Andrew Tugume do?',
+    answer: 'Andrew teaches, builds and invests. Through WorkMasters he helps people develop productive capital; through InfluenceMasters he helps experts develop influence capital; and through Bible Study with Andrew Tugume he teaches Scripture and its application to everyday life. He also speaks at conferences, organisations, universities and churches.',
+  },
+  {
+    question: 'Who does Andrew Tugume work with?',
+    answer: 'Professionals, consultants, freelancers, entrepreneurs, founders, experts and leaders who want to create more value from what they know — and anyone who wants to study the Bible and apply it to work, money, leadership and relationships.',
+  },
+  {
+    question: 'How do I book Andrew Tugume to speak?',
+    answer: 'Send a request through the speaking booking form at andrewtugume.com/speaking, or email andrewtugume2@gmail.com. Churches and ministries can use the teaching invitation form at andrewtugume.com/bible-study/invite.',
+  },
+  {
+    question: 'Where is Andrew Tugume based?',
+    answer: 'Andrew is based in Kampala, Uganda, and works with people and organisations online and in person.',
+  },
+  {
+    question: 'What is Qraft Group?',
+    answer: 'Qraft Group (Rata Qraft Solutions Limited) is the corporate business founded by Andrew Tugume. Its businesses include Qraft Academy (human capital development) and Qraft Capital (enterprise capital development).',
+  },
+  {
+    question: 'How can I contact Andrew Tugume?',
+    answer: 'Use the contact form at andrewtugume.com/contact, email andrewtugume2@gmail.com, or send a WhatsApp message to +256 755 017 384.',
+  },
+]

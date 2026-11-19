@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useId, useState } from 'react'
+import { getAttribution, trackSignUp } from '@/lib/analytics'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
@@ -24,10 +25,13 @@ export default function SubscribeForm({ tone = 'light', cta = 'Subscribe', inter
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, interest, website }),
+        body: JSON.stringify({ email, interest, website, source: getAttribution() }),
       })
       setStatus(response.ok ? 'success' : 'error')
-      if (response.ok) setEmail('')
+      if (response.ok) {
+        setEmail('')
+        trackSignUp(interest)
+      }
     } catch {
       setStatus('error')
     }

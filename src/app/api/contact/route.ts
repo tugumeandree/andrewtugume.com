@@ -8,6 +8,7 @@ type ContactPayload = {
   preferredContact?: string
   phone?: string
   message?: string
+  source?: string
   website?: string
 }
 
@@ -40,6 +41,7 @@ export async function POST(request: Request) {
     `Interest / subject: ${body.subject}`,
     `Preferred contact: ${body.preferredContact || 'Email'}`,
     body.phone && `Phone / WhatsApp: ${body.phone}`,
+    body.source && `Source: ${body.source}`,
   ].filter(Boolean).join('\n')
 
   const response = await fetch('https://api.resend.com/emails', {

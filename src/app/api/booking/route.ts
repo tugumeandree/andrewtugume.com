@@ -16,6 +16,7 @@ type BookingPayload = {
   message?: string
   additional?: string
   kind?: 'speaking' | 'ministry'
+  source?: string
   website?: string
 }
 
@@ -33,6 +34,7 @@ const fieldLabels: Array<[keyof BookingPayload, string]> = [
   ['audienceSize', 'Audience size'],
   ['budget', 'Budget'],
   ['additional', 'Additional information'],
+  ['source', 'Source'],
 ]
 
 export async function POST(request: Request) {

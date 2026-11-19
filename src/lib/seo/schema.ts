@@ -120,7 +120,7 @@ export function generateArticleSchema(
     '@type': 'BlogPosting',
     headline: title,
     description: description || '',
-    image: image || `https://andrewtugume.com/og/${slug}`,
+    image: image || `https://andrewtugume.com/blog/${slug}/opengraph-image`,
     datePublished: new Date(publishedDate).toISOString(),
     dateModified: modifiedDate ? new Date(modifiedDate).toISOString() : new Date(publishedDate).toISOString(),
     author: {

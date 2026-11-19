@@ -4,7 +4,12 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getAllPosts, getPostBySlug, PostMeta } from '@/lib/blog/posts'
-import { generateBreadcrumbSchema, generateArticleSchema } from '@/lib/seo/schema'
+import { generateBreadcrumbSchema } from '@/lib/seo/schema'
+import { ids } from '@/lib/seo/graph'
+import { pageMetadata } from '@/lib/seo/metadata'
+import ShareLinks from '@/components/ShareLinks'
+import SubscribeForm from '@/components/SubscribeForm'
+import { bios, initiatives } from '@/lib/brand'
 
 type Params = { params: Promise<{ slug: string }> }
 
@@ -18,43 +23,20 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const post = await getPostBySlug(slug)
   if (!post) return { title: 'Post Not Found' }
   
-  const url = `https://andrewtugume.com/blog/${post.meta.slug}`
-  const ogUrl = post.meta.ogImage ? post.meta.ogImage : `https://andrewtugume.com/og/${post.meta.slug}`
-  const articleDate = new Date(post.meta.date)
-  const publishedTime = articleDate.toISOString()
-  
+  const base = pageMetadata({ title: post.meta.title, description: post.meta.summary || '', path: `/blog/${post.meta.slug}`, type: 'article', image: `/blog/${post.meta.slug}/opengraph-image` })
+  const customImage = post.meta.ogImage?.startsWith('http') ? post.meta.ogImage : undefined
+
   return {
-    title: post.meta.title,
-    description: post.meta.summary,
+    ...base,
     keywords: post.meta.tags || [],
-    authors: [{ name: 'Andrew Tugume', url: 'https://andrewtugume.com' }],
-    creator: 'Andrew Tugume',
-    alternates: { 
-      canonical: url
-    },
+    authors: [{ name: 'Andrew Tugume', url: 'https://andrewtugume.com/about' }],
     openGraph: {
-      title: post.meta.title,
-      description: post.meta.summary,
-      url,
+      ...base.openGraph,
       type: 'article',
-      publishedTime: publishedTime,
+      publishedTime: new Date(post.meta.date).toISOString(),
       authors: ['Andrew Tugume'],
       tags: post.meta.tags || [],
-      images: [
-        { 
-          url: ogUrl, 
-          width: 1200, 
-          height: 630,
-          alt: post.meta.title,
-        }
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.meta.title,
-      description: post.meta.summary,
-      images: [ogUrl],
-      creator: '@_drewtugume',
+      ...(customImage && { images: [{ url: customImage, width: 1200, height: 630, alt: post.meta.title }] }),
     },
   }
 }
@@ -76,25 +58,12 @@ export default async function PostPage({ params }: Params) {
     '@type': 'BlogPosting',
     headline: meta.title,
     description: meta.summary,
-    image: meta.ogImage ? [meta.ogImage] : meta.image ? [meta.image] : [],
+    image: [`${canonical}/opengraph-image`],
     datePublished: publishedDate,
     dateModified: publishedDate,
-    author: {
-      '@type': 'Person',
-      name: 'Andrew Tugume',
-      url: 'https://andrewtugume.com',
-      image: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Andrew Tugume',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://res.cloudinary.com/dwa3soopc/image/upload/v1763044829/Andrew%20Bio%20Photos/andrew%20tugume.jpg',
-        width: 192,
-        height: 192,
-      }
-    },
+    author: { '@id': ids.person },
+    publisher: { '@id': ids.person },
+    isPartOf: { '@id': ids.website },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': canonical
@@ -163,10 +132,10 @@ export default async function PostPage({ params }: Params) {
               <span>{readingTime} min read</span>
             </div>
 
-            {(meta.image || meta.ogImage) && (
+            {meta.image?.startsWith('http') && (
               <div className="mb-8 rounded-lg overflow-hidden">
                 <Image 
-                  src={meta.image || meta.ogImage!} 
+                  src={meta.image} 
                   alt={meta.title} 
                   width={800} 
                   height={450} 
@@ -196,26 +165,34 @@ export default async function PostPage({ params }: Params) {
           />
 
           {/* Article Footer */}
-          <footer className="mt-12 pt-8 border-t border-gray-200">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <div className="flex items-start gap-4">
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2">About Andrew Tugume</h3>
-                  <p className="text-sm text-gray-700">
-                    Educator, technologist, and investor helping ambitious operators build skill, systems, and disciplined capital.
-                  </p>
-                  <Link href="/about" className="text-primary hover:underline text-sm font-semibold mt-2 inline-block">
-                    Learn more →
-                  </Link>
-                </div>
-              </div>
+          <footer className="mt-12 space-y-10 border-t border-gray-200 pt-8">
+            <ShareLinks url={canonical} title={meta.title} />
+
+            <div className="rounded-2xl bg-white border border-black/5 p-6">
+              <h2 className="text-lg font-semibold text-primary">About the author</h2>
+              <p className="mt-2 text-sm text-gray-700 leading-relaxed">{bios.short}</p>
+              <Link href="/about" className="mt-3 inline-flex text-sm font-semibold">More about Andrew →</Link>
             </div>
 
-            {/* Related Post Links */}
-            <div className="mt-8">
-              <Link href="/blog" className="text-primary hover:underline font-semibold">
-                ← Back to all posts
-              </Link>
+            <div className="rounded-2xl bg-primary p-6 md:p-8">
+              <h2 className="text-xl font-semibold text-white">Get new articles by email</h2>
+              <p className="mt-1 mb-4 text-sm text-white/75">Practical ideas on work, influence and purpose, when they’re published.</p>
+              <SubscribeForm tone="dark" interest="Resources" />
+            </div>
+
+            <div>
+              <h2 className="text-lg font-semibold text-primary">Keep going</h2>
+              <ul className="mt-3 grid gap-3 sm:grid-cols-3">
+                {initiatives.map((initiative) => (
+                  <li key={initiative.id}>
+                    <Link href={initiative.href} className="block h-full rounded-xl border border-black/5 bg-white p-4 text-sm hover:border-accent hover:no-underline">
+                      <span className="block font-semibold text-primary">{initiative.name}</span>
+                      <span className="mt-1 block text-gray-700">{initiative.category}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/blog" className="mt-6 inline-flex font-semibold">← All articles</Link>
             </div>
           </footer>
         </article>

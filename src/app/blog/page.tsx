@@ -1,27 +1,15 @@
 import React from 'react'
+import { pageMetadata } from '@/lib/seo/metadata'
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog/posts'
-import type { Metadata } from 'next'
 import { generateBreadcrumbSchema, generateWebPageSchema } from '@/lib/seo/schema'
 
-export const metadata: Metadata = {
-  title: 'Insights',
-  description: 'Essays on execution, leadership systems, technology strategy, and disciplined capital for ambitious operators.',
-  alternates: {
-    canonical: 'https://andrewtugume.com/blog',
-  },
-  openGraph: {
-    title: 'Insights — Andrew Tugume',
-    description: 'Essays on execution, leadership systems, technology strategy, and disciplined capital.',
-    url: 'https://andrewtugume.com/blog',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Insights — Andrew Tugume',
-    description: 'Essays on execution, leadership systems, technology strategy, and disciplined capital.',
-  },
-}
+export const metadata = pageMetadata({
+  title: 'Insights: Articles by Andrew Tugume',
+  description: 'Articles by Andrew Tugume on productivity, offers, influence, leadership, technology and the future of work.',
+  path: '/blog',
+  absolute: true,
+})
 
 export default async function BlogIndex() {
   const posts = await getAllPosts()
