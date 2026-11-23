@@ -166,8 +166,10 @@ const nextConfig = {
       permanent('/community', '/workmasters'),
       permanent('/community/workmasters', '/workmasters'),
 
-      // Faith content → Bible Study
-      permanent('/faith-knowledge', '/bible-study'),
+      // Bible Study → FaithMasters. Nested paths, query strings and #anchors carry over;
+      // older faith routes go straight to the new page so there are no redirect chains.
+      permanent('/bible-study/:path*', '/faithmasters/:path*'),
+      permanent('/faith-knowledge', '/faithmasters'),
 
       // Retired programmes and institutions (pages deleted November 2026)
       permanent('/techmasters', '/programs'),
@@ -176,8 +178,8 @@ const nextConfig = {
       permanent('/schools/chariot-leadership', '/ecosystem'),
       permanent('/community/chariot-leadership', '/ecosystem'),
       permanent('/schools/tabernacle-tech', '/ecosystem'),
-      permanent('/schools/nations-bible', '/bible-study'),
-      permanent('/community/nations-bible', '/bible-study'),
+      permanent('/schools/nations-bible', '/faithmasters'),
+      permanent('/community/nations-bible', '/faithmasters'),
 
       // Other
       permanent('/impact', '/about'),

@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 
-type Theme = 'ink' | 'work' | 'influence' | 'scripture'
+type Theme = 'ink' | 'work' | 'influence' | 'faith'
 
 const themes: Record<Theme, { section: string; eyebrow: string; title: string; intro: string }> = {
   ink: { section: 'bg-primary', eyebrow: 'text-accent', title: 'text-white', intro: 'text-white/80' },
   work: { section: 'bg-work', eyebrow: 'text-work-accent', title: 'text-white', intro: 'text-white/80' },
   influence: { section: 'bg-influence', eyebrow: 'text-[#F2C9D0]', title: 'text-white', intro: 'text-white/85' },
-  scripture: { section: 'bg-scripture-light', eyebrow: 'text-scripture-warm', title: 'text-scripture', intro: 'text-gray-800' },
+  faith: { section: 'bg-white', eyebrow: 'text-faith-sage', title: 'text-faith-teal', intro: 'text-faith-slate' },
 }
 
 type PageHeroProps = {

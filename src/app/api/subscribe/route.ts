@@ -10,8 +10,8 @@ const welcomes: Record<string, { subject: string; next: string; link: string }> 
     next: 'You’ll receive the WorkMasters LIVE dates as soon as they are confirmed. In the meantime, explore WorkMasters:',
     link: 'https://andrewtugume.com/workmasters',
   },
-  'Bible Study': {
-    subject: 'Welcome to Bible Study with Andrew Tugume',
+  FaithMasters: {
+    subject: 'Welcome to FaithMasters — Bible Study with Andrew Tugume',
     next: 'You’ll hear about new teaching, study guides and events. You can watch teaching on YouTube any time:',
     link: 'https://www.youtube.com/@drewbiblemedia',
   },

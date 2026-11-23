@@ -5,7 +5,7 @@ import ContactForm from '@/components/ContactForm'
 
 export const metadata = pageMetadata({
   title: 'Contact Andrew Tugume',
-  description: 'Contact Andrew Tugume about WorkMasters, InfluenceMasters, Bible Study, speaking or partnerships — by form, email or WhatsApp.',
+  description: 'Contact Andrew Tugume about WorkMasters, InfluenceMasters, FaithMasters, speaking or partnerships — by form, email or WhatsApp.',
   path: '/contact',
   absolute: true,
 })
@@ -28,7 +28,7 @@ export default function Contact() {
       <div className="space-y-10 max-w-5xl mx-auto">
         <section className="bg-white border border-black/5 rounded-2xl p-8 md:p-12">
           <h1 className="text-4xl md:text-5xl font-semibold text-primary">Contact</h1>
-          <p className="mt-4 text-gray-700">Questions about WorkMasters, InfluenceMasters, Bible Study, speaking or partnerships — send a note below.</p>
+          <p className="mt-4 text-gray-700">Questions about WorkMasters, InfluenceMasters, FaithMasters, speaking or partnerships — send a note below.</p>
         </section>
 
         <section className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
@@ -54,7 +54,7 @@ export default function Contact() {
               <h2 className="text-lg font-semibold text-primary">Specific requests</h2>
               <ul className="mt-3 space-y-2 text-sm">
                 <li><a href="/speaking#book">Book Andrew to speak</a></li>
-                <li><a href="/bible-study/invite">Invite Andrew to teach</a></li>
+                <li><a href="/faithmasters/invite">Invite Andrew to teach</a></li>
                 <li><a href="/ecosystem#partner">Partnership enquiry</a></li>
               </ul>
             </div>

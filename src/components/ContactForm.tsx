@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getAttribution, trackLead } from '@/lib/analytics'
+import { workplaceTraining } from '@/lib/brand'
 
 type ContactStatus = 'idle' | 'sending' | 'success' | 'error'
 
@@ -9,7 +10,8 @@ const defaultSubjects = [
   'General Inquiry',
   'WorkMasters',
   'InfluenceMasters',
-  'Bible Study',
+  'FaithMasters',
+  workplaceTraining.subject,
   'Speaking Invitation',
   'Podcast / Media Interview',
   'Partnership Opportunity',
@@ -50,6 +52,14 @@ export default function ContactForm({
   }
   const [status, setStatus] = useState<ContactStatus>('idle')
   const [formData, setFormData] = useState(initialFormData)
+
+  // /contact?subject=… preselects that subject on arrival, when the form offers it
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get('subject')
+    if (requested && subjects.includes(requested)) {
+      setFormData((previous) => ({ ...previous, subject: requested }))
+    }
+  }, [])
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>

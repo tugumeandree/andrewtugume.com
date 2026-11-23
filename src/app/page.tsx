@@ -17,7 +17,7 @@ import { brand, generalFaqs } from '@/lib/brand'
 
 export const metadata = pageMetadata({
   title: 'Andrew Tugume | Educator, Technologist & Investor, Kampala',
-  description: 'Andrew Tugume is a Kampala-based educator, technologist and investor. Explore WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
+  description: 'Andrew Tugume is a Kampala-based educator, technologist and investor. Explore WorkMasters, InfluenceMasters and FaithMasters.',
   path: '',
   absolute: true,
 })
@@ -42,7 +42,7 @@ export default function Home() {
         {/* Why this work matters + Personal Capital Development */}
         <PurposeSection />
 
-        {/* Bible Study as a distinct, welcoming initiative */}
+        {/* FaithMasters as a distinct, welcoming initiative */}
         <BibleWisdomSection />
 
         {/* Founder introduction */}

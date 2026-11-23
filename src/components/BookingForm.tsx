@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { getAttribution, trackLead } from '@/lib/analytics'
-import { bibleStudy, engagementFormats, signatureTalks } from '@/lib/brand'
+import { faithmasters, engagementFormats, signatureTalks } from '@/lib/brand'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 type Variant = 'speaking' | 'ministry'
@@ -28,7 +28,7 @@ const variants = {
       'Online teaching',
       'Other',
     ],
-    topics: [...bibleStudy.tracks.map((track) => track.title), ...bibleStudy.seminarThemes.map((theme) => `${theme} Seminar`), 'Other topic'],
+    topics: [...faithmasters.tracks.map((track) => track.title), ...faithmasters.seminarThemes.map((theme) => `${theme} Seminar`), 'Other topic'],
     showBudget: false,
     messageLabel: 'Purpose of the invitation *',
     messagePlaceholder: 'What you hope the teaching will achieve for your audience.',

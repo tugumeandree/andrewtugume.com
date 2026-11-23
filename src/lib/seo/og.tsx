@@ -6,7 +6,7 @@ const themes = {
   ink: { background: '#0B0B0B', eyebrow: '#C7A14B', title: '#FFFFFF', body: '#D4D4D4', rule: '#C7A14B' },
   work: { background: '#16233E', eyebrow: '#E87722', title: '#FFFFFF', body: '#D6DCE8', rule: '#E87722' },
   influence: { background: '#7A2E3A', eyebrow: '#F2C9D0', title: '#FFFFFF', body: '#F3E8EA', rule: '#F2C9D0' },
-  scripture: { background: '#F4EDE1', eyebrow: '#8A6A3B', title: '#4F5D3A', body: '#3F3F3F', rule: '#4F5D3A' },
+  faith: { background: '#124542', eyebrow: '#F4F6F5', title: '#FFFFFF', body: '#F4F6F5', rule: '#D96B27' },
 }
 
 type OgInput = {

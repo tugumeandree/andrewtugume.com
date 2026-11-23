@@ -6,5 +6,5 @@ export const size = ogSize
 export const contentType = 'image/png'
 
 export default function Image() {
-  return renderOgImage({ eyebrow: brand.titles.join(' · '), title: brand.headline, subtitle: 'WorkMasters · InfluenceMasters · Bible Study with Andrew Tugume' })
+  return renderOgImage({ eyebrow: brand.titles.join(' · '), title: brand.headline, subtitle: 'WorkMasters · InfluenceMasters · FaithMasters' })
 }

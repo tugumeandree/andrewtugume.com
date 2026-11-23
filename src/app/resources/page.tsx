@@ -6,7 +6,7 @@ import { getAllPosts } from '@/lib/blog/posts'
 import PageHero from '@/components/PageHero'
 import SectionHeading from '@/components/SectionHeading'
 import SubscribeForm from '@/components/SubscribeForm'
-import { bibleStudy, mediaItems, resourceCategories } from '@/lib/brand'
+import { faithmasters, mediaItems, resourceCategories } from '@/lib/brand'
 
 export const metadata = pageMetadata({
   title: 'Resources: Articles, Frameworks & Teaching',
@@ -19,10 +19,10 @@ const formatDate = (date: string) =>
 
 const collections = [
   {
-    title: 'Bible Study teaching tracks',
-    kicker: 'Bible Study',
+    title: 'FaithMasters teaching tracks',
+    kicker: 'FaithMasters',
     description: 'Four tracks on work, money, stewardship and relationships, with key passages and outcomes.',
-    href: '/bible-study#tracks',
+    href: '/faithmasters#tracks',
     className: 'bg-scripture-light',
   },
   {
@@ -131,21 +131,21 @@ export default async function Resources() {
           </section>
         )}
 
-        {/* Bible Study */}
+        {/* FaithMasters */}
         <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
           <div className="max-w-6xl mx-auto rounded-3xl bg-scripture-light p-8 md:p-12">
-            <p className="text-xs font-semibold tracking-[0.2em] text-scripture-warm uppercase">{bibleStudy.name}</p>
+            <p className="text-xs font-semibold tracking-[0.2em] text-scripture-warm uppercase">{faithmasters.name}</p>
             <h2 className="mt-3 text-3xl font-semibold text-scripture">Bible teaching and study</h2>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-              {bibleStudy.tracks.map((track) => (
+              {faithmasters.tracks.map((track) => (
                 <li key={track.id}>
-                  <Link href={`/bible-study#${track.id}`} className="font-semibold text-scripture">{track.title} →</Link>
+                  <Link href={`/faithmasters#${track.id}`} className="font-semibold text-scripture">{track.title} →</Link>
                 </li>
               ))}
             </ul>
-            {bibleStudy.youtubeChannelUrl && (
+            {faithmasters.youtubeChannelUrl && (
               <a
-                href={bibleStudy.youtubeChannelUrl}
+                href={faithmasters.youtubeChannelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center rounded-full bg-scripture px-6 py-3 text-sm font-semibold text-white hover:bg-primary hover:no-underline"

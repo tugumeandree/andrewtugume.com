@@ -5,7 +5,7 @@ import { brand, bookingHref, cld, initiatives, primaryCta } from '@/lib/brand'
 const engageLinks = [
   { href: primaryCta.href, label: primaryCta.label },
   { href: bookingHref, label: 'Book Andrew to speak' },
-  { href: '/bible-study/invite', label: 'Invite Andrew to teach' },
+  { href: '/faithmasters/invite', label: 'Invite Andrew to teach' },
   { href: '/ecosystem#partner', label: 'Partner with Andrew' },
   { href: '/speaking#media-kit', label: 'Media kit' },
 ]

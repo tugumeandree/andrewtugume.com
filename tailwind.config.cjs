@@ -12,7 +12,9 @@ module.exports = {
         // Per-initiative accents — typographic treatments, not logos
         work: { DEFAULT: '#16233E', accent: '#E87722', text: '#B0561A', light: '#FBF1E8' },
         influence: { DEFAULT: '#7A2E3A', light: '#F3E8EA' },
-        scripture: { DEFAULT: '#4F5D3A', warm: '#8A6A3B', light: '#F4EDE1' }
+        scripture: { DEFAULT: '#4F5D3A', warm: '#8A6A3B', light: '#F4EDE1' },
+        // FaithMasters pages only
+        faith: { teal: '#124542', terracotta: '#D96B27', sand: '#F4F6F5', slate: '#182221', sage: '#5C6B68' }
       },
       fontFamily: {
         display: ['"Playfair Display"', 'Sora', 'serif']

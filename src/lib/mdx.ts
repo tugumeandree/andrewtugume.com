@@ -31,7 +31,7 @@ export async function getMdxByRelativePath(relPath: string): Promise<MdxResult |
   } as any)
   
   // Create React element from evaluated content
-  const content = runtime.jsx(MdxContent as any, {})
+  const content = runtime.jsx(MdxContent as any, { components: { h1: 'h2' } })
   
   return { frontmatter, content }
 }

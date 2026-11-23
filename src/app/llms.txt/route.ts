@@ -1,5 +1,5 @@
 import { getAllPosts } from '@/lib/blog/posts'
-import { bibleStudy, brand, ecosystem, facts, generalFaqs, influencemasters, SITE_URL, workmasters } from '@/lib/brand'
+import { faithmasters, brand, ecosystem, facts, generalFaqs, influencemasters, SITE_URL, workmasters } from '@/lib/brand'
 
 // /llms.txt — a plain-text profile for AI assistants and generative search engines.
 // Built from the same verified content as the site, so it never drifts from it.
@@ -17,13 +17,13 @@ ${facts.map((fact) => `- ${fact.label}: ${fact.value}`).join('\n')}
 
 - [WorkMasters](${SITE_URL}/workmasters): ${workmasters.category}. ${workmasters.promise}
 - [InfluenceMasters](${SITE_URL}/influencemasters): ${influencemasters.category}. ${influencemasters.promise}
-- [${bibleStudy.name}](${SITE_URL}/bible-study): ${bibleStudy.descriptor} YouTube: ${bibleStudy.youtubeChannelUrl}
+- [${faithmasters.name}](${SITE_URL}/faithmasters) — ${faithmasters.byline}: ${faithmasters.mission} The public library is free. ${faithmasters.weekly.title}: ${faithmasters.weekly.when}. YouTube: ${faithmasters.youtubeChannelUrl}
 
 ## Frameworks
 
 - The Work Value Engine (WorkMasters): ${workmasters.engine.map((step) => step.title).join(' → ')}
 - The Influence Asset Cycle (InfluenceMasters): ${influencemasters.cycle.map((step) => step.title).join(' → ')}
-- Bible Study teaching tracks: ${bibleStudy.tracks.map((track) => track.title).join('; ')}
+- FaithMasters teaching tracks: ${faithmasters.tracks.map((track) => track.title).join('; ')}
 
 ## Ecosystem
 
@@ -39,7 +39,8 @@ ${generalFaqs.map((faq) => `### ${faq.question}\n${faq.answer}`).join('\n\n')}
 - [About](${SITE_URL}/about)
 - [Programmes](${SITE_URL}/programs)
 - [Book Andrew to speak](${SITE_URL}/speaking)
-- [Invite Andrew to teach](${SITE_URL}/bible-study/invite)
+- [FaithMasters](${SITE_URL}/faithmasters)
+- [Invite Andrew to teach](${SITE_URL}/faithmasters/invite)
 - [Ecosystem](${SITE_URL}/ecosystem)
 - [FAQ](${SITE_URL}/faq)
 - [Resources](${SITE_URL}/resources)

@@ -1,4 +1,5 @@
 import { getAllPosts } from '@/lib/blog/posts'
+import { getAllLessons } from '@/lib/faithmasters/lessons'
 import { NextResponse } from 'next/server'
 
 interface SitemapUrl {
@@ -20,8 +21,8 @@ export async function GET() {
     // Flagship initiatives
     { loc: `${base}/workmasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
     { loc: `${base}/influencemasters`, lastmod: currentDate, changefreq: 'monthly', priority: 0.9 },
-    { loc: `${base}/bible-study`, lastmod: currentDate, changefreq: 'weekly', priority: 0.9 },
-    { loc: `${base}/bible-study/invite`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
+    { loc: `${base}/faithmasters`, lastmod: currentDate, changefreq: 'weekly', priority: 0.9 },
+    { loc: `${base}/faithmasters/invite`, lastmod: currentDate, changefreq: 'monthly', priority: 0.6 },
     // Hubs
     { loc: `${base}/programs`, lastmod: currentDate, changefreq: 'monthly', priority: 0.8 },
     { loc: `${base}/resources`, lastmod: currentDate, changefreq: 'weekly', priority: 0.7 },
@@ -41,7 +42,14 @@ export async function GET() {
     priority: 0.8,
   }))
 
-  const allUrls = [...staticPages, ...postEntries]
+  const lessonEntries: SitemapUrl[] = getAllLessons().map((lesson) => ({
+    loc: `${base}${lesson.href}`,
+    lastmod: lesson.date ?? currentDate,
+    changefreq: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  const allUrls = [...staticPages, ...postEntries, ...lessonEntries]
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

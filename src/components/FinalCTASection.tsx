@@ -16,9 +16,9 @@ const paths = [
     accent: 'text-[#E8B4BE]',
   },
   {
-    title: 'Explore Bible Study',
+    title: 'Explore FaithMasters',
     body: 'Study Scripture and apply its wisdom to everyday life.',
-    href: '/bible-study',
+    href: '/faithmasters',
     accent: 'text-[#C9D3B5]',
   },
 ]

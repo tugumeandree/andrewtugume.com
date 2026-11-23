@@ -1,7 +1,7 @@
 // One connected JSON-LD graph describing Andrew, his initiatives and his businesses.
 // Every node has a stable @id so other schema on the site (articles, FAQs, profile
 // pages) can reference the same entities instead of redefining them.
-import { bibleStudy, brand, ecosystem, influencemasters, initiatives, knowsAbout, SITE_URL, workmasters } from '@/lib/brand'
+import { faithmasters, brand, ecosystem, influencemasters, initiatives, knowsAbout, SITE_URL, workmasters } from '@/lib/brand'
 
 export const ids = {
   person: `${SITE_URL}/#person`,
@@ -14,7 +14,7 @@ export const ids = {
 const initiativeDescriptions: Record<string, string> = {
   work: workmasters.promise,
   influence: influencemasters.promise,
-  scripture: bibleStudy.mission,
+  scripture: faithmasters.mission,
 }
 
 export function siteGraph() {
@@ -54,7 +54,7 @@ export function siteGraph() {
         url: `${SITE_URL}${initiative.href}`,
         description: initiativeDescriptions[initiative.id],
         ...(initiative.id === 'scripture'
-          ? { author: { '@id': ids.person }, ...(bibleStudy.youtubeChannelUrl && { sameAs: [bibleStudy.youtubeChannelUrl] }) }
+          ? { alternateName: faithmasters.byline, author: { '@id': ids.person }, ...(faithmasters.youtubeChannelUrl && { sameAs: [faithmasters.youtubeChannelUrl] }) }
           : { provider: { '@id': ids.person }, serviceType: initiative.category, areaServed: 'Africa' }),
       })),
       {

@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { generateBreadcrumbSchema } from '@/lib/seo/schema'
 import OfferTile from '@/components/OfferTile'
 import PageHero from '@/components/PageHero'
-import { bibleStudy, bookingHref, influencemasters, workmasters } from '@/lib/brand'
+import { faithmasters, bookingHref, influencemasters, workmasters } from '@/lib/brand'
 
 export const metadata = pageMetadata({
-  title: 'Programmes — WorkMasters, InfluenceMasters & Bible Study',
-  description: 'Every programme from Andrew Tugume with its current status — WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume.',
+  title: 'Programmes — WorkMasters, InfluenceMasters & FaithMasters',
+  description: 'Every programme from Andrew Tugume with its current status — WorkMasters, InfluenceMasters and FaithMasters.',
   path: '/programs',
   absolute: true,
 })
@@ -36,7 +36,7 @@ export default function Programs() {
         >
           <a href="#workmasters" className="inline-flex items-center justify-center rounded-full bg-work-accent px-6 py-3 text-sm font-semibold text-work hover:bg-white hover:no-underline">WorkMasters</a>
           <a href="#influencemasters" className="inline-flex items-center justify-center rounded-full bg-[#F2C9D0] px-6 py-3 text-sm font-semibold text-influence hover:bg-white hover:no-underline">InfluenceMasters</a>
-          <a href="#bible-study" className="inline-flex items-center justify-center rounded-full bg-scripture-light px-6 py-3 text-sm font-semibold text-scripture hover:bg-white hover:no-underline">Bible Study</a>
+          <a href="#faithmasters" className="inline-flex items-center justify-center rounded-full bg-scripture-light px-6 py-3 text-sm font-semibold text-scripture hover:bg-white hover:no-underline">FaithMasters</a>
         </PageHero>
 
         <section id="workmasters" className="px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -69,24 +69,24 @@ export default function Programs() {
           </div>
         </section>
 
-        <section id="bible-study" className="bg-scripture-light px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <section id="faithmasters" className="bg-scripture-light px-4 sm:px-6 lg:px-8 py-16 md:py-20">
           <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-semibold tracking-[0.2em] text-scripture-warm uppercase">Biblical Wisdom for Everyday Life</p>
-            <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-scripture">{bibleStudy.name}</h2>
+            <p className="text-xs font-semibold tracking-[0.2em] text-scripture-warm uppercase">{faithmasters.byline}</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-semibold text-scripture">{faithmasters.name}</h2>
             <p className="mt-4 max-w-3xl text-gray-800">
-              Bible Study is teaching, not a programme to buy. Join the weekly study, explore the four tracks, or invite
-              Andrew to teach.
+              The FaithMasters public library is free. Join the Friday study, explore the four tracks, or invite Andrew to
+              teach.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
-              <Link href="/bible-study#weekly" className="block rounded-2xl bg-white p-6 hover:no-underline">
-                <span className="block text-lg font-semibold text-scripture">{bibleStudy.weekly.title}</span>
-                <span className="mt-1 block text-sm text-gray-700">{bibleStudy.weekly.when}</span>
+              <Link href="/faithmasters#weekly" className="block rounded-2xl bg-white p-6 hover:no-underline">
+                <span className="block text-lg font-semibold text-scripture">{faithmasters.weekly.title}</span>
+                <span className="mt-1 block text-sm text-gray-700">{faithmasters.weekly.when}</span>
               </Link>
-              <Link href="/bible-study#tracks" className="block rounded-2xl bg-white p-6 hover:no-underline">
+              <Link href="/faithmasters#tracks" className="block rounded-2xl bg-white p-6 hover:no-underline">
                 <span className="block text-lg font-semibold text-scripture">Four teaching tracks</span>
                 <span className="mt-1 block text-sm text-gray-700">Work, money, stewardship, relationships</span>
               </Link>
-              <Link href="/bible-study/invite" className="block rounded-2xl bg-white p-6 hover:no-underline">
+              <Link href="/faithmasters/invite" className="block rounded-2xl bg-white p-6 hover:no-underline">
                 <span className="block text-lg font-semibold text-scripture">Invite Andrew to teach</span>
                 <span className="mt-1 block text-sm text-gray-700">Churches, ministries and Christian organisations</span>
               </Link>

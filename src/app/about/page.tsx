@@ -122,6 +122,7 @@ export default function About() {
               </div>
             ))}
           </dl>
+
         </section>
 
         {/* ── 2. Origin Story ──────────────────────────────────── */}
@@ -266,8 +267,8 @@ export default function About() {
           </h2>
           <p className="mt-4 text-gray-700 max-w-3xl leading-relaxed">
             WorkMasters and InfluenceMasters make up my Personal Capital Development work — helping people develop
-            productive capital and influence capital. Bible Study with Andrew Tugume is distinct: it is teaching,
-            grounded in Scripture, and it is never a condition of, or a route into, any commercial programme.
+            productive capital and influence capital. FaithMasters is distinct: it is Bible teaching, grounded in
+            Scripture, and its public library is free and never depends on joining a commercial programme.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {initiatives.map((initiative) => (
@@ -357,8 +358,8 @@ export default function About() {
               know they had.
             </p>
             <p>
-              My faith shapes how I think about work, stewardship, and service. It is the reason
-              <Link href="/bible-study">Bible Study with Andrew Tugume</Link> exists — because I believe the principles in
+              My faith shapes how I think about work, stewardship, and service. It is the reason{' '}
+              <Link href="/faithmasters">FaithMasters</Link> exists — because I believe the principles in
               scripture are as relevant to business and leadership as any management framework, and
               that the professionals who integrate both tend to build something more durable than
               those who keep the two separate.
@@ -401,10 +402,10 @@ export default function About() {
                 cta: 'Explore InfluenceMasters',
               },
               {
-                title: 'Bible Study',
+                title: 'FaithMasters',
                 body: 'Study Scripture and its application to work, leadership, money, stewardship and relationships.',
-                href: '/bible-study',
-                cta: 'Explore Bible Study',
+                href: '/faithmasters',
+                cta: 'Explore FaithMasters',
               },
               {
                 title: 'Speaking',
@@ -415,7 +416,7 @@ export default function About() {
               {
                 title: 'Guest Teaching',
                 body: 'Bible teaching and seminars for churches, ministries and Christian organisations.',
-                href: '/bible-study/invite',
+                href: '/faithmasters/invite',
                 cta: 'Invite Andrew to teach',
               },
               {

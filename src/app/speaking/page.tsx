@@ -173,7 +173,7 @@ export default function Speaking() {
                 <p className="text-white/75">{brand.location}</p>
                 <p className="pt-4 text-white/75">
                   Inviting Andrew to teach or preach at a church or ministry?{' '}
-                  <Link href="/bible-study/invite" className="text-white underline hover:text-accent">Use the teaching invitation form</Link>.
+                  <Link href="/faithmasters/invite" className="text-white underline hover:text-accent">Use the teaching invitation form</Link>.
                 </p>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function Speaking() {
                   <h3 className="text-lg font-semibold text-primary">Introduction line</h3>
                   <p className="mt-4 text-sm text-gray-700 leading-relaxed italic">
                     “Please welcome {brand.name} — educator, technologist and investor, founder of WorkMasters,
-                    InfluenceMasters and Bible Study with Andrew Tugume, here to help us develop our potential, create
+                    InfluenceMasters and FaithMasters, here to help us develop our potential, create
                     value and live with purpose.”
                   </p>
                 </article>

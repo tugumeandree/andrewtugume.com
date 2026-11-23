@@ -4,11 +4,11 @@ import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo/schema'
 import { pageMetadata } from '@/lib/seo/metadata'
 import FaqList from '@/components/FaqList'
 import PageHero from '@/components/PageHero'
-import { bibleStudy, generalFaqs, influencemasters, workmasters } from '@/lib/brand'
+import { faithmasters, generalFaqs, influencemasters, workmasters } from '@/lib/brand'
 
 export const metadata = pageMetadata({
   title: 'FAQ — About Andrew Tugume & His Programmes',
-  description: 'Answers to common questions about Andrew Tugume, WorkMasters, InfluenceMasters, Bible Study with Andrew Tugume, speaking invitations and how to get in touch.',
+  description: 'Answers to common questions about Andrew Tugume, WorkMasters, InfluenceMasters, FaithMasters, speaking invitations and how to get in touch.',
   path: '/faq',
   absolute: true,
 })
@@ -17,7 +17,7 @@ const groups = [
   { id: 'about-andrew', title: 'About Andrew Tugume', faqs: generalFaqs, href: '/about' },
   { id: 'workmasters', title: 'WorkMasters', faqs: workmasters.faqs, href: '/workmasters' },
   { id: 'influencemasters', title: 'InfluenceMasters', faqs: influencemasters.faqs, href: '/influencemasters' },
-  { id: 'bible-study', title: 'Bible Study with Andrew Tugume', faqs: bibleStudy.faqs, href: '/bible-study' },
+  { id: 'faithmasters', title: 'FaithMasters', faqs: faithmasters.faqs, href: '/faithmasters' },
 ]
 
 export default function FaqPage() {

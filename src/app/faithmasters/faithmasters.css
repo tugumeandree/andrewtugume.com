@@ -1,0 +1,133 @@
+.faithmasters {
+  background: #f4f6f5;
+  color: #182221;
+  font-family: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+
+.faithmasters :is(h1, h2, h3, h4, h5, h6),
+.faithmasters .fm-heading {
+  font-family: var(--font-outfit), system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+
+/* Zero-specificity scope, so text colour utilities on links and buttons still win */
+:where(.faithmasters) a {
+  color: #124542;
+}
+
+.faithmasters :is(a, button, summary, [role='tabpanel']):focus-visible {
+  outline: 3px solid #124542;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.faithmasters .fm-on-teal :is(a, button, summary):focus-visible {
+  outline-color: #fff;
+}
+
+/* Shared forms, in FaithMasters colours */
+.faithmasters .text-primary {
+  color: #124542;
+}
+
+.faithmasters .text-accent,
+.faithmasters form .text-gray-600 {
+  color: #5c6b68;
+}
+
+.faithmasters form button[type='submit'] {
+  background: #124542;
+  color: #fff;
+}
+
+.faithmasters form button[type='submit']:hover {
+  background: #0c3230;
+}
+
+.faithmasters form :is(input, select, textarea) {
+  border-color: #7d8a87;
+}
+
+.faithmasters form :is(input, select, textarea):focus {
+  border-color: #124542;
+  --tw-ring-color: rgb(18 69 66 / 0.45);
+}
+
+.faithmasters summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.faithmasters summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Reading layout for written teachings */
+.faithmasters .fm-reading {
+  max-width: 42rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.faithmasters .fm-reading > * + * {
+  margin-top: 1.25em;
+}
+
+.faithmasters .fm-reading :is(h2, h3, h4) {
+  color: #124542;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2em;
+}
+
+.faithmasters .fm-reading > :first-child {
+  margin-top: 0;
+}
+
+.faithmasters .fm-reading h2 {
+  font-size: 1.625rem;
+}
+
+.faithmasters .fm-reading h3 {
+  font-size: 1.3125rem;
+}
+
+.faithmasters .fm-reading a {
+  text-decoration: underline;
+}
+
+.faithmasters .fm-reading :is(ul, ol) {
+  padding-left: 1.5rem;
+}
+
+.faithmasters .fm-reading ul {
+  list-style: disc;
+}
+
+.faithmasters .fm-reading ol {
+  list-style: decimal;
+}
+
+.faithmasters .fm-reading li + li {
+  margin-top: 0.5em;
+}
+
+.faithmasters .fm-reading blockquote {
+  border-left: 3px solid #d96b27;
+  padding-left: 1.25rem;
+}
+
+.faithmasters .fm-reading table {
+  display: block;
+  overflow-x: auto;
+}
+
+.faithmasters .fm-reading :is(th, td) {
+  border: 1px solid #d5dcda;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.faithmasters .fm-reading img {
+  max-width: 100%;
+  height: auto;
+}

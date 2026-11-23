@@ -46,7 +46,7 @@ export const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/workmasters', label: 'WorkMasters' },
   { href: '/influencemasters', label: 'InfluenceMasters' },
-  { href: '/bible-study', label: 'Bible Study' },
+  { href: '/faithmasters', label: 'FaithMasters' },
   { href: '/resources', label: 'Resources' },
   { href: '/ecosystem', label: 'My Ecosystem' },
 ]
@@ -106,11 +106,11 @@ export const initiatives: Initiative[] = [
   },
   {
     id: 'scripture',
-    name: 'Bible Study with Andrew Tugume',
-    category: 'Biblical Wisdom for Everyday Life',
-    summary: 'Study Scripture and explore its application to work, leadership, business, stewardship, relationships and peace.',
-    href: '/bible-study',
-    cta: 'Explore Bible Study',
+    name: 'FaithMasters',
+    category: 'Bible Study with Andrew Tugume',
+    summary: 'Study Scripture in context and apply it to faith, relationships, wellbeing, work, leadership and stewardship.',
+    href: '/faithmasters',
+    cta: 'Explore FaithMasters',
   },
 ]
 
@@ -341,18 +341,20 @@ export const influencemasters = {
   ] as Faq[],
 }
 
-// ── Bible Study with Andrew Tugume ──────────────────────────
+// ── FaithMasters — Bible Study with Andrew Tugume ───────────
 
 export type Track = {
   id: string
   title: string
-  purpose: string
+  summary: string
   themes: string[]
   passages: string[]
   outcomes: string[]
   safeguards?: string[]
 }
 
+// A teaching published only on YouTube. Teachings with their own page on this site
+// are MDX files instead — see content/faithmasters/README.md.
 export type Teaching = {
   title: string
   youtubeId: string
@@ -362,39 +364,35 @@ export type Teaching = {
   date?: string
 }
 
-export const bibleStudy = {
-  name: 'Bible Study with Andrew Tugume',
-  descriptor: 'Studying Scripture. Understanding Truth. Applying Biblical Wisdom to Everyday Life.',
-  headline: 'Study the Bible. Grow in Wisdom. Apply Truth to Life.',
+export const faithmasters = {
+  name: 'FaithMasters',
+  byline: 'Bible Study with Andrew Tugume',
+  tagline: 'Study Scripture. Live it faithfully.',
+  coreMessage: 'Steward what God has entrusted to you.',
   intro:
-    'Explore Scripture through practical, carefully structured teaching on work, leadership, business, stewardship, relationships and everyday Christian living.',
+    'Explore free Bible teachings on faith, relationships, wellbeing, work, leadership and stewardship. Study at your own pace or join the Friday online Bible study.',
   mission:
-    'To help people understand the Bible faithfully, examine its teachings in context and apply biblical principles to work, leadership, business, finances, service, stewardship, relationships, wellbeing and everyday life.',
+    'FaithMasters is the Scripture-centred teaching initiative within AndrewTugume.com. It helps people study the Bible in context and apply it to faith, relationships, wellbeing, work, leadership and stewardship.',
   approach: [
-    'Begin with Scripture',
-    'Explain the historical, literary and theological context',
-    'Distinguish what a passage meant from how it applies today',
-    'Avoid isolated proof-texting',
-    'Note significant differences in Christian interpretation where relevant',
-    'Use accessible language',
-    'Connect teaching to practical decisions and conduct',
-  ],
-  // Existing weekly online study (from the previous /bible-study page)
+    { title: 'Start with Scripture', body: 'Read the passage itself first, and avoid building on isolated verses.' },
+    { title: 'Explain the context', body: 'Look at its history, literary form and theology, and note where Christians read it differently.' },
+    { title: 'Connect it to everyday decisions', body: 'Separate what the passage meant then from how it applies now, in plain language.' },
+  ] as Step[],
   weekly: {
-    title: 'Weekly online Bible study',
-    when: 'Every Friday, 8:00–9:00 PM EAT',
+    title: 'Friday online Bible study',
+    when: 'Fridays, 8:00–9:00 p.m. EAT',
     where: 'Online via Google Meet',
     href: 'https://meet.google.com/jbq-qumi-ntf',
   },
   // "Bible Study With Andrew Tugume" channel (confirmed by Andrew, November 2026)
   youtubeChannelUrl: 'https://www.youtube.com/@drewbiblemedia',
-  // Add verified teachings: { title, youtubeId, track, scripture, summary, date }
+  // Add verified YouTube-only teachings: { title, youtubeId, track, scripture, summary, date }
   teachings: [] as Teaching[],
   tracks: [
     {
       id: 'work-leadership',
-      title: 'Work, Leadership & Success According to the Bible',
-      purpose: 'How Scripture teaches about work, calling, diligence, excellence, integrity, leadership, ambition, humility, service and success.',
+      title: 'Work, Leadership & Success',
+      summary: 'What Scripture teaches about calling, diligence, integrity, leadership and success.',
       themes: [
         'God’s purpose for work',
         'Work before and after the Fall',
@@ -420,8 +418,8 @@ export const bibleStudy = {
     },
     {
       id: 'business-finance',
-      title: 'Business, Money & Finance According to the Bible',
-      purpose: 'What the Bible teaches about economic activity, enterprise, money, wealth, debt, planning, honesty, generosity and justice.',
+      title: 'Business, Money & Finance',
+      summary: 'What Scripture teaches about enterprise, money, debt, honesty and generosity.',
       themes: [
         'The purpose and limits of money',
         'Wealth, contentment and the love of money',
@@ -448,13 +446,13 @@ export const bibleStudy = {
         'Material wealth is not a sign of divine approval.',
         'Biblical passages are not investment strategies.',
         'This teaching is not regulated financial advice.',
-        'Bible Study is never used to solicit investments.',
+        'FaithMasters is never used to solicit investments.',
       ],
     },
     {
       id: 'stewardship',
-      title: 'Service, Stewardship & Management According to the Bible',
-      purpose: 'Responsibility, faithfulness, service, entrusted resources, leadership and accountability through biblical teaching.',
+      title: 'Service, Stewardship & Management',
+      summary: 'Faithfulness, service and accountability with the people and resources entrusted to you.',
       themes: [
         'What stewardship means',
         'Ownership and entrusted responsibility',
@@ -480,8 +478,8 @@ export const bibleStudy = {
     },
     {
       id: 'relationships',
-      title: 'Relationships, Wellbeing & Peace According to the Bible',
-      purpose: 'Biblical wisdom for healthy relationships, forgiveness, family, conflict, emotional life, rest, reconciliation and peaceful living.',
+      title: 'Relationships, Wellbeing & Peace',
+      summary: 'Biblical wisdom for family, friendship, conflict, forgiveness, rest and peace.',
       themes: [
         'Human dignity and relationships',
         'Love, kindness and compassion',
@@ -511,12 +509,6 @@ export const bibleStudy = {
       ],
     },
   ] as Track[],
-  formats: [
-    { title: 'YouTube teaching', body: 'Free public teaching on the Bible Study With Andrew Tugume channel — passage-by-passage studies, thematic series, short lessons and Q&A.' },
-    { title: 'Weekly online study', body: 'An interactive study on Friday evenings with discussion, questions and practical reflection.' },
-    { title: 'Seminars & guest teaching', body: 'Teaching for churches, ministries, fellowships, universities and Christian professional groups.' },
-    { title: 'Study guides & courses', body: 'Structured guides and courses for personal, small-group and church-based study, published as they are completed.' },
-  ],
   seminarThemes: [
     'Biblical Leadership',
     'Work and Calling',
@@ -526,16 +518,24 @@ export const bibleStudy = {
   ],
   faqs: [
     {
-      question: 'What is Bible Study with Andrew Tugume?',
-      answer: 'It is a Scripture-centred teaching initiative that helps people understand the Bible in context and apply biblical wisdom to work, leadership, business, stewardship, relationships and everyday life.',
+      question: 'What is FaithMasters?',
+      answer: 'FaithMasters is Andrew Tugume’s Scripture-centred teaching initiative, taught as Bible Study with Andrew Tugume. It helps people study the Bible in context and apply it to faith, relationships, wellbeing, work, leadership and stewardship.',
+    },
+    {
+      question: 'Is FaithMasters free?',
+      answer: 'Yes. The public library, teaching series, study guides, workbooks and self-paced courses are free, with no sign-in and no need to join a mailing list. Facilitated workplace training for teams and organisations is a separate paid service.',
     },
     {
       question: 'How can I take part?',
-      answer: 'Watch free teaching on the Bible Study With Andrew Tugume YouTube channel, join the weekly online study on Friday evenings, or join the mailing list to hear about new teaching, study guides and events.',
+      answer: 'Watch teaching on the Bible Study with Andrew Tugume YouTube channel, or join the online Bible study on Fridays from 8:00 to 9:00 p.m. EAT. Email updates are optional.',
     },
     {
-      question: 'Is this connected to WorkMasters or InfluenceMasters?',
-      answer: 'They share the same founder, but Bible Study is a distinct initiative with its own purpose. You never need to buy a programme to receive biblical teaching.',
+      question: 'What is FaithMasters workplace training?',
+      answer: 'It is paid, facilitated training for workers, supervisors, managers and organisations that want live help applying biblical principles to workplace responsibilities. Churches, ministries and fellowships can invite Andrew to teach instead.',
+    },
+    {
+      question: 'Is FaithMasters connected to WorkMasters or InfluenceMasters?',
+      answer: 'They share the same founder, but FaithMasters is a distinct initiative. You never need to buy a programme to receive biblical teaching.',
     },
     {
       question: 'Does the teaching promise financial success?',
@@ -550,6 +550,18 @@ export const bibleStudy = {
       answer: 'Yes. Send an invitation with your event details. Availability is confirmed for each request.',
     },
   ] as Faq[],
+}
+
+// Paid, facilitated training for organisations. Separate from guest teaching, which
+// churches and ministries request at /faithmasters/invite. The subject preselects the
+// matching option on the contact form.
+const WORKPLACE_TRAINING_SUBJECT = 'FaithMasters workplace training'
+
+export const workplaceTraining = {
+  subject: WORKPLACE_TRAINING_SUBJECT,
+  href: `/contact?subject=${encodeURIComponent(WORKPLACE_TRAINING_SUBJECT)}`,
+  description:
+    'Paid workplace training for workers, supervisors and managers. It adds live facilitation, feedback and help applying the material to your team’s priorities.',
 }
 
 // ── Wider ecosystem ─────────────────────────────────────────
@@ -722,9 +734,9 @@ export const appearances: Appearance[] = []
 
 export const bios = {
   short:
-    'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda. Through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume, he helps people develop their potential, create value and live with purpose. He is the founder of Rata Qraft Solutions Limited (Qraft Group).',
+    'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda. Through WorkMasters, InfluenceMasters and FaithMasters, he helps people develop their potential, create value and live with purpose. He is the founder of Rata Qraft Solutions Limited (Qraft Group).',
   long:
-    'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda. His work helps people discover what they carry, develop what they know and put it to meaningful use.\n\nThrough WorkMasters, he helps professionals, consultants and founders develop productive capital — turning skills and expertise into valuable offers, productive systems and income-generating assets. Through InfluenceMasters, he helps experts and leaders develop influence capital — their voice, original ideas and credible authority. Through Bible Study with Andrew Tugume, he teaches Scripture in context and its application to work, leadership, business, stewardship, relationships and everyday life.\n\nAndrew is the founder of Rata Qraft Solutions Limited (Qraft Group), whose businesses include Qraft Academy and Qraft Capital. Known to many of his students as Coach Drew, he speaks to conferences, organisations, universities and churches.',
+    'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda. His work helps people discover what they carry, develop what they know and put it to meaningful use.\n\nThrough WorkMasters, he helps professionals, consultants and founders develop productive capital — turning skills and expertise into valuable offers, productive systems and income-generating assets. Through InfluenceMasters, he helps experts and leaders develop influence capital — their voice, original ideas and credible authority. Through FaithMasters (Bible Study with Andrew Tugume), he teaches Scripture in context and its application to work, leadership, business, stewardship, relationships and everyday life.\n\nAndrew is the founder of Rata Qraft Solutions Limited (Qraft Group), whose businesses include Qraft Academy and Qraft Capital. Known to many of his students as Coach Drew, he speaks to conferences, organisations, universities and churches.',
 }
 
 // ── Resources ───────────────────────────────────────────────
@@ -764,7 +776,7 @@ export const facts = [
   { label: 'Name', value: 'Andrew Tugume (known to students as Coach Drew)' },
   { label: 'Roles', value: 'Educator, technologist and investor' },
   { label: 'Based in', value: 'Kampala, Uganda' },
-  { label: 'Initiatives', value: 'WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume' },
+  { label: 'Initiatives', value: 'WorkMasters, InfluenceMasters and FaithMasters (Bible Study with Andrew Tugume)' },
   { label: 'Founder of', value: 'Rata Qraft Solutions Limited (Qraft Group), including Qraft Academy and Qraft Capital' },
   { label: 'Speaks on', value: 'Productive capital, influence, the future of work, technology and biblical wisdom for everyday life' },
   { label: 'Contact', value: 'andrewtugume2@gmail.com · WhatsApp +256 755 017 384' },
@@ -786,11 +798,11 @@ export const knowsAbout = [
 export const generalFaqs: Faq[] = [
   {
     question: 'Who is Andrew Tugume?',
-    answer: 'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda. He helps people develop their potential, create value and live with purpose through WorkMasters, InfluenceMasters and Bible Study with Andrew Tugume, and he is the founder of Rata Qraft Solutions Limited (Qraft Group).',
+    answer: 'Andrew Tugume is an educator, technologist and investor based in Kampala, Uganda. He helps people develop their potential, create value and live with purpose through WorkMasters, InfluenceMasters and FaithMasters, and he is the founder of Rata Qraft Solutions Limited (Qraft Group).',
   },
   {
     question: 'What does Andrew Tugume do?',
-    answer: 'Andrew teaches, builds and invests. Through WorkMasters he helps people develop productive capital; through InfluenceMasters he helps experts develop influence capital; and through Bible Study with Andrew Tugume he teaches Scripture and its application to everyday life. He also speaks at conferences, organisations, universities and churches.',
+    answer: 'Andrew teaches, builds and invests. Through WorkMasters he helps people develop productive capital; through InfluenceMasters he helps experts develop influence capital; and through FaithMasters he teaches Scripture and its application to everyday life. He also speaks at conferences, organisations, universities and churches.',
   },
   {
     question: 'Who does Andrew Tugume work with?',
@@ -798,7 +810,7 @@ export const generalFaqs: Faq[] = [
   },
   {
     question: 'How do I book Andrew Tugume to speak?',
-    answer: 'Send a request through the speaking booking form at andrewtugume.com/speaking, or email andrewtugume2@gmail.com. Churches and ministries can use the teaching invitation form at andrewtugume.com/bible-study/invite.',
+    answer: 'Send a request through the speaking booking form at andrewtugume.com/speaking, or email andrewtugume2@gmail.com. Churches and ministries can use the teaching invitation form at andrewtugume.com/faithmasters/invite.',
   },
   {
     question: 'Where is Andrew Tugume based?',

@@ -10,7 +10,7 @@ import { capitalDimensions, ecosystem, initiatives, partnershipTypes } from '@/l
 
 export const metadata = pageMetadata({
   title: 'Ecosystem: Qraft Group & Future of Work Forum',
-  description: 'How WorkMasters, InfluenceMasters and Bible Study connect to Qraft Group (Rata Qraft Solutions Limited), Qraft Academy, Qraft Capital and the Future of Work Forum.',
+  description: 'How WorkMasters, InfluenceMasters and FaithMasters connect to Qraft Group (Rata Qraft Solutions Limited), Qraft Academy, Qraft Capital and the Future of Work Forum.',
   path: '/ecosystem',
 })
 
@@ -158,7 +158,7 @@ export default function Ecosystem() {
               />
               <p className="mt-6 text-sm text-gray-700">
                 Booking a talk? Use the <Link href="/speaking#book">speaking request form</Link>. Inviting Andrew to teach
-                at a church or ministry? Use the <Link href="/bible-study/invite">teaching invitation form</Link>.
+                at a church or ministry? Use the <Link href="/faithmasters/invite">teaching invitation form</Link>.
               </p>
             </div>
             <ContactForm

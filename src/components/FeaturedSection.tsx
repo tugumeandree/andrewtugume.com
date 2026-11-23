@@ -3,7 +3,7 @@ import Link from 'next/link'
 import SectionHeading from '@/components/SectionHeading'
 import StatusBadge from '@/components/StatusBadge'
 import { getAllPosts } from '@/lib/blog/posts'
-import { bibleStudy, workmasters, type Status } from '@/lib/brand'
+import { faithmasters, workmasters, type Status } from '@/lib/brand'
 
 type FeaturedItem = {
   kicker: string
@@ -19,7 +19,7 @@ type FeaturedItem = {
 export default async function FeaturedSection() {
   const [latestPost] = await getAllPosts()
   const live = workmasters.offers.find((offer) => offer.id === 'live')
-  const latestTeaching = bibleStudy.teachings[0]
+  const latestTeaching = faithmasters.teachings[0]
 
   const items: FeaturedItem[] = []
 
@@ -46,10 +46,10 @@ export default async function FeaturedSection() {
   }
 
   items.push({
-    kicker: 'Bible Study',
-    title: bibleStudy.weekly.title,
-    body: `${bibleStudy.weekly.when} · ${bibleStudy.weekly.where}`,
-    href: '/bible-study#weekly',
+    kicker: 'FaithMasters',
+    title: faithmasters.weekly.title,
+    body: `${faithmasters.weekly.when} · ${faithmasters.weekly.where}`,
+    href: '/faithmasters#weekly',
     cta: 'Join the study',
   })
 
