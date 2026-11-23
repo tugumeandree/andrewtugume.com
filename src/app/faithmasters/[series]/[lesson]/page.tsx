@@ -13,9 +13,7 @@ import { faithmasters, SITE_URL } from '@/lib/brand'
 
 type Params = { params: Promise<{ series: string; lesson: string }> }
 
-// Lessons are built ahead of time from the published files; any other address is a 404
-export const dynamicParams = false
-
+// Published lessons are built ahead of time; any other address falls through to notFound()
 export function generateStaticParams() {
   return getAllLessons().map((lesson) => ({ series: lesson.series, lesson: lesson.slug }))
 }
