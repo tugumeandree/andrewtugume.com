@@ -168,7 +168,9 @@ const nextConfig = {
 
       // Bible Study → FaithMasters. Nested paths, query strings and #anchors carry over;
       // older faith routes go straight to the new page so there are no redirect chains.
-      permanent('/bible-study/:path*', '/faithmasters/:path*'),
+      // The landing page has its own rule: an empty :path* leaves a trailing slash on Vercel.
+      permanent('/bible-study', '/faithmasters'),
+      permanent('/bible-study/:path+', '/faithmasters/:path+'),
       permanent('/faith-knowledge', '/faithmasters'),
 
       // Retired programmes and institutions (pages deleted November 2026)
